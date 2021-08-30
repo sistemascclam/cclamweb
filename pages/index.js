@@ -1,82 +1,60 @@
 import Head from 'next/head'
+import Image from 'next/image'
+import Layout, { siteTitle } from '../components/layout'
+import Typing from '../components/Typing'
+import Carrousel from '../components/Carrousel/index'
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <Layout home>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>{siteTitle}</title>
       </Head>
+      <header className="relative h-screen bg-hero-pattern">
+        <Image
+          src={"/images/landing.png"}
+          alt="Logo CCLAM"
+          layout="fill"
+          objectFit="cover"
+          quality="100"
+        />
+        <div className="relative bottom-0 left-0 lg:pt-40 md:pt-40 sm:pt-40 pt-36 mb-3">
+          <div className="text-left p-6 mx-6 mt-auto">
+            <p className="text-sm lg:text-base md:text-base sm:text-base block text-yellow-400  font-semibold mb-3 tracking-widest">CÁMARA DE COMERCIO Y PRODUCCIÓN DE LAMBAYEQUE</p>
+            <h1 className="text-3xl lg:text-7xl md:text-7xl sm:text-6xl tracking-tight font-extrabold text-white">
+              <span className="block">SOMOS</span>
+              <Typing phrases={["UNA PALABRA", "OTRA FRASE", "ULTIMA FRASE"]} />
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
+            </h1>
+            <p className="mt-3 text-white max-w-xl text-base lg:text-xl md:text-xl sm:text-xl">
+              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
             </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          </div>
+          <div className="w-full my-6 py-6 flex justify-center">
+            <a href="#areas" className="rounded-full h-12 w-12 bg-white flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </a>
+          </div>
         </div>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
-    </div>
+      </header>
+      <section id="areas" className="relative h-screen">
+        <Carrousel />
+      </section>
+      <section id="video" className="relative h-screen hidden lg:block md:block sm:block">
+        <div className="static">
+          <div className="h-screen min-w-full z--10 overflow-hidden">
+            <iframe src="https://www.youtube.com/embed/-hJtGc8vMOQ?autoplay=1&mute=1&loop=1&playlist=-hJtGc8vMOQ&modestbranding=1&autohide=1&showinfo=0&controls=0"
+              title="Video" frameBorder="0" width="1800" height="759" className="-translate-x-56" allowFullScreen></iframe>
+          </div>
+          <div className="absolute h-screen min-w-full top-0 bg-blue-900 bg-opacity-60 z-0 select-none">
+          </div>
+        </div>
+      </section>
+      <section id="convenios">
+        asdsad
+      </section>
+    </Layout>
   )
 }

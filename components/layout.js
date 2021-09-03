@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import NavBar from './Nav/index'
-import FloatingGroup from './FloatingButtons/index'
+import NavBar from './Global/Nav/index'
+import FloatingGroup from './Global/FloatingButtons/index'
 
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'CCLAM | Cámara de Comercio y Producción de Lambayeque'
 
 export default function Layout({ children, home }) {
   return (
@@ -11,7 +11,7 @@ export default function Layout({ children, home }) {
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Cámara de Comercio y Producción de Lambayeque"
         />
         <meta
           property="og:image"
@@ -24,7 +24,7 @@ export default function Layout({ children, home }) {
       </Head>
       <FloatingGroup />
       <NavBar />
-      <main>{children}</main>
+      <main className="bg-themeWhite">{children}</main>
     </>
   )
 }

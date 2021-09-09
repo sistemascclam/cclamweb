@@ -3,7 +3,10 @@
  */
  const nextConfig = {
     images: {
-        domains: ['www.cclam.org.pe'],
+        domains: ['www.cclam.org.pe','localhost'],
+    },
+    env: {
+      graphuri: 'http://localhost/wordpress/graphql',
     },
   }
   

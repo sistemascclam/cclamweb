@@ -40,7 +40,7 @@ const ListMenu = (menusParam, cod,tooglemodal) => {
                         }
 
                         <div className={`${!show.includes(cod + "" + key) ? "hidden" : 'block'}`}>{menu.menus && ListMenu(menu.menus, `${cod}${key}`)}</div>
-                        {key < menusParam.length - 1 && <hr />}
+                        {key < menusParam.length - 1 && <hr className="text-gray-200" />}
                     </div>)
             }
         </nav>

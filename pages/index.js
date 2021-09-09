@@ -11,7 +11,7 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <header className="relative h-screen bg-hero-pattern">
+      <header className="relative h-screen bg-hero-pattern bg-cover">
         <Image
           src={"/images/landing.png"}
           alt="Logo CCLAM"

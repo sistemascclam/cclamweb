@@ -311,7 +311,7 @@ export default function RecursosHumanos() {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <section className="h-screen bg-themeWhite">
+            <div className="min-h-screen bg-themeWhite">
                 <div className="pt-40 text-center">
                     <h1 className="text-5xl font-black text-themeLightBlue">Contáctanos</h1>
                 </div>
@@ -337,7 +337,7 @@ export default function RecursosHumanos() {
                         )
                     }
                 </div>
-            </section>
+            </div>
         </Layout>
     )
 }

@@ -44,9 +44,10 @@ export default function ConveniosSection() {
 
     return (
         <section id="convenios" className="h-screen"  onMouseEnter={startCounting}>
+            
             <div className="text-center mt-24">
-                <h2 className="text-6xl font-extrabold text-themeBlue">Convenios</h2>
-                <h3 className="text-2xl font-light text-themeBlue mt-2">Nuestros <strong>asociados</strong> nos respaldan</h3>
+                <h2 className="text-6xl font-extrabold text-themeBlue ">Convenios</h2>
+                <h3 className="text-2xl font-normal mt-2">Nuestros <strong>asociados</strong> nos respaldan</h3>
                 <div className="text-white bg-gradient-to-r from-themeBlue to-themeLightBlue flex flex-wrap justify-between content-center  w-10/12 mx-auto rounded-lg shadow-3xl py-5 px-6 lg:px-32 mt-12">
                     <div className="mx-auto my-2">
                         <p className="font-extrabold text-4xl mb-1"><span ref={conveniosRef} />+</p>

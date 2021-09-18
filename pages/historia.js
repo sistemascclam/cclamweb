@@ -7,11 +7,11 @@ export default function Historia() {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <section className="h-screen ">
-                <div className="pt-40 text-center">
-                    <h1 className="text-5xl font-black">Nuestra historia <span className="block text-themeLightBlue mt-2">Gremio empresarial de Lambayeque</span></h1>
+            <section className="py-14">
+                <div className="pt-20 lg:pt-30 text-center mb-14">
+                    <h1 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-black">Nuestra historia <span className="block text-themeLightBlue mt-2">Gremio empresarial de Lambayeque</span></h1>
                 </div>
-                <div className="bg-white w-full my-14 shadow-card px-28 py-20 rounded-4xl">
+                <div className="bg-white w-full shadow-close px-5 lg:px-28 py-12 lg:py-20 rounded-4xl">
                     <h3 className="font-extrabold text-themeLightBlue text-xl">GÉNESIS DE UNA CÁMARA IMPULSADORA DEL DESARROLLO DE LAMBAYEQUE</h3>
                     <p className="text-justify mt-5 text-gray-900 text-lg font-normal">
                         A finales del siglo XX Lambayeque se encontraba en pleno proceso de recuperación de la crisis económica, producto de la post guerra con Chile. La resquebrajada economía de la gran hacienda se reactiva con nuevas perspectivas de gestión que buscaban extender con eficiencia la producción de arroz y azúcar por nuestros valles.

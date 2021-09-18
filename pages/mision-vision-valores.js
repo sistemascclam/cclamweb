@@ -8,7 +8,7 @@ export default function MisionVisionValores() {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <section className="h-screen py-24">
+            <section className="py-24">
                 <div className="w-full flex justify-around flex-wrap ">
                     <div className="max-w-sm">
                         <CardStyled

@@ -17,39 +17,39 @@ export default function ContigoEmpresa({ noticiasData, pronunciamientosData }) {
         <title>{siteTitle}</title>
       </Head>
       <div className="min-h-screen w-full">
-        <section id="contigo-empresa" className="relative w-full min-h-screen mx-auto bg-black">
+        <section id="contigo-empresa" className="relative w-full mx-auto bg-black">
           <div className="static">
-            <div className="min-w-full z--10 overflow-hidden">
-              <video width="1800" height="759" muted autoPlay loop playsInline>
+            <div className="min-w-full overflow-hidden">
+              <video width="100%" muted autoPlay loop playsInline>
                 <source src={"videos/contigoempresa.mp4"} type="video/mp4" />
                 Tu buscador no soporta este tipo de video.
               </video>
             </div>
-            <div className="absolute h-full min-w-full top-0 bg-themeBlue bg-opacity-70 z-0 select-none">
+            <div className="absolute min-w-full top-0 h-full bg-themeBlue bg-opacity-70 z-0 select-none">
             </div>
           </div>
-          <div className="absolute top-10 font-bold text-5xl text-white w-full text-center">
+          <div className="hidden lg:block absolute top-10 font-bold text-5xl text-white w-full text-center">
             <Typing phrases={["CONTIGO EMPRESA"]} />
           </div>
         </section>
-        <section id="noticias" className="relative w-11/12 mx-auto -mt-32 rounded-xl lg:bg-white lg:shadow-xl lg:-mt-60	lg:p-6">
+        <section id="noticias" className="relative lg:w-11/12 mx-auto -mt-2 rounded-xl bg-white shadow-xl lg:-mt-60	p-6">
           <TitleSection
             title={"Noticias"}
           />
           <NoticiasContainer noticiasData={noticiasData} />
           <div className="w-full text-center mt-8 "><Link href="/galeria/noticias"><a className="hover:text-themeLightBlue">Ver más...</a></Link></div>
         </section>
-        <section id="revista-digital" className="relative w-11/12 mx-auto lg:p-6 mt-10">
-          <div className="grid grid-cols-2">
-            <div className="w-auto flex flex-wrap content-center">
-              <p className="font-extrabold text-5xl text-left">
+        <section id="revista-digital" className="relative min-h-screen flex flex-wrap content-center w-full py-6 px-10 lg:px-20 mt-10">
+          <div className="w-full flex flex-wrap justify-between ">
+            <div className="w-full lg:w-5/12 flex flex-wrap content-center ">
+              <p className="font-extrabold mx-auto lg:mx-0 text-center lg:text-left text-3xl lg:text-5xl md:text-5xl sm:text-6xl">
                 Imagen empresarial
               </p>
-              <p className="font-extrabold text-3xl text-left text-themeLightBlue mt-3">
+              <p className="font-extrabold text-center lg:text-left text-3xl text-themeLightBlue mt-0 mb-5 lg:mt-3">
                 Nuestra revista institucional
               </p>
             </div>
-            <div className="relative w-10/12 ml-auto rounded-2xl shadow-card transition duration-500 ease-in-out transform hover:-translate-x-5">
+            <div className="relative w-full lg:w-5/12	 ml-auto rounded-2xl shadow-card transition duration-500 ease-in-out transform hover:-translate-x-5">
               <a className="" href="https://issuu.com/cclam2021/docs/imagen_empresarial_digital_-_edici_n_bicentenario_" target="_blank">
                 <Image
                   className="rounded-2xl "
@@ -85,7 +85,7 @@ const TitleSection = ({ title, description }) =>
     </p>
     {
       description ?
-        <p className="text-sm lg:text-lg leading-relaxed text-gray-500 font-medium mb-20 max-w-2xl">{description}</p>
+        <p className="text-sm lg:text-lg leading-relaxed text-gray-500 font-medium mb-10 max-w-2xl">{description}</p>
         :
         ""
     }

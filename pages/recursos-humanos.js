@@ -201,7 +201,7 @@ const cards = [
             />} />,
     },
     {
-        keywords: ["capacitación","capacitacion","formalización","formalizacion","desarrollo",],
+        keywords: ["capacitación","capacitacion","formalización","formalizacion","desarrollo","carmen","julia","sime"],
         element: <CardContact
             correo="capacitacion@cclam.org.pe"
             telf="944675625"

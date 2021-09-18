@@ -10,6 +10,34 @@ export default function Carrousel() {
                 <Item
                     description="Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua."
                     phrases={["ÁREA DE MESA DE PARTES", "MESA DE PARTES"]}
+                    bg="bg-mesa-de-partes"
+                />,
+                <Item
+                    description="Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua."
+                    phrases={["ÁREA DE PROTESTOS", "PROTESTOS"]}
+                    bg="bg-protestos"
+                />,
+                <Item
+                    description="Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua."
+                    phrases={["ÁREA DE FORMALIZACION", "FORMALIZACION"]}
+                    bg="bg-formalizacion"
+                />,
+                <Item
+                    description="Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua."
+                    phrases={["ÁREA DE COMERCIO EXTERIOR", "COMERCIO EXTERIOR"]}
+                    bg="bg-comercio-exterior"
+                />
+            ]}
+        />
+        </>
+    )
+}
+
+/*
+            slides={[
+                <Item
+                    description="Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua."
+                    phrases={["ÁREA DE MESA DE PARTES", "MESA DE PARTES"]}
                     ImgCarrousel={() => <Image
                         src={"/images/areas/mesa-de-partes.png"}
                         alt="MESA DE PARTES"
@@ -52,7 +80,4 @@ export default function Carrousel() {
                     />}
                 />
             ]}
-        />
-        </>
-    )
-}
+*/

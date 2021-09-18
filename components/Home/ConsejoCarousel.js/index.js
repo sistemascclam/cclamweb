@@ -3,20 +3,20 @@ import "keen-slider/keen-slider.min.css"
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 
-export default function ConsejoCarousel() {
+export default function ConsejoCarousel({ className, slidesLg = 4, slidesSM = 2, animation = '' }) {
     const [pause, setPause] = useState(false)
     const timer = useRef()
-
+    const [currentSlide, setcurrentSlide] = useState(0);
     const [sliderRef, slider] = useKeenSlider({
         loop: true,
         rtl: true,
-        spacing:25,
+        spacing: 25,
         breakpoints: {
-            '(max-width: 640px)': {
-                slidesPerView: 2,
+            '(max-width: 639px) ': {
+                slidesPerView: slidesSM,
             },
-            '(min-width: 1024px)': {
-                slidesPerView: 4,
+            '(min-width: 640px)': {
+                slidesPerView: slidesLg,
             },
         },
         duration: 1000,
@@ -26,16 +26,10 @@ export default function ConsejoCarousel() {
         dragEnd: () => {
             setPause(false)
         },
+        slideChanged(s) {
+            setcurrentSlide(s.details().relativeSlide)
+        },
     })
-
-    useEffect(() => {
-        sliderRef.current.addEventListener("mouseover", () => {
-            setPause(true)
-        })
-        sliderRef.current.addEventListener("mouseout", () => {
-            setPause(false)
-        })
-    }, [sliderRef])
 
     useEffect(() => {
         timer.current = setInterval(() => {
@@ -49,121 +43,121 @@ export default function ConsejoCarousel() {
     }, [pause, slider])
 
     return (
-        <div ref={sliderRef} className="keen-slider mx-auto h-80">
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <div className="responsive my-auto">
-
+        <div ref={sliderRef} className="keen-slider mx-auto h-full w-full">
+            <div className="keen-slider__slide content-center flex items-stretch justify-center h-full w-full">
+                <div className={`relative my-auto h-full w-full ${currentSlide === 7 ? '' : animation}`}>
                     <Image
-                        src={"/images/consejo/directivos/carlos-burgos.jpg"}
-                        alt="Logo SUNAT"
-                        layout="fill"
-                        quality="100"
-                        
-                        objectFit="cover"
-                    />
-                </div>
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <div className="responsive my-auto">
-
-                    <Image
-                        src={"/images/consejo/directivos/olivio-huancaruna.jpg"}
-                        alt="Zegel ZEGEL"
-                        layout="fill"
-                        quality="100"
-                        
-                        objectFit="cover"
-                    />
-                </div>
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <div className="responsive my-auto">
-
-                    <Image
-                        src={"/images/consejo/directivos/elkin-vanegas.jpg"}
-                        alt="Logo SIPAN"
-                        layout="fill"
-                        quality="100"
-                        
-                        objectFit="cover"
-                    />
-                </div>
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <div className="responsive my-auto">
-
-                    <Image
-                        src={"/images/consejo/directivos/astrid-reynoso.jpg"}
-                        alt="Logo UCV"
-                        layout="fill"
-                        quality="100"
-                        
-                        objectFit="cover"
-                    />
-                </div>
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <div className="responsive my-auto">
-
-                    <Image
-                        src={"/images/consejo/directivos/franco-chiappe.jpg"}
-                        alt="Logo RENIEC"
-                        layout="fill"
-                        quality="100"
-                        
-                        objectFit="cover"
-                    />
-                </div>
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <div className="responsive my-auto">
-
-                    <Image
-                        src={"/images/consejo/directivos/mitchel-gamboa.jpg"}
-                        alt="Logo Induamerica"
-                        layout="fill"
-                        quality="100"
-                        
-                        objectFit="cover"
-                    />
-                </div>
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <div className="responsive my-auto">
-
-                    <Image
-                        src={"/images/consejo/directivos/vanesa-ramos.jpg"}
-                        alt="Logo Claro"
-                        layout="fill"
-                        quality="100"
-                        
-                        objectFit="cover"
-                    />
-                </div>
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <div className="responsive my-auto">
-
-                    <Image
-                        src={"/images/consejo/directivos/carlos-iberico.png"}
-                        alt="Logo CERTUS"
-                        layout="fill"
-                        quality="100"
-                        
-                        objectFit="cover"
-                    />
-                </div>
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <div className="responsive my-auto">
-
-                    <Image
+                        className={className}
                         src={"/images/consejo/directivos/patricia-diaz.jpg"}
-                        alt="Logo Colegio de Ingenieros de Lambayeque"
-                        layout="fill"
+                        alt="Patricia Diaz"
+                        layout="responsive"
                         quality="100"
-                        
-                        objectFit="cover"
+                        width="490"
+                        height="612"
+                    />
+                </div>
+            </div>
+            <div className="keen-slider__slide content-center flex items-stretch justify-center">
+                <div className={`relative my-auto h-full w-full ${currentSlide === 8 ? '' : animation}`}>
+                    <Image
+                        className={className}
+                        src={"/images/consejo/directivos/carlos-iberico.png"}
+                        alt="Carlos Iberico"
+                        layout="responsive"
+                        quality="100"
+                        width="490"
+                        height="612"
+                    />
+                </div>
+            </div>
+            <div className="keen-slider__slide content-center flex items-stretch justify-center">
+                <div className={`relative my-auto h-full w-full ${currentSlide + 2 === 2 ? '' : animation}`}>
+                    <Image
+                        className={className}
+                        src={"/images/consejo/directivos/vanesa-ramos.jpg"}
+                        alt="Vanesa Ramos"
+                        layout="responsive"
+                        quality="100"
+                        width="490"
+                        height="612"
+                    />
+                </div>
+            </div>
+            <div className="keen-slider__slide content-center flex items-stretch justify-center">
+                <div className={`relative my-auto h-full w-full ${currentSlide + 2 === 3 ? '' : animation}`}>
+                    <Image
+                        className={className}
+                        src={"/images/consejo/directivos/mitchel-gamboa.jpg"}
+                        alt="Mitchel Gamboa"
+                        layout="responsive"
+                        quality="100"
+                        width="490"
+                        height="612"
+                    />
+                </div>
+            </div>
+            <div className="keen-slider__slide content-center flex items-stretch justify-center">
+                <div className={`relative my-auto h-full w-full ${currentSlide + 2 === 4 ? '' : animation}`}>
+                    <Image
+                        className={className}
+                        src={"/images/consejo/directivos/franco-chiappe.jpg"}
+                        alt="Franco Chiappe"
+                        layout="responsive"
+                        quality="100"
+                        width="490"
+                        height="612"
+                    />
+                </div>
+            </div>
+            <div className="keen-slider__slide content-center flex items-stretch justify-center">
+                <div className={`relative my-auto h-full w-full ${currentSlide + 2 === 5 ? '' : animation}`}>
+                    <Image
+                        className={className}
+                        src={"/images/consejo/directivos/astrid-reynoso.jpg"}
+                        alt="Atrid Reynoso"
+                        layout="responsive"
+                        quality="100"
+                        width="490"
+                        height="612"
+                    />
+                </div>
+            </div>
+            <div className="keen-slider__slide content-center flex items-stretch justify-center">
+                <div className={`relative my-auto h-full w-full ${currentSlide + 2 === 6 ? '' : animation}`}>
+                    <Image
+                        className={className}
+                        src={"/images/consejo/directivos/elkin-vanegas.jpg"}
+                        alt="Elkin Vanegas"
+                        layout="responsive"
+                        quality="100"
+                        width="490"
+                        height="612"
+                    />
+                </div>
+            </div>
+            <div className="keen-slider__slide content-center flex items-stretch justify-center">
+                <div className={`relative my-auto h-full w-full ${currentSlide + 2 === 7 ? '' : animation}`}>
+                    <Image
+                        className={className}
+                        src={"/images/consejo/directivos/olivio-huancaruna.jpg"}
+                        alt="Olivio Huancaruna"
+                        layout="responsive"
+                        quality="100"
+                        width="490"
+                        height="612"
+                    />
+                </div>
+            </div>
+            <div className="keen-slider__slide content-center flex items-stretch justify-center">
+                <div className={`relative my-auto h-full w-full ${currentSlide + 2 === 8 ? '' : animation}`}>
+                    <Image
+                        className={className}
+                        src={"/images/consejo/directivos/carlos-burgos.jpg"}
+                        alt="Ing. Carlos Burgos"
+                        layout="responsive"
+                        quality="100"
+                        width="490"
+                        height="612"
                     />
                 </div>
             </div>

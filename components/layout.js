@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import NavBar from './Global/Nav/index'
 import FloatingGroup from './Global/FloatingButtons/index'
-
+import Footer from './Global/Footer/index'
 export const siteTitle = 'CCLAM | Cámara de Comercio y Producción de Lambayeque'
 
 export default function Layout({ children, home }) {
@@ -24,7 +24,8 @@ export default function Layout({ children, home }) {
       </Head>
       <FloatingGroup />
       <NavBar />
-      <main className="bg-themeWhite">{children}</main>
+      <main className="bg-themeWhite font-poppins">{children}</main>
+      <Footer />
     </>
   )
 }

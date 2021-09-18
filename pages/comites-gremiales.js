@@ -179,7 +179,7 @@ const SectoristaConComites = ({ sectorista }) =>
                 sectorista.comites.map((comite, i) =>
                     <CardSectorista key={i} className="p-3" orientation={i % 2 === 0 ? "r" : "l"} >
                         <div className={`${i % 2 === 0 ? "ml-28" : "mr-28"} flex`}>
-                            <p className={`my-auto text-themeLightBlue text-md lg:text-xl font-semibold text-center mx-auto ${i % 2 === 0 ? "" : "order-1"}`}>
+                            <p className={`my-auto text-themeLightBlue lg:text-xl font-semibold text-center mx-auto ${i % 2 === 0 ? "" : "order-1"}`}>
                                 {comite.name}
                             </p>
                             <div className="bg-themeLightBlue bg-opacity-20 p-2 lg:p-3 rounded-full text-themeLightBlue h-full my-auto">

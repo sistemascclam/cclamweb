@@ -1,0 +1,17 @@
+[
+    {
+        "empresa": "Claro",
+        "imageSrc": "/images/convenios/certus.png",
+        "beneficio":"2 Cursos empresariales"
+    },
+    {
+        "empresa": "Claro",
+        "imageSrc": "/images/convenios/claro.png",
+        "beneficio":"1 mes de plan familia"
+    },
+    {
+        "empresa": "Claro",
+        "imageSrc": "/images/convenios/zegel.png",
+        "beneficio":"1 licenciatura empresarial"
+    }
+]

@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../../components/layout'
-import { getNoticiasData, getPronunciamientosData } from '../../lib/contigoempresa'
 import Link from 'next/link'
 import Typing from '../../components/Typing'
 import Image from 'next/image'
 import moment from 'moment'
 import 'moment/locale/es'
 moment.locale('es')
+import { getAllNews } from '../../lib/noticias'
+import { getAllPronunciamientos } from '../../lib/pronunciamientos'
 import NoticiasContainer from '../../components/ContigoEmpresa/NoticiasContainer'
 import PronunciamientosContainer from '../../components/ContigoEmpresa/PronunciamientosContainer'
 
@@ -93,12 +94,22 @@ const TitleSection = ({ title, description }) =>
   </div>
 
 export async function getStaticProps() {
-  const noticiasData = await getNoticiasData(6)
-  const pronunciamientosData = await getPronunciamientosData(2) //POR PUEBA 2, PONER 4 DESPUÉS 
+  const noticiasData = getAllNews([
+    'title',
+    'date',
+    'slug',
+    'coverImage',
+    'description',
+  ])
+  const pronunciamientosData = getAllPronunciamientos([
+    'title',
+    'date',
+    'slug',
+    'coverImage',
+    'description',
+  ])
+
   return {
-    props: {
-      noticiasData,
-      pronunciamientosData
-    }
+    props: { noticiasData, pronunciamientosData },
   }
 }

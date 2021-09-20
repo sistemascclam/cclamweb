@@ -8,15 +8,15 @@ export default function NoticiasContainer({noticiasData}) {
     return (
         <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-20">
             {
-                noticiasData?.children?.edges?.map((edge, i) =>
-                    <NoticiaCard key={i} title={edge.node.title} id={edge.node.id} date={moment(edge.node.date).format('LL')}
-                        image={edge.node.featuredImage ?
+                noticiasData?.map((noticia, i) =>
+                    <NoticiaCard key={i} title={noticia.title} slug={noticia.slug} date={moment(noticia.date).format('LL')}
+                        image={noticia.coverImage ?
                             <Image
                                 className="brightness-50 rounded-xl "
                                 layout="fill"
                                 objectFit="cover"
-                                src={edge.node.featuredImage.node.mediaItemUrl}
-                                alt={edge.node.title}
+                                src={noticia.coverImage}
+                                alt={noticia.slug}
                             />
                             :
                             <Image
@@ -24,7 +24,7 @@ export default function NoticiasContainer({noticiasData}) {
                                 layout="fill"
                                 objectFit="cover"
                                 src={"/images/landing.png"}
-                                alt={edge.node.title}
+                                alt={noticia.node.title}
                             />
                         } />
                 )
@@ -33,8 +33,8 @@ export default function NoticiasContainer({noticiasData}) {
     )
 }
 
-const NoticiaCard = ({ title, image, date, id }) => (
-    <Link href={`/noticia/${id}`} >
+const NoticiaCard = ({ title, image, date, slug }) => (
+    <Link href={`/noticia/${slug}`} >
         <a className="relative flex  hover:scale-105 transition duration-500 ease-in-out cursor-pointer ">
             <div className="relative w-full h-60 lg:h-32 lg:w-32">
                 {image}

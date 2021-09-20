@@ -21,7 +21,7 @@ var options = [
         ],
         orientation: 'normal',
         image: <Image
-            className="rounded-3xl"
+            className="rounded-3xl filter brightness-50"
             src='/images/servicios/ambientes/leftimage.jpg'
             width="763"
             height="368"
@@ -43,7 +43,7 @@ var options = [
         ],
         orientation: 'reverse',
         image: <Image
-            className="rounded-3xl"
+            className="rounded-3xl filter brightness-75 shadow-close"
             src='/images/servicios/ambientes/section2.jpg'
             width="626"
             height="417"
@@ -59,7 +59,7 @@ var options = [
         ],
         orientation: 'normal',
         image: <Image
-            className="rounded-3xl"
+            className="rounded-3xl filter brightness-75 shadow-close"
             src='/images/servicios/ambientes/section3.jpg'
             width="624"
             height="417"

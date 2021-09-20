@@ -1,4 +1,4 @@
-export default function ItemChat({ item, description, phone }) {
+export default function ItemChat({ item, descripcion, phone }) {
     return (
         <a href={`https://wa.me/${phone}`} target="_blank" className="bg-green-100 m-1 py-3 px-3 rounded-lg flex justify-between">
             <div className="flex">
@@ -7,7 +7,7 @@ export default function ItemChat({ item, description, phone }) {
                 </div>
                 <div className="flex flex-col text-left">
                     <p>{item}</p>
-                    <small className="font-medium text-xs">{description}</small>
+                    <small className="font-medium text-xs">{descripcion}</small>
                 </div>
             </div>
             <div className="my-auto">

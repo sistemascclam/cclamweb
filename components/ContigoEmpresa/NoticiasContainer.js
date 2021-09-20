@@ -15,7 +15,7 @@ export default function NoticiasContainer({noticiasData}) {
                                 className="brightness-50 rounded-xl "
                                 layout="fill"
                                 objectFit="cover"
-                                src={noticia.coverImage}
+                                src={`/images/contigoempresa/noticias/${noticia.coverImage}`}
                                 alt={noticia.slug}
                             />
                             :

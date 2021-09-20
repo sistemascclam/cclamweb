@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../../components/layout";
 import Image from "next/image";
+import CardContact from "../../components/Servicios/CardContact"
 
 var options = [
     {
@@ -138,7 +139,7 @@ export default function CentroArbitraje() {
             <div className="py-20">
                 <div className="flex flex-wrap flex-col lg:flex-row justify-between ">
                     <div className="my-auto mx-auto text-center">
-                        <p className="font-extrabold text-6xl">
+                        <p className="font-extrabold text-xl lg:text-6xl">
                             {" "}
                             Centro de{" "}
                             <span className="text-themeBlue">
@@ -151,32 +152,52 @@ export default function CentroArbitraje() {
                     </div>
                 </div>
                 <div className="bg-white w-full shadow-close px-5 lg:px-24 py-12 rounded-t-4xl mt-10">
-                    <p className="text-justify mt-5 text-base font-normal">
-                        El Centro de Arbitraje pertenece al Centro de Solución
-                        de Disputas de la Centenaria Cámara de Comercio y
-                        Producción de Lambayeque, el mismo que se encarga de
-                        impulsar el arbitraje como un mecanismo eficiente de
-                        resolución de conflictos. Asimismo, sus procesos
-                        arbitrales se caracterizan por ser resueltos de manera
-                        rápida, con imparcialidad, ética y veracidad; siempre
-                        acorde a la normatividad vigente y a su Reglamento
-                        Arbitraje.
-                    </p>
-                    <p className="text-justify mt-5 text-base font-normal">
-                        Se caracteriza por contar tanto con la infraestructura y
-                        ambientes apropiados para el desarrollo de audiencias
-                        presenciales, como por contar con una plataforma digital
-                        apta durante todo el proceso e idónea para audiencias
-                        virtuales. De esa manera otorgan las condiciones más
-                        favorables para el correcto desarrollo de los procesos
-                        arbitrales.
-                    </p>
-                    <p className="text-justify mt-5 text-base font-normal">
-                        Para mayor información llamar al 984 701 376 – 984 793
-                        698 o escribir a los siguientes correos electrónicos:
-                        secretariogeneral@cclam.org.pe o
-                        secretariaarbitral@cclam.org.pe
-                    </p>
+                    <div className="flex flex-wrap lg:flex-nowrap">
+                        <div className="w-56 mx-auto">
+                            <CardContact
+                                image={
+                                    <Image
+                                        className="rounded-full filter brightness-95 "
+                                        src="/images/soluciondisputas/encargado.png"
+                                        width="600"
+                                        height="600"
+                                    />
+                                }
+                                area="Centro de Solución y Disputas"
+                                encargado="Maria Alejandra Pasco Herrera"
+                                phone="984701376"
+                                mail="secretariogeneral@cclam.org.pe"
+                            />
+                        </div>
+                        <div className="col-span-4 lg:pl-5">
+                            <p className="text-justify mt-5 text-base font-normal">
+                                El Centro de Arbitraje pertenece al Centro de Solución
+                                de Disputas de la Centenaria Cámara de Comercio y
+                                Producción de Lambayeque, el mismo que se encarga de
+                                impulsar el arbitraje como un mecanismo eficiente de
+                                resolución de conflictos. Asimismo, sus procesos
+                                arbitrales se caracterizan por ser resueltos de manera
+                                rápida, con imparcialidad, ética y veracidad; siempre
+                                acorde a la normatividad vigente y a su Reglamento
+                                Arbitraje.
+                            </p>
+                            <p className="text-justify mt-5 text-base font-normal">
+                                Se caracteriza por contar tanto con la infraestructura y
+                                ambientes apropiados para el desarrollo de audiencias
+                                presenciales, como por contar con una plataforma digital
+                                apta durante todo el proceso e idónea para audiencias
+                                virtuales. De esa manera otorgan las condiciones más
+                                favorables para el correcto desarrollo de los procesos
+                                arbitrales.
+                            </p>
+                            <p className="text-justify mt-5 text-base font-normal">
+                                Para mayor información llamar al 984 701 376 – 984 793
+                                698 o escribir a los siguientes correos electrónicos:
+                                secretariogeneral@cclam.org.pe o
+                                secretariaarbitral@cclam.org.pe
+                            </p>
+                        </div>
+                    </div>
 
                     <div className="flex flex-wrap justify-between content-center mt-20">
                         {options.map((option, i) => (
@@ -290,17 +311,6 @@ export default function CentroArbitraje() {
                             <p>IMPARCIALIDAD</p>
                             <p>INDEPENDENCIA</p>
                             <p>ÉTICA</p>
-                        </div>
-                        <div className="w-full lg:w-1/2 relative mt-20">
-                            <p className="font-bold text-3xl text-themeBlue  mb-5">
-                                Contáctanos
-                            </p>
-                            <Image
-                                className="shadow-close rounded-xl"
-                                src="/images/soluciondisputas/maria-alejandra.png"
-                                width="300"
-                                height="300"
-                            />
                         </div>
                     </div>
                 </div>

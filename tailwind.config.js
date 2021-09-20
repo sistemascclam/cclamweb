@@ -10,12 +10,12 @@ module.exports = {
     },
     extend: {
       backgroundImage: theme => ({
-        'hero-pattern': "url('/images/landing.png')",
-        'mesa-de-partes': "url('/images/areas/mesa-de-partes.png')",
-        'protestos': "url('/images/areas/protestos.png')",
-        'formalizacion': "url('/images/areas/formalizacion.png')",
-        'comercio-exterior': "url('/images/areas/comercio-exterior.png')",
-        'fachadacclam': "url('/images/fachadacclam.png')",
+        'hero-pattern': `url('/images/landing.png')`,
+        'mesa-de-partes': `url('/images/areas/mesa-de-partes.png')`,
+        'protestos': `url('/images/areas/protestos.png')`,
+        'formalizacion': `url('/images/areas/formalizacion.png')`,
+        'comercio-exterior': `url('/images/areas/comercio-exterior.png')`,
+        'fachadacclam': `url('/images/fachadacclam.png')`,
       }),
       colors: {
         greenWhatsapp: '#27A02F',

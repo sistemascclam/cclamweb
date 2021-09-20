@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import menus from "../../../content/navegacion.json"
+import ListMenu from "../Nav/ListMenu"
 
 export default function index() {
     return (
@@ -6,10 +8,15 @@ export default function index() {
             <div className="flex flex-wrap justify-between text-gray-600">
                 <div className="flex flex-col mt-10 lg:mt-20">
                     <p className="font-bold">Sobre tu cámara</p>
-                    <p className="mt-4 font-light">¿Quiénes somos?</p>
-                    <p className="mt-4 font-light">Servicio al asociado</p>
-                    <p className="mt-4 font-light">Contigo empresa</p>
-                    <p className="mt-4 font-light">Pagos</p>
+                    <ListMenu
+                        type={"small"}
+                        menusParam={menus}
+                        cod={1} />
+                        {
+                            /*
+                            nav.map((n, i) => <p key={i} className="mt-4 font-light">{n.title}</p>)
+                            */
+                        }
                 </div>
                 <div className="w-48 mt-10 lg:mt-20">
                     <p className="font-bold mb-5">Paga aquí con</p>
@@ -28,7 +35,7 @@ export default function index() {
                             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                             <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                         </svg>
-                        <a href="mailto:camara@cclam.org.pe" target="_blank" className="text-sm">camara@cclam.org.pe</a>
+                        <a href="mailto:secretariagerencia@cclam.org.pe" target="_blank" className="text-sm">secretariagerencia@cclam.org.pe</a>
                     </div>
                     <div className="flex mt-5">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-themeLightBlue mr-3" viewBox="0 0 20 20" fill="currentColor">

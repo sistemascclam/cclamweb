@@ -115,7 +115,7 @@ export default function ProtestosYMoras() {
                                     height="495"
                                 />
                             </div>
-                            <div className="relative w-full lg:w-7/12 ml-5 rounded-xl shadow-close">
+                            <div className="relative w-full lg:w-7/12 lg:ml-5 rounded-xl shadow-close">
                                 <Image
                                     className="rounded-xl shadow-close"
                                     src="/images/servicios/protestos/campaign.png"

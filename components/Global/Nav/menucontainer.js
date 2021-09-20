@@ -1,51 +1,5 @@
-import Link from 'next/link';
-import React, { useEffect, useState } from 'react'
-
-const ListMenu = (menusParam, cod,tooglemodal) => {
-    const [show, setShow] = useState([]);
-
-    const clickedShow = (cod, key) => {
-        if (!show.includes(cod + "" + key)) {
-            setShow([...show, cod + "" + key])
-        } else {
-            setShow(show.filter(s => s != cod + "" + key))
-        }
-    }
-
-    return (
-        <nav className="w-full px-4 mt-2 mb-8 mx-auto">
-            {
-                menusParam.map((menu, key) =>
-                    <div key={`${cod}${key}`}>
-                        {
-                            menu.to ?
-                                <Link href={menu.to} >
-                                    <a >
-                                        <div className="mt-5 mb-2 w-full" >
-                                            <div className="flex justify-between text-lg text-left font-normal text-gray-900 hover:text-themeLightBlue">
-                                                <p>{menu.title}</p>
-                                                {menu.menus && <span >{!show.includes(cod + "" + key) ? "+" : '-'}</span>}
-                                            </div>
-
-                                        </div>
-                                    </a>
-                                </Link>
-                                :
-                                <button className="mt-5 mb-2 w-full" onClick={() => clickedShow(cod, key)}>
-                                    <div className="flex justify-between text-lg text-left font-normal text-gray-900 hover:text-themeLightBlue">
-                                        <p>{menu.title}</p>
-                                        {menu.menus && <span >{!show.includes(cod + "" + key) ? "+" : '-'}</span>}
-                                    </div>
-                                </button>
-                        }
-
-                        <div className={`${!show.includes(cod + "" + key) ? "hidden" : 'block'}`}>{menu.menus && ListMenu(menu.menus, `${cod}${key}`)}</div>
-                        {key < menusParam.length - 1 && <hr className="text-gray-200" />}
-                    </div>)
-            }
-        </nav>
-    );
-}
+import React, { useState } from 'react'
+import ListMenu from "./ListMenu"
 
 export default function Menucontainer({ tooglemodal, menus }) {
     return (
@@ -63,9 +17,10 @@ export default function Menucontainer({ tooglemodal, menus }) {
                                 </button>
                             </div>
                             <div className="px-4 sm:px-6 ">
-                                {
-                                    ListMenu(menus, 1,tooglemodal)
-                                }
+                                <ListMenu
+                                    menusParam={menus}
+                                    cod={1}
+                                    tooglemodal={tooglemodal} />
                             </div>
                         </div>
                     </div>

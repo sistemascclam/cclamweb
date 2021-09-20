@@ -50,76 +50,76 @@ export default function ConveniosCarousel() {
         <div ref={sliderRef} className="keen-slider mt-20 w-11/12 mx-auto">
             <div className="keen-slider__slide content-center flex items-stretch justify-center">
                 <img
-                    src={"/images/convenios/sunat.png"}
+                    src={`${process.env.imgIniPath}convenios/sunat.png`}
                     alt="Logo SUNAT"
                     className="responsive my-auto max-h-20"
                 />
             </div>
             <div className="keen-slider__slide content-center flex items-stretch justify-center">
                 <img
-                    src={"/images/convenios/zegel.png"}
+                    src={`${process.env.imgIniPath}convenios/zegel.png`}
                     alt="Zegel ZEGEL"
                     className="responsive my-auto max-h-20"
                 />
             </div>
             <div className="keen-slider__slide content-center flex items-stretch justify-center">
                 <img
-                    src={"/images/convenios/uss.png"}
+                    src={`${process.env.imgIniPath}convenios/uss.png`}
                     alt="Logo SIPAN"
                     className="responsive my-auto max-h-20"
                 />
             </div>
             <div className="keen-slider__slide content-center flex items-stretch justify-center">
                 <img
-                    src={"/images/convenios/ucv.png"}
+                    src={`${process.env.imgIniPath}convenios/ucv.png`}
                     alt="Logo UCV"
                     className="responsive my-auto max-h-20"
                 />
             </div>
             <div className="keen-slider__slide content-center flex items-stretch justify-center">
                 <img
-                    src={"/images/convenios/reniec.png"}
+                    src={`${process.env.imgIniPath}convenios/reniec.png`}
                     alt="Logo RENIEC"
                     className="responsive my-auto max-h-20"
                 />
             </div>
             <div className="keen-slider__slide content-center flex items-stretch justify-center">
                 <img
-                    src={"/images/convenios/induamerica.png"}
+                    src={`${process.env.imgIniPath}convenios/induamerica.png`}
                     alt="Logo Induamerica"
                     className="responsive my-auto max-h-20"
                 />
             </div>
             <div className="keen-slider__slide content-center flex items-stretch justify-center">
                 <img
-                    src={"/images/convenios/claro.png"}
+                    src={`${process.env.imgIniPath}convenios/claro.png`}
                     alt="Logo Claro"
                     className="responsive my-auto max-h-20"
                 />
             </div>
             <div className="keen-slider__slide content-center flex items-stretch justify-center">
                 <img
-                    src={"/images/convenios/certus.png"}
+                    src={`${process.env.imgIniPath}convenios/certus.png`}
                     alt="Logo CERTUS"
                     className="responsive my-auto max-h-20"
                 />
             </div>
             <div className="keen-slider__slide content-center flex items-stretch justify-center">
                 <img
-                    src={"/images/convenios/cil.png"}
+                    src={`${process.env.imgIniPath}convenios/cil.png`}
                     alt="Logo Colegio de Ingenieros de Lambayeque"
                     className="responsive my-auto max-h-20"
                 />
             </div>
             <div className="keen-slider__slide content-center flex items-stretch justify-center">
                 <img
-                    src={"/images/convenios/usat.png"}
+                    src={`${process.env.imgIniPath}convenios/usat.png`}
                     alt="Logo USAT"
                     className="responsive my-auto max-h-20"
                 />
             </div><div className="keen-slider__slide content-center flex items-stretch justify-center">
                 <img
-                    src={"/images/convenios/sanroque.png"}
+                    src={`${process.env.imgIniPath}convenios/sanroque.png`}
                     alt="Logo SAN ROQUE"
                     className="responsive my-auto max-h-20"
                 />

@@ -14,8 +14,6 @@ export default function Noticia({ noticia }) {
         return <ErrorPage statusCode={404} />;
     }
 
-    console.log(noticia)
-
     return (
         <Layout>
             <Head>
@@ -28,7 +26,7 @@ export default function Noticia({ noticia }) {
                             className="brightness-25"
                             objectFit="cover"
                             layout="fill"
-                            src={noticia.coverImage}
+                            src={`/images/contigoempresa/noticias/${noticia.coverImage}`}
                             alt={noticia.sllug}
                         />
                     ) : (

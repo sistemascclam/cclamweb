@@ -1,5 +1,5 @@
 import ItemChat from "./ItemChat";
-import menuwhatsapp from "../../../../content/menuwhatsapp.json";
+import menuwhatsapp from "../../../../content/home/menuwhatsapp.json";
 
 export default function Chat() {
     return (

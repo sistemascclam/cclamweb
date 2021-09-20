@@ -25,7 +25,7 @@ export default function Home() {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <header className="relative h-screen bg-hero-pattern bg-cover  shadow-card">
+            <header className="relative h-screen bg-hero-pattern bg-cover  shadow-card flex flex-wrap content-center">
                 <Image
                     src={"/images/landing.png"}
                     alt="Logo CCLAM"
@@ -33,25 +33,23 @@ export default function Home() {
                     objectFit="cover"
                     quality="100"
                 />
-                <div className="relative bottom-0 left-0 lg:pt-40 md:pt-40 sm:pt-40 pt-36 mb-3">
-                    <div className="text-left p-6 mx-6 mt-auto">
+                <div className="relative bottom-0 left-0 ">
+                    <div className="text-left p-6 mx-6 my-auto">
                         <p className="text-sm lg:text-base md:text-base sm:text-base block text-yellow-400  font-semibold mb-3 tracking-widest">
                             CÁMARA DE COMERCIO Y PRODUCCIÓN DE LAMBAYEQUE
                         </p>
                         <h1 className="text-3xl lg:text-7xl md:text-7xl sm:text-6xl tracking-tight font-extrabold text-white">
-                            <span className="block mb-2">Somos</span>
+                            <span className="block mb-2">Seguimos</span>
                             <Typing
                                 phrases={[
-                                    "Una palabra",
-                                    "Otra frase",
-                                    "Última frase",
+                                    "cambiando",
+                                    "mejorando",
+                                    "transformando",
                                 ]}
                             />
                         </h1>
                         <p className="mt-3 text-white max-w-xl text-base lg:text-xl md:text-xl sm:text-xl">
-                            Anim aute id magna aliqua ad ad non deserunt sunt.
-                            Qui irure qui lorem cupidatat commodo. Elit sunt
-                            amet fugiat veniam occaecat fugiat aliqua.
+                            Nos seguimos transformando para continuar siendo el motor de nuestra región, tenemos nuevos servicios digitales para potenciar tu negocio.
                         </p>
                     </div>
                 </div>
@@ -143,18 +141,16 @@ export default function Home() {
                         ?.filter((c, i) => i < 3)
                         .map((c, i) => (
                             <div
-                                key={i}
-                                className={`absolute w-96 lg:w-full shadow-card rounded-xl  ${
-                                    i === 0
+                                key={`cursos_${i}`}
+                                className={`absolute w-96 lg:w-full shadow-card rounded-xl  ${i === 0
                                         ? "translate-x-10 lg:translate-x-60"
                                         : i === 1
-                                        ? "translate-x-12 lg:translate-x-64"
-                                        : "translate-x-14 lg:translate-x-72"
-                                }  transition duration-700 ease-in-out transform ${
-                                    i === 2
+                                            ? "translate-x-12 lg:translate-x-64"
+                                            : "translate-x-14 lg:translate-x-72"
+                                    }  transition duration-700 ease-in-out transform ${i === 2
                                         ? "hover:-translate-x-0"
                                         : "hover:-translate-x-5"
-                                }`}
+                                    }`}
                                 onClick={() =>
                                     toogleModal(
                                         <Image
@@ -187,24 +183,23 @@ export default function Home() {
                         ?.filter((c, i) => i < 3)
                         .map((c, i) => (
                             <div
-                                className={`absolute w-96 lg:w-full shadow-card rounded-xl ${
-                                    i === 0
+                                key={`event_${i}`}
+                                className={`absolute w-96 lg:w-full shadow-card rounded-xl ${i === 0
                                         ? "-translate-x-60"
                                         : i === 1
-                                        ? "-translate-x-64"
-                                        : "-translate-x-72"
-                                } transition duration-700 ease-in-out transform ${
-                                    i === 2
+                                            ? "-translate-x-64"
+                                            : "-translate-x-72"
+                                    } transition duration-700 ease-in-out transform ${i === 2
                                         ? "lg:hover:-translate-x-0 hover:-translate-x-48"
                                         : "lg:hover:-translate-x-2 hover:-translate-x-52"
-                                } `}
+                                    } `}
                                 onClick={() => toogleModal(
                                     <Image
-                                    className="rounded-xl"
-                                    src={`/images/eventos/${c.evento}`}
-                                    width="663"
-                                    height="663"
-                                    layout="responsive"
+                                        className="rounded-xl"
+                                        src={`/images/eventos/${c.evento}`}
+                                        width="663"
+                                        height="663"
+                                        layout="responsive"
                                     />)}
                             >
                                 <Image
@@ -224,7 +219,10 @@ export default function Home() {
                             eventos y actividades
                         </p>
                     </TitleHeading>
-                    <Button className="mt-5 ml-auto">
+                    <Button className="mt-5 ml-auto"
+                        execfunc={() =>
+                            router.push("/galeria/eventos")
+                        }>
                         Saber más
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

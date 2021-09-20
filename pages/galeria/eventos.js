@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../../components/layout'
-import { getAllPronunciamientos } from '../../lib/pronunciamientos'
-import PronunciamientosContainer from '../../components/ContigoEmpresa/PronunciamientosContainer'
+import { getAllEventos } from '../../lib/eventos'
+import EventosContainer from '../../components/EventosContainer'
 
-export default function Eventos({ pronunciamientosData }) {
+export default function Eventos({ eventosData }) {
     return (
         <Layout>
             <Head>
@@ -14,7 +14,7 @@ export default function Eventos({ pronunciamientosData }) {
                     <h1 className="text-sm lg:text-xl md:text-xl font-black text-themeLightBlue ">GALERÍA<span className="block text-black text-2xl lg:text-5xl md:text-5xl">Eventos</span></h1>
                 </div>
                 <div className="w-full lg:px-14 px-6 py-6 lg:py-20 ">
-                    <PronunciamientosContainer pronunciamientosData={pronunciamientosData} />
+                    <EventosContainer eventosData={eventosData} />
                 </div>
             </div>
         </Layout>
@@ -22,16 +22,17 @@ export default function Eventos({ pronunciamientosData }) {
 }
 
 export async function getStaticProps() {
-    const pronunciamientosData = getAllPronunciamientos([
+    const eventosData = getAllEventos([
       'title',
       'date',
       'slug',
       'coverImage',
       'description',
+      'presentationDate'
     ])
     return {
         props: {
-            pronunciamientosData
+            eventosData
         }
     }
 }

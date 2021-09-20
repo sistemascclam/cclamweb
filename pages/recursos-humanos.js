@@ -175,7 +175,7 @@ const cards = [
     {
         keywords: ["sistemas","daniela","paiva"],
         element: <CardContact
-            correo="secretariagerencia@cclam.org.pe"
+            correo="sistemas@cclam.org.pe"
             telf="939387702"
             wsp="939387702"
             image={<Image
@@ -259,7 +259,7 @@ const cards = [
     {
         keywords: ["alex","didi","servicio","asociado"],
         element: <CardContact
-            correo="sistemas@cclam.org.pe"
+            correo="alexgomez@cclam.org.pe"
             telf="942418670"
             wsp="942418670"
             image={<Image

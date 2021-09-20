@@ -32,23 +32,74 @@ var options = [
 ]
 
 var especialidades = [
-    { category: 'Administración', esp: 'Gerencia', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
-    { category: 'Administración', esp: 'Banca y Finanzas', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
-    { category: 'Administración', esp: 'Administración de Negocios', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
-    { category: 'Administración', esp: 'Administración Aduanera', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
-    { category: 'Administración', esp: 'Desarrollo Económico y Contable', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
-    { category: 'Administración', esp: 'Mercadeo', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
-    { category: 'Administración', esp: 'Asistencia', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
-    { category: 'Informática y Comunicaciones', esp: 'Administración en redes', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
-    { category: 'Informática y Comunicaciones', esp: 'Especialización básico de la línea de Microsoft Office', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
-    { category: 'Informática y Comunicaciones', esp: 'Especialización intermedio de la línea de Microsoft Office', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
-    { category: 'Informática y Comunicaciones', esp: 'Especialización intensivo de la línea de Microsoft Office', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
-    { category: 'Informática y Comunicaciones', esp: 'Manejo de multimedia', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
-    { category: 'Informática y Comunicaciones', esp: 'Community Manager', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
-    { category: 'Informática y Comunicaciones', esp: 'Marketing', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
-    { category: 'Informática y Comunicaciones', esp: 'Publicidad', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
-    { category: 'Psicología', esp: 'Recursos Humanos y/o Talento Humano', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
-    { category: 'Entre otras especialidades', esp: 'Educación laboral e institucional.', image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg' },
+    {
+        category: 'Administración', esp: 'Gerencia',
+        image: '/images/servicios/desarrolloempresarial/especialidades/gerencia.jpg'
+    },
+    {
+        category: 'Administración', esp: 'Banca y Finanzas',
+        image: '/images/servicios/desarrolloempresarial/especialidades/finanzas.jpg'
+    },
+    {
+        category: 'Administración', esp: 'Administración de Negocios',
+        image: '/images/servicios/desarrolloempresarial/especialidades/administracion.jpg'
+    },
+    {
+        category: 'Administración', esp: 'Administración Aduanera',
+        image: '/images/servicios/desarrolloempresarial/especialidades/aduanas.jpg'
+    },
+    {
+        category: 'Administración', esp: 'Desarrollo Económico y Contable',
+        image: '/images/servicios/desarrolloempresarial/especialidades/conta.jpg'
+    },
+    {
+        category: 'Administración', esp: 'Mercadeo',
+        image: '/images/servicios/desarrolloempresarial/especialidades/mercadeo.jpg'
+    },
+    {
+        category: 'Administración', esp: 'Asistencia',
+        image: '/images/servicios/desarrolloempresarial/especialidades/asistencia.jpg'
+    },
+    {
+        category: 'Informática y Comunicaciones', esp: 'Administración en redes',
+        image: '/images/servicios/desarrolloempresarial/especialidades/redes.jpg'
+    },
+    {
+        category: 'Informática y Comunicaciones', esp: 'Especialización básico de la línea de Microsoft Office',
+        image: '/images/servicios/desarrolloempresarial/especialidades/office.jpg'
+    },
+    {
+        category: 'Informática y Comunicaciones', esp: 'Especialización intermedio de la línea de Microsoft Office',
+        image: '/images/servicios/desarrolloempresarial/especialidades/office.jpg'
+    },
+    {
+        category: 'Informática y Comunicaciones', esp: 'Especialización intensivo de la línea de Microsoft Office',
+        image: '/images/servicios/desarrolloempresarial/especialidades/office.jpg'
+    },
+    {
+        category: 'Informática y Comunicaciones', esp: 'Manejo de multimedia',
+        image: '/images/servicios/desarrolloempresarial/especialidades/multimedia.jpg'
+    },
+    {
+        category: 'Informática y Comunicaciones', esp: 'Community Manager',
+        image: '/images/servicios/desarrolloempresarial/especialidades/comunitymanager.jpg'
+    },
+    {
+        category: 'Informática y Comunicaciones', esp: 'Marketing',
+        image: '/images/servicios/desarrolloempresarial/especialidades/marketing.jpg'
+    },
+    {
+        category: 'Informática y Comunicaciones', esp: 'Publicidad',
+        image: '/images/servicios/desarrolloempresarial/especialidades/publicidad.jpg'
+    },
+    {
+        category: 'Psicología', esp: 'Recursos Humanos y/o Talento Humano',
+        image: '/images/servicios/desarrolloempresarial/especialidades/rrhh.jpg'
+    },
+    {
+        category: 'Entre otras especialidades', esp: 'Educación laboral e institucional.',
+        image: '/images/servicios/desarrolloempresarial/especialidades/gerencia.jpg'
+    },
 ]
 
 export default function DesarrolloEmpresarial() {

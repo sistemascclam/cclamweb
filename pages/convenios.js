@@ -2,7 +2,7 @@ import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import Image from "next/image";
 import CardContact from "../components/Servicios/CardContact";
-import data from "../content/convenios.json";
+import data from "../content/home/convenios.json";
 
 export default function Convenios() {
     return (
@@ -29,7 +29,7 @@ export default function Convenios() {
             <section className="min-h-screen">
                 <div className="relative px-0 lg:px-10 py-5 -mt-10 lg:-mt-28">
                     <div className="flex flex-row flex-wrap gap-4 justify-center mt-10 mb-14">
-                        {data.map((convenio, i) => (
+                        {data?.map((convenio, i) => (
                             <ConvenioCard key={i} {...convenio} />
                         ))}
                     </div>
@@ -75,7 +75,7 @@ const ConvenioCard = ({ empresa, beneficio, imageSrc }) => (
         <div className="text-center mt-5">
             <p className="text-gray-500 font-medium mb-3">Beneficio</p>
             <p className="text-sm mb-6">{beneficio}</p>
-            <a href={`https://wa.me/51984632346?text=Hola!%20Quiero%20saber%20más%20sobre%20el%20convenio%20con%20*${empresa.replaceAll(" ","%20")}*`} target="_blank" className="bg-themeLightBlue bg-opacity-20 rounded-full px-3 py-1 text-sm text-themeLightBlue shadow-sm hover:bg-opacity-70 hover:text-white">Saber más</a>
+            <a href={`https://wa.me/51984632346?text=Hola!%20Quiero%20saber%20más%20sobre%20el%20convenio%20con%20${empresa.replace(/ /g,"%20")}`} target="_blank" className="bg-themeLightBlue bg-opacity-20 rounded-full px-3 py-1 text-sm text-themeLightBlue shadow-sm hover:bg-opacity-70 hover:text-white">Saber más</a>
         </div>
     </div>
 );

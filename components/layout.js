@@ -8,7 +8,7 @@ export default function Layout({ children, home }) {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={`${process.env.imgIniPath}favicon.ico`} />
         <meta
           name="description"
           content="Cámara de Comercio y Producción de Lambayeque"

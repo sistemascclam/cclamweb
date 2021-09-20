@@ -1,10 +1,10 @@
 ---
 title: 'SMV Y CCLAM realizaron evento el mercado de valores como alternativa de financiamiento e inversión'
 description: ''
-coverImage: '/images/contigoempresa/noticias/smv/smvcover.jpg'
+coverImage: 'smv/smvcover.jpg'
 date: '2020-03-16T05:35:07.322Z'
 ogImage:
-  url: '/images/contigoempresa/noticias/smv/smvcover.jpg'
+  url: 'smv/smvcover.jpg'
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.

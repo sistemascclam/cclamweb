@@ -3,6 +3,7 @@ import { Transition } from '@headlessui/react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react';
 import Menucontainer from './menucontainer'
+import nav from "../../../content/navegacion.json"
 
 export default function NavBar() {
     const [hidden, setHidden] = useState(false);
@@ -26,41 +27,7 @@ export default function NavBar() {
         <nav className={`mt-0 absolute  w-full z-10 top-0 p-5`}>
             {
                 showmenuModal ? <Menucontainer tooglemodal={toogleModal}
-                    menus={[
-                        {
-                            title: "Tu cámara",
-                            menus: [
-                                { title: "¿Quiénes somos?", menus: [{ title: "Historia", to: "/historia" }, { title: "Misión, Visión y Valores", to: "/mision-vision-valores" }, { title: "Consejo Directivo - Gerencia general", to: "/consejo-directivo" }, { title: "Recursos humanos", to: "/recursos-humanos" }] },
-                                { title: "Servicio al asociado", menus: [{ title: "Comités Gremiales", to: "/comites-gremiales" }, { title: "Convenios", to: "/convenios" }] },
-                                { title: "Contigo empresa", to: "/contigo-empresa" }
-                            ]
-                        },
-                        {
-                            title: "Solución de disputas",
-                            menus: [
-                                { title: 'Conócenos', to: '/solucion-de-disputas' },
-                                { title: 'Centro de arbitraje', to: '/solucion-de-disputas/centro-de-arbitraje' },
-                                { title: 'Centro de conciliación extrajudicial', to: '/solucion-de-disputas/centro-de-conciliacion' },
-                                { title: 'Junta de resolución de disputas', to: '/solucion-de-disputas/junta-resolucion-disputas' }
-                            ]
-                        },
-                        {
-                            title: "Servicios",
-                            menus: [
-                                { title: "Protestos - Moras", to: "/servicios/protestos-moras" },
-                                { title: "Comercio exterior", to: "/servicios/comercio-exterior" },
-                                { title: "Centro de formación y desarrollo empresarial", to: "/servicios/desarrollo-empresarial" },
-                                { title: "Formalización de empresas", to: "/servicios/formalizacion-empresas" },
-                                { title: "Alquiler de ambientes", to: "/servicios/ambientes" }
-                            ]
-                        },
-                        {
-                            title: "Asóciate a la cámara"
-                        },
-                        {
-                            title: "Pagos"
-                        },
-                    ]}
+                    menus={nav}
                 /> : ""
             }
             <div className="fixed left-5">

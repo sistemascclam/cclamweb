@@ -1,27 +1,31 @@
 [
     {
+        "item":"Servicioal Asociado",
+        "phone":"51942418670"
+    },
+    {
         "item":"Protestos",
         "descripcion":"Cursos, capacitaciones y otros",
-        "numero":"51984632346"
+        "phone":"51944674614"
     },
     {
         "item":"Arbitraje y Conciliación",
         "descripcion":"Solución idónea a conflictos",
-        "numero":"51984701376"
+        "phone":"51984701376"
     },
     {
         "item":"Comercio exterior",
         "descripcion":"Importa y exporta",
-        "numero":"51944680348"
+        "phone":"51944680348"
     },
     {
         "item":"Formalización de empresas",
         "descripcion":"Formalizza de manera fácil, a bajo costo y en el menor tiempo",
-        "numero":"51944675625"
+        "phone":"51984785915"
     },
     {
         "item":"Capacitaciones",
         "descripcion":"Mejora tu competitividad personal y laboral",
-        "numero":"51984632346"
+        "phone":"51944675625"
     }
 ]

@@ -45,7 +45,7 @@ export default function ComercioExterior() {
     return (
         <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>CCLAM | Comercio exterior</title>
             </Head>
             <section className="min-h-screen">
                 <div className="relative w-full">

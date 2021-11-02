@@ -1,6 +1,8 @@
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import { useEffect, useRef, useState } from "react"
+import Image from 'next/image'
+import convenios from "../../../public/dynamic/convenios.json"
 
 export default function ConveniosCarousel() {
     const [pause, setPause] = useState(false)
@@ -10,12 +12,12 @@ export default function ConveniosCarousel() {
         loop: true,
         rtl: true,
         breakpoints: {
-          '(max-width: 640px)': {
-            slidesPerView: 2,
-          },
-          '(min-width: 1024px)': {
-            slidesPerView: 7,
-          },
+            '(max-width: 640px)': {
+                slidesPerView: 2,
+            },
+            '(min-width: 1024px)': {
+                slidesPerView: 7,
+            },
         },
         duration: 1000,
         dragStart: () => {
@@ -48,82 +50,24 @@ export default function ConveniosCarousel() {
 
     return (
         <div ref={sliderRef} className="keen-slider mt-20 w-11/12 mx-auto">
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <img
-                    src={`${process.env.imgIniPath}convenios/sunat.png`}
-                    alt="Logo SUNAT"
-                    className="responsive my-auto max-h-20"
-                />
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <img
-                    src={`${process.env.imgIniPath}convenios/zegel.png`}
-                    alt="Zegel ZEGEL"
-                    className="responsive my-auto max-h-20"
-                />
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <img
-                    src={`${process.env.imgIniPath}convenios/uss.png`}
-                    alt="Logo SIPAN"
-                    className="responsive my-auto max-h-20"
-                />
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <img
-                    src={`${process.env.imgIniPath}convenios/ucv.png`}
-                    alt="Logo UCV"
-                    className="responsive my-auto max-h-20"
-                />
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <img
-                    src={`${process.env.imgIniPath}convenios/reniec.png`}
-                    alt="Logo RENIEC"
-                    className="responsive my-auto max-h-20"
-                />
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <img
-                    src={`${process.env.imgIniPath}convenios/induamerica.png`}
-                    alt="Logo Induamerica"
-                    className="responsive my-auto max-h-20"
-                />
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <img
-                    src={`${process.env.imgIniPath}convenios/claro.png`}
-                    alt="Logo Claro"
-                    className="responsive my-auto max-h-20"
-                />
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <img
-                    src={`${process.env.imgIniPath}convenios/certus.png`}
-                    alt="Logo CERTUS"
-                    className="responsive my-auto max-h-20"
-                />
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <img
-                    src={`${process.env.imgIniPath}convenios/cil.png`}
-                    alt="Logo Colegio de Ingenieros de Lambayeque"
-                    className="responsive my-auto max-h-20"
-                />
-            </div>
-            <div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <img
-                    src={`${process.env.imgIniPath}convenios/usat.png`}
-                    alt="Logo USAT"
-                    className="responsive my-auto max-h-20"
-                />
-            </div><div className="keen-slider__slide content-center flex items-stretch justify-center">
-                <img
-                    src={`${process.env.imgIniPath}convenios/sanroque.png`}
-                    alt="Logo SAN ROQUE"
-                    className="responsive my-auto max-h-20"
-                />
-            </div>
+            {
+                convenios.map((c, i) =>
+                    <div key={i} className="keen-slider__slide content-center flex items-stretch justify-center">
+                        <div
+                            className="my-auto h-20 w-full"
+                        >
+                            <Image
+                                alt={`${c.empresa}`}
+                                src={`${c.imageSrc}`}
+                                width={100}
+                                height={40}
+                                layout="responsive"
+                                objectFit="scale-down"
+                            />
+                        </div>
+                    </div>
+                )
+            }
         </div>
     )
 }

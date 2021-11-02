@@ -16,7 +16,7 @@ var options = [
             </svg>
         ),
         title: "Estatutos del centro",
-        items: ["Estatutos arbitraje 2020.pdf"],
+        items: [{name:"Estatutos arbitraje 2020.pdf",link:"ESTATUTO_CENTRO_DE_ARBITRAJE_CCLAM_MAYO2020.pdf"}],
     },
     {
         icon: (
@@ -36,16 +36,16 @@ var options = [
         ),
         title: "Reglamentos del centro",
         items: [
-            "Reglamento: Antes de marzo de 2019.pdf",
-            "Reglamento: Desde marzo de 2019.pdf",
-            "Reglamento vigente: Julio de 2020.pdf",
+            {name:"Reglamento: Antes de marzo de 2019.pdf",link:"REGLAMENTO_ANTES_DE_MARZO_DE_2019.pdf"},
+            {name:"Reglamento: Desde marzo de 2019.pdf",link:"REGLAMENTO_CENTRO_DE_ARBITRAJE_CCLAM_MARZO_2019.pdf"},
+            {name:"Reglamento vigente: Julio de 2020.pdf",link:"REGLAMENTO_CENTRO_DE_ARBITRAJE_CCLAM_JULIO_2020.pdf"}
         ],
     },
     {
         title: "Tarifarios",
         items: [
-            "Tarifario de arbitraje.pdf",
-            "Tarifario de servicios adicionales de arbitraje.pdf",
+            {name:"Tarifario de arbitraje.pdf",link:"ANEXO1_TARIFARIO_DE_ARBITRAJE.pdf"},
+            {name:"Tarifario de servicios adicionales de arbitraje.pdf",link:"ANEXO2_TARIFARIO_DE_SERVICIOS_ADICIONALES_DE_ARBITRAJE.pdf"}
         ],
         icon: (
             <svg
@@ -64,7 +64,7 @@ var options = [
     },
     {
         title: "Registro de árbitros",
-        items: ["Registro de árbitros 2021.pdf"],
+        items: [{name:"Registro de árbitros 2021.pdf",link:"REGISTRO_DE_ARBITROS_ACTUALIZADO.pdf"}],
         icon: (
             <svg
                 viewBox="0 0 448 512"
@@ -83,7 +83,7 @@ var options = [
     },
     {
         title: "Requisitos para la incorporación de árbitros al centro",
-        items: ["Requisitos de incorporación de árbitros 2020.pdf"],
+        items: [{name:"Requisitos de incorporación de árbitros 2020.pdf",link:"REQUISITOS_INCORPORACION_AL_REGISTRO_DE_ARBITROS_JULIO2020.pdf"}],
         icon: (
             <svg
                 viewBox="0 0 576 512"
@@ -102,7 +102,7 @@ var options = [
     },
     {
         title: "Directivas",
-        items: ["Directiva N°01 - CA -CSA CPPL Renovación.pdf"],
+        items: [{name:"Directiva N°01 - CA -CSA CPPL Renovación.pdf",link:"DIRECTIVA_N_01_CA_CSA_CCPL_RENOVACION.pdf"}],
         icon: (
             <svg
                 viewBox="0 0 24 24"
@@ -134,7 +134,7 @@ export default function CentroArbitraje() {
     return (
         <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>CCLAM | Centro de arbitraje</title>
             </Head>
             <div className="py-20">
                 <div className="flex flex-wrap flex-col lg:flex-row justify-between ">
@@ -204,8 +204,8 @@ export default function CentroArbitraje() {
                             <Item key={i} {...option} />
                         ))}
                     </div>
-                    <div className="flex justify-between my-20">
-                        <div className="relative">
+                        <div className="flex flex-wrap justify-between my-20">
+                            <div className="relative w-full lg:w-96 mb-5 lg:mb-0">
                             <Image
                                 className="shadow-xl rounded-xl"
                                 src="/images/soluciondisputas/protocoloarbitraje.png"
@@ -213,7 +213,7 @@ export default function CentroArbitraje() {
                                 height="663"
                             />
                         </div>
-                        <div className="relative w-7/12 ml-5 rounded-xl shadow-close">
+                            <div className="relative w-full lg:w-7/12 lg:ml-5 rounded-xl shadow-close">
                             <Image
                                 className="rounded-xl shadow-close"
                                 src="/images/soluciondisputas/post-mesa-conciliacion.png"
@@ -233,8 +233,8 @@ export default function CentroArbitraje() {
                         layout="responsive"
                     />
                 </div>
-                <div className="px-8">
-                    <div className="relative bg-white shadow-close px-5 lg:px-14 py-10 rounded-3xl -mt-14 mx-auto">
+                <div className="lg:px-8">
+                    <div className="relative bg-white shadow-close px-5 lg:px-14 py-10 rounded-3xl -mt-3 lg:-mt-14 mx-auto">
                         <p className="font-bold text-themeBlue text-xl mb-8">
                             CONSEJO SUPERIOR DE ARBITRAJE 2019 - 2022
                         </p>
@@ -271,7 +271,7 @@ export default function CentroArbitraje() {
                         <p className="font-bold text-themeBlue text-xl mb-4">
                             CONSEJO SUPERIOR DE ARBITRAJE 2019 - 2022
                         </p>
-                        <ul class="list-none list-inside mb-14">
+                        <ul className="list-none list-inside mb-14">
                             {listConsejo.map((it, i) => (
                                 <li className="flex mb-2" key={i}>
                                     <span>
@@ -346,8 +346,8 @@ const Item = ({ title, items, icon }) => (
                     {title}
                 </p>
                 {items.map((item, k) => (
-                    <a key={k} className="text-sm mb-2 block">
-                        {item}
+                    <a key={k} href={`https://cclam.org.pe/pdfs/${item.link}`} target="_blank" className="text-sm mb-2 block hover:text-blue-600">
+                        {item.name}
                     </a>
                 ))}
             </div>

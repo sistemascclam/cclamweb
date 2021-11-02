@@ -8,7 +8,7 @@ export default function ConsejoDirectivo() {
     return (
         <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>CCLAM | Consejo directivo</title>
             </Head>
             <section className="py-14">
                 <div className="pt-32 text-center">

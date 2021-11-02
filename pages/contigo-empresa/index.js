@@ -1,21 +1,22 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../../components/layout'
+import Layout from '../../components/layout'
 import Link from 'next/link'
 import Typing from '../../components/Typing'
 import Image from 'next/image'
 import moment from 'moment'
 import 'moment/locale/es'
 moment.locale('es')
-import { getAllNews } from '../../lib/noticias'
-import { getAllPronunciamientos } from '../../lib/pronunciamientos'
 import NoticiasContainer from '../../components/ContigoEmpresa/NoticiasContainer'
 import PronunciamientosContainer from '../../components/ContigoEmpresa/PronunciamientosContainer'
+import staticInfo from "../../public/dynamic/contigoempresa/index.json"
+import pronunciamientosData from "../../public/dynamic/contigoempresa/pronunciamientos.json"
+import noticiasData from "../../public/dynamic/contigoempresa/noticias.json"
 
-export default function ContigoEmpresa({ noticiasData, pronunciamientosData }) {
+export default function ContigoEmpresa() {
   return (
     <Layout>
       <Head>
-        <title>{siteTitle}</title>
+        <title>CCLAM | Contigo empresa</title>
       </Head>
       <div className="min-h-screen w-full">
         <section id="contigo-empresa" className="relative w-full mx-auto bg-black">
@@ -51,10 +52,11 @@ export default function ContigoEmpresa({ noticiasData, pronunciamientosData }) {
               </p>
             </div>
             <div className="relative w-full lg:w-5/12 ml-auto rounded-2xl shadow-close transition duration-500 ease-in-out transform hover:-translate-x-5">
-              <a className="" href="https://issuu.com/cclam2021/docs/imagen_empresarial_digital_-_edici_n_bicentenario_" target="_blank">
+              <a className="" href={staticInfo.revistaEmpresarialURL} target="_blank">
                 <Image
                   className="rounded-2xl "
-                  src="/images/contigoempresa/revistadigital.jpeg"
+                  alt="Revista empresarial"
+                  src={staticInfo.revistaEmpresarialImg}
                   layout="responsive"
                   width="390"
                   height="390"
@@ -92,24 +94,3 @@ const TitleSection = ({ title, description }) =>
     }
 
   </div>
-
-export async function getStaticProps() {
-  const noticiasData = getAllNews([
-    'title',
-    'date',
-    'slug',
-    'coverImage',
-    'description',
-  ])
-  const pronunciamientosData = getAllPronunciamientos([
-    'title',
-    'date',
-    'slug',
-    'coverImage',
-    'description',
-  ])
-
-  return {
-    props: { noticiasData, pronunciamientosData },
-  }
-}

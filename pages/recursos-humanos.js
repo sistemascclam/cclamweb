@@ -18,7 +18,8 @@ const cards = [
                 className="rounded-4xl"
             />} />,
         keywords: ["gerente", "gerencia", "miguel camacho"]
-    }, {
+    }, 
+    {
         keywords: ["asistente", "Secretaria", "gerencia", "chelsy","quispe"],
         element: <CardContact
             correo="secretariagerencia@cclam.org.pe"
@@ -33,60 +34,18 @@ const cards = [
             />} />,
     },
     {
-        keywords: ["asistente","contabilidad","recursos humanos","walter","villavicencio"],
+        keywords: ["alex","didi","servicio","asociado"],
         element: <CardContact
-            correo="asistentecontable@cclam.org.pe"
-            telf="938883716"
-            wsp="938883716"
+            correo="alexgomez@cclam.org.pe"
+            telf="942418670"
+            wsp="942418670"
             image={<Image
-                src="/images/recursos-humanos/contabilidad.png"
+                src="/images/recursos-humanos/servicio-asociado.png"
                 layout="fill"
                 objectFit="cover"
                 quality="100"
                 className="rounded-4xl"
-            />} />,
-    },
-    {
-        keywords: ["asistente","contable","Jorge","Chozo"],
-        element: <CardContact
-            correo="jchozo@cclam.org.pe"
-            telf="984785915"
-            wsp="984785915"
-            image={<Image
-                src="/images/recursos-humanos/asistente-contable.png"
-                layout="fill"
-                objectFit="cover"
-                quality="100"
-                className="rounded-4xl"
-            />} />,
-    },
-    {
-        keywords: ["caja","ana","guzman"],
-        element: <CardContact
-            correo="aguzman@cclam.org.pe"
-            telf="944683540"
-            wsp="944683540"
-            image={<Image
-                src="/images/recursos-humanos/caja.png"
-                layout="fill"
-                objectFit="cover"
-                quality="100"
-                className="rounded-4xl"
-            />} />,
-    },
-    {
-        keywords: ["protestos","riesgos","vanessa","ñiquen"],
-        element: <CardContact
-            correo="protestos@cclam.org.pe"
-            telf="944674614"
-            wsp="944674614"
-            image={<Image
-                src="/images/recursos-humanos/protestos.png"
-                layout="fill"
-                objectFit="cover"
-                quality="100"
-                className="rounded-4xl"
-            />} />,
+            />} />
     },
     {
         keywords: ["solución","disputas","maria","alejandra","pasco","arbitraje"],
@@ -110,6 +69,76 @@ const cards = [
             wsp="984793698"
             image={<Image
                 src="/images/recursos-humanos/asistente-legal.png"
+                layout="fill"
+                objectFit="cover"
+                quality="100"
+                className="rounded-4xl"
+            />} />,
+    },
+    {
+        keywords: ["secretario","arbitral","legal","juan","pablo","pacheco","ojeda"],
+        element: <CardContact
+            correo="secretriaarbitral@cclam.org.pe"
+            telf="984793698"
+            wsp="984793698"
+            image={<Image
+                src="/images/recursos-humanos/juan-pablo.png"
+                layout="fill"
+                objectFit="cover"
+                quality="100"
+                className="rounded-4xl"
+            />} />,
+    },
+    {
+        keywords: ["protestos","riesgos","vanessa","ñiquen"],
+        element: <CardContact
+            correo="protestos@cclam.org.pe"
+            telf="944674614"
+            wsp="944674614"
+            image={<Image
+                src="/images/recursos-humanos/protestos.png"
+                layout="fill"
+                objectFit="cover"
+                quality="100"
+                className="rounded-4xl"
+            />} />,
+    },
+    {
+        keywords: ["comercio","exterior","juan","carlos","mera"],
+        element: <CardContact
+            correo="comex@cclam.org.pe "
+            telf="944680348"
+            wsp="944680348"
+            image={<Image
+                src="/images/recursos-humanos/comercio-exterior.png"
+                layout="fill"
+                objectFit="cover"
+                quality="100"
+                className="rounded-4xl"
+            />} />,
+    },
+    {
+        keywords: ["capacitación","capacitacion","formalización","formalizacion","desarrollo","carmen","julia","sime"],
+        element: <CardContact
+            correo="capacitacion@cclam.org.pe"
+            telf="944675625"
+            wsp="944675625"
+            image={<Image
+                src="/images/recursos-humanos/desarrollo-empresarial.png"
+                layout="fill"
+                objectFit="cover"
+                quality="100"
+                className="rounded-4xl"
+            />} />,
+    },
+    {
+        keywords: ["empresas","formalizacion","jorge","chozo","cajusol"],
+        element: <CardContact
+            correo="jchozo@cclam.org.pe"
+            telf="984785915"
+            wsp="984785915"
+            image={<Image
+                src="/images/recursos-humanos/formalizacion.png"
                 layout="fill"
                 objectFit="cover"
                 quality="100"
@@ -173,6 +202,48 @@ const cards = [
             />} />,
     },
     {
+        keywords: ["asistente","contabilidad","recursos humanos","walter","villavicencio"],
+        element: <CardContact
+            correo="asistentecontable@cclam.org.pe"
+            telf="938883716"
+            wsp="938883716"
+            image={<Image
+                src="/images/recursos-humanos/contabilidad.png"
+                layout="fill"
+                objectFit="cover"
+                quality="100"
+                className="rounded-4xl"
+            />} />,
+    },
+    {
+        keywords: ["caja","ana","guzman"],
+        element: <CardContact
+            correo="aguzman@cclam.org.pe"
+            telf="944683540"
+            wsp="944683540"
+            image={<Image
+                src="/images/recursos-humanos/caja.png"
+                layout="fill"
+                objectFit="cover"
+                quality="100"
+                className="rounded-4xl"
+            />} />,
+    },
+    {
+        keywords: ["rosa","bances","sectorista"],
+        element: <CardContact
+            correo="rosabances@cclam.org.pe"
+            telf="984713266"
+            wsp="984713266"
+            image={<Image
+                src="/images/recursos-humanos/sectorista.png"
+                layout="fill"
+                objectFit="cover"
+                quality="100"
+                className="rounded-4xl"
+            />} />,
+    },
+    {
         keywords: ["sistemas","daniela","paiva"],
         element: <CardContact
             correo="sistemas@cclam.org.pe"
@@ -180,34 +251,6 @@ const cards = [
             wsp="939387702"
             image={<Image
                 src="/images/recursos-humanos/sistemas.png"
-                layout="fill"
-                objectFit="cover"
-                quality="100"
-                className="rounded-4xl"
-            />} />,
-    },
-    {
-        keywords: ["comercio","exterior","juan","carlos","mera"],
-        element: <CardContact
-            correo="comex@cclam.org.pe "
-            telf="944680348"
-            wsp="944680348"
-            image={<Image
-                src="/images/recursos-humanos/comercio-exterior.png"
-                layout="fill"
-                objectFit="cover"
-                quality="100"
-                className="rounded-4xl"
-            />} />,
-    },
-    {
-        keywords: ["capacitación","capacitacion","formalización","formalizacion","desarrollo","carmen","julia","sime"],
-        element: <CardContact
-            correo="capacitacion@cclam.org.pe"
-            telf="944675625"
-            wsp="944675625"
-            image={<Image
-                src="/images/recursos-humanos/desarrollo-empresarial.png"
                 layout="fill"
                 objectFit="cover"
                 quality="100"
@@ -241,34 +284,6 @@ const cards = [
                 quality="100"
                 className="rounded-4xl"
             />} />,
-    },
-    {
-        keywords: ["rosa","bances","sectorista"],
-        element: <CardContact
-            correo="rosabances@cclam.org.pe"
-            telf="984713266"
-            wsp="984713266"
-            image={<Image
-                src="/images/recursos-humanos/sectorista.png"
-                layout="fill"
-                objectFit="cover"
-                quality="100"
-                className="rounded-4xl"
-            />} />,
-    },
-    {
-        keywords: ["alex","didi","servicio","asociado"],
-        element: <CardContact
-            correo="alexgomez@cclam.org.pe"
-            telf="942418670"
-            wsp="942418670"
-            image={<Image
-                src="/images/recursos-humanos/servicio-asociado.png"
-                layout="fill"
-                objectFit="cover"
-                quality="100"
-                className="rounded-4xl"
-            />} />
     },
     {
         keywords: ["laura","torres"],
@@ -309,7 +324,7 @@ export default function RecursosHumanos() {
     return (
         <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>CCLAM | Recursos humanos</title>
             </Head>
             <div className="min-h-screen bg-themeWhite">
                 <div className="pt-40 text-center">

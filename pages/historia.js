@@ -5,7 +5,7 @@ export default function Historia() {
     return (
         <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>CCLAM | Historia</title>
             </Head>
             <section className="py-14">
                 <div className="pt-20 lg:pt-30 text-center mb-14">

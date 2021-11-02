@@ -2,7 +2,7 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import cursos from "../content/static/cursospromo.json";
+import cursos from "../public/dynamic/cursospromo.json";
 import ModalImage from './ModalImage'
 
 export default function CarouselCourses({ slidesLg = 3, slidesSM = 1 }) {

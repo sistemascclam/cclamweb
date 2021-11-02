@@ -39,7 +39,7 @@ export default function FormalizacionEmpresas() {
     return (
         <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>CCLAM | Formalización de empresas</title>
             </Head>
             <div className="pt-32 lg:pt-28 lg:pb-28">
                 <div className="flex flex-wrap flex-col lg:flex-row justify-between ">

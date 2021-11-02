@@ -10,11 +10,20 @@ module.exports = {
     },
     extend: {
       backgroundImage: theme => ({
+        // 'hero-pattern': `url('/webcclam/images/landing.png')`,
+        // 'mesa-de-partes': `url('/webcclam/images/areas/mesa-de-partes.png')`,
+        // 'protestos': `url('/webcclam/images/areas/protestos.png')`,
+        // 'formalizacion': `url('/webcclam/images/areas/formalizacion.png')`,
+        // 'comercio-exterior': `url('/webcclam/images/areas/comercio-exterior.png')`,
+        // 'identidad-digital': `url('/webcclam/images/areas/identidad-digital.jpg')`,
+        // 'fachadacclam': `url('/webcclam/images/fachadacclam.png')`,
+
         'hero-pattern': `url('/images/landing.png')`,
         'mesa-de-partes': `url('/images/areas/mesa-de-partes.png')`,
         'protestos': `url('/images/areas/protestos.png')`,
         'formalizacion': `url('/images/areas/formalizacion.png')`,
         'comercio-exterior': `url('/images/areas/comercio-exterior.png')`,
+        'identidad-digital': `url('/images/areas/identidad-digital.jpg')`,
         'fachadacclam': `url('/images/fachadacclam.png')`,
       }),
       colors: {

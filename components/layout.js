@@ -8,11 +8,12 @@ export default function Layout({ children, home }) {
   return (
     <>
       <Head>
-        <link rel="icon" href={`${process.env.imgIniPath}favicon.ico`} />
-        <meta
-          name="description"
-          content="Cámara de Comercio y Producción de Lambayeque"
-        />
+        <link rel="icon" href={`https://www.cclam.org.pe/favicon.ico`} />
+        <meta name="description" content="Cámara de Comercio y Producción de Lambayeque" />
+        <meta property="og:title" content="CCLAM | Página Web" />
+        <meta property="og:description" content="Cámara de Comercio y Producción de Lambayeque" />
+        <meta property="og:url" content={process.env.inipath} />
+        <meta property="og:type" content="website" />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(

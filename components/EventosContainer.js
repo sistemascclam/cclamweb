@@ -15,7 +15,7 @@ export default function EventosContainer({ eventosData }) {
     }
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="flex flex-wrap justify-center">
             {
                 eventosData.map((evento, key) =>
                     <div key={key}
@@ -23,17 +23,17 @@ export default function EventosContainer({ eventosData }) {
                             <Image
                                 className="rounded-xl shadow-xl cursor-grab "
                                 alt={evento.date}
-                                src={`/images/eventos/${evento.coverImage}`}
+                                src={`/images/eventos/${evento.evento}`}
                                 width="600"
                                 height="600"
                                 layout="responsive"
                                 quality="100"
                             />)}>
-                        <div className="relative hover:scale-105 transition duration-500 ease-in-out shadow-xl">
+                        <div className="mx-2 my-4 w-80 relative hover:scale-105 transition duration-500 ease-in-out shadow-xl">
                             <Image
                                 className="rounded-xl shadow-xl cursor-pointer "
                                 alt={evento.date}
-                                src={`/images/eventos/${evento.coverImage}`}
+                                src={`/images/eventos/${evento.evento}`}
                                 width="600"
                                 height="600"
                                 layout="responsive"

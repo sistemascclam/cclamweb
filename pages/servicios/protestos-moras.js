@@ -43,7 +43,7 @@ export default function ProtestosYMoras() {
     return (
         <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>CCLAM | Protestos y moras</title>
             </Head>
             <section className="min-h-screen">
                 <div className="relative w-full">

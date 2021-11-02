@@ -1,13 +1,13 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../../components/layout'
-import { getAllPronunciamientos } from '../../lib/pronunciamientos'
+import Layout from '../../components/layout'
 import PronunciamientosContainer from '../../components/ContigoEmpresa/PronunciamientosContainer'
+import pronunciamientosData from "../../public/dynamic/contigoempresa/pronunciamientos.json"
 
-export default function Noticias({ pronunciamientosData }) {
+export default function Noticias() {
     return (
         <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>CCLAM | Pronunciamientos</title>
             </Head>
             <div className="min-h-screen bg-themeWhite">
                 <div className="pt-36 lg:pt-20 text-center">
@@ -19,19 +19,4 @@ export default function Noticias({ pronunciamientosData }) {
             </div>
         </Layout>
     )
-}
-
-export async function getStaticProps() {
-    const pronunciamientosData = getAllPronunciamientos([
-      'title',
-      'date',
-      'slug',
-      'coverImage',
-      'description',
-    ])
-    return {
-        props: {
-            pronunciamientosData
-        }
-    }
 }

@@ -6,7 +6,7 @@ export default function MisionVisionValores() {
     return (
         <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>CCLAM | Misión Visión y Valores</title>
             </Head>
             <section className="py-24">
                 <div className="w-full flex justify-around flex-wrap ">

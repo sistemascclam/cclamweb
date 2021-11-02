@@ -56,7 +56,7 @@ export default function CentroDeConciliacion() {
     return (
         <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>CCLAM | Centro de Conciliación</title>
             </Head>
             <div className="pb-20 pt-36 lg:pt-20">
                 <div className="flex flex-wrap flex-col lg:flex-row justify-between ">

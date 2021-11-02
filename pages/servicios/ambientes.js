@@ -71,12 +71,12 @@ export default function AlquilerAmbientes() {
     return (
         <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>CCLAM | Ambientes</title>
             </Head>
             <div className="pt-32 pb-10 lg:pt-28 lg:pb-28">
                 <div className="flex flex-wrap flex-col lg:flex-row justify-between ">
                     <div className="my-auto mx-auto text-center">
-                        <p className="font-extrabold text-3xl lg:text-5xl md:text-5xl sm:text-6xl "> Ambientes <span className="text-themeBlue">empresariales</span> </p>
+                        <p className="font-extrabold text-3xl lg:text-5xl md:text-5xl sm:text-6xl "> Ambientes <span className="text-themeBlue">Empresariales</span> </p>
                         <p className="font-medium text-themeLightBlue text-2xl mt-3">¡Auditorio y directorio a tu servicio!</p>
                     </div>
                 </div>

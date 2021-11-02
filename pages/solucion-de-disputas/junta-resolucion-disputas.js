@@ -1,12 +1,12 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../../components/layout'
+import Layout from '../../components/layout'
 import Image from "next/image";
 
 export default function JuntaResolucionDisputas() {
     return (
         <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>CCLAM | Junta de resolución de disputas</title>
             </Head>
             <div className="pt-40 flex flex-wrap justify-center">
                 <div className="relative ">

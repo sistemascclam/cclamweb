@@ -7,7 +7,7 @@ export default function Noticias({ noticiasData }) {
     return (
         <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>CCLAM | Noticias</title>
             </Head>
             <div className="min-h-screen bg-themeWhite">
                 <div className="pt-36 lg:pt-20 text-center">

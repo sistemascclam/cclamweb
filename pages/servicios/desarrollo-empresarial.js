@@ -106,7 +106,7 @@ export default function DesarrolloEmpresarial() {
     return (
         <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>CCLAM | Desarrollo empresarial</title>
             </Head>
             <section className="min-h-screen">
                 <div className="relative w-full">
@@ -118,8 +118,9 @@ export default function DesarrolloEmpresarial() {
                     />
                 </div>
                 <div className="relative px-0 lg:px-10 py-5 -mt-20 lg:-mt-28">
-                    <div className="bg-white w-full shadow-close px-5 lg:px-24 py-12 rounded-3xl mt-10">
-                        <div className="flex flex-wrap lg:flex-nowrap">
+                    <div className="bg-white w-full shadow-close px-5 lg:px-24 pt-1 pb-12 rounded-3xl mt-10">
+                        <ProximasCapacitaciones />
+                        <div className="flex flex-wrap lg:flex-nowrap my-14">
                             <div className="w-56 mx-auto">
                                 <CardContact
                                     image={
@@ -153,7 +154,6 @@ export default function DesarrolloEmpresarial() {
                                 )
                             }
                         </div>
-                        <ProximasCapacitaciones />
                     </div>
                 </div>
             </section>
@@ -163,7 +163,7 @@ export default function DesarrolloEmpresarial() {
 
 
 const Option = ({ title, subtitle, items, orientation }) =>
-<div className="py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div className="py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className={`${orientation === 'reverse' ? 'order-last text-right' : ''}`}>
             <p className="text-base text-themeLightBlue mb-1">{subtitle}</p>
             <p className="font-bold text-3xl">{title}</p>

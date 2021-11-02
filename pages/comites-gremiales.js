@@ -11,8 +11,8 @@ const sectoristas = [
         comites: [
             {
                 name: "Salud",
-                icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 lg:h-8 lg:w-8" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24" >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M11,12v1H10a1,1,0,0,0,0,2h1v1a1,1,0,0,0,2,0V15h1a1,1,0,0,0,0-2H13V12a1,1,0,0,0-2,0Zm10.66406-1.74756-9-8a.99893.99893,0,0,0-1.32812,0l-9,8a.99991.99991,0,0,0,1.32812,1.49512L4,11.449V21a.99974.99974,0,0,0,1,1H19a.99974.99974,0,0,0,1-1V11.449l.33594.29859a.99991.99991,0,0,0,1.32812-1.49512ZM18,20H6V9.6712l6-5.33331L18,9.6712Z" />
+                icon: <svg viewBox="0 0 448 512"className="h-6 w-6 lg:h-8 lg:w-8" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M128 244v-40c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12zm140 12h40c6.627 0 12-5.373 12-12v-40c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12zm-76 84v-40c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12zm76 12h40c6.627 0 12-5.373 12-12v-40c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12zm180 124v36H0v-36c0-6.627 5.373-12 12-12h19.5V85.035C31.5 73.418 42.245 64 55.5 64H144V24c0-13.255 10.745-24 24-24h112c13.255 0 24 10.745 24 24v40h88.5c13.255 0 24 9.418 24 21.035V464H436c6.627 0 12 5.373 12 12zM79.5 463H192v-67c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v67h112.5V112H304v24c0 13.255-10.745 24-24 24H168c-13.255 0-24-10.745-24-24v-24H79.5v351zM266 64h-26V38a6 6 0 00-6-6h-20a6 6 0 00-6 6v26h-26a6 6 0 00-6 6v20a6 6 0 006 6h26v26a6 6 0 006 6h20a6 6 0 006-6V96h26a6 6 0 006-6V70a6 6 0 00-6-6z"></path>
                 </svg>
             },
             {
@@ -29,10 +29,22 @@ const sectoristas = [
                 </svg>
             },
             {
-                name: " Pesca industrial",
+                name: "Textil y joyería",
+                icon: <svg viewBox="0 0 512 512" className="h-6 w-6 lg:h-8 lg:w-8" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32" d="M35.42 188.21l207.75 269.46a16.17 16.17 0 0025.66 0l207.75-269.46a16.52 16.52 0 00.95-18.75L407.06 55.71A16.22 16.22 0 00393.27 48H118.73a16.22 16.22 0 00-13.79 7.71L34.47 169.46a16.52 16.52 0 00.95 18.75zM48 176h416"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M400 64l-48 112-96-128M112 64l48 112 96-128m0 400l-96-272m96 272l96-272"></path>
+                </svg>
+            },
+            {
+                name: "Pesca industrial",
                 icon: <svg viewBox="0 0 576 512" className="h-6 w-6 lg:h-8 lg:w-8" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" >
                     <path fill="currentColor" d="M327.1 96c-89.97 0-168.54 54.77-212.27 101.63L27.5 131.58c-12.13-9.18-30.24.6-27.14 14.66L24.54 256 .35 365.77c-3.1 14.06 15.01 23.83 27.14 14.66l87.33-66.05C158.55 361.23 237.13 416 327.1 416 464.56 416 576 288 576 256S464.56 96 327.1 96zm87.43 184c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24 13.26 0 24 10.74 24 24 0 13.25-10.75 24-24 24z"></path>
                 </svg>
+            },
+            {
+                name: "Seguridad y salud en el trabajo",
+                icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 lg:h-8 lg:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
             },
         ]
     },
@@ -145,7 +157,7 @@ const sectoristas = [
         name: "Chelsy Quispe Díaz",
         telf: "944680147",
         correo:"secretariagerencia@cclam.org.pe",
-        src: "/images/comitesgremiales/vanessa.png",
+        src: "/images/comitesgremiales/chelsy.png",
         comites: [
             {
                 name: "Educación",
@@ -164,7 +176,7 @@ export default function Asociados() {
     return (
         <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>CCLAM | Comités gremiales</title>
             </Head>
             <section className="min-h-screen ">
                 <div className="pt-36 lg:pt-28 text-center">

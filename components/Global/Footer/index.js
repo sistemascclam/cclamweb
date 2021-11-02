@@ -12,11 +12,6 @@ export default function index() {
                         type={"small"}
                         menusParam={menus}
                         cod={1} />
-                        {
-                            /*
-                            nav.map((n, i) => <p key={i} className="mt-4 font-light">{n.title}</p>)
-                            */
-                        }
                 </div>
                 <div className="w-48 mt-10 lg:mt-20">
                     <p className="font-bold mb-5">Paga aquí con</p>

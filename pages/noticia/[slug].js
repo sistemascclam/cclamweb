@@ -17,7 +17,7 @@ export default function Noticia({ noticia }) {
     return (
         <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>{`CCLAM | ${noticia.title}`}</title>
             </Head>
             <div className="w-full min-h-screen">
                 <div className="relative w-full h-96 mx-auto bg-black">
@@ -27,7 +27,7 @@ export default function Noticia({ noticia }) {
                             objectFit="cover"
                             layout="fill"
                             src={`/images/contigoempresa/noticias/${noticia.coverImage}`}
-                            alt={noticia.sllug}
+                            alt={noticia.slug}
                         />
                     ) : (
                         <Image

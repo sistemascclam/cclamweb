@@ -28,6 +28,14 @@ export default function Carrousel() {
                         servicelink="/servicios/formalizacion-empresas"
                     />,
                     <Item
+                        fijo="IDENTIDAD"
+                        description="Te brindamos la asesoría correcta para que puedas formalizar y obtener beneficios ¡Te entregamos tu empresa totalmente constituida!"
+                        phrases={["DIGITAL"]}
+                        bg="bg-identidad-digital"
+                        servicelink="/servicios/formalizacion-empresas"
+                        textWhite
+                    />,
+                    <Item
                         fijo="COMERCIO"
                         description="Importar y exportar nunca fue tan fácil, lleva tu empresa al siguiente nivel con nuestra asesoría."
                         phrases={["EXTERIOR"]}

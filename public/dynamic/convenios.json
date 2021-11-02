@@ -1,0 +1,92 @@
+[
+    {
+        "empresa": "SUNAT - REGIONAL NORTE",
+        "imageSrc": "/images/convenios/sunat.png",
+        "beneficio":"Folletos, cartillas, discos otros para enviar a asociados. Charlas mensuales."
+    },
+    {
+        "empresa": "CONASEV",
+        "imageSrc": "/images/convenios/conasev.png",
+        "beneficio":"Participar como ponentes en los seminarios, cursos, otros que organice la CCLAM para asociados y público en general. Recepcionar material que brinde conasev. Incluir logotipo de la CCLAM cuando cumpla ítems del convenio."
+    },
+    {
+        "empresa": "COLEGIO DE NOTARIOS DE CHICLAYO",
+        "imageSrc": "/images/convenios/cnotarios.png",
+        "beneficio":"Participar como aliados estrategicos para la formalizacion de la micro y pequeña empresa de la Region."
+    },
+    {
+        "empresa": "Bolsa de Valores de Lima",
+        "imageSrc": "/images/convenios/bolsavaloreslimasvg.svg",
+        "beneficio":"CCLAM brindara informacion que la bolsa requiera para el desarrollo de sus actividades,del mismo modo la CCLAM podrá hacer uso de las instalaciones de la bolsa cuando lo requiera"
+    },
+    {
+        "empresa": "Universidad San Martin de Porres",
+        "imageSrc": "/images/convenios/usmp.png",
+        "beneficio":"Promover el desarrollo del turismo y fortalecer el trabajo entre ambas instituciones."
+    },
+    {
+        "empresa": "Universidad Pontificia Catolica del Peru",
+        "imageSrc": "/images/convenios/pucp.jpg",
+        "beneficio":"Desarrollar la cooperacion en proyectos, programas y actividades de carácter academico y cultural, de investigacion y de asesoramiento."
+    },
+    {
+        "empresa": "Cámara de Comercio de Lima",
+        "imageSrc": "/images/convenios/cclima.png",
+        "beneficio":"General."
+    },
+    {
+        "empresa": "ESAN",
+        "imageSrc": "/images/convenios/esan.png",
+        "beneficio":"15% a los asociados y trabajadores de la CCLAMen el proceso de admisión a los programas de post grado de esan"
+    },
+    {
+        "empresa": "ADEX",
+        "imageSrc": "/images/convenios/adex.png",
+        "beneficio":"Participación de productores exportadores en las ferias que promueve adex, coordinar cursos y seminarios de capacitación para productores y comerciantes de la región, certificados doble acreditación por parte de Adex y CCLAM promover la participación de las empresas afiliadas de CCLAM en los programas y proyectos de cooperación que gestiona adex, accesos para un usuario al sistema adex data trade."
+    },
+    {
+        "empresa": "MINCETUR",
+        "imageSrc": "/images/convenios/mincetur.png",
+        "beneficio":"Podrá otorgar certificados de origen a mercancías producidas en el todo el territorio nacional."
+    },
+    {
+        "empresa": "EQUIFAX",
+        "imageSrc": "/images/convenios/equifax.png",
+        "beneficio":"Recopilar,sistematizar y analizar informacion asÍ como la explotacion comercial de la misma."
+    },
+    {
+        "empresa": "BANCO CENTRAL DE RESERVA DEL PERU",
+        "imageSrc": "/images/convenios/bcrp.png",
+        "beneficio":"Informar sobre la coyuntura económica nacional, regional, social y financiera mediante eventos para los empresarios lambayecanos."
+    },
+    {
+        "empresa": "ICPNI",
+        "imageSrc": "/images/convenios/ipcni.png",
+        "beneficio":"General"
+    },
+    {
+        "empresa": "INSTITUTO PRIVADA JUAN MEJÍA BACA",
+        "imageSrc": "/images/convenios/juanmejiabaca.jpg",
+        "beneficio":"Descuentos para los asociados, cónyuge e hijos en los programas de pre grado. 20% para los cursos de idiomas extranjeros y programas de formación continua."
+    },
+    {
+        "empresa": "Estudio Reynoso",
+        "imageSrc": "/images/convenios/estudioreynoso.png",
+        "beneficio":"Asignación de un contador, previa coordinación. 1.- Supervisión registro contable 2.- Provisión de planillas, gastos, alquileres, depreciación y otros relacionados 3.- Formulación, análisis y evaluación de balances mensuales 4.- Supervisión de cálculos de las planillas. 5.- Análisis y evaluación sistemática 6.- Asesoramiento en el registro de contratos laborales. 7.- Elaborar liquidación de impuesto y presentar los pdt 621, plame y otras declaraciones mensuales y anuales. 8.- Asesoría en la atención de fiscalizaciones y requerimientos de información. 9.-Formulación y asesoramiento en solicitudes de devolución de percepciones y retenciones no aplicadas 10.- Actualización de cambios en la normatividad tributaria, laboral y financiera."
+    },
+    {
+        "empresa": "Universidad César Vallejo",
+        "imageSrc": "/images/convenios/ucv.png",
+        "beneficio":"Descuento a los trabajadores, asociados y a sus familiares directos, la escala 3de tasas de matrícula en pensiones."
+    },
+    {
+        "empresa": "ARGOS DAJE",
+        "imageSrc": "/images/convenios/argosdaje.jpg",
+        "beneficio":"Diagnostico de linea base, en todo lo concerniente a la exigencia del sistema de gestión de seguridad y salud en el trabajo"
+    },
+    {
+        "empresa": "Universidad Señor de Sipan",
+        "imageSrc": "/images/convenios/uss.png",
+        "beneficio":"20%dscto en la pension mensual correspondiente al programa de formacion profesional para gente con experiencia nivel de pregrado y 20%dscto en pago de pension mensual para seguir estudios de diplomado,maestria y doctorado,nivel posgrado."
+    }
+]

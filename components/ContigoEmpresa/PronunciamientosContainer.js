@@ -22,7 +22,7 @@ export default function PronunciamientosContainer({ pronunciamientosData }) {
                         onClick={() => toogleModal(
                             <Image
                                 className="rounded-xl shadow-xl cursor-grab "
-                                alt={pronunciamiento.date}
+                                alt={pronunciamiento.title}
                                 src={`/images/contigoempresa/pronunciamientos/${pronunciamiento.coverImage}`}
                                 width="600"
                                 height="600"

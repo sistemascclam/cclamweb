@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Item({ bg, fijo, phrases, description, servicelink, external, textWhite }) {
     return (
         <>
-            <div className={`absolute inset-0 ${bg} bg-cover bg-right opacity-25 lg:opacity-100 md:opacity-100 sm:opacity-100 h-full w-full`}></div>
+            <div className={`absolute inset-0 ${bg} bg-cover ${textWhite ? 'bg-left opacity-100' : 'bg-right opacity-25'} lg:opacity-100 md:opacity-100 sm:opacity-100 h-full w-full`}></div>
             <div className="absolute lg:pt-44 md:pt-44 sm:pt-44 pt-40 mb-3 ">
                 <div className="text-left p-6 mx-6 mt-auto ">
                     <p className={`font-medium text-lg ${textWhite ? 'text-white' : 'text-themeBlue' }`}>Lo mejor de nosotros</p>

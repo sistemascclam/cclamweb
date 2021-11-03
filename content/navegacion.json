@@ -10,7 +10,7 @@
     {
         "title": "Solución de disputas",
         "menus": [
-            { "title": "Conócenos", "to": "/solucion-de-disputas" },
+            { "title": "Conócenos", "to": "/solucion-de-disputas/conocenos" },
             { "title": "Centro de arbitraje", "to": "/solucion-de-disputas/centro-de-arbitraje" },
             { "title": "Centro de conciliación extrajudicial", "to": "/solucion-de-disputas/centro-de-conciliacion" },
             { "title": "Junta de resolución de disputas", "to": "/solucion-de-disputas/junta-resolucion-disputas" }
@@ -28,8 +28,5 @@
     },
     {
         "title": "Asóciate a la cámara", "external":"https://cclam.org.pe/gs/public/afiliacion"
-    },
-    {
-        "title": "Pagos", "external":"https://cclam.org.pe/pagos"
     }
 ]

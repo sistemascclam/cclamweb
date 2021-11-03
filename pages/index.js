@@ -26,14 +26,7 @@ export default function Home() {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <header className="relative h-screen bg-hero-pattern bg-cover  shadow-card flex flex-wrap content-center">
-                <Image
-                    src={"/images/landing.png"}
-                    alt="Logo CCLAM"
-                    layout="fill"
-                    objectFit="cover"
-                    quality="100"
-                />
+            <header className="relative h-screen bg-hero-pattern bg-cover bg-center shadow-card flex flex-wrap content-center">
                 <div className="relative bottom-0 left-0 ">
                     <div className="text-left p-6 mx-6 my-auto">
                         <p className="text-sm lg:text-base md:text-base sm:text-base block text-yellow-400  font-semibold mb-3 tracking-widest">
@@ -81,17 +74,9 @@ export default function Home() {
             <section id="video" className="relative">
                 <div className="static">
                     <div className="min-w-full overflow-hidden">
-                        <video
-                            width="1800"
-                            height="759"
-                            muted
-                            autoPlay
-                            loop
-                            playsInline
-                        >
-                            <source src={"videos/video.mp4"} type="video/mp4" />
-                            Tu buscador no soporta este tipo de video.
-                        </video>
+                        <div className="embed-container">
+                            <iframe src='https://www.youtube.com/embed/-hJtGc8vMOQ?rel=0&amp;autoplay=1&mute=1&controls=0&modestbranding&Version=3&loop=1&playlist=-hJtGc8vMOQ' frameBorder='0' allowFullScreen></iframe>
+                        </div>
                     </div>
                     <div className="absolute h-full min-w-full top-0 bg-themeBlue bg-opacity-70 z-0 select-none"></div>
                 </div>
@@ -191,28 +176,28 @@ export default function Home() {
                         />
                     </div>
                 </div>
-                    <Button
-                        className="w-max mx-auto mt-10"
-                        execfunc={() =>
-                            router.push("/contigo-empresa")
-                        }
+                <Button
+                    className="w-max mx-auto mt-10"
+                    execfunc={() =>
+                        router.push("/contigo-empresa")
+                    }
+                >
+                    Saber más
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 my-auto ml-2"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
                     >
-                        Saber más
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5 my-auto ml-2"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 5l7 7-7 7"
-                            />
-                        </svg>
-                    </Button>
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                        />
+                    </svg>
+                </Button>
 
             </section>
             <section

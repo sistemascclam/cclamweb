@@ -64,11 +64,13 @@ export default function CarouselCourses({ slidesLg = 3, slidesSM = 1 }) {
                         onClick={() => toogleModal(
                             <Image
                             className="rounded-3xl shadow-close"
+                            alt="Curso modal imagen"
                             src={`/images/servicios/desarrolloempresarial/cursos/${c.curso}`}
                             width="600"
                             height="600"
                             />)}>
                         <Image
+                            alt="Curso"
                             className="rounded-3xl shadow-close cursor-pointer"
                             src={`/images/servicios/desarrolloempresarial/cursos/${c.curso}`}
                             width="400"

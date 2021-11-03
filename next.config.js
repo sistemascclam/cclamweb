@@ -7,7 +7,7 @@
 
       domains: ['www.cclam.org.pe', 'localhost'],
     
-      // domains: ['www.cclam.org.pe', 'localhost'],
+    // domains: ['www.cclam.org.pe', 'localhost'],
     // loader: 'imgix',
     // path: 'https://cclam.org.pe/webcclam',
   },

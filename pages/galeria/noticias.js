@@ -1,9 +1,16 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../../components/layout'
-import { getAllNews } from '../../lib/noticias'
+import Layout from '../../components/layout'
 import NoticiasContainer from '../../components/ContigoEmpresa/NoticiasContainer'
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import {list} from "../../redux/actions/noticia"
 
-export default function Noticias({ noticiasData }) {
+export default function Noticias() {
+    const dispatch = useDispatch();
+    const {noticiaList}=useSelector(({noticia})=>noticia)
+    useEffect(() => {
+      dispatch(list())
+    }, [])
     return (
         <Layout>
             <Head>
@@ -14,23 +21,9 @@ export default function Noticias({ noticiasData }) {
                     <h1 className="text-sm lg:text-xl md:text-xl font-black text-themeLightBlue ">GALERÍA<span className="block text-black text-2xl lg:text-5xl md:text-5xl">Noticias</span></h1>
                 </div>
                 <div className="w-full lg:px-14 px-6 py-6 lg:py-20">
-                    <NoticiasContainer noticiasData={noticiasData} />
+                    <NoticiasContainer noticiasData={noticiaList} />
                 </div>
             </div>
         </Layout>
     )
-}
-
-export async function getStaticProps() {
-  const noticiasData = getAllNews([
-    'title',
-    'date',
-    'slug',
-    'coverImage',
-    'description',
-  ])
-
-  return {
-    props: { noticiasData },
-  }
 }

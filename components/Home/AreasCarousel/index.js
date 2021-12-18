@@ -28,19 +28,28 @@ export default function Carrousel() {
                         servicelink="/servicios/formalizacion-empresas"
                     />,
                     <Item
+                        fijo="COMERCIO"
+                        description="Importar y exportar nunca fue tan fácil, lleva tu empresa al siguiente nivel con nuestra asesoría."
+                        phrases={["EXTERIOR"]}
+                        bg="bg-comercio-exterior"
+                        servicelink="/servicios/comercio-exterior"
+                    />,
+                    <Item
                         fijo="IDENTIDAD"
                         description="Te brindamos la asesoría correcta para que puedas formalizar y obtener beneficios ¡Te entregamos tu empresa totalmente constituida!"
                         phrases={["DIGITAL"]}
                         bg="bg-identidad-digital"
                         servicelink="/servicios/formalizacion-empresas"
                         textWhite
-                    />,
+                    />
+                    ,
                     <Item
-                        fijo="COMERCIO"
-                        description="Importar y exportar nunca fue tan fácil, lleva tu empresa al siguiente nivel con nuestra asesoría."
-                        phrases={["EXTERIOR"]}
-                        bg="bg-comercio-exterior"
-                        servicelink="/servicios/comercio-exterior"
+                        fijo=""
+                        description="Entérate del estado de tu empresa llenando una encuesta y recibe asesorías personalizadas en base a los resultados."
+                        phrases={["KAP"]}
+                        bg="bg-kap"
+                        external="https://www.cclam.org.pe/diagnostico-empresarial/registro"
+                        textWhite
                     />
                 ]}
             />

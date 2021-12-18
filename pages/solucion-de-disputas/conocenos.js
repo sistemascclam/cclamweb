@@ -16,7 +16,7 @@ export default function Index() {
                 <div className="relative w-full">
                     <Image
                         className="filter brightness-75"
-                        src="/images/soluciondisputas/centro-de-soluciones.png"
+                        src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/centro-de-soluciones.png`}
                         width="1366"
                         height="505"
                         layout="responsive"
@@ -27,7 +27,7 @@ export default function Index() {
                         <div className="flex flex-wrap lg:flex-nowrap">
                             <Image
                                 className="filter brightness-90"
-                                src="/images/soluciondisputas/logo-centro-disputas.png"
+                                src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/logo-centro-disputas.png`}
                                 width="628"
                                 height="275"
                             />
@@ -77,7 +77,7 @@ export default function Index() {
                                         image={
                                             <Image
                                                 className="rounded-full filter brightness-95 "
-                                                src="/images/soluciondisputas/encargado.png"
+                                                src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/encargado.png`}
                                                 width="600"
                                                 height="600"
                                             />

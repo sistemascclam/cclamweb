@@ -12,7 +12,7 @@ export default function ConsejoDirectivo() {
             </Head>
             <section className="py-14">
                 <div className="pt-32 text-center">
-                    <h1 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-black">Consejo Directivo - Gerencia General <span className="block text-themeLightBlue mt-2">2019 - 2022</span></h1>
+                    <h1 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-black">Consejo Directivo - Gerencia General <span className="block text-themeBlue mt-2">2019 - 2022</span></h1>
                 </div>
                 <div className="bg-white w-full my-14 shadow-close lg:px-28 px-6 py-6 lg:py-20 rounded-4xl">
                     <h3 className="font-extrabold text-themeLightBlue text-xl">GÉNESIS DE UNA CÁMARA IMPULSADORA DEL DESARROLLO DE LAMBAYEQUE</h3>
@@ -25,7 +25,7 @@ export default function ConsejoDirectivo() {
                     <CardStyled
                         title="PRESIDENTE DEL CONSEJO DIRECTIVO 2019 – 2022"
                         right={<Image
-                            src="/images/consejo/presidente.png"
+                            src={`${process.env.STORAGE_URL_FT}${'/images/consejo/presidente.png'}`}
                             alt="Presidente de la CCLAM"
                             layout="fill"
                             objectFit="cover"
@@ -43,7 +43,7 @@ export default function ConsejoDirectivo() {
                     <CardStyled
                         title="GERENCIA GENERAL"
                         right={<Image
-                            src="/images/consejo/gerente.png"
+                            src={`${process.env.STORAGE_URL_FT}${'/images/consejo/gerente.png'}`}
                             alt="Gerente de la CCLAM"
                             layout="fill"
                             objectFit="cover"

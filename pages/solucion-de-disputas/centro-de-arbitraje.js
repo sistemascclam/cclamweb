@@ -158,7 +158,7 @@ export default function CentroArbitraje() {
                                 image={
                                     <Image
                                         className="rounded-full filter brightness-95 "
-                                        src="/images/soluciondisputas/encargado.png"
+                                        src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/encargado.png`}
                                         width="600"
                                         height="600"
                                     />
@@ -208,7 +208,7 @@ export default function CentroArbitraje() {
                             <div className="relative w-full lg:w-96 mb-5 lg:mb-0">
                             <Image
                                 className="shadow-xl rounded-xl"
-                                src="/images/soluciondisputas/protocoloarbitraje.png"
+                                src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/protocoloarbitraje.png`}
                                 width="468"
                                 height="663"
                             />
@@ -216,7 +216,7 @@ export default function CentroArbitraje() {
                             <div className="relative w-full lg:w-7/12 lg:ml-5 rounded-xl shadow-close">
                             <Image
                                 className="rounded-xl shadow-close"
-                                src="/images/soluciondisputas/post-mesa-conciliacion.png"
+                                src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/post-mesa-conciliacion.png`}
                                 width="480"
                                 height="480"
                                 layout="responsive"
@@ -227,7 +227,7 @@ export default function CentroArbitraje() {
                 <div className="relative rounded-2xl -mt-5">
                     <Image
                         className="filter brightness-75 rounded-2xl"
-                        src="/images/soluciondisputas/consejo-arbitraje.jpg"
+                        src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/consejo-arbitraje.jpg`}
                         width="1366"
                         height="458"
                         layout="responsive"
@@ -346,7 +346,7 @@ const Item = ({ title, items, icon }) => (
                     {title}
                 </p>
                 {items.map((item, k) => (
-                    <a key={k} href={`https://cclam.org.pe/pdfs/${item.link}`} target="_blank" className="text-sm mb-2 block hover:text-blue-600">
+                    <a key={k} href={`https://cclam.org.pe/pdfs/${item.link}`} target="_blank" rel="noreferrer" className="text-sm mb-2 block hover:text-blue-600">
                         {item.name}
                     </a>
                 ))}

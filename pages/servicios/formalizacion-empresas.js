@@ -58,7 +58,7 @@ export default function FormalizacionEmpresas() {
                                     image={
                                         <Image
                                             className="rounded-full filter brightness-95 "
-                                            src="/images/servicios/formalizacionempresas/encargado.png"
+                                            src={`${process.env.STORAGE_URL_FT}/images/servicios/formalizacionempresas/encargado.png`}
                                             width="600"
                                             height="600"
                                         />

@@ -22,7 +22,7 @@ var options = [
         orientation: 'normal',
         image: <Image
             className="rounded-3xl filter brightness-50"
-            src='/images/servicios/ambientes/leftimage.jpg'
+            src={`${process.env.STORAGE_URL_FT}/images/servicios/ambientes/leftimage.jpg`}
             width="763"
             height="368"
         />
@@ -44,7 +44,7 @@ var options = [
         orientation: 'reverse',
         image: <Image
             className="rounded-3xl filter brightness-75 shadow-close"
-            src='/images/servicios/ambientes/section2.jpg'
+            src={`${process.env.STORAGE_URL_FT}/images/servicios/ambientes/section2.jpg`}
             width="626"
             height="417"
         />
@@ -60,7 +60,7 @@ var options = [
         orientation: 'normal',
         image: <Image
             className="rounded-3xl filter brightness-75 shadow-close"
-            src='/images/servicios/ambientes/section3.jpg'
+            src={`${process.env.STORAGE_URL_FT}/images/servicios/ambientes/section3.jpg`}
             width="624"
             height="417"
         />
@@ -90,7 +90,7 @@ export default function AlquilerAmbientes() {
                                     image={
                                         <Image
                                             className="rounded-full filter brightness-95 "
-                                            src="/images/servicios/ambientes/encargado.png"
+                                            src={`${process.env.STORAGE_URL_FT}/images/servicios/ambientes/encargado.png`}
                                             width="600"
                                             height="600"
                                         />

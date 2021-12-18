@@ -8,11 +8,16 @@ import 'moment/locale/es'
 moment.locale('es')
 import NoticiasContainer from '../../components/ContigoEmpresa/NoticiasContainer'
 import PronunciamientosContainer from '../../components/ContigoEmpresa/PronunciamientosContainer'
-import staticInfo from "../../public/dynamic/contigoempresa/index.json"
-import pronunciamientosData from "../../public/dynamic/contigoempresa/pronunciamientos.json"
-import noticiasData from "../../public/dynamic/contigoempresa/noticias.json"
+import { getOne } from "../../redux/actions/revistadigital"
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
 
 export default function ContigoEmpresa() {
+  const dispatch = useDispatch();
+  const { revistaDigitalObject } = useSelector(({ revistadigital }) => revistadigital)
+  useEffect(() => {
+    dispatch(getOne())
+  }, [])
   return (
     <Layout>
       <Head>
@@ -38,7 +43,7 @@ export default function ContigoEmpresa() {
           <TitleSection
             title={"Noticias"}
           />
-          <NoticiasContainer noticiasData={noticiasData} />
+          <NoticiasContainer />
           <div className="w-full text-center mt-8 "><Link href="/galeria/noticias"><a className="hover:text-themeLightBlue">Ver más...</a></Link></div>
         </section>
         <section id="revista-digital" className="relative min-h-screen flex flex-wrap content-center w-full py-6 px-10 lg:px-20 mt-10">
@@ -50,18 +55,24 @@ export default function ContigoEmpresa() {
               <p className="font-extrabold text-center lg:text-left text-3xl text-themeLightBlue mt-0 mb-5 lg:mt-3">
                 Nuestra revista institucional
               </p>
+              <Link href="/galeria/revistas-digitales"><a className="hover:text-themeLightBlue">Ver más...</a></Link>
             </div>
             <div className="relative w-full lg:w-5/12 ml-auto rounded-2xl shadow-close transition duration-500 ease-in-out transform hover:-translate-x-5">
-              <a className="" href={staticInfo.revistaEmpresarialURL} target="_blank">
-                <Image
-                  className="rounded-2xl "
-                  alt="Revista empresarial"
-                  src={staticInfo.revistaEmpresarialImg}
-                  layout="responsive"
-                  width="390"
-                  height="390"
-                />
-              </a>
+              {
+                revistaDigitalObject ?
+                  <a className="" href={revistaDigitalObject.revista ? (`${process.env.STORAGE_URL_BK}${revistaDigitalObject.revista}`) : revistaDigitalObject.url} target="_blank" rel="noreferrer">
+                    <Image
+                      className="rounded-2xl "
+                      alt="Revista empresarial"
+                      src={`${process.env.STORAGE_URL_BK}${revistaDigitalObject.coverImage}`}
+                      layout="responsive"
+                      width="390"
+                      height="390"
+                    />
+                  </a>
+                  :
+                  ""
+              }
             </div>
           </div>
         </section>
@@ -70,7 +81,7 @@ export default function ContigoEmpresa() {
             title={"Pronunciamientos"}
             description={`La Centenaria Cámara de Comercio y Producción de Lambayeque respalda proyectos que van acorde al desarrollo y prestigio de la región Lambayeque, a través de: Comunicados a la opinión pública; Convocatorias institucionales; Conferencias de Prensa; Entrevistas de interés público; Proyección Social; entre otros.`}
           />
-          <PronunciamientosContainer pronunciamientosData={pronunciamientosData} />
+          <PronunciamientosContainer />
           <div className="w-full text-center mt-6"><Link href="/galeria/pronunciamientos"><a className="hover:text-themeLightBlue">Ver más...</a></Link></div>
         </section>
       </div>

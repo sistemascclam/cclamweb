@@ -22,6 +22,8 @@ export default function Layout({ children, home }) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
+        <link rel="apple-touch-icon" href="https://www.cclam.org.pe/favicon.ico" />
       </Head>
       <FloatingGroup />
       <NavBar />

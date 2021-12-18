@@ -19,18 +19,18 @@ export default function Item({ bg, fijo, phrases, description, servicelink, exte
                     {
                         servicelink ?
                             <Link href={servicelink}>
-                                <a className="mt-6 bg-gradient-to-r from-themeBlue to-themeLightBlue text-white font-light rounded-full px-4 py-1 flex w-max">
+                                <a className="mt-6 bg-gradient-to-r from-themeBlue to-themeLightBlue shadow-md text-white font-normal text-sm rounded-full px-4 py-2 transition-all ease-in-out duration-500 hover:ml-2 flex w-max">
                                     Saber más
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 my-auto ml-3 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
                                     </svg>
                                 </a>
                             </Link>
                             :
-                            <a href={external} target="_blank" className="mt-6 bg-gradient-to-r from-themeBlue to-themeLightBlue text-white font-light rounded-full px-4 py-1 flex w-max">
+                            <a href={external} target="_blank" rel="noreferrer" className="mt-6 bg-gradient-to-r from-themeBlue to-themeLightBlue shadow-md text-white font-normal text-sm rounded-full px-4 py-2 transition-all ease-in-out duration-500 hover:ml-2 flex w-max">
                                 Saber más
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 my-auto ml-3 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
                                 </svg>
                             </a>
                     }

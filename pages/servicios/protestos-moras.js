@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Layout, { siteTitle } from '../../components/layout'
 import Image from "next/image";
 import CardContact from "../../components/Servicios/CardContact"
+import ServiciosPagosOnline from '../../components/Servicios/ServiciosPagosOnline';
 
 var options = [
     {
@@ -39,7 +40,10 @@ var options = [
     },
 ]
 
+const idArea=3;
+
 export default function ProtestosYMoras() {
+
     return (
         <Layout>
             <Head>
@@ -48,7 +52,7 @@ export default function ProtestosYMoras() {
             <section className="min-h-screen">
                 <div className="relative w-full">
                     <Image
-                        src="/images/servicios/protestos/header.png"
+                        src={`${process.env.STORAGE_URL_FT}/images/servicios/protestos/header.png`}
                         width="1366"
                         height="505"
                         layout="responsive"
@@ -62,7 +66,7 @@ export default function ProtestosYMoras() {
                                     image={
                                         <Image
                                             className="rounded-full filter brightness-95 "
-                                            src="/images/servicios/protestos/encargado.png"
+                                            src={`${process.env.STORAGE_URL_FT}/images/servicios/protestos/encargado.png`}
                                             width="600"
                                             height="600"
                                         />
@@ -82,7 +86,12 @@ export default function ProtestosYMoras() {
                                 </p>
                             </div>
                         </div>
-                        <div className="my-14 flex flex-wrap gap-4 ">
+                        <ServiciosPagosOnline idArea={idArea} />
+                        <div className="text-center mt-14 mb-5">
+                            <p className="text-base text-themeLightBlue mb-1">Otros servicios</p>
+                            <p className="font-bold text-3xl">Pide más información</p>
+                        </div>
+                        <div className="mb-14 flex flex-wrap gap-4 ">
                             {
                                 options.map((op, i) =>
                                     <div key={i} className="w-64 mx-auto">
@@ -110,7 +119,7 @@ export default function ProtestosYMoras() {
                             <div className="relative w-full lg:w-96 mb-5 lg:mb-0">
                                 <Image
                                     className="shadow-xl rounded-xl"
-                                    src="/images/servicios/protestos/portalweb.jpg"
+                                    src={`${process.env.STORAGE_URL_FT}/images/servicios/protestos/portalweb.jpg`}
                                     width="1024"
                                     height="495"
                                 />
@@ -118,7 +127,7 @@ export default function ProtestosYMoras() {
                             <div className="relative w-full lg:w-7/12 lg:ml-5 rounded-xl shadow-close">
                                 <Image
                                     className="rounded-xl shadow-close"
-                                    src="/images/servicios/protestos/campaign.png"
+                                    src={`${process.env.STORAGE_URL_FT}/images/servicios/protestos/campaign.png`}
                                     width="480"
                                     height="480"
                                     layout="responsive"

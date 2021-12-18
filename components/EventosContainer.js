@@ -5,7 +5,7 @@ import ModalImage from './ModalImage';
 import { useState } from 'react';
 moment.locale('es')
 
-export default function EventosContainer({ eventosData }) {
+export default function EventosContainer({ eventosData, type }) {
     let [isOpen, setIsOpen] = useState(false)
     let [imageModal, setImageModal] = useState(<></>)
 
@@ -17,30 +17,45 @@ export default function EventosContainer({ eventosData }) {
     return (
         <div className="flex flex-wrap justify-center">
             {
-                eventosData.map((evento, key) =>
-                    <div key={key}
-                        onClick={() => toogleModal(
-                            <Image
-                                className="rounded-xl shadow-xl cursor-grab "
-                                alt={evento.date}
-                                src={`/images/eventos/${evento.evento}`}
-                                width="600"
-                                height="600"
-                                layout="responsive"
-                                quality="100"
-                            />)}>
-                        <div className="mx-2 my-4 w-80 relative hover:scale-105 transition duration-500 ease-in-out shadow-xl">
-                            <Image
-                                className="rounded-xl shadow-xl cursor-pointer "
-                                alt={evento.date}
-                                src={`/images/eventos/${evento.evento}`}
-                                width="600"
-                                height="600"
-                                layout="responsive"
-                                quality="100"
-                            />
+                eventosData?.map((evento, key) =>
+                type==="proximos" && evento.link ?
+                        <a key={key} href={evento.link} target="_blank">
+                            <div className="mx-2 my-4 w-80 relative hover:scale-105 transition duration-500 ease-in-out shadow-xl">
+                                <Image
+                                    className="rounded-xl shadow-xl cursor-pointer "
+                                    alt={evento.title}
+                                    src={`${process.env.STORAGE_URL_BK}${evento.coverImage}`}
+                                    width="600"
+                                    height="600"
+                                    layout="responsive"
+                                    objectFit="cover"
+                                />
+                            </div>
+                        </a>
+                        :
+                        <div key={key}
+                            onClick={() => toogleModal(
+                                <Image
+                                    className="rounded-xl shadow-xl cursor-grab "
+                                    alt={evento.title}
+                                    src={`${process.env.STORAGE_URL_BK}${evento.coverImage}`}
+                                    width="600"
+                                    height="600"
+                                    layout="responsive"
+                                    objectFit="cover"
+                                />)}>
+                            <div className="mx-2 my-4 w-80 relative hover:scale-105 transition duration-500 ease-in-out shadow-xl">
+                                <Image
+                                    className="rounded-xl shadow-xl cursor-pointer "
+                                    alt={evento.title}
+                                    src={`${process.env.STORAGE_URL_BK}${evento.coverImage}`}
+                                    width="600"
+                                    height="600"
+                                    layout="responsive"
+                                    objectFit="cover"
+                                />
+                            </div>
                         </div>
-                    </div>
                 )
             }
             <ModalImage isOpen={isOpen} imageModal={imageModal} toogleModal={toogleModal} />

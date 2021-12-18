@@ -10,7 +10,7 @@ export default function Whatsapp() {
         <>
             {showChat && <Chat />}
             <div className="flex justify-end">
-                <button className="flex justify-end" onClick={toogleChat}>
+                <button className="flex justify-end" name="whatsappbutton" aria-label="BotonWhatsapp" onClick={toogleChat}>
                     {
                         !showChat ?
                             <>

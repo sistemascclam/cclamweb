@@ -2,15 +2,14 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import cursos from "../public/dynamic/cursospromo.json";
-import ModalImage from './ModalImage'
+import ContenidoExtra from './ContenidoExtra'
 
-export default function CarouselCourses({ slidesLg = 3, slidesSM = 1 }) {
+export default function CarouselCourses({ slidesLg = 3, slidesSM = 1, cursos }) {
     let [isOpen, setIsOpen] = useState(false)
-    let [imageModal, setImageModal] = useState(<></>)
+    const [selected, setselected] = useState(0)
 
-    const toogleModal = (image) => {
-        if (image) setImageModal(image)
+    const toogleModal = (i) => {
+        setselected(i)
         setIsOpen(!isOpen)
     }
     const [pause, setPause] = useState(false);
@@ -61,25 +60,18 @@ export default function CarouselCourses({ slidesLg = 3, slidesSM = 1 }) {
             {cursos?.map((c, i) => (
                 <div key={i} className="keen-slider__slide content-center flex items-stretch justify-center h-full w-full">
                     <div className={`relative my-auto h-full w-full`} 
-                        onClick={() => toogleModal(
-                            <Image
-                            className="rounded-3xl shadow-close"
-                            alt="Curso modal imagen"
-                            src={`/images/servicios/desarrolloempresarial/cursos/${c.curso}`}
-                            width="600"
-                            height="600"
-                            />)}>
+                        onClick={()=>toogleModal(i)}>
                         <Image
-                            alt="Curso"
+                            alt={c.descripcion}
                             className="rounded-3xl shadow-close cursor-pointer"
-                            src={`/images/servicios/desarrolloempresarial/cursos/${c.curso}`}
+                            src={`${process.env.STORAGE_URL_BK}${c.coverImage}`}
                             width="400"
                             height="400"
                         />
                     </div>
                 </div>
             ))}
-            <ModalImage isOpen={isOpen} imageModal={imageModal} toogleModal={toogleModal} />
+            <ContenidoExtra isOpen={isOpen} lista={cursos.slice(selected,cursos.length).concat(cursos.slice(0,selected))} toogleModal={toogleModal} />
         </div>
     );
 }

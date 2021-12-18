@@ -58,7 +58,7 @@ export default function ConveniosCarousel() {
                         >
                             <Image
                                 alt={`${c.empresa}`}
-                                src={`${c.imageSrc}`}
+                                src={`${process.env.STORAGE_URL_FT}${c.imageSrc}`}
                                 width={100}
                                 height={40}
                                 layout="responsive"

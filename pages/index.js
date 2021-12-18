@@ -7,64 +7,85 @@ import ConveniosSection from "../components/Home/ConveniosSection";
 import Carrousel from "../components/Home/AreasCarousel/index";
 import ConsejoCarousel from "../components/Home/ConsejoCarousel.js/index";
 import { useRouter } from "next/router";
-import cursos from "../public/dynamic/cursospromo.json";
-import eventos from "../public/dynamic/eventos.json";
-import ModalImage from "../components/ModalImage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { list as listcurso } from "../redux/actions/curso"
+import { list as listactividad } from "../redux/actions/actividad"
+import ContenidoExtra from "../components/ContenidoExtra";
 
 export default function Home() {
     const router = useRouter();
     let [isOpen, setIsOpen] = useState(false);
-    let [imageModal, setImageModal] = useState(<></>);
+    const [listExtra, setListExtra] = useState([])
 
-    const toogleModal = (image) => {
-        if (image) setImageModal(image);
-        setIsOpen(!isOpen);
-    };
+    const toogleModal = () => {
+        setIsOpen(!isOpen)
+    }
+
+    const openContenidoExtra = (selected,tipo) => {
+        if(tipo==="curso"){
+            setListExtra(cursoList?.filter((c, i) => i < 3).slice(selected, cursoList?.filter((c, i) => i < 3).length).concat(cursoList?.filter((c, i) => i < 3).slice(0, selected)))
+        }else{
+            setListExtra(actividadList?.filter((c, i) => new Date(c.fechaFin).getTime()>=Date.now())?.filter((c, i) => i < 3).slice(selected, actividadList?.filter((c, i) => i < 3).length).concat(actividadList?.filter((c, i) => i < 3).slice(0, selected)))
+        }
+        toogleModal()
+    }
+
+    const dispatch = useDispatch();
+    const { cursoList } = useSelector(({ curso }) => curso);
+    const { actividadList } = useSelector(({ actividad }) => actividad);
+
+    useEffect(() => {
+        dispatch(listcurso())
+        dispatch(listactividad())
+    }, [])
+
     return (
         <Layout home>
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <header className="relative h-screen bg-hero-pattern bg-cover bg-center shadow-card flex flex-wrap content-center">
-                <div className="relative bottom-0 left-0 ">
-                    <div className="text-left p-6 mx-6 my-auto">
-                        <p className="text-sm lg:text-base md:text-base sm:text-base block text-yellow-400  font-semibold mb-3 tracking-widest">
-                            CÁMARA DE COMERCIO Y PRODUCCIÓN DE LAMBAYEQUE
-                        </p>
-                        <h1 className="text-3xl lg:text-7xl md:text-7xl sm:text-6xl tracking-tight font-extrabold text-white">
-                            <span className="block mb-2">Seguimos</span>
-                            <Typing
-                                phrases={[
-                                    "Cambiando",
-                                    "Mejorando",
-                                    "Transformando",
-                                ]}
-                            />
-                        </h1>
-                        <p className="mt-3 text-white max-w-xl text-base lg:text-xl md:text-xl sm:text-xl">
-                            Nos seguimos transformando para continuar siendo el motor de nuestra región, tenemos nuevos servicios digitales para potenciar tu negocio.
-                        </p>
+            <header className="relative h-screen bg-bgblue  shadow-card ">
+                <div className="relative h-screen bg-hero-pattern bg-cover bg-center shadow-card flex flex-wrap content-center">
+                    <div className="relative bottom-0 left-0 ">
+                        <div className="text-left p-6 mx-6 my-auto">
+                            <p className="text-sm lg:text-base md:text-base sm:text-base block text-yellow-400  font-semibold mb-3 tracking-widest">
+                                CÁMARA DE COMERCIO Y PRODUCCIÓN DE LAMBAYEQUE
+                            </p>
+                            <h1 className="text-3xl lg:text-7xl md:text-7xl sm:text-6xl tracking-tight font-extrabold text-white">
+                                <span className="block mb-2">Seguimos</span>
+                                <Typing
+                                    phrases={[
+                                        "Cambiando",
+                                        "Mejorando",
+                                        "Transformando",
+                                    ]}
+                                />
+                            </h1>
+                            <p className="mt-3 text-white max-w-xl text-base lg:text-xl md:text-xl sm:text-xl">
+                                Nos seguimos transformando para continuar siendo el motor de nuestra región, tenemos nuevos servicios digitales para potenciar tu negocio.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div className="absolute bottom-0 my-6 py-6 inset-x-0">
-                    <a
-                        href="#areas"
-                        className="rounded-full h-12 w-12 bg-white flex items-center justify-center text-themeBlue mx-auto"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
+                    <div className="absolute bottom-0 my-6 py-6 inset-x-0">
+                        <a
+                            href="#areas"
+                            className="rounded-full h-12 w-12 bg-white flex items-center justify-center text-themeBlue mx-auto"
                         >
-                            <path
-                                fillRule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clipRule="evenodd"
-                            />
-                        </svg>
-                    </a>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                            >
+                                <path
+                                    fillRule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clipRule="evenodd"
+                                />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </header>
             <section id="areas" className="relative h-screen">
@@ -75,7 +96,16 @@ export default function Home() {
                 <div className="static">
                     <div className="min-w-full overflow-hidden">
                         <div className="embed-container">
-                            <iframe src='https://www.youtube.com/embed/-hJtGc8vMOQ?rel=0&amp;autoplay=1&mute=1&controls=0&modestbranding&Version=3&loop=1&playlist=-hJtGc8vMOQ' frameBorder='0' allowFullScreen></iframe>
+                            <iframe src='https://www.youtube.com/embed/-hJtGc8vMOQ?autoplay=1&mute=1&controls=0&modestbranding&Version=3&loop=1&playlist=-hJtGc8vMOQ'
+                                frameBorder='0'
+                                allow='autoplay; encrypted-media'
+                                allowFullScreen
+                                title="Video promocional de áreas"
+                            />
+                            {/* <iframe src='https://www.youtube.com/embed/-hJtGc8vMOQ?rel=0&amp;autoplay=1&mute=1&controls=0&modestbranding&Version=3&loop=1&playlist=-hJtGc8vMOQ'
+                                frameBorder='0'
+                                allowFullScreen
+                                title="Video promocional de áreas"></iframe> */}
                         </div>
                     </div>
                     <div className="absolute h-full min-w-full top-0 bg-themeBlue bg-opacity-70 z-0 select-none"></div>
@@ -127,10 +157,11 @@ export default function Home() {
                 <div className="w-52 mt-10 lg:mt-0 lg:w-96 mx-auto">
                     <Image
                         className="rounded-full shadow-close"
-                        src="/images/soluciondisputas/encargados.png"
+                        src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/encargados.png`}
                         width="600"
                         height="600"
                         objectFit="cover"
+                        alt="Encargados de solución y disputas"
                     />
                 </div>
 
@@ -154,30 +185,33 @@ export default function Home() {
                     <div className="text-center rounded-3xl hover:scale-105 transition duration-500 ease-in-out">
                         <Image
                             className="rounded-3xl shadow-xl "
-                            src="/images/ceentrevistas.jpg"
+                            src={`${process.env.STORAGE_URL_FT}/images/ceentrevistas.jpg`}
                             width="411"
                             height="231"
+                            alt="Entrevistas thumbnail"
                         />
                     </div>
                     <div className="text-center rounded-3xl hover:scale-105 transition duration-500 ease-in-out">
                         <Image
                             className="rounded-3xl shadow-xl "
-                            src="/images/cenoticias.jpg"
+                            src={`${process.env.STORAGE_URL_FT}/images/cenoticias.jpg`}
                             width="411"
                             height="231"
+                            alt="Noticias thumbnail"
                         />
                     </div>
                     <div className="text-center rounded-3xl hover:scale-105 transition duration-500 ease-in-out">
                         <Image
                             className="rounded-3xl shadow-xl "
-                            src="/images/cehistoriasexito.jpg"
+                            src={`${process.env.STORAGE_URL_FT}/images/cehistoriasexito.jpg`}
                             width="411"
                             height="231"
+                            alt="Historias de éxito thumbnail"
                         />
                     </div>
                 </div>
                 <Button
-                    className="w-max mx-auto mt-10"
+                    className="w-max mx-auto mt-10 transition-all duration-500 ease-in-out hover:-translate-x-3"
                     execfunc={() =>
                         router.push("/contigo-empresa")
                     }
@@ -242,9 +276,9 @@ export default function Home() {
                     </Button>
                 </div>
                 <div className="relative lg:w-5/12 lg:translate-x-28 ">
-                    {cursos
+                    {cursoList
                         ?.filter((c, i) => i < 3)
-                        .map((c, i) => (
+                        ?.map((c, i) => (
                             <div
                                 key={`cursos_${i}`}
                                 className={`absolute w-96 lg:w-full shadow-card rounded-xl  ${i === 0
@@ -256,24 +290,15 @@ export default function Home() {
                                         ? "hover:-translate-x-0"
                                         : "hover:-translate-x-5"
                                     }`}
-                                onClick={() =>
-                                    toogleModal(
-                                        <Image
-                                            className="rounded-xl"
-                                            src={`/images/servicios/desarrolloempresarial/cursos/${c.curso}`}
-                                            width="663"
-                                            height="663"
-                                            layout="responsive"
-                                        />
-                                    )
-                                }
+                                onClick={()=>openContenidoExtra(i,"curso")}
                             >
                                 <Image
                                     className="rounded-xl cursor-pointer"
-                                    src={`/images/servicios/desarrolloempresarial/cursos/${c.curso}`}
+                                    src={`${process.env.STORAGE_URL_BK}${c.coverImage}`}
                                     width="663"
                                     height="663"
                                     layout="responsive"
+                                    alt={c.descripcion}
                                 />
                             </div>
                         ))}
@@ -284,8 +309,8 @@ export default function Home() {
                 className="relative bg-themeWhite overflow-hidden min-h-screen h-full flex py-20 lg:py-0"
             >
                 <div className="relative lg:w-5/12">
-                    {eventos
-                        ?.filter((c, i) => c.nuevo)
+                    {actividadList
+                        ?.filter((c, i) => new Date(c.fechaFin).getTime()>=Date.now())
                         ?.filter((c, i) => i < 3)
                         .map((c, i) => (
                             <div
@@ -299,21 +324,15 @@ export default function Home() {
                                         ? "lg:hover:-translate-x-0 hover:-translate-x-48"
                                         : "lg:hover:-translate-x-2 hover:-translate-x-52"
                                     } `}
-                                onClick={() => toogleModal(
-                                    <Image
-                                        className="rounded-xl"
-                                        src={`/images/eventos/${c.evento}`}
-                                        width="663"
-                                        height="663"
-                                        layout="responsive"
-                                    />)}
+                                onClick={()=>openContenidoExtra(i,"actividad")}
                             >
                                 <Image
                                     className="rounded-xl cursor-pointer"
-                                    src={`/images/eventos/${c.evento}`}
+                                    src={`${process.env.STORAGE_URL_BK}${c.coverImage}`}
                                     width="663"
                                     height="663"
                                     layout="responsive"
+                                    alt={c.title}
                                 />
                             </div>
                         ))}
@@ -374,11 +393,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <ModalImage
-                isOpen={isOpen}
-                imageModal={imageModal}
-                toogleModal={toogleModal}
-            />
+            <ContenidoExtra isOpen={isOpen} lista={listExtra} toogleModal={toogleModal} />
         </Layout>
     );
 }
@@ -400,7 +415,7 @@ const Paragraph = ({ children, className }) => (
 const Button = ({ children, className, execfunc }) => (
     <button
         onClick={execfunc}
-        className={`${className} text-sm lg:text-base md:text-base  flex bg-themeLightBlue text-white font-semibold rounded-full shadow-md py-2 px-5 hover:opacity-80`}
+        className={`${className} text-sm lg:text-base md:text-base  flex bg-themeLightBlue text-white font-semibold rounded-full shadow-md py-2 px-5`}
     >
         {children}
     </button>

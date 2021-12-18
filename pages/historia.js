@@ -9,10 +9,10 @@ export default function Historia() {
             </Head>
             <section className="py-14">
                 <div className="pt-20 lg:pt-30 text-center mb-14">
-                    <h1 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-black">Nuestra historia <span className="block text-themeLightBlue mt-2">Gremio empresarial de Lambayeque</span></h1>
+                    <h1 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-black">Nuestra historia <span className="block text-themeBlue mt-2">Gremio empresarial de Lambayeque</span></h1>
                 </div>
                 <div className="bg-white w-full shadow-close px-5 lg:px-28 py-12 lg:py-20 rounded-4xl">
-                    <h3 className="font-extrabold text-themeLightBlue text-xl">GÉNESIS DE UNA CÁMARA IMPULSADORA DEL DESARROLLO DE LAMBAYEQUE</h3>
+                    <h3 className="font-extrabold text-themeBlue text-xl">GÉNESIS DE UNA CÁMARA IMPULSADORA DEL DESARROLLO DE LAMBAYEQUE</h3>
                     <p className="text-justify mt-5 text-gray-900 text-base font-normal">
                         A finales del siglo XX Lambayeque se encontraba en pleno proceso de recuperación de la crisis económica, producto de la post guerra con Chile. La resquebrajada economía de la gran hacienda se reactiva con nuevas perspectivas de gestión que buscaban extender con eficiencia la producción de arroz y azúcar por nuestros valles.
                     </p>
@@ -34,12 +34,12 @@ export default function Historia() {
                     <p className="text-justify mt-5 text-gray-900 text-base font-normal">
                         Finalmente acuerdan fundar la Cámara de Comercio y Agricultura de Lambayeque, el 21 de abril de 1945 se acuerda cambiar el nombre por Cámara de Comercio, Agricultura e Industrias del departamento de Lambayeque. Actualmente lleva la denominación de Cámara de Comercio y Producción de Lambayeque.
                     </p>
-                    <h3 className="font-extrabold text-themeLightBlue text-xl mt-20">RECONOCIMIENTO DE LAS GESTIONES DE LA CÁMARA</h3>
+                    <h3 className="font-extrabold text-themeBlue text-xl mt-20">RECONOCIMIENTO DE LAS GESTIONES DE LA CÁMARA</h3>
                     <p className="text-justify mt-5 text-gray-900 text-base font-normal">
                         A dos años de instalada la Cámara de Comercio y Agricultura de Lambayeque, asume la Presidencia Don Aurelio Montenegro, quien reemplazaba a Daniel Urrea, que viajaba por razones de trabajo a Arequipa, donde va a impulsar la organización del empresario sureño.
                     </p>
                     <p className="text-justify mt-5 text-gray-900 text-base font-normal">
-                        La Cámara de Comercio siempre tuvo una posición deliberante, polémica, clara, apartidaria y siguiendo la ideología de la gestión empresarial. Es reconocida como una institución tutelar, básica para impulsar el desarrollo económico en nuestro país. De ahí su buen posicionamiento en la vida política nacional, por su reconocida defensa de los intereses lambayecanos, donde destacan:
+                        La Cámara de Comercio siempre tuvo una posición deliberante, polémica, clara, apartidaria y siguiendo la ideología de la gestión empresarial. Es reconocida como una institución tutelar, básica para impulsar el desarrollo económico en nuestro país. De ahí su buen posicionamiento en la vida política nacional, por su reconocida defensa de los intereses lambayecanos.
                     </p>
                 </div>
             </section>

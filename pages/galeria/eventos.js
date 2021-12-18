@@ -1,9 +1,19 @@
 import Head from 'next/head'
 import Layout from '../../components/layout'
 import EventosContainer from '../../components/EventosContainer'
-import eventosData from "../../public/dynamic/eventos.json"
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import {list} from "../../redux/actions/actividad"
+import moment from 'moment'
+import 'moment/locale/es'
+moment.locale('es')
 
 export default function Eventos() {
+    const dispatch = useDispatch();
+    const {actividadList}=useSelector(({actividad})=>actividad)
+    useEffect(() => {
+      dispatch(list())
+    }, [])
     return (
         <Layout>
             <Head>
@@ -16,9 +26,9 @@ export default function Eventos() {
                 <div className="w-full py-6 lg:py-14 text-center">
                     <p className="text-base text-themeLightBlue mb-1 leading-tight">Entérate de lo que viene</p>
                     <p className="font-bold text-3xl leading-tight">Próximos eventos</p>
-                    <EventosContainer eventosData={eventosData.filter(e => e.nuevo)} />
+                    <EventosContainer type="proximos" eventosData={actividadList?.filter(e =>e.fechaFin>=moment(Date.now()).format('Y-M-D'))} />
                     <p className="font-bold text-3xl leading-tight mt-20">Eventos pasados</p>
-                    <EventosContainer eventosData={eventosData.filter(e => !e.nuevo)} />
+                    <EventosContainer type="pasados" eventosData={actividadList?.filter(e =>e.fechaFin<moment(Date.now()).format('Y-M-D'))} />
                 </div>
             </div>
         </Layout>

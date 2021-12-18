@@ -4,7 +4,7 @@ export default function FloatingGroup() {
     return (
         <div className="fixed z-10 bottom-0 right-0 mr-6 mb-6 justify-end ">
             <div className="flex justify-end ">
-                <a href="https://cclam.sofydoc.com/externo/" target="_blank" className="flex justify-end ">
+                <a href="https://cclam.sofydoc.com/externo/" rel="noreferrer" target="_blank" className="flex justify-end ">
                     <div className="hidden lg:block my-auto mr-3 bg-white px-3 py-1 rounded-full font-semibold shadow-3xl">
                         <p className="text-sm">Mesa virtual</p>
                     </div>

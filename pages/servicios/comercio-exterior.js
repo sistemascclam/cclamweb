@@ -50,7 +50,7 @@ export default function ComercioExterior() {
             <section className="min-h-screen">
                 <div className="relative w-full">
                     <Image
-                        src="/images/servicios/comercioexterior/header.png"
+                        src={`${process.env.STORAGE_URL_FT}/images/servicios/comercioexterior/header.png`}
                         width="1366"
                         height="505"
                         layout="responsive"
@@ -64,7 +64,7 @@ export default function ComercioExterior() {
                                     image={
                                         <Image
                                             className="rounded-full filter brightness-95 "
-                                            src="/images/servicios/comercioexterior/encargado.png"
+                                            src={`${process.env.STORAGE_URL_FT}/images/servicios/comercioexterior/encargado.png`}
                                             width="600"
                                             height="600"
                                         />
@@ -95,7 +95,7 @@ export default function ComercioExterior() {
                             <div className="relative w-full lg:w-7/12 ml-5 rounded-xl shadow-close">
                                 <Image
                                     className="rounded-xl shadow-close"
-                                    src="/images/servicios/comercioexterior/big.png"
+                                    src={`${process.env.STORAGE_URL_FT}/images/servicios/comercioexterior/big.png`}
                                     width="480"
                                     height="480"
                                     layout="responsive"
@@ -104,7 +104,7 @@ export default function ComercioExterior() {
                             <div className="relative w-full lg:w-96 mt-5 lg:mt-0">
                                 <Image
                                     className="shadow-xl rounded-xl"
-                                    src="/images/servicios/afiliate.png"
+                                    src={`${process.env.STORAGE_URL_FT}/images/servicios/afiliate.png`}
                                     width="480"
                                     height="480"
                                 />

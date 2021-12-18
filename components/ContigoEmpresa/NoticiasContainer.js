@@ -1,30 +1,38 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import {list} from "../../redux/actions/noticia"
+import { useDispatch,useSelector } from 'react-redux'
+import { useEffect } from 'react'
 import moment from 'moment'
 import 'moment/locale/es'
 moment.locale('es')
 
-export default function NoticiasContainer({noticiasData}) {
+export default function NoticiasContainer() {
+    const dispatch = useDispatch();
+    const {noticiaList}=useSelector(({noticia})=>noticia)
+    useEffect(() => {
+      dispatch(list())
+    }, [])
     return (
         <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-20">
             {
-                noticiasData?.map((noticia, i) =>
+                noticiaList?.map((noticia, i) =>
                     <NoticiaCard key={i} title={noticia.title} slug={noticia.slug} date={moment(noticia.date).format('LL')}
                         image={noticia.coverImage ?
                             <Image
-                                className="brightness-50 rounded-xl "
+                                className="brightness-75 rounded-xl "
                                 layout="fill"
                                 objectFit="cover"
-                                src={`/images/contigoempresa/noticias/${noticia.coverImage}`}
+                                src={`${process.env.STORAGE_URL_BK}${noticia.coverImage}`}
                                 alt={noticia.slug}
                             />
                             :
                             <Image
-                                className="brightness-50 rounded-3xl	 "
+                                className="brightness-75 rounded-3xl	 "
                                 layout="fill"
                                 objectFit="cover"
-                                src={"/images/landing.png"}
-                                alt={noticia.node.title}
+                                src={`${process.env.STORAGE_URL_FT}/images/landing.png`}
+                                alt={noticia.title}
                             />
                         } />
                 )

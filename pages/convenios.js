@@ -28,11 +28,12 @@ export default function Convenios() {
             </div>
             <section className="min-h-screen">
                 <div className="relative px-0 lg:px-10 py-5 -mt-10 lg:-mt-28">
-                    <div className="flex flex-row flex-wrap gap-4 justify-center mt-10 mb-14">
+                    <div className="flex flex-row flex-wrap gap-6 justify-center mt-10 mb-14">
                         {data?.map((convenio, i) => (
                             <ConvenioCard key={i} {...convenio} />
                         ))}
                     </div>
+                        <p className="block text-center text-lg italic mt-2 mb-10">Y muchos convenios más...</p>
                     <div className="w-56 mx-auto">
                         <p className="text-center text-themeLightBlue font-semibold">
                             ¿Quieres saber más?
@@ -44,9 +45,10 @@ export default function Convenios() {
                             image={
                                 <Image
                                     className="rounded-full filter brightness-95 "
-                                    src="/images/convenios/encargado.png"
+                                    src={`${process.env.STORAGE_URL_FT}/images/convenios/encargado.png`}
                                     width="600"
                                     height="600"
+                                    alt="Encargado de convenios"
                                 />
                             }
                             area="Sectorista"
@@ -62,20 +64,21 @@ export default function Convenios() {
 }
 
 const ConvenioCard = ({ empresa, beneficio, imageSrc }) => (
-    <div className="bg-white w-64 p-5 rounded-3xl flex flex-col shadow-close">
+    <a className="group bg-white w-64 p-5 rounded-xl flex flex-col shadow-xl hover:bg-blue-500 hover:ring-blue-500" href={`https://wa.me/51984713266?text=Hola!%20Quiero%20saber%20más%20sobre%20el%20convenio%20con%20${empresa.replace(/ /g,"%20")}`} target="_blank" rel="noreferrer">
         <div className="w-7/12	mx-auto">
             <Image
-                src={imageSrc}
+                src={`${process.env.STORAGE_URL_FT}${imageSrc}`}
                 width="50"
                 height="50"
                 layout="responsive"
                 objectFit="contain"
+                alt={`${empresa.replace(/ /g,"%20")}`}
             />
         </div>
-        <div className="text-center mt-5">
-            <p className="text-gray-500 font-medium mb-3">Beneficio</p>
-            <p className="text-xs mb-6">{beneficio}</p>
-            <a href={`https://wa.me/51984713266?text=Hola!%20Quiero%20saber%20más%20sobre%20el%20convenio%20con%20${empresa.replace(/ /g,"%20")}`} target="_blank" className="bg-themeLightBlue bg-opacity-20 rounded-full px-3 py-1 text-sm text-themeLightBlue shadow-sm hover:bg-opacity-70 hover:text-white">Me interesa</a>
+        <div className="text-center mt-5 ">
+            <p className="text-gray-500 font-medium mb-3 group-hover:text-white">Beneficio</p>
+            <p className="text-xs mb-6 group-hover:text-white">{beneficio}</p>
+            <span className="text-themeLightBlue text-sm group-hover:text-white">Saber más...</span>
         </div>
-    </div>
+    </a>
 );

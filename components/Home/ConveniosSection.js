@@ -82,7 +82,7 @@ export default function ConveniosSection() {
                         e.preventDefault();
                         router.push("/convenios");
                     }}
-                    className="flex bg-themeLightBlue text-white font-semibold rounded-full shadow-lg py-2 px-5 mx-auto mt-16"
+                    className="flex bg-themeLightBlue text-white font-semibold rounded-full shadow-lg py-2 px-5 mx-auto mt-16 transition-all ease-in-out duration-500 hover:translate-x-3"
                 >
                     Saber más
                     <svg

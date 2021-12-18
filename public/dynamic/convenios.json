@@ -5,6 +5,16 @@
         "beneficio":"Folletos, cartillas, discos otros para enviar a asociados. Charlas mensuales."
     },
     {
+        "empresa": "Estudio Reynoso",
+        "imageSrc": "/images/convenios/estudioreynoso.png",
+        "beneficio":"Asignación de un contador, previa coordinación. 1.- Supervisión registro contable 2.- Provisión de planillas, gastos, alquileres, depreciación y otros relacionados 3.- Formulación, análisis y evaluación de balances mensuales 4.- Supervisión de cálculos de las planillas. 5.- Asesoramiento en el registro de contratos laborales."
+    },
+    {
+        "empresa": "MINCETUR",
+        "imageSrc": "/images/convenios/mincetur.png",
+        "beneficio":"Podrá otorgar certificados de origen a mercancías producidas en el todo el territorio nacional."
+    },
+    {
         "empresa": "CONASEV",
         "imageSrc": "/images/convenios/conasev.png",
         "beneficio":"Participar como ponentes en los seminarios, cursos, otros que organice la CCLAM para asociados y público en general. Recepcionar material que brinde conasev. Incluir logotipo de la CCLAM cuando cumpla ítems del convenio."
@@ -45,11 +55,6 @@
         "beneficio":"Participación de productores exportadores en las ferias que promueve adex, coordinar cursos y seminarios de capacitación para productores y comerciantes de la región, certificados doble acreditación por parte de Adex y CCLAM promover la participación de las empresas afiliadas de CCLAM en los programas y proyectos de cooperación que gestiona adex, accesos para un usuario al sistema adex data trade."
     },
     {
-        "empresa": "MINCETUR",
-        "imageSrc": "/images/convenios/mincetur.png",
-        "beneficio":"Podrá otorgar certificados de origen a mercancías producidas en el todo el territorio nacional."
-    },
-    {
         "empresa": "EQUIFAX",
         "imageSrc": "/images/convenios/equifax.png",
         "beneficio":"Recopilar,sistematizar y analizar informacion asÍ como la explotacion comercial de la misma."
@@ -68,11 +73,6 @@
         "empresa": "INSTITUTO PRIVADA JUAN MEJÍA BACA",
         "imageSrc": "/images/convenios/juanmejiabaca.jpg",
         "beneficio":"Descuentos para los asociados, cónyuge e hijos en los programas de pre grado. 20% para los cursos de idiomas extranjeros y programas de formación continua."
-    },
-    {
-        "empresa": "Estudio Reynoso",
-        "imageSrc": "/images/convenios/estudioreynoso.png",
-        "beneficio":"Asignación de un contador, previa coordinación. 1.- Supervisión registro contable 2.- Provisión de planillas, gastos, alquileres, depreciación y otros relacionados 3.- Formulación, análisis y evaluación de balances mensuales 4.- Supervisión de cálculos de las planillas. 5.- Análisis y evaluación sistemática 6.- Asesoramiento en el registro de contratos laborales. 7.- Elaborar liquidación de impuesto y presentar los pdt 621, plame y otras declaraciones mensuales y anuales. 8.- Asesoría en la atención de fiscalizaciones y requerimientos de información. 9.-Formulación y asesoramiento en solicitudes de devolución de percepciones y retenciones no aplicadas 10.- Actualización de cambios en la normatividad tributaria, laboral y financiera."
     },
     {
         "empresa": "Universidad César Vallejo",

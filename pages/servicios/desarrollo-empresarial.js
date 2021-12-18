@@ -2,8 +2,10 @@ import Head from 'next/head'
 import Layout, { siteTitle } from '../../components/layout'
 import Image from "next/image";
 import CardContact from "../../components/Servicios/CardContact"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CarouselCourses from '../../components/CarouselCourses'
+import { useDispatch, useSelector } from "react-redux";
+import {list} from "../../redux/actions/curso"
 
 var options = [
     {
@@ -103,6 +105,12 @@ var especialidades = [
 ]
 
 export default function DesarrolloEmpresarial() {
+    const dispatch= useDispatch();
+    const {cursoList} = useSelector(({ curso }) => curso);
+
+    useEffect(() => {
+        dispatch(list())
+    }, [])
     return (
         <Layout>
             <Head>
@@ -111,7 +119,7 @@ export default function DesarrolloEmpresarial() {
             <section className="min-h-screen">
                 <div className="relative w-full">
                     <Image
-                        src="/images/servicios/desarrolloempresarial/header.png"
+                        src={`${process.env.STORAGE_URL_FT}/images/servicios/desarrolloempresarial/header.png`}
                         width="1366"
                         height="505"
                         layout="responsive"
@@ -119,14 +127,19 @@ export default function DesarrolloEmpresarial() {
                 </div>
                 <div className="relative px-0 lg:px-10 py-5 -mt-20 lg:-mt-28">
                     <div className="bg-white w-full shadow-close px-5 lg:px-24 pt-1 pb-12 rounded-3xl mt-10">
-                        <ProximasCapacitaciones />
+                        {
+                            cursoList ?
+                            <ProximasCapacitaciones cursos={cursoList} />
+                            :
+                            ""
+                        }
                         <div className="flex flex-wrap lg:flex-nowrap my-14">
                             <div className="w-56 mx-auto">
                                 <CardContact
                                     image={
                                         <Image
                                             className="rounded-full filter brightness-95 "
-                                            src="/images/servicios/desarrolloempresarial/encargado.png"
+                                            src={`${process.env.STORAGE_URL_FT}/images/servicios/desarrolloempresarial/encargado.png`}
                                             width="600"
                                             height="600"
                                         />
@@ -206,7 +219,7 @@ const Especialidades = () => {
                             <div className="relative w-80 h-56" >
                                 <Image
                                     className="rounded-3xl"
-                                    src={e.image}
+                                    src={`${process.env.STORAGE_URL_FT}${e.image}`}
                                     layout="fill"
                                     objectFit="cover"
                                 />
@@ -231,13 +244,13 @@ const Especialidades = () => {
     );
 }
 
-const ProximasCapacitaciones = () => {
+const ProximasCapacitaciones = ({cursos}) => {
     return (
         <div className="text-center my-14">
             <p className="text-base text-themeLightBlue mb-1">Aprende con nosotros</p>
             <p className="font-bold text-3xl">Próximas capacitaciones</p>
             <div className="my-10 flex flex-wrap justify-center gap-4">
-                <CarouselCourses />
+                <CarouselCourses cursos={cursos} />
             </div>
             <p className="italic text-lg text-gray-500">"Tu mejor inversión para mejorar la competitividad profesional y laboral"</p>
         </div>

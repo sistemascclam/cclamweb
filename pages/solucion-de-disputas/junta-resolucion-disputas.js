@@ -11,7 +11,7 @@ export default function JuntaResolucionDisputas() {
             <div className="pt-40 flex flex-wrap justify-center">
                 <div className="relative ">
                     <Image
-                        src="/images/inconstruction.png"
+                        src={`${process.env.STORAGE_URL_FT}/images/inconstruction.png`}
                         width="300"
                         height="300"
                     />

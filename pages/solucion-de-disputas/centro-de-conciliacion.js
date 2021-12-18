@@ -72,7 +72,7 @@ export default function CentroDeConciliacion() {
                                 image={
                                     <Image
                                         className="rounded-full filter brightness-95 "
-                                        src="/images/soluciondisputas/encargado.png"
+                                        src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/encargado.png`}
                                         width="600"
                                         height="600"
                                     />
@@ -108,7 +108,7 @@ export default function CentroDeConciliacion() {
                             <div className="relative w-full lg:w-96 mb-5 lg:mb-0">
                             <Image
                                 className="shadow-xl rounded-xl"
-                                src="/images/soluciondisputas/protocoloconciliacion.jpg"
+                                src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/protocoloconciliacion.jpg`}
                                 width="468"
                                 height="663"
                             />
@@ -116,7 +116,7 @@ export default function CentroDeConciliacion() {
                             <div className="relative w-full lg:w-7/12 lg:ml-5 rounded-xl shadow-close">
                             <Image
                                 className="rounded-xl shadow-close"
-                                src="/images/soluciondisputas/proyectos-conciliacion.jpeg"
+                                src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/proyectos-conciliacion.jpeg`}
                                 width="480"
                                 height="480"
                                 layout="responsive"

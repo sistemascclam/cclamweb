@@ -40,7 +40,7 @@ export default function ContenidoExtra({ isOpen, toogleModal, lista }) {
                         leaveTo="opacity-0 scale-95"
                     >
                         <div className="relative inline-block w-full max-w-4xl overflow-hidden text-center align-middle transition-all transform bg-white bg-opacity-0  rounded-2xl">
-                            <span className="cursor-pointer flex justify-center content-center items-center select-none absolute top-1 right-1 z-10  w-8 h-8 text-black rounded-full hover:shadow-lg hover:text-white hover:bg-black hover:bg-opacity-50" onClick={toogleModal}>
+                            <span className="cursor-pointer flex justify-center content-center items-center select-none absolute top-1 right-1 z-10  w-8 h-8 text-white rounded-full hover:shadow-lg hover:text-black hover:bg-white hover:bg-opacity-50" onClick={toogleModal}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                                     <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                                 </svg>
@@ -60,7 +60,7 @@ export default function ContenidoExtra({ isOpen, toogleModal, lista }) {
                                                 src={`${process.env.STORAGE_URL_BK}${c.coverImage}`}
                                                 layout="fill"
                                                 objectFit="contain"
-                                                className="cursor-pointer"
+                                                className="cursor-pointer bg-black"
                                                 onClick={() => {
                                                     if (c.inscripcionLink) {
                                                         window.open(c.inscripcionLink, '_blank');

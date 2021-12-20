@@ -28,7 +28,7 @@ export const list = () => {
   export const getOne = (url) => {
     return (dispatch) => {
       dispatch({ type: FETCH_START });
-      axios.post('/externalnewget/',
+      axios.post('/externalnewget',
       {url:url}
       ).then(({ data }) => {
         dispatch({ type: FETCH_SUCCESS });

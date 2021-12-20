@@ -8,18 +8,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getOne } from "../../redux/actions/noticia"
 
-export default function Noticia() {
+export default function noticia() {
     const router = useRouter();
     const {
-        query: { slug },
+        query: { titulo },
     } = router
     const dispatch = useDispatch();
     const { noticiaObject } = useSelector(({ noticia }) => noticia)
     useEffect(() => {
-        if (slug) {
-            dispatch(getOne(slug))
+        if (titulo) {
+            dispatch(getOne(titulo))
         }
-    }, [slug])
+    }, [titulo])
 
     return (
         <Layout>

@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react"
 import { toSoles, withLeftZeros } from "../../util/Helper"
 import { getOne } from "../../redux/actions/concepto"
 import { check, resetdcto } from "../../redux/actions/descuento"
-import { generateorder, paypedidoweb,resetSuccessPedido,resetErrors } from "../../redux/actions/pedido"
+import { generateorder, paypedidoweb, resetSuccessPedido, resetErrors } from "../../redux/actions/pedido"
 import { initIziForm, resetIziForm } from "../../redux/actions/izi"
 import { useForm } from "react-hook-form";
 import Link from 'next/link'
@@ -25,7 +25,12 @@ import Image from 'next/image'
 export default function RealizarPago() {
   const [showComponent, setshowComponent] = useState(0);
   const [paiddata, setpaiddata] = useState(null)
-  const [saving, setsaving] = useState(true)
+  useEffect(() => {
+    return () => {
+      setshowComponent(0)
+      setpaiddata(null)
+    }
+  }, [])
   return (
     <Layout>
       <Head>
@@ -77,7 +82,7 @@ const plans = [
   }
 ]
 
-const RegistrarInfo = ({ handleEndForm,setpaiddata }) => {
+const RegistrarInfo = ({ handleEndForm, setpaiddata }) => {
   const dispatch = useDispatch();
   const Router = useRouter();
   const { conceptoFound } = useSelector(({ concepto }) => concepto);
@@ -92,15 +97,22 @@ const RegistrarInfo = ({ handleEndForm,setpaiddata }) => {
   const [typeDoc, settypeDoc] = useState(null);
   const { pedidoErrors } = useSelector(({ pedido }) => pedido);
   const [error, seterror] = useState(null);
+  const [done, setdone] = useState(false)
   const {
-    query: { id },
+    query: { servicio },
   } = router
 
   useEffect(() => {
-    if (id) {
-      dispatch(getOne(id));
+    setdone(false)
+    dispatch(resetSuccessPedido())
+    dispatch(resetIziForm())
+  }, [])
+
+  useEffect(() => {
+    if (servicio) {
+      dispatch(getOne(servicio));
     }
-  }, [id, dispatch])
+  }, [servicio, dispatch])
 
   useEffect(() => {
     if (typeof (conceptoFound) != 'object') {
@@ -137,7 +149,8 @@ const RegistrarInfo = ({ handleEndForm,setpaiddata }) => {
         .then(({ KR, result }) => {
           KR.showForm(result.formId)
           KR.onSubmit((res) => {
-            dispatch(paypedidoweb({"pedido_id":res.clientAnswer.orderId,"iziresponse":res.clientAnswer}))
+            console.log(res)
+            dispatch(paypedidoweb({ "pedido_id": res.clientAnswer.orderDetails.orderId, "iziresponse": res.clientAnswer }))
             if (res.clientAnswer.orderStatus === 'PAID' || res.clientAnswer.orderStatus === 'PARTIALLY_PAID' || res.clientAnswer.orderStatus === 'RUNNING') {
               setpaiddata(res.clientAnswer);
               handleEndForm(payMethod.id)
@@ -176,26 +189,34 @@ const RegistrarInfo = ({ handleEndForm,setpaiddata }) => {
         } else {
           dispatch(initIziForm(final))
         }
+        setdone(true)
       }
     }
   }
 
   useEffect(() => {
-    if (successPedido === 200) {
-      dispatch(resetSuccessPedido())
-      window.scrollTo(0, 0)
-      handleEndForm(payMethod.id)
+    if (successPedido === 200 && done) {
+      resetWhenEnd()
     }
-  }, [successPedido])
+  }, [successPedido,dispatch]);
+
+  const resetWhenEnd=()=>{
+    dispatch(resetSuccessPedido())
+    window.scrollTo(0, 0)
+    handleEndForm(payMethod.id)
+    setpayFormLoaded(false)
+    dispatch(resetIziForm())
+    setdone(false)
+  }
 
   const handleBack = () => {
     setpayFormLoaded(false)
     dispatch(resetIziForm())
   }
 
-  const handleResetError=(keys)=>{
-    if(pedidoErrors==null || keys==null ) return
-    let errorstmp=pedidoErrors;
+  const handleResetError = (keys) => {
+    if (pedidoErrors == null || keys == null) return
+    let errorstmp = pedidoErrors;
     keys.forEach(kk => {
       delete errorstmp[kk]
     });
@@ -306,7 +327,7 @@ const RegistrarInfo = ({ handleEndForm,setpaiddata }) => {
                       Tipo de documento <span className="text-red-500">*</span>
                     </label>
                     <select
-                      onChange={(e) => {settypeDoc(e.target.value); handleResetError(["tipoDoc"])}}
+                      onChange={(e) => { settypeDoc(e.target.value); handleResetError(["tipoDoc"]) }}
                       id="tipo-doc"
                       name="tipo-doc"
                       autoComplete="tipo-doc"
@@ -332,7 +353,7 @@ const RegistrarInfo = ({ handleEndForm,setpaiddata }) => {
                       name="documento"
                       id="documento"
                       autoComplete="given-name"
-                      onChange={(e) => handleResetError(["dni","ruc"])}
+                      onChange={(e) => handleResetError(["dni", "ruc"])}
                       className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                     />
                     {
@@ -353,7 +374,7 @@ const RegistrarInfo = ({ handleEndForm,setpaiddata }) => {
                       type="text"
                       name="nombres"
                       id="nombres"
-                      onChange={(e) => handleResetError(["razonsocial","nombres"])}
+                      onChange={(e) => handleResetError(["razonsocial", "nombres"])}
                       autoComplete="given-name"
                       className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                     />
@@ -667,11 +688,11 @@ const PayIziForm = ({ loaded, error, handleBack }) => {
         <div className="form">
           <div className="container">
             {!loaded ?
-            <svg className="animate-spin  h-5 w-5 text-blue-600 mx-auto text-center" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-            : ""
+              <svg className="animate-spin  h-5 w-5 text-blue-600 mx-auto text-center" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              : ""
             }
             <div id="myPaymentForm" className="w-max m-auto"></div>
             <div className="text-center text-red-500">{error}</div>
@@ -727,7 +748,7 @@ const SuccessPayment = ({ paiddata }) => {
     const pdfHeight =
       (imgProperties.height * pdfWidth) / imgProperties.width;
     pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    pdf.save(`CCLAM PAGO ONLINE ${new Date().getDate()}${new Date().getMonth()+1}${new Date().getFullYear()}.pdf`);
+    pdf.save(`CCLAM PAGO ONLINE ${new Date().getDate()}${new Date().getMonth() + 1}${new Date().getFullYear()}.pdf`);
   };
 
   return (
@@ -739,11 +760,12 @@ const SuccessPayment = ({ paiddata }) => {
             options={defaultOptions}
           />
         </div>
+        <p className="font-bold text-lg opacity-90">Orden de pago N° {withLeftZeros(paiddata?.orderDetails?.orderId)}</p>
         <p className="font-bold text-4xl opacity-90">{`¡Pago ${paiddata?.orderStatus === 'PAID' ? 'exitoso' : paiddata?.orderStatus === 'PARTIALLY_PAID' ? 'parcialmente pagado' : 'en proceso'}!`}</p>
-        <p className="font-bold text-blue-600 text-5xl my-4">S/.{toSoles(paiddata?.orderDetails?.orderTotalAmount/100)}</p>
+        <p className="font-bold text-blue-600 text-5xl my-4">S/.{toSoles(paiddata?.orderDetails?.orderTotalAmount / 100)}</p>
         <p className="text-blue-600 my-2 text-lg">{conceptoFound?.servicio}</p>
         <p className="my-2 font-medium text-2xl	">
-        {`${paiddata?.customer?.billingDetails.firstName ? `${paiddata?.customer?.billingDetails.firstName} ${paiddata?.customer?.billingDetails?.lastName}` : paiddata?.customer?.billingDetails.legalName}`.toUpperCase()}
+          {`${paiddata?.customer?.billingDetails.firstName ? `${paiddata?.customer?.billingDetails.firstName} ${paiddata?.customer?.billingDetails?.lastName}` : paiddata?.customer?.billingDetails.legalName}`.toUpperCase()}
         </p>
         <p>{moment(paiddata?.serverDate).format('llll')}</p>
         <p className="text-sm font-light leading-none mt-5">La constancia de pago se enviará al correo <span className="text-blue-600">{paiddata?.customer?.email}</span></p>

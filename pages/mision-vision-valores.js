@@ -91,7 +91,7 @@ export default function MisionVisionValores() {
                                 </svg>
                                 <p className="my-auto text-xl font-bold ml-4">VALORES</p>
                             </div>
-                            <p className="text-gray-500 mt-4 text-sm">.</p>
+                            <p className="text-gray-500 mt-4 text-sm">Integridad y Respeto, Responsabilidad, Eficiencia, Sencillez y actitud de servicio, Crecimiento, Transparencia, Confianza, Transformación.</p>
                         </div>
                     </Transition>
                 </div>

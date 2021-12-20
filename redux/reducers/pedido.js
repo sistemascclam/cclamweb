@@ -6,7 +6,7 @@ import {
 } from "../types";
 
 const INIT_STATE = {
-  successPedido:0,
+  successPedido:200,
   loadingPedido:false,
   pedidoData: null,
   pedidoErrors: null

@@ -12,6 +12,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { list as listcurso } from "../redux/actions/curso"
 import { list as listactividad } from "../redux/actions/actividad"
 import ContenidoExtra from "../components/ContenidoExtra";
+import moment from 'moment'
+import 'moment/locale/es'
+moment.locale('es')
 
 export default function Home() {
     const router = useRouter();
@@ -22,11 +25,11 @@ export default function Home() {
         setIsOpen(!isOpen)
     }
 
-    const openContenidoExtra = (selected,tipo) => {
-        if(tipo==="curso"){
+    const openContenidoExtra = (selected, tipo) => {
+        if (tipo === "curso") {
             setListExtra(cursoList?.filter((c, i) => i < 3).slice(selected, cursoList?.filter((c, i) => i < 3).length).concat(cursoList?.filter((c, i) => i < 3).slice(0, selected)))
-        }else{
-            setListExtra(actividadList?.filter((c, i) => new Date(c.fechaFin).getTime()>=Date.now())?.filter((c, i) => i < 3).slice(selected, actividadList?.filter((c, i) => i < 3).length).concat(actividadList?.filter((c, i) => i < 3).slice(0, selected)))
+        } else {
+            setListExtra(actividadList?.filter((c, i) => new Date(c.fechaFin).getTime() >= Date.now())?.filter((c, i) => i < 3).slice(selected, actividadList?.filter((c, i) => i < 3).length).concat(actividadList?.filter((c, i) => i < 3).slice(0, selected)))
         }
         toogleModal()
     }
@@ -290,11 +293,11 @@ export default function Home() {
                                         ? "hover:-translate-x-0"
                                         : "hover:-translate-x-5"
                                     }`}
-                                onClick={()=>openContenidoExtra(i,"curso")}
                             >
                                 <Image
                                     className="rounded-xl cursor-pointer"
                                     src={`${process.env.STORAGE_URL_BK}${c.coverImage}`}
+                                    onClick={() => openContenidoExtra(i, "curso")}
                                     width="663"
                                     height="663"
                                     layout="responsive"
@@ -310,7 +313,7 @@ export default function Home() {
             >
                 <div className="relative lg:w-5/12">
                     {actividadList
-                        ?.filter((c, i) => new Date(c.fechaFin).getTime()>=Date.now())
+                        ?.filter((c, i) => c.fechaFin >= moment(Date.now()).format('Y-M-D'))
                         ?.filter((c, i) => i < 3)
                         .map((c, i) => (
                             <div
@@ -324,7 +327,7 @@ export default function Home() {
                                         ? "lg:hover:-translate-x-0 hover:-translate-x-48"
                                         : "lg:hover:-translate-x-2 hover:-translate-x-52"
                                     } `}
-                                onClick={()=>openContenidoExtra(i,"actividad")}
+                                onClick={() => openContenidoExtra(i, "actividad")}
                             >
                                 <Image
                                     className="rounded-xl cursor-pointer"

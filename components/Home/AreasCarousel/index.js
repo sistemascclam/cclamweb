@@ -44,9 +44,9 @@ export default function Carrousel() {
                     />
                     ,
                     <Item
-                        fijo=""
+                        fijo="DIAGNÓSTICO"
                         description="Entérate del estado de tu empresa llenando una encuesta y recibe asesorías personalizadas en base a los resultados."
-                        phrases={["KAP"]}
+                        phrases={["EMPRESARIAL"]}
                         bg="bg-kap"
                         external="https://www.cclam.org.pe/diagnostico-empresarial/registro"
                         textWhite

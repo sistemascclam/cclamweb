@@ -48,7 +48,7 @@ export default function Home() {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <header className="relative h-screen bg-bgblue  shadow-card ">
+            <header className="relative h-screen bg-blue-50  shadow-card ">
                 <div className="relative h-screen bg-cabecera-navidad bg-cover bg-right shadow-card flex flex-wrap content-center">
                     <div className="relative bottom-0 left-0 ">
                         <div className="text-left p-6 mx-6 my-auto">

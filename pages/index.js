@@ -49,13 +49,13 @@ export default function Home() {
                 <title>{siteTitle}</title>
             </Head>
             <header className="relative h-screen bg-bgblue  shadow-card ">
-                <div className="relative h-screen bg-cabecera-navidad bg-cover bg-center shadow-card flex flex-wrap content-center">
+                <div className="relative h-screen bg-cabecera-navidad bg-cover bg-right shadow-card flex flex-wrap content-center">
                     <div className="relative bottom-0 left-0 ">
                         <div className="text-left p-6 mx-6 my-auto">
                             <p className="text-sm lg:text-base md:text-base sm:text-base block text-yellow-400  font-semibold mb-3 tracking-widest">
                                 CÁMARA DE COMERCIO Y PRODUCCIÓN DE LAMBAYEQUE
                             </p>
-                            <h1 className="text-3xl lg:text-7xl md:text-7xl sm:text-6xl tracking-tight font-extrabold text-white">
+                            <h1 className="text-3xl lg:text-7xl md:text-7xl sm:text-6xl tracking-tight font-extrabold text-azulNavidad">
                                 <span className="block mb-2">Seguimos</span>
                                 <Typing
                                     phrases={[
@@ -65,7 +65,7 @@ export default function Home() {
                                     ]}
                                 />
                             </h1>
-                            <p className="mt-3 text-white max-w-xl text-base lg:text-xl md:text-xl sm:text-xl">
+                            <p className="mt-3 text-azulNavidad max-w-xl text-base lg:text-xl md:text-xl sm:text-xl">
                                 Nos seguimos transformando para continuar siendo el motor de nuestra región, tenemos nuevos servicios digitales para potenciar tu negocio.
                             </p>
                         </div>

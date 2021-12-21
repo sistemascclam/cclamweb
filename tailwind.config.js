@@ -37,7 +37,8 @@ module.exports = {
         startGradient: '#471E96',
         withGradient: '#253DD8',
         endGradient: '#24D6FA',
-        bgblue:'#091d9d'
+        bgblue:'#091d9d',
+        azulNavidad:'#001d67'
       },
       zIndex: {
         '-10': '-10',

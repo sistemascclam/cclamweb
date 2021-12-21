@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
-import Layout from "../../components/layout";
+import Layout from "../components/layout";
 import Image from "next/image";
 import moment from "moment";
 import "moment/locale/es";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getOne } from "../../redux/actions/noticia"
+import { getOne } from "../redux/actions/noticia"
 
 export default function noticia() {
     const router = useRouter();

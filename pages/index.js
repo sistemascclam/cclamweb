@@ -49,7 +49,7 @@ export default function Home() {
                 <title>{siteTitle}</title>
             </Head>
             <header className="relative h-screen bg-bgblue  shadow-card ">
-                <div className="relative h-screen bg-hero-pattern bg-cover bg-center shadow-card flex flex-wrap content-center">
+                <div className="relative h-screen bg-cabecera-navidad bg-cover bg-center shadow-card flex flex-wrap content-center">
                     <div className="relative bottom-0 left-0 ">
                         <div className="text-left p-6 mx-6 my-auto">
                             <p className="text-sm lg:text-base md:text-base sm:text-base block text-yellow-400  font-semibold mb-3 tracking-widest">

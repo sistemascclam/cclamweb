@@ -42,7 +42,7 @@ export default function NoticiasContainer() {
 }
 
 const NoticiaCard = ({ title, image, date, slug }) => (
-    <Link href={`/contigo-empresa/noticia?titulo=${slug}`} >
+    <Link href={`/noticia?titulo=${slug}`} >
         <a className="relative flex  hover:scale-105 transition duration-500 ease-in-out cursor-pointer ">
             <div className="relative w-full h-60 lg:h-32 lg:w-32">
                 {image}

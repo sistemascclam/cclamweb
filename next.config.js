@@ -43,7 +43,7 @@ const nextConfig = {
     BASE_URL: '/',
     API_LINK: 'https://www.cclam.org.pe/recursos.base/public/api/',
     STORAGE_URL_FT: '',
-    STORAGE_URL_BK: '/recursos.base/public/storage/',
+    STORAGE_URL_BK: 'https://www.cclam.org.pe/recursos.base/public/storage/',
     REACT_APP_IZI_PUBLIC_KEY: '63084599:publickey_rBMYJiwriH3xOZZJq6W1rKH3jtTU1paQHgcu8bCMnySvO'
   },
 }

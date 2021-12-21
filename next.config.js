@@ -37,7 +37,7 @@
 
 const nextConfig = {
   images: {
-    domains: ['localhost:3000', 'localhost:8000', 'localhost'],
+    domains: ['www.cclam.org.pe', 'localhost'],
   },
   env: {
     BASE_URL: '/',

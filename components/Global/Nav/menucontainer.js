@@ -28,7 +28,7 @@ export default function Menucontainer({ show, tooglemodal, menus }) {
                             leaveFrom="translate-x-0"
                             leaveTo="translate-x-full"
                         >
-                            <div className="relative w-screen max-w-sm">
+                            <div className="relative w-screen max-w-xs lg:max-w-sm">
                                 <Transition.Child
                                     as={Fragment}
                                     enter="ease-in-out duration-500"

@@ -36,7 +36,7 @@ export default function ConsejoCarousel({ className, slidesLg = 4, slidesSM = 2,
             if (!pause && slider) {
                 slider.prev()
             }
-        }, 2000)
+        }, 5000)
         return () => {
             clearInterval(timer.current)
         }

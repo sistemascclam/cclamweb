@@ -345,40 +345,62 @@ export default function RecursosHumanos() {
             </Head>
             <div className="min-h-screen bg-themeWhite">
 
-                <div className="pt-40 text-center">
-                    <h1 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-black">Recursos <span className="text-themeBlue mt-2">Humanos</span></h1>
-                    <p className="font-medium text-themeLightBlue text-2xl mt-3">¡Contáctate con nosotros!</p>
-                </div>
-                <div className="w-full px-2 lg:px-20 pt-10 flex">
-                    <Transition
-                        show={search}
-                        enter="transition-opacity duration-150"
-                        enterFrom="opacity-0"
-                        enterTo="opacity-100"
-                        leave="transition-opacity duration-150"
-                        leaveFrom="opacity-100"
-                        leaveTo="opacity-0"
-                        className="ml-auto mr-5 w-full "
-                    >
-                    <input
-                        className="form-input w-full rounded-full shadow-sm py-2 px-5 "
-                        type="text" placeholder="Buscar colaborador"
-                        onChange={(e) => setvalue(e.target.value)}
-                    />
-                    </Transition>
-                    <button className={`${!search && 'ml-auto'} block bg-themeLightBlue p-3 rounded-full text-white`} onClick={toogleSearch}>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                    </button>
-                </div>
-                <div className="w-full grid mt-12 px-2 lg:px-12 grid-cols-1 lg:grid-cols-2 gap-12">
-                    {
-                        cards.filter(f => value ? f.keywords.some(k => value.trim().toLocaleLowerCase().replace(/\s\s+/g, ' ').split(" ").some(v => k.includes(v))) : true).map((c, i) =>
-                            <div key={i}>{c.element}</div>
-                        )
-                    }
-                </div>
+                <Transition
+                    show={true}
+                    appear={true}
+                    enter="transform transition duration-1000"
+                    enterFrom="opacity-0 -translate-y-3"
+                    enterTo="opacity-100 translate-y-0"
+                    leave="transform duration-200 transition ease-in-out"
+                    leaveFrom="opacity-100 translate-y-0 "
+                    leaveTo="opacity-0 "
+                >
+                    <div className="pt-40 text-center">
+                        <h1 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-black">Recursos <span className="text-themeBlue mt-2">Humanos</span></h1>
+                        <p className="font-medium text-themeLightBlue text-2xl mt-3">¡Contáctate con nosotros!</p>
+                    </div>
+                </Transition>
+                <Transition
+                    show={true}
+                    appear={true}
+                    enter="transform transition duration-1000"
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
+                    leave="transform duration-200 transition ease-in-out"
+                    leaveFrom="opacity-100 "
+                    leaveTo="opacity-0 "
+                >
+                    <div className="w-full px-2 lg:px-20 pt-10 flex">
+                        <Transition
+                            show={search}
+                            enter="transition-opacity duration-150"
+                            enterFrom="opacity-0"
+                            enterTo="opacity-100"
+                            leave="transition-opacity duration-150"
+                            leaveFrom="opacity-100"
+                            leaveTo="opacity-0"
+                            className="ml-auto mr-5 w-full "
+                        >
+                            <input
+                                className="form-input w-full rounded-full shadow-sm py-2 px-5 "
+                                type="text" placeholder="Buscar colaborador"
+                                onChange={(e) => setvalue(e.target.value)}
+                            />
+                        </Transition>
+                        <button className={`${!search && 'ml-auto'} block bg-themeLightBlue p-3 rounded-full text-white`} onClick={toogleSearch}>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div className="w-full grid mt-12 px-2 lg:px-12 grid-cols-1 lg:grid-cols-2 gap-12">
+                        {
+                            cards.filter(f => value ? f.keywords.some(k => value.trim().toLocaleLowerCase().replace(/\s\s+/g, ' ').split(" ").some(v => k.includes(v))) : true).map((c, i) =>
+                                <div key={i}>{c.element}</div>
+                            )
+                        }
+                    </div>
+                </Transition>
             </div>
         </Layout>
     )

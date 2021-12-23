@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../../components/layout'
+import Layout from '../../components/layout'
 import Image from "next/image";
+import { Transition } from '@headlessui/react'
 import CardContact from "../../components/Servicios/CardContact"
 
 var options = [
@@ -83,38 +84,48 @@ export default function AlquilerAmbientes() {
             </div>
             <section className="min-h-screen">
                 <div className="relative px-0 -mt-10 lg:-mt-28">
-                    <div className="bg-white w-full shadow-close px-5 lg:px-24 py-12 rounded-3xl mt-10">
-                        <div className="flex flex-wrap lg:flex-nowrap">
-                            <div className="w-56 mx-auto">
-                                <CardContact
-                                    image={
-                                        <Image
-                                            className="rounded-full filter brightness-95 "
-                                            src={`${process.env.STORAGE_URL_FT}/images/servicios/ambientes/encargado.png`}
-                                            width="600"
-                                            height="600"
-                                        />
-                                    }
-                                    area="Centro de Formación y Desarrollo Empresarial"
-                                    encargado="Carmen Julia Sime Nieto"
-                                    phone="944675625"
-                                    mail="capacitacion@cclam.org.pe"
-                                />
+                    <Transition
+                        show={true}
+                        appear={true}
+                        enter="transform transition duration-500"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="transform duration-200 transition ease-in-out"
+                        leaveFrom="opacity-100 "
+                    >
+                        <div className="bg-white w-full shadow-close px-5 lg:px-24 py-12 rounded-3xl mt-10">
+                            <div className="flex flex-wrap lg:flex-nowrap">
+                                <div className="w-56 mx-auto">
+                                    <CardContact
+                                        image={
+                                            <Image
+                                                className="rounded-full filter brightness-95 "
+                                                src={`${process.env.STORAGE_URL_FT}/images/servicios/ambientes/encargado.png`}
+                                                width="600"
+                                                height="600"
+                                            />
+                                        }
+                                        area="Centro de Formación y Desarrollo Empresarial"
+                                        encargado="Carmen Julia Sime Nieto"
+                                        phone="944675625"
+                                        mail="capacitacion@cclam.org.pe"
+                                    />
+                                </div>
+                                <div className="col-span-4 lg:pl-5">
+                                    <p className="text-justify mt-5 text-base">
+                                        El área de Ambientes Empresariales de la Centenaria Cámara de Comercio y Producción de Lambayeque invita a realizar reuniones de trabajo, encuentros de negocio, conferencias de prensa, capacitaciones, lanzamiento de productos, entre otros eventos en nuestros cómodos espacios de auditorio y directorio.
+                                    </p>
+                                </div>
                             </div>
-                            <div className="col-span-4 lg:pl-5">
-                                <p className="text-justify mt-5 text-base">
-                                    El área de Ambientes Empresariales de la Centenaria Cámara de Comercio y Producción de Lambayeque invita a realizar reuniones de trabajo, encuentros de negocio, conferencias de prensa, capacitaciones, lanzamiento de productos, entre otros eventos en nuestros cómodos espacios de auditorio y directorio.
-                                </p>
+                            <div>
+                                {
+                                    options.map((op, j) =>
+                                        <Option key={j} {...op} />
+                                    )
+                                }
                             </div>
                         </div>
-                        <div>
-                            {
-                                options.map((op, j) =>
-                                    <Option key={j} {...op} />
-                                )
-                            }
-                        </div>
-                    </div>
+                    </Transition>
                 </div>
             </section>
         </Layout>

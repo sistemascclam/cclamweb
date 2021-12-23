@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../../components/layout'
+import Layout from '../../components/layout'
 import Image from "next/image";
+import { Transition } from '@headlessui/react'
 import CardContact from "../../components/Servicios/CardContact"
 
 var options = [
@@ -57,6 +58,15 @@ export default function ComercioExterior() {
                     />
                 </div>
                 <div className="relative px-0 lg:px-10 py-5 -mt-16 lg:-mt-28">
+                    <Transition
+                        show={true}
+                        appear={true}
+                        enter="transform transition duration-500"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="transform duration-200 transition ease-in-out"
+                        leaveFrom="opacity-100 "
+                    >
                     <div className="bg-white w-full shadow-close px-5 lg:px-24 py-12 rounded-3xl mt-10">
                         <div className="flex flex-wrap lg:flex-nowrap">
                             <div className="w-56 mx-auto">
@@ -111,6 +121,7 @@ export default function ComercioExterior() {
                             </div>
                         </div>
                     </div>
+                    </Transition>
                 </div>
             </section>
         </Layout>

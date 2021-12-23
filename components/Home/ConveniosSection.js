@@ -58,19 +58,19 @@ export default function ConveniosSection() {
                 </h3>
                 <div className="text-white bg-gradient-to-r from-themeBlue to-themeLightBlue flex flex-wrap justify-between content-center  w-10/12 mx-auto rounded-lg shadow-3xl py-5 px-6 lg:px-32 mt-12">
                     <div className="mx-auto my-2">
-                        <p className="font-extrabold text-4xl mb-1">
+                        <p className="font-extrabold text-3xl lg:text-4xl mb-1">
                             <span ref={conveniosRef} />+
                         </p>
                         <small className="text-xs">CONVENIOS</small>
                     </div>
                     <div className="mx-auto my-2">
-                        <p className="font-extrabold text-4xl mb-1">
+                        <p className="font-extrabold text-3xl lg:text-4xl mb-1">
                             <span ref={serviceYears} />+
                         </p>
                         <small className="text-xs">AÑOS DE SERVICIO</small>
                     </div>
                     <div className="mx-auto my-2">
-                        <p className="font-extrabold text-4xl mb-1">
+                        <p className="font-extrabold text-3xl lg:text-4xl mb-1">
                             <span ref={empresasRef} />+
                         </p>
                         <small className="text-xs">EMPRESAS</small>

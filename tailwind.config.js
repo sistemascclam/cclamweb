@@ -10,6 +10,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: theme => ({
+        // 'cabecera-navidad': `url('/webcclam/images/cabecera-navidad.png')`,
         // 'hero-pattern': `url('/webcclam/images/landing.png')`,
         // 'mesa-de-partes': `url('/webcclam/images/areas/mesa-de-partes.png')`,
         // 'protestos': `url('/webcclam/images/areas/protestos.png')`,

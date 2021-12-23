@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../../components/layout'
+import Layout from '../../components/layout'
+import { Transition } from '@headlessui/react'
 import Image from "next/image";
 import CardContact from "../../components/Servicios/CardContact"
 
@@ -51,41 +52,51 @@ export default function FormalizacionEmpresas() {
             </div>
             <section className="min-h-screen">
                 <div className="relative px-0 lg:px-10 py-5 -mt-10 lg:-mt-28">
-                    <div className="bg-white w-full shadow-close px-5 lg:px-24 py-12 rounded-3xl mt-10">
-                        <div className="flex flex-wrap lg:flex-nowrap">
-                            <div className="w-56 mx-auto">
-                                <CardContact
-                                    image={
-                                        <Image
-                                            className="rounded-full filter brightness-95 "
-                                            src={`${process.env.STORAGE_URL_FT}/images/servicios/formalizacionempresas/encargado.png`}
-                                            width="600"
-                                            height="600"
-                                        />
-                                    }
-                                    area="Formalización de empresas"
-                                    encargado="Jorge Luis Chozo Cajusol"
-                                    phone="984785915"
-                                    mail="jchozo@cclam.org.pe"
-                                />
+                    <Transition
+                        show={true}
+                        appear={true}
+                        enter="transform transition duration-500"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="transform duration-200 transition ease-in-out"
+                        leaveFrom="opacity-100 "
+                    >
+                        <div className="bg-white w-full shadow-close px-5 lg:px-24 py-12 rounded-3xl mt-10">
+                            <div className="flex flex-wrap lg:flex-nowrap">
+                                <div className="w-56 mx-auto">
+                                    <CardContact
+                                        image={
+                                            <Image
+                                                className="rounded-full filter brightness-95 "
+                                                src={`${process.env.STORAGE_URL_FT}/images/servicios/formalizacionempresas/encargado.png`}
+                                                width="600"
+                                                height="600"
+                                            />
+                                        }
+                                        area="Formalización de empresas"
+                                        encargado="Jorge Luis Chozo Cajusol"
+                                        phone="984785915"
+                                        mail="jchozo@cclam.org.pe"
+                                    />
+                                </div>
+                                <div className="col-span-4 pl-5">
+                                    <p className="text-justify mt-5 text-base">
+                                        El área de Formalización de Empresas: Ventanilla Única de la Centenaria Cámara de Comercio y Producción de Lambayeque brinda orientación gratuita y personalizada ayudando a la formalización de manera fácil, a bajo costo y en el menor tiempo.
+                                    </p>
+                                    <p className="text-justify mt-5 text-base">
+                                        El asesoramiento es de manera continua identificando el tipo de empresa que más te convenga, brindando información precisa para iniciar tu negocio.
+                                    </p>
+                                </div>
                             </div>
-                            <div className="col-span-4 pl-5">
-                                <p className="text-justify mt-5 text-base">
-                                    El área de Formalización de Empresas: Ventanilla Única de la Centenaria Cámara de Comercio y Producción de Lambayeque brinda orientación gratuita y personalizada ayudando a la formalización de manera fácil, a bajo costo y en el menor tiempo.
-                                </p>
-                                <p className="text-justify mt-5 text-base">
-                                    El asesoramiento es de manera continua identificando el tipo de empresa que más te convenga, brindando información precisa para iniciar tu negocio.
-                                </p>
+                            <div className="mt-5">
+                                {
+                                    options.map((op, j) =>
+                                        <Option key={j} {...op} />
+                                    )
+                                }
                             </div>
                         </div>
-                        <div className="mt-5">
-                            {
-                                options.map((op, j) =>
-                                    <Option key={j} {...op} />
-                                )
-                            }
-                        </div>
-                    </div>
+                    </Transition>
                 </div>
             </section>
         </Layout>
@@ -94,7 +105,7 @@ export default function FormalizacionEmpresas() {
 
 
 const Option = ({ title, subtitle, items, orientation }) =>
-<div className="py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div className="py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className={`${orientation === 'reverse' ? 'order-last text-right' : ''}`}>
             <p className="text-base text-themeLightBlue mb-1">{subtitle}</p>
             <p className="font-bold text-3xl">{title}</p>

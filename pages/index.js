@@ -49,7 +49,7 @@ export default function Home() {
                 <title>{siteTitle}</title>
             </Head>
             <header className="relative h-screen bg-blue-50  shadow-card ">
-                <div className="relative h-screen bg-cabecera-navidad bg-cover bg-right shadow-card flex flex-wrap content-center">
+                <div className="relative h-screen bg-cabecera-navidad bg-cover bg-left shadow-card flex flex-wrap content-center">
                     <div className="relative bottom-0 left-0 ">
                         <div className="text-left p-6 mx-6 my-auto">
                             <p className="text-sm lg:text-base md:text-base sm:text-base block text-yellow-400  font-semibold mb-3 tracking-widest">
@@ -131,26 +131,26 @@ export default function Home() {
                     <div className="flex flex-col flex-wrap  mt-10">
                         <Link href={`/solucion-de-disputas/centro-de-arbitraje`}>
                             <a>
-                                <div className="mb-4 w-full lg:w-96 bg-themeBlue bg-opacity-0 px-5 py-2 rounded-full text-gray-600 flex transition duration-500 ease-in-out transform hover:scale-105 cursor-pointer">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-themeBlue mr-5" viewBox="0 0 20 20" fill="currentColor">
+                                <div className="mb-4 w-full lg:w-96 bg-themeLightBlue bg-opacity-0 px-5 py-2 rounded-full text-gray-600 flex transition duration-500 ease-in-out transform hover:scale-105 cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-themeLightBlue mr-5" viewBox="0 0 20 20" fill="currentColor">
                                         <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
                                     </svg>
-                                    <p className="my-auto text-base">Centro de Arbitraje</p>
+                                    <p className="my-auto text-base mx-auto">Centro de Arbitraje</p>
                                 </div>
                             </a>
                         </Link>
                         <Link href={`/solucion-de-disputas/centro-de-conciliacion`}>
                             <a>
-                                <div className="mb-4 w-full lg:w-96 bg-themeBlue bg-opacity-0 px-5 py-2 rounded-full text-gray-600 flex transition duration-500 ease-in-out transform hover:scale-105 cursor-pointer">
-                                    <svg viewBox="0 0 640 512" className="h-7 w-7 text-themeBlue mr-5" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M434.7 64h-85.9c-8 0-15.7 3-21.6 8.4l-98.3 90c-.1.1-.2.3-.3.4-16.6 15.6-16.3 40.5-2.1 56 12.7 13.9 39.4 17.6 56.1 2.7.1-.1.3-.1.4-.2l79.9-73.2c6.5-5.9 16.7-5.5 22.6 1 6 6.5 5.5 16.6-1 22.6l-26.1 23.9L504 313.8c2.9 2.4 5.5 5 7.9 7.7V128l-54.6-54.6c-5.9-6-14.1-9.4-22.6-9.4zM544 128.2v223.9c0 17.7 14.3 32 32 32h64V128.2h-96zm48 223.9c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zM0 384h64c17.7 0 32-14.3 32-32V128.2H0V384zm48-63.9c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16c0-8.9 7.2-16 16-16zm435.9 18.6L334.6 217.5l-30 27.5c-29.7 27.1-75.2 24.5-101.7-4.4-26.9-29.4-24.8-74.9 4.4-101.7L289.1 64h-83.8c-8.5 0-16.6 3.4-22.6 9.4L128 128v223.9h18.3l90.5 81.9c27.4 22.3 67.7 18.1 90-9.3l.2-.2 17.9 15.5c15.9 13 39.4 10.5 52.3-5.4l31.4-38.6 5.4 4.4c13.7 11.1 33.9 9.1 45-4.7l9.5-11.7c11.2-13.8 9.1-33.9-4.6-45.1z"></path></svg>
+                                <div className="mb-4 w-full lg:w-96 bg-themeLightBlue bg-opacity-0 px-5 py-2 rounded-full text-gray-600 flex transition duration-500 ease-in-out transform hover:scale-105 cursor-pointer">
+                                    <svg viewBox="0 0 640 512" className="h-7 w-7 text-themeLightBlue mr-5" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M434.7 64h-85.9c-8 0-15.7 3-21.6 8.4l-98.3 90c-.1.1-.2.3-.3.4-16.6 15.6-16.3 40.5-2.1 56 12.7 13.9 39.4 17.6 56.1 2.7.1-.1.3-.1.4-.2l79.9-73.2c6.5-5.9 16.7-5.5 22.6 1 6 6.5 5.5 16.6-1 22.6l-26.1 23.9L504 313.8c2.9 2.4 5.5 5 7.9 7.7V128l-54.6-54.6c-5.9-6-14.1-9.4-22.6-9.4zM544 128.2v223.9c0 17.7 14.3 32 32 32h64V128.2h-96zm48 223.9c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zM0 384h64c17.7 0 32-14.3 32-32V128.2H0V384zm48-63.9c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16c0-8.9 7.2-16 16-16zm435.9 18.6L334.6 217.5l-30 27.5c-29.7 27.1-75.2 24.5-101.7-4.4-26.9-29.4-24.8-74.9 4.4-101.7L289.1 64h-83.8c-8.5 0-16.6 3.4-22.6 9.4L128 128v223.9h18.3l90.5 81.9c27.4 22.3 67.7 18.1 90-9.3l.2-.2 17.9 15.5c15.9 13 39.4 10.5 52.3-5.4l31.4-38.6 5.4 4.4c13.7 11.1 33.9 9.1 45-4.7l9.5-11.7c11.2-13.8 9.1-33.9-4.6-45.1z"></path></svg>
                                     <p className="my-auto text-base">Centro de Conciliación Extrajudicial</p>
                                 </div>
                             </a>
                         </Link>
                         <Link href={`/solucion-de-disputas/junta-resolucion-disputas`}>
                             <a>
-                                <div className="w-full lg:w-96 bg-themeBlue bg-opacity-0 px-5 py-2 rounded-full text-gray-600 flex transition duration-500 ease-in-out transform hover:scale-105 cursor-pointer">
-                                    <svg viewBox="0 0 448 512" className="h-7 w-7 text-themeBlue mr-5" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" ><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm95.8 32.6L272 480l-32-136 32-56h-96l32 56-32 136-47.8-191.4C56.9 292 0 350.3 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-72.1-56.9-130.4-128.2-133.8z"></path></svg>
+                                <div className="w-full lg:w-96 bg-themeLightBlue bg-opacity-0 px-5 py-2 rounded-full text-gray-600 flex transition duration-500 ease-in-out transform hover:scale-105 cursor-pointer">
+                                    <svg viewBox="0 0 448 512" className="h-7 w-7 text-themeLightBlue mr-5" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" ><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm95.8 32.6L272 480l-32-136 32-56h-96l32 56-32 136-47.8-191.4C56.9 292 0 350.3 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-72.1-56.9-130.4-128.2-133.8z"></path></svg>
                                     <p className="my-auto text-base">Junta de resolución de disputas</p>
                                 </div>
                             </a>

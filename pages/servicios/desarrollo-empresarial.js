@@ -1,11 +1,12 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../../components/layout'
+import Layout from '../../components/layout'
 import Image from "next/image";
 import CardContact from "../../components/Servicios/CardContact"
 import { useEffect, useState } from 'react';
+import { Transition } from '@headlessui/react'
 import CarouselCourses from '../../components/CarouselCourses'
 import { useDispatch, useSelector } from "react-redux";
-import {list} from "../../redux/actions/curso"
+import { list } from "../../redux/actions/curso"
 
 var options = [
     {
@@ -105,8 +106,8 @@ var especialidades = [
 ]
 
 export default function DesarrolloEmpresarial() {
-    const dispatch= useDispatch();
-    const {cursoList} = useSelector(({ curso }) => curso);
+    const dispatch = useDispatch();
+    const { cursoList } = useSelector(({ curso }) => curso);
 
     useEffect(() => {
         dispatch(list())
@@ -126,48 +127,58 @@ export default function DesarrolloEmpresarial() {
                     />
                 </div>
                 <div className="relative px-0 lg:px-10 py-5 -mt-20 lg:-mt-28">
-                    <div className="bg-white w-full shadow-close px-5 lg:px-24 pt-1 pb-12 rounded-3xl mt-10">
-                        {
-                            cursoList ?
-                            <ProximasCapacitaciones cursos={cursoList} />
-                            :
-                            ""
-                        }
-                        <div className="flex flex-wrap lg:flex-nowrap my-14">
-                            <div className="w-56 mx-auto">
-                                <CardContact
-                                    image={
-                                        <Image
-                                            className="rounded-full filter brightness-95 "
-                                            src={`${process.env.STORAGE_URL_FT}/images/servicios/desarrolloempresarial/encargado.png`}
-                                            width="600"
-                                            height="600"
-                                        />
-                                    }
-                                    area="Centro de Formación y Desarrollo Empresarial"
-                                    encargado="Carmen Julia Sime Nieto"
-                                    phone="944675625"
-                                    mail="capacitacion@cclam.org.pe"
-                                />
-                            </div>
-                            <div className="col-span-4 pl-5">
-                                <p className="text-justify mt-5 text-base">
-                                    El Centro de Formación y Desarrollo Empresarial de la Centenaria Cámara de Comercio y Producción de Lambayeque promueve permanentemente programas de capacitación empresarial para mejorar la competitividad personal y laboral. Cuenta con tarifas especiales participando de conferencias, talleres, seminarios, cursos de especialización, desayunos empresariales, diplomados y más.
-                                </p>
-                                <p className="text-justify mt-5 text-base">
-                                    Además estamos en alianzas con diversas instituciones privadas y estatales para desarrollar una serie de eventos de formación y diseñar nuevas capacidades que estén a la vanguardia de la tecnología.
-                                </p>
-                            </div>
-                        </div>
-                        <Especialidades />
-                        <div>
+                    <Transition
+                        show={true}
+                        appear={true}
+                        enter="transform transition duration-500"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="transform duration-200 transition ease-in-out"
+                        leaveFrom="opacity-100 "
+                    >
+                        <div className="bg-white w-full shadow-close px-5 lg:px-24 pt-1 pb-12 rounded-3xl mt-10">
                             {
-                                options.map((op, j) =>
-                                    <Option key={j} {...op} />
-                                )
+                                cursoList ?
+                                    <ProximasCapacitaciones cursos={cursoList} />
+                                    :
+                                    ""
                             }
+                            <div className="flex flex-wrap lg:flex-nowrap my-14">
+                                <div className="w-56 mx-auto">
+                                    <CardContact
+                                        image={
+                                            <Image
+                                                className="rounded-full filter brightness-95 "
+                                                src={`${process.env.STORAGE_URL_FT}/images/servicios/desarrolloempresarial/encargado.png`}
+                                                width="600"
+                                                height="600"
+                                            />
+                                        }
+                                        area="Centro de Formación y Desarrollo Empresarial"
+                                        encargado="Carmen Julia Sime Nieto"
+                                        phone="944675625"
+                                        mail="capacitacion@cclam.org.pe"
+                                    />
+                                </div>
+                                <div className="col-span-4 pl-5">
+                                    <p className="text-justify mt-5 text-base">
+                                        El Centro de Formación y Desarrollo Empresarial de la Centenaria Cámara de Comercio y Producción de Lambayeque promueve permanentemente programas de capacitación empresarial para mejorar la competitividad personal y laboral. Cuenta con tarifas especiales participando de conferencias, talleres, seminarios, cursos de especialización, desayunos empresariales, diplomados y más.
+                                    </p>
+                                    <p className="text-justify mt-5 text-base">
+                                        Además estamos en alianzas con diversas instituciones privadas y estatales para desarrollar una serie de eventos de formación y diseñar nuevas capacidades que estén a la vanguardia de la tecnología.
+                                    </p>
+                                </div>
+                            </div>
+                            <Especialidades />
+                            <div>
+                                {
+                                    options.map((op, j) =>
+                                        <Option key={j} {...op} />
+                                    )
+                                }
+                            </div>
                         </div>
-                    </div>
+                    </Transition>
                 </div>
             </section>
         </Layout>
@@ -244,7 +255,7 @@ const Especialidades = () => {
     );
 }
 
-const ProximasCapacitaciones = ({cursos}) => {
+const ProximasCapacitaciones = ({ cursos }) => {
     return (
         <div className="text-center my-14">
             <p className="text-base text-themeLightBlue mb-1">Aprende con nosotros</p>

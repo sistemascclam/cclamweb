@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../../components/layout'
+import Layout from '../../components/layout'
 import Image from "next/image";
 import CardContact from "../../components/Servicios/CardContact"
-
+import { Transition } from '@headlessui/react'
 
 var options = [
     {
@@ -58,72 +58,94 @@ export default function CentroDeConciliacion() {
             <Head>
                 <title>CCLAM | Centro de Conciliación</title>
             </Head>
-            <div className="pb-20 pt-36 lg:pt-20">
-                <div className="flex flex-wrap flex-col lg:flex-row justify-between ">
-                    <div className="my-auto mx-auto text-center">
-                        <p className="font-extrabold text-3xl lg:text-6xl"> Centro de <span className="text-themeBlue">Conciliación</span> </p>
-                        <p className="font-medium text-themeLightBlue text-2xl mt-3">¡La solución en tus manos!</p>
-                    </div>
-                </div>
-                <div className="bg-white w-full shadow-close px-5 lg:px-24 py-12 rounded-4xl mt-10">
-                    <div className="flex flex-wrap lg:flex-nowrap">
-                        <div className="w-56 mx-auto">
-                            <CardContact
-                                image={
-                                    <Image
-                                        className="rounded-full filter brightness-95 "
-                                        src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/encargado.png`}
-                                        width="600"
-                                        height="600"
-                                    />
-                                }
-                                area="Centro de Solución y Disputas"
-                                encargado="Maria Alejandra Pasco Herrera"
-                                phone="984701376"
-                                mail="secretariogeneral@cclam.org.pe"
-                            />
-                        </div>
-                        <div className="col-span-4 lg:pl-5">
-                    <p className="text-justify mt-5 text-base font-normal">
-                        El Centro de Conciliación pertenece al Centro de Solución de Disputas de la Centenaria Cámara de Comercio y Producción de Lambayeque, el mismo que se encarga de impulsar los procesos conciliatorios como un mecanismo alternativo de resolución de conflictos en aras de brindar soluciones óptimas, oportunas y eficientes para las partes que deciden someter sus controversias en esta vía.
-                    </p>
-                    <p className="text-justify mt-5 text-base font-normal">
-                        La conciliación extrajudicial es un proceso avalado por el Ministerio de Justicia y Derechos Humanos, mediante el cual las partes podrán optar por llegar a un acuerdo conciliatorio de manera rápida y económica para resolver sus controversias.
-                    </p>
-                    <p className="text-justify mt-5 text-base font-normal">
-                        Durante este procedimiento, las partes asistirán a las audiencias de conciliación con la intervención activa e imparcial del denominado conciliador a través del diálogo. Este procedimiento concluye con la emisión del Acta de Conciliación, documento que constituye título ejecutivo, el cual contendrá el acuerdo al que llegaron las partes, debiendo estar firmada por las partes intervinientes y el conciliador.
-                    </p>
-                    <p className="text-justify mt-5 text-base font-normal">
-                        Para mayor información llamar al 984 701 376 – 984 793 698 o escribir a los siguientes correos electrónicos: secretariogeneral@cclam.org.pe o secretariaarbitral@cclam.org.pe.
-                    </p>
+            <div className="pt-28 pb-4">
+                <Transition
+                    show={true}
+                    appear={true}
+                    enter="transform transition duration-1000"
+                    enterFrom="opacity-0 -translate-y-3"
+                    enterTo="opacity-100 translate-y-0"
+                    leave="transform duration-200 transition ease-in-out"
+                    leaveFrom="opacity-100 translate-y-0 "
+                    leaveTo="opacity-0 "
+                >
+                    <div className="flex flex-wrap flex-col lg:flex-row justify-between ">
+                        <div className="my-auto mx-auto text-center">
+                            <p className="font-extrabold text-3xl lg:text-6xl"> Centro de <span className="text-themeBlue">Conciliación</span> </p>
+                            <p className="font-medium text-themeLightBlue text-2xl mt-1">¡La solución en tus manos!</p>
                         </div>
                     </div>
-                    <div className="flex flex-wrap justify-between content-center mt-20">
-                        {
-                            options.map((option, i) => <Item key={i} {...option} />)
-                        }
+                </Transition>
+                <Transition
+                    show={true}
+                    appear={true}
+                    enter="transform transition duration-1000"
+                    enterFrom="translate-y-8"
+                    enterTo="translate-y-0"
+                    leave="transform duration-200 transition ease-in-out"
+                    leaveFrom="translate-y-0 "
+                    leaveTo=""
+                >
+                    <div className="bg-white w-full shadow-close px-5 lg:px-24 py-12 rounded-4xl mt-10">
+                        <div className="flex flex-wrap lg:flex-nowrap">
+                            <div className="w-56 mx-auto">
+                                <CardContact
+                                    image={
+                                        <Image
+                                            className="rounded-full filter brightness-95 "
+                                            src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/encargado.png`}
+                                            width="600"
+                                            height="600"
+                                        />
+                                    }
+                                    area="Centro de Solución y Disputas"
+                                    encargado="Maria Alejandra Pasco Herrera"
+                                    phone="984701376"
+                                    mail="secretariogeneral@cclam.org.pe"
+                                />
+                            </div>
+                            <div className="col-span-4 lg:pl-5">
+                                <p className="text-justify mt-5 text-base font-normal">
+                                    El Centro de Conciliación pertenece al Centro de Solución de Disputas de la Centenaria Cámara de Comercio y Producción de Lambayeque, el mismo que se encarga de impulsar los procesos conciliatorios como un mecanismo alternativo de resolución de conflictos en aras de brindar soluciones óptimas, oportunas y eficientes para las partes que deciden someter sus controversias en esta vía.
+                                </p>
+                                <p className="text-justify mt-5 text-base font-normal">
+                                    La conciliación extrajudicial es un proceso avalado por el Ministerio de Justicia y Derechos Humanos, mediante el cual las partes podrán optar por llegar a un acuerdo conciliatorio de manera rápida y económica para resolver sus controversias.
+                                </p>
+                                <p className="text-justify mt-5 text-base font-normal">
+                                    Durante este procedimiento, las partes asistirán a las audiencias de conciliación con la intervención activa e imparcial del denominado conciliador a través del diálogo. Este procedimiento concluye con la emisión del Acta de Conciliación, documento que constituye título ejecutivo, el cual contendrá el acuerdo al que llegaron las partes, debiendo estar firmada por las partes intervinientes y el conciliador.
+                                </p>
+                                <p className="text-justify mt-5 text-base font-normal">
+                                    Para mayor información llamar al 984 701 376 – 984 793 698 o escribir a los siguientes correos electrónicos: secretariogeneral@cclam.org.pe o secretariaarbitral@cclam.org.pe.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="flex flex-wrap justify-between content-center mt-20">
+                            {
+                                options.map((option, i) => <Item key={i} {...option} />)
+                            }
 
-                    </div>
+                        </div>
                         <div className="flex flex-wrap justify-between my-20">
                             <div className="relative w-full lg:w-96 mb-5 lg:mb-0">
-                            <Image
-                                className="shadow-xl rounded-xl"
-                                src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/protocoloconciliacion.jpg`}
-                                width="468"
-                                height="663"
-                            />
-                        </div>
+                                <Image
+                                    className="shadow-xl rounded-xl"
+                                    src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/protocoloconciliacion.jpg`}
+                                    width="468"
+                                    height="663"
+                                />
+                            </div>
                             <div className="relative w-full lg:w-7/12 lg:ml-5 rounded-xl shadow-close">
-                            <Image
-                                className="rounded-xl shadow-close"
-                                src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/proyectos-conciliacion.jpeg`}
-                                width="480"
-                                height="480"
-                                layout="responsive"
-                            />
+                                <Image
+                                    className="rounded-xl shadow-close"
+                                    src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/proyectos-conciliacion.jpeg`}
+                                    width="480"
+                                    height="480"
+                                    layout="responsive"
+                                />
+                            </div>
                         </div>
                     </div>
-                </div>
+                </Transition>
             </div>
         </Layout>
     )

@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
+import Layout from '../components/layout'
 import Image from "next/image";
+import { Transition } from '@headlessui/react'
 
 const sectoristas = [
     {
@@ -31,7 +32,7 @@ const sectoristas = [
             {
                 name: "Textil y joyería",
                 icon: <svg viewBox="0 0 512 512" className="h-6 w-6" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32" d="M35.42 188.21l207.75 269.46a16.17 16.17 0 0025.66 0l207.75-269.46a16.52 16.52 0 00.95-18.75L407.06 55.71A16.22 16.22 0 00393.27 48H118.73a16.22 16.22 0 00-13.79 7.71L34.47 169.46a16.52 16.52 0 00.95 18.75zM48 176h416"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M400 64l-48 112-96-128M112 64l48 112 96-128m0 400l-96-272m96 272l96-272"></path>
+                    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32" d="M35.42 188.21l207.75 269.46a16.17 16.17 0 0025.66 0l207.75-269.46a16.52 16.52 0 00.95-18.75L407.06 55.71A16.22 16.22 0 00393.27 48H118.73a16.22 16.22 0 00-13.79 7.71L34.47 169.46a16.52 16.52 0 00.95 18.75zM48 176h416"></path><path fill="none" stroke="currentColor" strokeLinecap="round" stroke-linejoin="round" stroke-width="32" d="M400 64l-48 112-96-128M112 64l48 112 96-128m0 400l-96-272m96 272l96-272"></path>
                 </svg>
             },
             {
@@ -179,13 +180,24 @@ export default function Asociados() {
                 <title>CCLAM | Comités gremiales</title>
             </Head>
             <section className="min-h-screen ">
-                <div className="pt-36 lg:pt-28 text-center">
-                    <h1 className="text-3xl lg:text-5xl font-black">Comités gremiales <span className="block text-themeBlue mt-2">Representatividad nacional</span></h1>
-                    <div className="max-w-6xl mx-auto mt-5">
+                <Transition
+                    show={true}
+                    appear={true}
+                    enter="transform transition duration-1000"
+                    enterFrom="opacity-0 -translate-y-3"
+                    enterTo="opacity-100 translate-y-0"
+                    leave="transform duration-200 transition ease-in-out"
+                    leaveFrom="opacity-100 translate-y-0 "
+                    leaveTo="opacity-0 "
+                >
+                    <div className="pt-36 lg:pt-28 text-center">
+                        <h1 className="text-3xl lg:text-5xl font-black">Comités gremiales <span className="block text-themeBlue mt-2">Representatividad nacional</span></h1>
+                        <div className="max-w-6xl mx-auto mt-5">
 
-                        <p className="text-sm lg:text-lg">Los Comités Gremiales son órganos de apoyo que se han conformado en la institución con los diferentes sectores que tiene la región Lambayeque. Actualmente la Centenaria Cámara de Comercio y Producción de Lambayeque cuenta con 16 Comités Gremiales al Servicio institucional empresarial y regional.</p>
+                            <p className="text-sm lg:text-lg">Los Comités Gremiales son órganos de apoyo que se han conformado en la institución con los diferentes sectores que tiene la región Lambayeque. Actualmente la Centenaria Cámara de Comercio y Producción de Lambayeque cuenta con 16 Comités Gremiales al Servicio institucional empresarial y regional.</p>
+                        </div>
                     </div>
-                </div>
+                </Transition>
                 {
                     sectoristas.map((sectorista, k) =>
                         <SectoristaConComites key={k}
@@ -199,7 +211,7 @@ export default function Asociados() {
 }
 
 const SectoristaConComites = ({ sectorista }) =>
-    <>
+    <div>
         <div className="my-10 flex justify-end overflow-hidden">
             <div className="lg:w-8/12 py-1">
                 <CardSectorista className="ml-5 p-1 flex" orientation="l">
@@ -223,7 +235,7 @@ const SectoristaConComites = ({ sectorista }) =>
         <div className="px-5 flex flex-wrap justify-center gap-6">
             {
                 sectorista.comites.map((comite, i) =>
-                    <a href={`https://wa.me/51${sectorista.telf}?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20del%20comit%C3%A9%20gremial%20de%20${comite.name.replace(/ /g,"%20")}`} target="_blank" className="group block max-w-xs rounded-xl p-6 bg-white ring-gray-900/5 shadow-lg space-y-3 hover:bg-blue-500 hover:ring-blue-500">
+                    <a href={`https://wa.me/51${sectorista.telf}?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20del%20comit%C3%A9%20gremial%20de%20${comite.name.replace(/ /g, "%20")}`} target="_blank" className="group block max-w-xs rounded-xl p-6 bg-white ring-gray-900/5 shadow-lg space-y-3 hover:bg-blue-500 hover:ring-blue-500">
                         <div className="flex items-center space-x-3">
                             <span className="text-blue-500 group-hover:text-white">
                                 {comite.icon}
@@ -233,14 +245,14 @@ const SectoristaConComites = ({ sectorista }) =>
                         <p className="text-gray-500 group-hover:text-white text-sm">Escríbenos para enterarte más del comité de {comite.name}.</p>
                         <div className="w-max my-0 p-1 rounded-2xl relative">
                             <span className="group-hover:text-white text-blue-500 text-xs">
-                                Saber más... 
+                                Saber más...
                             </span>
                         </div>
                     </a>
                 )
             }
         </div>
-    </>
+    </div>
 
 const CardSectorista = ({ className, children, orientation }) =>
     <div className={`bg-white relative h-full ${className} ${orientation === 'l' ? 'rounded-l-full  translate-x-28 text-left' : 'rounded-r-full  -translate-x-28 text-right'} shadow-close transition duration-500 ease-in-out transform hover:translate-x-0`}>

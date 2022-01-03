@@ -53,7 +53,7 @@ export default function ConveniosSection() {
                 <h2 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-extrabold text-themeBlue ">
                     Convenios
                 </h2>
-                <h3 className="text-base lg:text-2xl md:text-2xl sm:text-2xl font-normal mt-2">
+                <h3 className="text-base lg:text-2xl md:text-2xl sm:text-2xl font-normal mt-2 text-themeBlue">
                     Nuestros <strong>asociados</strong> nos respaldan
                 </h3>
                 <div className="text-white bg-gradient-to-r from-themeBlue to-themeLightBlue flex flex-wrap justify-between content-center  w-10/12 mx-auto rounded-lg shadow-3xl py-5 px-6 lg:px-32 mt-12">

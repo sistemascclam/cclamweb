@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react';
 moment.locale('es')
 
-export default function PronunciamientosContainer() {
+export default function PronunciamientosContainer({limit=50}) {
     const dispatch = useDispatch();
     const { pronunciamientoList } = useSelector(({ pronunciamiento }) => pronunciamiento)
 
@@ -26,13 +26,13 @@ export default function PronunciamientosContainer() {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             {
-                pronunciamientoList?.map((pronunciamiento, key) =>
+                pronunciamientoList?.filter((p,k)=>k<limit)?.map((pronunciamiento, key) =>
                     pronunciamiento.link ?
                         <a key={key} href={pronunciamiento.link} target="_blank">
                             <div className="text-right text-gray-500 mb-2">
                                 <p className="text-xs">{moment(pronunciamiento.date).calendar()}</p>
                             </div>
-                            <div className="relative hover:scale-105 transition duration-500 ease-in-out shadow-xl">
+                            <div className="relative hover:scale-105 transition duration-500 ease-in-out shadow-xl 	">
                                 <Image
                                     className="rounded-xl shadow-xl cursor-pointer "
                                     alt={pronunciamiento.date}

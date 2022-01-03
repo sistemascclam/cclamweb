@@ -12,8 +12,11 @@ export default function ConveniosCarousel() {
         loop: true,
         rtl: true,
         breakpoints: {
-            '(max-width: 640px)': {
+            '(max-width: 598px)': {
                 slidesPerView: 2,
+            },
+            '(min-width: 599px)': {
+                slidesPerView: 4,
             },
             '(min-width: 1024px)': {
                 slidesPerView: 7,

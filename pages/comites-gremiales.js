@@ -225,7 +225,7 @@ const SectoristaConComites = ({ sectorista }) =>
                         />
                     </div>
                     <div className="my-auto">
-                        <p className="font-bold text-themeLightBlue select-none ">{sectorista.name}</p>
+                        <p className="font-bold text-bgblue select-none ">{sectorista.name}</p>
                         <a href={`https://wa.me/51${sectorista.telf}`} target="_blank" rel="noreferrer" className="hover:text-themeLightBlue block text-sm">+51{sectorista.telf}</a>
                         <a href={`mailto:${sectorista.correo}`} target="_blank" rel="noreferrer" className="hover:text-themeLightBlue block text-sm">{sectorista.correo}</a>
                     </div>
@@ -235,16 +235,16 @@ const SectoristaConComites = ({ sectorista }) =>
         <div className="px-5 flex flex-wrap justify-center gap-6">
             {
                 sectorista.comites.map((comite, i) =>
-                    <a href={`https://wa.me/51${sectorista.telf}?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20del%20comit%C3%A9%20gremial%20de%20${comite.name.replace(/ /g, "%20")}`} target="_blank" className="group block max-w-xs rounded-xl p-6 bg-white ring-gray-900/5 shadow-lg space-y-3 hover:bg-blue-500 hover:ring-blue-500">
+                    <a href={`https://wa.me/51${sectorista.telf}?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20del%20comit%C3%A9%20gremial%20de%20${comite.name.replace(/ /g, "%20")}`} target="_blank" className="group block max-w-xs rounded-xl p-6 bg-white ring-gray-900/5 shadow-lg space-y-3 hover:bg-bgblue hover:ring-bgbg-bgblue hover:bg-opacity-80">
                         <div className="flex items-center space-x-3">
-                            <span className="text-blue-500 group-hover:text-white">
+                            <span className="text-bgblue group-hover:text-white">
                                 {comite.icon}
                             </span>
                             <h3 className="text-gray-900 group-hover:text-white text-base leading-tight font-semibold">{comite.name}</h3>
                         </div>
                         <p className="text-gray-500 group-hover:text-white text-sm">Escríbenos para enterarte más del comité de {comite.name}.</p>
                         <div className="w-max my-0 p-1 rounded-2xl relative">
-                            <span className="group-hover:text-white text-blue-500 text-xs">
+                            <span className="group-hover:text-white text-bgblue text-xs">
                                 Saber más...
                             </span>
                         </div>
@@ -255,7 +255,7 @@ const SectoristaConComites = ({ sectorista }) =>
     </div>
 
 const CardSectorista = ({ className, children, orientation }) =>
-    <div className={`bg-white relative h-full ${className} ${orientation === 'l' ? 'rounded-l-full  translate-x-28 text-left' : 'rounded-r-full  -translate-x-28 text-right'} shadow-close transition duration-500 ease-in-out transform hover:translate-x-0`}>
+    <div className={`bg-white relative h-full ${className} ${orientation === 'l' ? 'rounded-l-full  lg:translate-x-28 text-left' : 'rounded-r-full  lg:-translate-x-28 text-right'} shadow-close transition duration-500 ease-in-out transform hover:translate-x-0`}>
         {children}
     </div>
 

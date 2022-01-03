@@ -86,7 +86,7 @@ export default function Convenios() {
 
 const ConvenioCard = ({ empresa, beneficio, imageSrc }) => (
     <a className="group bg-white w-64 p-5 rounded-xl flex flex-col shadow-xl hover:bg-blue-500 hover:ring-blue-500" href={`https://wa.me/51984713266?text=Hola!%20Quiero%20saber%20más%20sobre%20el%20convenio%20con%20${empresa.replace(/ /g, "%20")}`} target="_blank" rel="noreferrer">
-        <div className="w-7/12	mx-auto">
+        <div className="w-7/12	mx-auto bg-white p-2 rounded-xl">
             <Image
                 src={`${process.env.STORAGE_URL_FT}${imageSrc}`}
                 width="50"

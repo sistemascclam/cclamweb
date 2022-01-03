@@ -8,7 +8,7 @@ export default function Historia() {
             <Head>
                 <title>CCLAM | Historia</title>
             </Head>
-            <section className="pt-28 pb-4">
+            <section className="pt-32 lg:pt-28 pb-4">
                 <Transition
                     show={true}
                     appear={true}
@@ -19,7 +19,7 @@ export default function Historia() {
                     leaveFrom="opacity-100 translate-y-0 "
                     leaveTo="opacity-0 "
                 >
-                    <div className="text-center mb-10">
+                    <div className="text-center mb-8">
                         <h1 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-black">Nuestra historia <span className="block text-themeBlue mt-2">Gremio empresarial de Lambayeque</span></h1>
                     </div>
                 </Transition>
@@ -33,7 +33,7 @@ export default function Historia() {
                     leaveFrom="translate-y-0 "
                     leaveTo=""
                 >
-                    <div className="bg-white w-full shadow-close px-5 lg:px-28 py-12 lg:py-20 rounded-4xl">
+                    <div className="bg-white w-full shadow-close px-5 lg:px-28 pt-10 pb-12 lg:py-20 rounded-4xl">
                         <h3 className="font-extrabold text-themeBlue text-xl">GÉNESIS DE UNA CÁMARA IMPULSADORA DEL DESARROLLO DE LAMBAYEQUE</h3>
                         <p className="text-justify mt-5 text-gray-900 text-base font-normal">
                             A finales del siglo XX Lambayeque se encontraba en pleno proceso de recuperación de la crisis económica, producto de la post guerra con Chile. La resquebrajada economía de la gran hacienda se reactiva con nuevas perspectivas de gestión que buscaban extender con eficiencia la producción de arroz y azúcar por nuestros valles.

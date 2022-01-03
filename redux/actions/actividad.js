@@ -12,7 +12,6 @@ export const list = () => {
       axios.get('/externalactivitylist'
       ).then(({ data }) => {
         if (data) {
-          console.log(data)
           dispatch({ type: FETCH_SUCCESS });
           dispatch({ type: LIST_ACTIVIDAD, payload: data });
         } else {

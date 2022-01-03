@@ -51,7 +51,7 @@ export default function Menucontainer({ show, tooglemodal, menus }) {
                                         </button>
                                     </div>
                                 </Transition.Child>
-                                <div className="h-full flex flex-col py-6 bg-white bg-opacity-95 shadow-xl">
+                                <div className="h-full flex flex-col py-6 bg-white bg-opacity-90 shadow-xl">
                                     <div className="px-4 sm:px-6 mb-2">
                                         <Dialog.Title className="font-medium text-gray-800">Menú</Dialog.Title>
                                     </div>

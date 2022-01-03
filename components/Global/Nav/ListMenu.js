@@ -21,7 +21,7 @@ const FillMenus = (menusParam, cod, tooglemodal, type) => {
                             menu.to ?
                                 <Link href={menu.to} >
                                     <a>
-                                        <div className={`${type === "small" ? 'mt-4 font-light' : 'px-5 w-full hover:bg-bgblue rounded-xl hover:text-white text-gray-700 text-base font-normal py-2 my-1'}`} >
+                                        <div className={`group ${type === "small" ? 'mt-4 font-light' : 'px-5 w-full hover:bg-bgblue rounded-xl hover:text-white text-gray-700 text-base font-normal py-2 my-1'}`} >
                                             <MenuItem type={type} menu={menu} icon={menu.icon} show={show} cod={cod} showinx={key} />
                                         </div>
                                     </a>
@@ -29,12 +29,12 @@ const FillMenus = (menusParam, cod, tooglemodal, type) => {
                                 :
                                 menu.external ?
                                     <a href={menu.external} target="_blank" rel="noreferrer">
-                                        <div className={`${type === "small" ? 'mt-4 font-light' : 'px-5 w-full hover:bg-bgblue rounded-xl hover:text-white text-gray-700 text-base font-normal py-2 my-1'}`} >
+                                        <div className={`group ${type === "small" ? 'mt-4 font-light' : 'px-5 w-full hover:bg-bgblue rounded-xl hover:text-white text-gray-700 text-base font-normal py-2 my-1'}`} >
                                             <MenuItem type={type} menu={menu} icon={menu.icon} show={show} cod={cod} showinx={key} />
                                         </div>
                                     </a>
                                     :
-                                    <button className={`${type === "small" ? 'mt-4 font-light' : 'px-5 w-full hover:bg-bgblue rounded-xl hover:text-white text-gray-700 text-base font-normal py-2 my-1'}`} onClick={() => clickedShow(cod, key)}>
+                                    <button className={`group ${type === "small" ? 'mt-4 font-light' : 'px-5 w-full hover:bg-bgblue rounded-xl hover:text-white text-gray-700 text-base font-normal py-2 my-1'}`} onClick={() => clickedShow(cod, key)}>
                                         <MenuItem type={type} menu={menu} icon={menu.icon} show={show} cod={cod} showinx={key} />
                                     </button>
                         }
@@ -51,8 +51,8 @@ const MenuItem = ({ menu, show, cod, showinx, type, icon }) =>
         <div className='flex'>
             {
                 icon && type !== "small" ?
-                    <span className="bg-blue-100 my-auto p-1 rounded-lg mr-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-bgblue opacity-80" viewBox="0 0 20 20" fill="currentColor">
+                    <span className="my-auto p-1 rounded-lg mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-bgblue opacity-80 group-hover:text-white group-hover:opacity-90" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d={icon} clipRule="evenodd" />
                         </svg>
                     </span> : ""

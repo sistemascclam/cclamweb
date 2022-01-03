@@ -357,7 +357,7 @@ export default function RecursosHumanos() {
                 >
                     <div className="pt-40 text-center">
                         <h1 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-black">Recursos <span className="text-themeBlue mt-2">Humanos</span></h1>
-                        <p className="font-medium text-themeLightBlue text-2xl mt-3">¡Contáctate con nosotros!</p>
+                        <p className="font-medium text-themeLightBlue text-xl mt-1">¡Contáctate con nosotros!</p>
                     </div>
                 </Transition>
                 <Transition

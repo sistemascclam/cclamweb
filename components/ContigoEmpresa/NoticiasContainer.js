@@ -7,7 +7,7 @@ import moment from 'moment'
 import 'moment/locale/es'
 moment.locale('es')
 
-export default function NoticiasContainer() {
+export default function NoticiasContainer({limit=50}) {
     const dispatch = useDispatch();
     const {noticiaList}=useSelector(({noticia})=>noticia)
     useEffect(() => {
@@ -16,11 +16,11 @@ export default function NoticiasContainer() {
     return (
         <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-20">
             {
-                noticiaList?.map((noticia, i) =>
+                noticiaList?.filter((n,k)=>k<limit)?.map((noticia, i) =>
                     <NoticiaCard key={i} title={noticia.title} slug={noticia.slug} date={moment(noticia.date).format('LL')}
                         image={noticia.coverImage ?
                             <Image
-                                className="brightness-75 rounded-xl "
+                            className="brightness-50 rounded-xl "
                                 layout="fill"
                                 objectFit="cover"
                                 src={`${process.env.STORAGE_URL_BK}${noticia.coverImage}`}

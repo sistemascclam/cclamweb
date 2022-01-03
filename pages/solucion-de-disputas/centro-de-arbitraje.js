@@ -65,7 +65,7 @@ var options = [
     },
     {
         title: "Registro de árbitros",
-        items: [{ name: "Registro de árbitros 2021.pdf", link: "REGISTRO_DE_ARBITROS_ACTUALIZADO.pdf" }],
+        items: [{ name: "Registro de árbitros 2021.pdf", link: "REGISTRO_DE_ARBITROS_ACTUALIZADO_2021.pdf" }],
         icon: (
             <svg
                 viewBox="0 0 448 512"
@@ -364,7 +364,7 @@ const Item = ({ title, items, icon }) => (
                 }
             </span>
             <div className="max-w-xs mt-1 pl-5">
-                <p className="text-lg font-medium mb-3 text-blue-600">
+                <p className="text-lg font-medium mb-3 text-blue-600 select-none">
                     {title}
                 </p>
                 {items.map((item, k) => (

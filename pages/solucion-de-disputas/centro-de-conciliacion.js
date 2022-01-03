@@ -161,7 +161,7 @@ const Item = ({ title, items, icon }) =>
                 }
             </span>
             <div className="w-80 mt-1 pl-5">
-                <p className="text-lg font-medium mb-3 text-blue-600">{title}</p>
+                <p className="text-lg font-medium mb-3 text-blue-600 select-none">{title}</p>
                 {
                     items.map((item, k) => <a key={k} className="text-sm mb-2 block text-wrap" >{item}</a>)
                 }

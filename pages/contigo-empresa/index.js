@@ -43,7 +43,7 @@ export default function ContigoEmpresa() {
           <TitleSection
             title={"Noticias"}
           />
-          <NoticiasContainer />
+          <NoticiasContainer limit={6} />
           <div className="w-full text-center mt-8 "><Link href="/galeria/noticias"><a className="hover:text-themeLightBlue">Ver más...</a></Link></div>
         </section>
         <section id="revista-digital" className="relative min-h-screen flex flex-wrap content-center w-full py-6 px-10 lg:px-20 mt-10">
@@ -81,7 +81,7 @@ export default function ContigoEmpresa() {
             title={"Pronunciamientos"}
             description={`La Centenaria Cámara de Comercio y Producción de Lambayeque respalda proyectos que van acorde al desarrollo y prestigio de la región Lambayeque, a través de: Comunicados a la opinión pública; Convocatorias institucionales; Conferencias de Prensa; Entrevistas de interés público; Proyección Social; entre otros.`}
           />
-          <PronunciamientosContainer />
+          <PronunciamientosContainer limit={4} />
           <div className="w-full text-center mt-6"><Link href="/galeria/pronunciamientos"><a className="hover:text-themeLightBlue">Ver más...</a></Link></div>
         </section>
       </div>

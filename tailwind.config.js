@@ -10,7 +10,6 @@ module.exports = {
     },
     extend: {
       backgroundImage: theme => ({
-        // 'cabecera-navidad': `url('/webcclam/images/cabecera-navidad.png')`,
         // 'hero-pattern': `url('/webcclam/images/landing.png')`,
         // 'mesa-de-partes': `url('/webcclam/images/areas/mesa-de-partes.png')`,
         // 'protestos': `url('/webcclam/images/areas/protestos.png')`,
@@ -20,8 +19,7 @@ module.exports = {
         // 'kap': `url('/webcclam/images/areas/kapfondo.png')`,
         // 'fachadacclam': `url('/webcclam/images/fachadacclam.png')`,
 
-        'cabecera-navidad': `url('/images/cabecera-navidad.png')`,
-        'landing': `url('/images/landing.png')`,
+        'landing': `url('/images/portada-aniversario.png')`,
         'mesa-de-partes': `url('/images/areas/mesa-de-partes.png')`,
         'protestos': `url('/images/areas/protestos.png')`,
         'formalizacion': `url('/images/areas/formalizacion.png')`,

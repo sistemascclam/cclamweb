@@ -48,14 +48,14 @@ export default function Home() {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <header className="relative h-screen bg-bgblue  shadow-card ">
+            <header className="relative h-screen bg-themeWhite  shadow-card ">
                 <div className="relative h-screen bg-landing bg-cover bg-left shadow-card flex flex-wrap content-center">
                     <div className="relative bottom-0 left-0 ">
                         <div className="text-left p-6 mx-6 my-auto">
                             <p className="text-sm lg:text-base md:text-base sm:text-base block text-yellow-400  font-semibold mb-3 tracking-widest">
                                 CÁMARA DE COMERCIO Y PRODUCCIÓN DE LAMBAYEQUE
                             </p>
-                            <h1 className="text-3xl lg:text-7xl md:text-7xl sm:text-6xl tracking-tight font-extrabold text-themeWhite">
+                            <h1 className="text-3xl lg:text-7xl md:text-7xl sm:text-6xl tracking-tight font-extrabold text-azulNavidad">
                                 <span className="block mb-2">Seguimos</span>
                                 <Typing
                                     phrases={[
@@ -65,7 +65,7 @@ export default function Home() {
                                     ]}
                                 />
                             </h1>
-                            <p className="mt-3 text-themeWhite max-w-xl text-base lg:text-xl md:text-xl sm:text-xl mb-6">
+                            <p className="mt-3 text-azulNavidad max-w-xl text-base lg:text-xl md:text-xl sm:text-xl mb-6">
                                 Nos seguimos transformando para continuar siendo el motor de nuestra región, tenemos nuevos servicios digitales para potenciar tu negocio.
                             </p>
                             <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fcclambayeque%2F&width=130&layout=button_count&action=like&size=small&share=false&height=21&appId" width="220" height="46" style={{border:"none",overflow:"hidden"}} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>

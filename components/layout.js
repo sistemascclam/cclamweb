@@ -2,6 +2,7 @@ import Head from 'next/head'
 import NavBar from './Global/Nav/index'
 import FloatingGroup from './Global/FloatingButtons/index'
 import Footer from './Global/Footer/index'
+import CookieConsent from './CookieConsent'
 export const siteTitle = 'CCLAM | Cámara de Comercio y Producción de Lambayeque'
 
 export default function Layout({ children, home }) {
@@ -29,6 +30,7 @@ export default function Layout({ children, home }) {
         <link rel="apple-touch-icon" href="https://www.cclam.org.pe/favicon.ico" />
       </Head>
       <FloatingGroup />
+      <CookieConsent />
       <NavBar />
       <main className="bg-themeWhite font-poppins">{children}</main>
       <Footer />

@@ -61,7 +61,8 @@ module.exports = {
         'close': 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;'
       },
       height: {
-        '96xl': '26rem'
+        '96xl': '26rem',
+        '600px':'600px'
       },
       borderRadius: {
         '4xl': '3rem',

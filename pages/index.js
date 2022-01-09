@@ -48,9 +48,9 @@ export default function Home() {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <header className="relative h-screen bg-themeWhite  shadow-card ">
-                <div className="relative h-screen bg-landing bg-cover bg-left shadow-card flex flex-wrap content-center">
-                    <div className="relative bottom-0 left-0 ">
+            <header className="relative bg-themeWhite  shadow-card ">
+                <div className="relative min-h-screen bg-landing bg-cover bg-left shadow-card flex flex-wrap content-center">
+                    <div className="relative py-36">
                         <div className="text-left p-6 mx-6 my-auto">
                             <p className="text-sm lg:text-base md:text-base sm:text-base block text-yellow-400  font-semibold mb-3 tracking-widest">
                                 CÁMARA DE COMERCIO Y PRODUCCIÓN DE LAMBAYEQUE
@@ -68,7 +68,7 @@ export default function Home() {
                             <p className="mt-3 text-azulNavidad max-w-xl text-base lg:text-xl md:text-xl sm:text-xl mb-6">
                                 Nos seguimos transformando para continuar siendo el motor de nuestra región, tenemos nuevos servicios digitales para potenciar tu negocio.
                             </p>
-                            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fcclambayeque%2F&width=130&layout=button_count&action=like&size=small&share=false&height=21&appId" width="220" height="46" style={{border:"none",overflow:"hidden"}} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fcclambayeque%2F&width=130&layout=button_count&action=like&size=small&share=false&height=21&appId" width="220" height="46" style={{ border: "none", overflow: "hidden" }} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                         </div>
                     </div>
                     <div className="absolute bottom-0 my-6 py-6 inset-x-0">
@@ -92,7 +92,7 @@ export default function Home() {
                     </div>
                 </div>
             </header>
-            <section id="areas" className="relative h-screen">
+            <section id="areas" className="relative min-h-screen">
                 <Carrousel />
             </section>
             <ConveniosSection />
@@ -125,14 +125,14 @@ export default function Home() {
                     <p className="font-semibold text-themeLightBlue text-2xl mt-3 leading-none">
                         ¡Procesos rápidos y correctos!
                     </p>
-                    <div className="flex flex-col flex-wrap  mt-10">
+                    <div className="flex flex-col flex-wrap mt-10">
                         <Link href={`/solucion-de-disputas/centro-de-arbitraje`}>
                             <a>
                                 <div className="mb-4 w-full lg:w-96 bg-themeBlue bg-opacity-0 px-5 py-2 rounded-full text-gray-600 flex transition duration-500 ease-in-out transform hover:scale-105 cursor-pointer">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-themeBlue mr-5" viewBox="0 0 20 20" fill="currentColor">
                                         <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
                                     </svg>
-                                    <p className="my-auto text-base mx-auto">Centro de Arbitraje</p>
+                                    <p className="my-auto text-base">Centro de Arbitraje</p>
                                 </div>
                             </a>
                         </Link>
@@ -165,6 +165,16 @@ export default function Home() {
                     />
                 </div>
 
+            </section>
+            <section id="googleads">
+                <amp-ad width="100vw" height="320"
+                    type="adsense"
+                    data-ad-client="ca-pub-9881670143684490"
+                    data-ad-slot="5806654043"
+                    data-auto-format="rspv"
+                    data-full-width="">
+                    <div overflow=""></div>
+                </amp-ad>
             </section>
             <section
                 id="contigoempresa"
@@ -233,6 +243,16 @@ export default function Home() {
                     </svg>
                 </Button>
 
+            </section>
+            <section id="googleads2">
+                <amp-ad width="100vw" height="320"
+                    type="adsense"
+                    data-ad-client="ca-pub-9881670143684490"
+                    data-ad-slot="7303568544"
+                    data-auto-format="rspv"
+                    data-full-width="">
+                    <div overflow=""></div>
+                </amp-ad>
             </section>
             <section
                 id="cursos"
@@ -368,7 +388,7 @@ export default function Home() {
             </section>
             <section
                 id="consejo-directivo"
-                className="relative h-screen mx-auto pb-10 bg-themeWhite"
+                className="relative min-h-screen h-600px mx-auto pb-10 bg-themeWhite"
             >
                 <div className="h-full w-full absolute rounded-2xl shadow-close bg-fachadacclam bg-cover">
                     <div className="absolute bg-themeBlue bg-opacity-70 w-full h-full rounded-2xl "></div>

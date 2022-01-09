@@ -52,7 +52,7 @@ const sectoristas = [
     {
         name: "Martha Sifuentes Rojas",
         telf: "944684294",
-        correo: "rosabances@cclam.org.pe",
+        correo: "servicioalasociado@cclam.org.pe",
         src: "/images/comitesgremiales/martha.png",
         comites: [
             {

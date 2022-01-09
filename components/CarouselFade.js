@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { useKeenSlider } from "keen-slider/react"
+import "keen-slider/keen-slider.min.css"
 
 export default function CarouselFade({ slides }) {
   const [opacities, setOpacities] = useState([])
@@ -48,18 +49,16 @@ export default function CarouselFade({ slides }) {
   }, [pause, slider])
 
   return (
-    <div>
-      <div ref={sliderRef} className="fader">
-        {slides.map((slide, idx) => (
-          <div
-            key={idx}
-            className="fader__slide"
-            style={{ opacity: opacities[idx], visibility: currentSlide === idx ? 'visible' : 'hidden' }}
-          >
-            {slide}
-          </div>
-        ))}
-      </div>
+    <div ref={sliderRef} className="relative overflow-hidden min-h-screen h-600px">
+      {slides.map((slide, idx) => (
+        <div
+          key={idx}
+          className="absolute w-full h-full top-0"
+          style={{ opacity: opacities[idx], visibility: currentSlide === idx ? 'visible' : 'hidden' }}
+        >
+          {slide}
+        </div>
+      ))}
     </div>
   )
 }

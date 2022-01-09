@@ -84,6 +84,16 @@ export default function ContigoEmpresa() {
           <PronunciamientosContainer limit={4} />
           <div className="w-full text-center mt-6"><Link href="/galeria/pronunciamientos"><a className="hover:text-themeLightBlue">Ver más...</a></Link></div>
         </section>
+        <section>
+          <amp-ad width="100vw" height="320"
+            type="adsense"
+            data-ad-client="ca-pub-9881670143684490"
+            data-ad-slot="2203285107"
+            data-auto-format="rspv"
+            data-full-width="">
+            <div overflow=""></div>
+          </amp-ad>
+        </section>
       </div>
     </Layout >
   )

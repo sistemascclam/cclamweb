@@ -10,15 +10,6 @@ module.exports = {
     },
     extend: {
       backgroundImage: theme => ({
-        // 'hero-pattern': `url('/webcclam/images/landing.png')`,
-        // 'mesa-de-partes': `url('/webcclam/images/areas/mesa-de-partes.png')`,
-        // 'protestos': `url('/webcclam/images/areas/protestos.png')`,
-        // 'formalizacion': `url('/webcclam/images/areas/formalizacion.png')`,
-        // 'comercio-exterior': `url('/webcclam/images/areas/comercio-exterior.png')`,
-        // 'identidad-digital': `url('/webcclam/images/areas/identidad-digital.jpg')`,
-        // 'kap': `url('/webcclam/images/areas/kapfondo.png')`,
-        // 'fachadacclam': `url('/webcclam/images/fachadacclam.png')`,
-
         'landing': `url('/images/portada-aniversario.png')`,
         'mesa-de-partes': `url('/images/areas/mesa-de-partes.png')`,
         'protestos': `url('/images/areas/protestos.png')`,
@@ -27,6 +18,7 @@ module.exports = {
         'identidad-digital': `url('/images/areas/identidad-digital.jpg')`,
         'kap': `url('/images/areas/kapfondo.png')`,
         'fachadacclam': `url('/images/fachadacclam.png')`,
+        'fachada-gradiente': `url('/images/fachada-gradiente.jpg')`,
       }),
       colors: {
         greenWhatsapp: '#27A02F',
@@ -53,6 +45,7 @@ module.exports = {
         'triangle-float2': 'float2 4s infinite',
         'triangle-float3': 'float3 6s infinite',
         'successcard': 'successcard 2s',
+        'afiliation': 'afiliation 2s',
         'fadeinup': 'fadeinUp 1s both',
       },
       boxShadow: {
@@ -113,6 +106,17 @@ module.exports = {
           },
           '100%': {
             transform: 'translate(0, 0)',
+          },
+        },
+        'afiliation': {
+          '0%': {
+            width: '50%',
+          },
+          '50%': {
+            width: '100%',
+          },
+          '100%': {
+            width: '100%',
           },
         },
         'successcard': {

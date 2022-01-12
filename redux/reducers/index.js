@@ -9,6 +9,7 @@ import noticia from  "./noticia"
 import pronunciamiento from  "./pronunciamiento"
 import revistadigital from  "./revistadigital"
 import actividad from  "./actividad"
+import promotor from  "./promotor"
 
 // COMBINED REDUCERS
 const reducers = {
@@ -22,6 +23,7 @@ const reducers = {
   pronunciamiento: pronunciamiento,
   revistadigital: revistadigital,
   actividad: actividad,
+  promotor: promotor,
 }
 
 export default combineReducers(reducers)

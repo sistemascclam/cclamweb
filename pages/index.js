@@ -14,12 +14,18 @@ import { list as listactividad } from "../redux/actions/actividad"
 import ContenidoExtra from "../components/ContenidoExtra";
 import moment from 'moment'
 import 'moment/locale/es'
+import GoogleAdd from "../components/GoogleAdd";
 moment.locale('es')
 
 export default function Home() {
     const router = useRouter();
     let [isOpen, setIsOpen] = useState(false);
     const [listExtra, setListExtra] = useState([])
+
+
+    const dispatch = useDispatch();
+    const { cursoList } = useSelector(({ curso }) => curso);
+    const { actividadList } = useSelector(({ actividad }) => actividad);
 
     const toogleModal = () => {
         setIsOpen(!isOpen)
@@ -33,10 +39,6 @@ export default function Home() {
         }
         toogleModal()
     }
-
-    const dispatch = useDispatch();
-    const { cursoList } = useSelector(({ curso }) => curso);
-    const { actividadList } = useSelector(({ actividad }) => actividad);
 
     useEffect(() => {
         dispatch(listcurso())
@@ -167,14 +169,7 @@ export default function Home() {
 
             </section>
             <section id="googleads">
-                <amp-ad width="100vw" height="320"
-                    type="adsense"
-                    data-ad-client="ca-pub-9881670143684490"
-                    data-ad-slot="5806654043"
-                    data-auto-format="rspv"
-                    data-full-width="">
-                    <div overflow=""></div>
-                </amp-ad>
+                <GoogleAdd slot_id="5806654043" />
             </section>
             <section
                 id="contigoempresa"
@@ -245,14 +240,7 @@ export default function Home() {
 
             </section>
             <section id="googleads2">
-                <amp-ad width="100vw" height="320"
-                    type="adsense"
-                    data-ad-client="ca-pub-9881670143684490"
-                    data-ad-slot="7303568544"
-                    data-auto-format="rspv"
-                    data-full-width="">
-                    <div overflow=""></div>
-                </amp-ad>
+                <GoogleAdd slot_id="7303568544" />
             </section>
             <section
                 id="cursos"
@@ -330,9 +318,9 @@ export default function Home() {
             >
                 <div className="relative lg:w-5/12">
                     {actividadList
-                        ?.filter((c, i) => c.fechaFin >= moment(Date.now()).format('Y-M-D'))
+                        ?.filter((c, i) => c.fechaFin >= moment(Date.now()).format('YYYY-MM-DD'))
                         ?.filter((c, i) => i < 3)
-                        .map((c, i) => (
+                        ?.map((c, i) => (
                             <div
                                 key={`event_${i}`}
                                 className={`absolute w-96 lg:w-full shadow-card rounded-xl ${i === 0

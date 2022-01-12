@@ -11,6 +11,7 @@ import PronunciamientosContainer from '../../components/ContigoEmpresa/Pronuncia
 import { getOne } from "../../redux/actions/revistadigital"
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
+import GoogleAdd from '../../components/GoogleAdd'
 
 export default function ContigoEmpresa() {
   const dispatch = useDispatch();
@@ -85,14 +86,7 @@ export default function ContigoEmpresa() {
           <div className="w-full text-center mt-6"><Link href="/galeria/pronunciamientos"><a className="hover:text-themeLightBlue">Ver más...</a></Link></div>
         </section>
         <section>
-          <amp-ad width="100vw" height="320"
-            type="adsense"
-            data-ad-client="ca-pub-9881670143684490"
-            data-ad-slot="2203285107"
-            data-auto-format="rspv"
-            data-full-width="">
-            <div overflow=""></div>
-          </amp-ad>
+          <GoogleAdd slot_id="2203285107" />
         </section>
       </div>
     </Layout >

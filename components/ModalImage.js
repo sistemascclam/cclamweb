@@ -19,7 +19,7 @@ export default function ModalImage({isOpen,imageModal,toogleModal}) {
                 className="fixed inset-0 z-10 overflow-y-auto"
                 onClose={toogleModal}
             >
-                <Dialog.Overlay className="fixed inset-0 bg-black opacity-80" />
+                <Dialog.Overlay className="fixed inset-0 bg-white opacity-80" />
                 <div className="min-h-screen text-center">
                     <Transition.Child
                         as={Fragment}

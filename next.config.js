@@ -54,7 +54,7 @@ const nextConfig = {
   images: {
     domains: ['www.cclam.org.pe', 'localhost'],
         loader: 'imgix',
-        path: 'https://cclamweb.vercel.app',
+        path: 'www.cclam.org.pe',
   },
   env: {
     BASE_URL: '/',

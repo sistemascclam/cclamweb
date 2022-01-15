@@ -2,19 +2,20 @@ import React from 'react'
 
 import Select from 'react-select';
 import { useDispatch, useSelector } from "react-redux";
-import { filter } from "../../redux/actions/promotor";
+import { filter } from "../../redux/actions/comitegremial";
+import { useEffect } from 'react';
 
-export default function SearchPromotor({ onChange,onBlur,selected }) {
+export default function SearchComiteGremial({ onChange,onBlur,selected }) {
     const dispatch = useDispatch();
-    const { promoFilterLoading, promotorFilter } = useSelector(({ promotor }) => promotor);
-    const handleInputChange = (inputValue, actionMeta) => {
-        inputValue.length >= 2 && dispatch(filter(inputValue));
-    }
+    const {comiteGremialFilterLoading,comiteGremialFilter} = useSelector(({ comitegremial }) => comitegremial);
+    useEffect(() => {
+      dispatch(filter());
+    }, [dispatch])
     return (
         <Select
-            isLoading={promoFilterLoading}
-            placeholder="¿Quién lo contactó?"
-            instanceId="searchPromotorFilter"
+        isLoading={comiteGremialFilterLoading}
+            placeholder="Comité gremial *"
+            instanceId="SearchComiteGremialFilter"
             styles={{
                 control: (provided, state) => ({
                     ...provided,
@@ -28,16 +29,13 @@ export default function SearchPromotor({ onChange,onBlur,selected }) {
                     },
                 }),
             }}
-            noOptionsMessage={({ inputValue }) => !inputValue ? 'Debe digitar' : "No se encontraron resultados"}
-            name="searchPromotorFilter"
+            name="SearchComiteGremialFilter"
             className="shadow-sm appearance-none border rounded-md w-full h-10 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-gray-200"
-            loadingMessage={() => 'Cargando...'}   //minor type-O here
-            onInputChange={handleInputChange}
-            isClearable={true}
             onChange={onChange}
-            options={promotorFilter}
             onBlur={onBlur}
             selected={selected}
+            options={comiteGremialFilter}
+            value={comiteGremialFilter.find(c=>c.value === selected)}
         />
     )
 }

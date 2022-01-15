@@ -80,7 +80,7 @@ export default function ComercioExterior() {
                                         />
                                     }
                                     area="Comercio exterior"
-                                    encargado="Juan Carlos Mera Goicochea"
+                                    encargado="Verónica Vanessa Piscoya Lazo"
                                     phone="944680348"
                                     mail="comex@cclam.org.pe"
                                 />

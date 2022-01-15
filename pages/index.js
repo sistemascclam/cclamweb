@@ -35,7 +35,18 @@ export default function Home() {
         if (tipo === "curso") {
             setListExtra(cursoList?.filter((c, i) => i < 3).slice(selected, cursoList?.filter((c, i) => i < 3).length).concat(cursoList?.filter((c, i) => i < 3).slice(0, selected)))
         } else {
-            setListExtra(actividadList?.filter((c, i) => new Date(c.fechaFin).getTime() >= Date.now())?.filter((c, i) => i < 3).slice(selected, actividadList?.filter((c, i) => i < 3).length).concat(actividadList?.filter((c, i) => i < 3).slice(0, selected)))
+            setListExtra(
+                actividadList?.filter((c, i) => new Date(c.fechaFin).getTime() >= Date.now())?.filter((c, i) => i < 3).slice(selected, actividadList?.filter((c, i) => i < 3).length).concat(actividadList?.filter((c, i) => i < 3).slice(0, selected))
+                    .sort((a, b) => {
+                        if (a.name > b.name) {
+                            return 1;
+                        }
+                        if (a.name < b.name) {
+                            return -1;
+                        }
+                        return 0;
+                    })
+            )
         }
         toogleModal()
     }

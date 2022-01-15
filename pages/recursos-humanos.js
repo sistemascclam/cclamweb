@@ -112,7 +112,7 @@ const cards = [
             />} />,
     },
     {
-        keywords: ["comercio", "exterior", "juan", "carlos", "mera"],
+        keywords: ["comercio", "exterior", "vanesa", "veronica", "piscoya", "lazo"],
         element: <CardContact
             correo="comex@cclam.org.pe "
             telf="944680348"
@@ -123,7 +123,7 @@ const cards = [
                 objectFit="cover"
                 quality="100"
                 className="rounded-4xl"
-                alt="juan mera"
+                alt="Vanesa Piscoya"
             />} />,
     },
     {
@@ -296,20 +296,6 @@ const cards = [
             wsp="984704667"
             image={<Image
                 src={`${process.env.STORAGE_URL_FT}/images/recursos-humanos/design.png`}
-                layout="fill"
-                objectFit="cover"
-                quality="100"
-                className="rounded-4xl"
-            />} />,
-    },
-    {
-        keywords: ["laura", "torres"],
-        element: <CardContact
-            correo=" "
-            telf="948501378"
-            wsp="948501378"
-            image={<Image
-                src={`${process.env.STORAGE_URL_FT}/images/recursos-humanos/promocion-desarrollo-asociados.png`}
                 layout="fill"
                 objectFit="cover"
                 quality="100"

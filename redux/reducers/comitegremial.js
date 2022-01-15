@@ -1,25 +1,25 @@
 import {
-    FILTER_PROMOTOR,
-    LOADING_PROMOTOR,
+    FILTER_COMITE_GREMIAL,
+    LOADING_COMITE_GREMIAL,
   } from "../types";
   
   const INIT_STATE = {
-    promotorFilter:[],
-    promoFilterLoading:false
+    comiteGremialFilter:[],
+    comiteGremialFilterLoading:false
   };
   
   const states = (state = INIT_STATE, action) => {
     switch (action.type) {
-      case FILTER_PROMOTOR: {
+      case FILTER_COMITE_GREMIAL: {
         return {
           ...state,
-          promotorFilter: action.payload,
+          comiteGremialFilter: action.payload,
         }
       }
-      case LOADING_PROMOTOR: {
+      case LOADING_COMITE_GREMIAL: {
         return {
           ...state,
-          promoFilterLoading: action.payload,
+          comiteGremialFilterLoading: action.payload,
         }
       }
       default:

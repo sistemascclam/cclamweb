@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import Head from 'next/head'
 import Layout from '../../components/layout'
 import { useDispatch, useSelector } from "react-redux";
-import { RadioGroup, Disclosure, Transition } from '@headlessui/react'
+import { RadioGroup } from '@headlessui/react'
 import { useEffect, useRef, useState } from "react"
 import { toSoles, withLeftZeros } from "../../util/Helper"
 import { getOne } from "../../redux/actions/concepto"

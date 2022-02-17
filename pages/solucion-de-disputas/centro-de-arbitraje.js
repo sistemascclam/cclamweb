@@ -3,6 +3,7 @@ import Layout from "../../components/layout";
 import Image from "next/image";
 import CardContact from "../../components/Servicios/CardContact"
 import { Transition } from '@headlessui/react'
+import CalculadoraArbitraje from "../../components/calculadoraArbitraje";
 
 var options = [
     {
@@ -65,7 +66,7 @@ var options = [
     },
     {
         title: "Registro de árbitros",
-        items: [{ name: "Registro de árbitros - Enero 2022.pdf", link: "2022/ENERO/REGISTRO_DE_ARBITROS_ACTUALIZADO_ENE_2022.pdf" }],
+        items: [{ name: "Registro de árbitros - Febrero 2022.pdf", link: "2022/FEBRERO/REGISTRO_DE_ARBITROS_ACTUALIZADO_02_2022.pdf" }],
         icon: (
             <svg
                 viewBox="0 0 448 512"
@@ -185,14 +186,14 @@ export default function CentroArbitraje() {
                                             height="600"
                                         />
                                     }
-                                    area="Centro de Solución y Disputas"
-                                    encargado="Maria Alejandra Pasco Herrera"
+                                    area="Centro de Solución de Disputas"
+                                    encargado="María Alejandra Pasco Herrera"
                                     phone="984701376"
                                     mail="secretariogeneral@cclam.org.pe"
                                 />
                             </div>
-                            <div className="col-span-4 lg:pl-5">
-                                <p className="text-justify mt-5 text-base font-normal">
+                            <div className="col-span-4 lg:pl-5 text-gray-800">
+                                <p className="text-justify mt-5">
                                     El Centro de Arbitraje pertenece al Centro de Solución
                                     de Disputas de la Centenaria Cámara de Comercio y
                                     Producción de Lambayeque, el mismo que se encarga de
@@ -203,7 +204,7 @@ export default function CentroArbitraje() {
                                     acorde a la normatividad vigente y a su Reglamento
                                     Arbitraje.
                                 </p>
-                                <p className="text-justify mt-5 text-base font-normal">
+                                <p className="text-justify mt-5">
                                     Se caracteriza por contar tanto con la infraestructura y
                                     ambientes apropiados para el desarrollo de audiencias
                                     presenciales, como por contar con una plataforma digital
@@ -212,15 +213,25 @@ export default function CentroArbitraje() {
                                     favorables para el correcto desarrollo de los procesos
                                     arbitrales.
                                 </p>
-                                <p className="text-justify mt-5 text-base font-normal">
+                                <p className="text-justify mt-5">
                                     Para mayor información llamar al 984 701 376 – 984 793
-                                    698 o escribir a los siguientes correos electrónicos:
-                                    secretariogeneral@cclam.org.pe o
-                                    secretariaarbitral@cclam.org.pe
+                                    698 o escribir a los siguientes correos electrónicos: {" "}
+                                    <span>
+                                        secretariogeneral@cclam.org.pe
+                                    </span>,  {" "}
+                                    <span>
+                                        secretariaarbitral@cclam.org.pe
+                                    </span> o {" "}
+                                    <span>
+                                        secretariaarbitraje@cclam.org.pe
+                                    </span>
+                                    .
                                 </p>
                             </div>
                         </div>
-                        <div className="flex flex-wrap justify-between content-center mt-20">
+                        
+                        <CalculadoraArbitraje />
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-4 gap-x-6 mt-14">
                             {options.map((option, i) => (
                                 <Item key={i} {...option} />
                             ))}
@@ -255,7 +266,7 @@ export default function CentroArbitraje() {
                         />
                     </div>
                     <div className="lg:px-8">
-                        <div className="relative bg-white shadow-close px-5 lg:px-14 py-10 rounded-3xl -mt-3 lg:-mt-14 mx-auto">
+                        <div className="relative bg-white shadow-close px-5 lg:px-14 py-10 rounded-3xl -mt-3 lg:-mt-14 mx-auto text-gray-800">
                             <p className="font-bold text-themeBlue text-xl mb-8">
                                 CONSEJO SUPERIOR DE ARBITRAJE 2019 - 2022
                             </p>
@@ -292,13 +303,13 @@ export default function CentroArbitraje() {
                             <p className="font-bold text-themeBlue text-xl mb-4">
                                 CONSEJO SUPERIOR DE ARBITRAJE 2019 - 2022
                             </p>
-                            <ul className="list-none list-inside mb-14">
+                            <ul className="list-none list-inside mb-14 text-gray-800">
                                 {listConsejo.map((it, i) => (
                                     <li className="flex mb-2" key={i}>
                                         <span>
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                className="h-5 w-5 my-auto text-blue-500 mr-3"
+                                                className="h-4 w-4 mt-1 text-blue-500 mr-3"
                                                 fill="none"
                                                 viewBox="0 0 24 24"
                                                 stroke="currentColor"
@@ -342,7 +353,7 @@ export default function CentroArbitraje() {
 }
 
 const Item = ({ title, items, icon }) => (
-    <div className="flex flex-col flex-wrap content-center mb-14 ">
+    <div className="flex flex-col flex-wrap content-start mb-14 w-full ">
         <div className="text-gray-700 flex">
             <span className="bg-themeBlue bg-opacity-5 h-14 w-14 flex justify-center rounded-full">
                 {

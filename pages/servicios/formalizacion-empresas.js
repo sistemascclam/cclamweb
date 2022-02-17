@@ -79,11 +79,11 @@ export default function FormalizacionEmpresas() {
                                         mail="jchozo@cclam.org.pe"
                                     />
                                 </div>
-                                <div className="col-span-4 pl-5">
-                                    <p className="text-justify mt-5 text-base">
+                                <div className="col-span-4 pl-5 text-gray-800">
+                                    <p className="text-justify mt-5">
                                         El área de Formalización de Empresas: Ventanilla Única de la Centenaria Cámara de Comercio y Producción de Lambayeque brinda orientación gratuita y personalizada ayudando a la formalización de manera fácil, a bajo costo y en el menor tiempo.
                                     </p>
-                                    <p className="text-justify mt-5 text-base">
+                                    <p className="text-justify mt-5">
                                         El asesoramiento es de manera continua identificando el tipo de empresa que más te convenga, brindando información precisa para iniciar tu negocio.
                                     </p>
                                 </div>

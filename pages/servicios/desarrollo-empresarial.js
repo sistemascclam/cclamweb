@@ -160,11 +160,11 @@ export default function DesarrolloEmpresarial() {
                                         mail="capacitacion@cclam.org.pe"
                                     />
                                 </div>
-                                <div className="col-span-4 pl-5">
-                                    <p className="text-justify mt-5 text-base">
+                                <div className="col-span-4 pl-5 text-gray-800">
+                                    <p className="text-justify mt-5">
                                         El Centro de Formación y Desarrollo Empresarial de la Centenaria Cámara de Comercio y Producción de Lambayeque promueve permanentemente programas de capacitación empresarial para mejorar la competitividad personal y laboral. Cuenta con tarifas especiales participando de conferencias, talleres, seminarios, cursos de especialización, desayunos empresariales, diplomados y más.
                                     </p>
-                                    <p className="text-justify mt-5 text-base">
+                                    <p className="text-justify mt-5">
                                         Además estamos en alianzas con diversas instituciones privadas y estatales para desarrollar una serie de eventos de formación y diseñar nuevas capacidades que estén a la vanguardia de la tecnología.
                                     </p>
                                 </div>
@@ -226,24 +226,26 @@ const Especialidades = () => {
             <div className="flex flex-wrap justify-center gap-4">
                 {
                     especialidades.filter(e => categoryselected === "" ? e : e.category === categoryselected).filter((e, i) => i < maxviewed).map((e, i) =>
-                        <div className="w-80" key={`${i}`}>
+                        <a
+                        href={`https://wa.me/51944675625?text=Hola!%20Quisiera%20saber%20más%20sobre%20cursos%20de%20${e.esp.replace(/ /g, "%20").toLocaleUpperCase()}`} target="_blank" rel="noreferrer"
+                        className="w-80 group cursor-pointer" key={`${i}`}>
                             <div className="relative w-80 h-56" >
                                 <Image
-                                    className="rounded-3xl"
+                                    className="rounded-3xl group-hover:brightness-25 transition-all ease-in-out duration-500"
                                     src={`${process.env.STORAGE_URL_FT}${e.image}`}
                                     layout="fill"
                                     objectFit="cover"
                                 />
                                 <div className="absolute bg-themeBlue bg-opacity-30 inset-0 rounded-3xl"></div>
-                                <div className="absolute inset-0 rounded-3xl flex flex-wrap content-center ">
+                                <div className="absolute inset-0 rounded-3xl flex flex-wrap content-center">
                                     <div className="flex flex-col mx-auto">
-                                        <p className="text-white text-sm font-light">{e.category}</p>
-                                        <p className="text-white text-2xl font-bold">{e.esp}</p>
+                                        <p className="text-white group-hover:text-lg  transition-all ease-in-out duration-500 text-sm font-light">{e.category}</p>
+                                        <p className="text-white group-hover:text-2xl transition-all ease-in-out duration-500  text-xl font-bold">{e.esp}</p>
                                     </div>
                                 </div>
                             </div>
-                            <p className="text-xs mt-1">Infórmate llamando a 944789544 o enviando un correo a campus@cclam.org.pe</p>
-                        </div>
+                            {/* <p className="text-xs mt-1">Infórmate llamando a 944 675 625 o enviando un correo a campus@cclam.org.pe</p> */}
+                        </a>
                     )
                 }
             </div>

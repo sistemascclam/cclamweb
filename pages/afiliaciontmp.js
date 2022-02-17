@@ -67,6 +67,11 @@ export default function Afiliacion() {
             <div className="lg:flex w-4/12 hidden bg-gray-500 bg-no-repeat bg-cover bg-center bg-fachada-gradiente relative justify-around items-center ">
                 <div className={`absolute bg-gradient-to-tr from-bgblue via-withGradient to-themeLightBlue ${step > 1 ? 'opacity-90' : 'opacity-70'} inset-0 z-0`}></div>
                 <div className={`${step > 1 ? 'hidden' : ''} z-10`}>
+                    <img
+                        alt="Logo CCLAM"
+                        src={`${process.env.BASE_URL}images/logo_dark.png`}
+                        className={`w-32 mb-2 ${step === maxStep ? 'hidden' : ''}`}
+                    />
                     <h1 className="text-white font-bold text-4xl font-sans">Afíliate ahora</h1>
                     <p className="text-white mt-1">Únete a la red empresarial más grande del norte del Perú</p>
                     <a target="_blank" href="https://cclam.org.pe/pdfs/2022/ENERO/BENEFICIOS_ASOCIADOS_2022.pdf" className="w-28 bg-white text-bgblue mt-4 py-2 rounded-2xl font-semibold hover:bg-gray-200 mb-2 flex justify-center">Saber más</a>
@@ -85,15 +90,6 @@ export default function Afiliacion() {
                 </div>
             </div>
             <form onSubmit={handleSubmit(onSubmit, handleError)} onChange={clearErrors} className="lg:w-8/12 w-full bg-white relative py-6 h-full flex flex-col content-center">
-                <Link href={`/`}>
-                    <a>
-                        <img
-                            alt="Logo CCLAM"
-                            src={`${process.env.BASE_URL}images/logocclam.png`}
-                            className={`w-36 mb-2 mx-auto ${step === maxStep ? 'hidden' : 'hidden lg:flex absolute z-20 mx-auto inset-x-0'}`}
-                        />
-                    </a>
-                </Link>
                 <div className="fixed lg:hidden inset-0 bg-gray-500 bg-no-repeat bg-cover bg-fachada-gradiente items-center">
                     <div className="fixed bg-gradient-to-tr from-bgblue via-withGradient to-themeLightBlue opacity-70 inset-0"></div>
                 </div>
@@ -124,9 +120,9 @@ export default function Afiliacion() {
                     />
                     <div className="flex lg:hidden flex-col w-full relative lg:absolute bottom-0 lg:bottom-6 inset-x-0 mt-10">
                         <FormButtons step={step} maxStep={maxStep} prev={prev} loadingSendAfiliation={loadingSendAfiliation} />
-                    <div className="text-sm leading-none mt-6 text-center">
-                        <p>Al afiliarse confirma que está de acuerdo con nuestros <a href="https://cclam.org.pe/pdfs/2022/ENERO/Terminos_y_condiciones_CCLAM.pdf" target="_blank" className="text-blue-600 hover:text-blue-700">Términos de servicio, políticas de privacidad y uso de Cookies</a>.</p>
-                    </div>
+                        <div className="text-sm leading-none mt-6 text-center">
+                            <p>Al afiliarse confirma que está de acuerdo con nuestros <a href="https://cclam.org.pe/pdfs/2022/ENERO/Terminos_y_condiciones_CCLAM.pdf" target="_blank" className="text-blue-600 hover:text-blue-700">Términos de servicio, políticas de privacidad y uso de Cookies</a>.</p>
+                        </div>
                     </div>
                 </div>
                 <div className="hidden lg:flex flex-col w-full relative lg:absolute bottom-0 lg:bottom-6 inset-x-0 mt-10">

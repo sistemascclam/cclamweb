@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link';
+import { Transition } from '@headlessui/react';
 
 const FillMenus = (menusParam, cod, tooglemodal, type) => {
     const [show, setShow] = useState([]);
@@ -38,7 +39,18 @@ const FillMenus = (menusParam, cod, tooglemodal, type) => {
                                         <MenuItem type={type} menu={menu} icon={menu.icon} show={show} cod={cod} showinx={key} />
                                     </button>
                         }
-                        <div className={`${!show.includes(cod + "" + key) ? "hidden" : 'block'} mx-3`}>{menu.menus && FillMenus(menu.menus, `${cod}${key}`, tooglemodal, type)}</div>
+                        <Transition
+                            show={show.includes(cod + "" + key)}
+                            appear={true}
+                            enter="transform transition duration-500"
+                            enterFrom="opacity-0"
+                            enterTo="opacity-100 translate-y-0"
+                            leave="transform duration-200 transition ease-in-out"
+                            leaveFrom="opacity-100 translate-y-0 "
+                            leaveTo="opacity-0 "
+                        >
+                            <div className={` mx-3`}>{menu.menus && FillMenus(menu.menus, `${cod}${key}`, tooglemodal, type)}</div>
+                        </Transition>
                     </div>)
             }
         </div>
@@ -55,21 +67,22 @@ const MenuItem = ({ menu, show, cod, showinx, type, icon }) =>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-bgblue opacity-80 group-hover:text-white group-hover:opacity-90" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d={icon} clipRule="evenodd" />
                         </svg>
-                    </span> : ""
+                    </span> : <div className="ml-5"></div>
             }
-            <p>{menu.title} </p>
+            <p>{menu.title}</p>
         </div>
         {menu.menus &&
             <span className="my-auto">
                 {!show.includes(cod + "" + showinx) ?
-                    <svg xmlns="http://www.w3.org/2000/svg" className="ml-3 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+                    <svg xmlns="http://www.w3.org/2000/svg" className="ml-3 h-3 w-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg> :
-                    <svg xmlns="http://www.w3.org/2000/svg" className="ml-3 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
+                    <svg xmlns="http://www.w3.org/2000/svg" className="ml-3 h-3 w-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                 }
-            </span>}
+            </span>
+        }
     </div>
 
 export default function ListMenu({ menusParam, cod, tooglemodal, type }) {

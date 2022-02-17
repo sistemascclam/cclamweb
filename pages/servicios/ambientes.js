@@ -111,8 +111,8 @@ export default function AlquilerAmbientes() {
                                         mail="capacitacion@cclam.org.pe"
                                     />
                                 </div>
-                                <div className="col-span-4 lg:pl-5">
-                                    <p className="text-justify mt-5 text-base">
+                                <div className="col-span-4 lg:pl-5 text-gray-800">
+                                    <p className="text-justify mt-5">
                                         El área de Ambientes Empresariales de la Centenaria Cámara de Comercio y Producción de Lambayeque invita a realizar reuniones de trabajo, encuentros de negocio, conferencias de prensa, capacitaciones, lanzamiento de productos, entre otros eventos en nuestros cómodos espacios de auditorio y directorio.
                                     </p>
                                 </div>
@@ -153,7 +153,7 @@ const Option = ({ title, subtitle, items, orientation, image }) =>
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
-                                <div className="w-auto">
+                                <div className="w-auto cursor-default">
                                     <p>{it}</p>
                                 </div>
                             </div>

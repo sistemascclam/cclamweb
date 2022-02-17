@@ -67,14 +67,12 @@ export default function NavBar() {
                 </Link>
             </div>
             <div className="fixed right-5 flex items-center">
-                <Link href="/afiliacion">
-                    <a className="animate-lookatme inline-flex items-center justify-center px-4 py-1 mr-2 font-medium leading-6 whitespace-no-wrap text-white rounded-full focus:outline-none focus:shadow-outline-indigo active:bg-blue-100 shadow-lg transition duration-500 ease-in-out transform hover:scale-105 bg-gradient-to-r from-pink-500 to-yellow-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 hidden lg:block mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                        </svg>
-                        <span className="select-none">Asóciate</span>
-                    </a>
-                </Link>
+                <a href='https://cclam.org.pe/gs/public/afiliacion' target="_blank" rel="noreferrer"className="animate-lookatme inline-flex items-center justify-center px-4 py-1 mr-2 font-medium leading-6 whitespace-no-wrap text-white rounded-full focus:outline-none focus:shadow-outline-indigo active:bg-blue-100 shadow-lg transition duration-500 ease-in-out transform hover:scale-105 bg-gradient-to-r from-pink-500 to-yellow-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 hidden lg:block mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                    </svg>
+                    <span className="select-none">Asóciate</span>
+                </a>
                 <button onClick={toogleModal} name="menu" aria-label="menu" className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 whitespace-no-wrap text-white bg-gradient-to-r from-green-400 to-blue-500 lg:bg-gradient-to-r lg:from-white lg:to-white lg:text-themeBlue rounded-full focus:outline-none focus:shadow-outline-indigo active:bg-blue-100 shadow-lg transition duration-500 ease-in-out transform hover:scale-105">
                     <span className="hidden lg:block select-none">Menú</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 lg:ml-2" viewBox="0 0 20 20" fill="currentColor">

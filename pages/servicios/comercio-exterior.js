@@ -85,11 +85,11 @@ export default function ComercioExterior() {
                                     mail="comex@cclam.org.pe"
                                 />
                             </div>
-                            <div className="col-span-4 lg:pl-5">
-                                <p className="text-justify mt-5 text-base">
+                            <div className="col-span-4 lg:pl-5 text-gray-800">
+                                <p className="text-justify mt-5">
                                     El área de Comercio Exterior de la Centenaria Cámara de Comercio y Producción de Lambayeque ofrece asesorías de manera personalizada para exportar y/o importar oportunidades comerciales, precios, información de impuestos arancelarios y tratados internacionales; también verificar información actualizada en estadísticas de comercio exterior para atender las necesidades de su empresa y conocer el mercado internacional.
                                 </p>
-                                <p className="text-justify mt-5 text-base">
+                                <p className="text-justify mt-5">
                                     Además conocer las normas técnicas, mercados estratégicos, generar nuevos contactos, participar en ruedas de negocio, ferias y eventos locales, nacionales e internacionales.
                                 </p>
                             </div>

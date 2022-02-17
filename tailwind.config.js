@@ -6,7 +6,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      'poppins': ['Poppins'],
+      'poppins': ['Lato'],
     },
     extend: {
       backgroundImage: theme => ({

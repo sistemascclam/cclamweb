@@ -1,5 +1,5 @@
-export const toSoles=(param)=>{
-    return (Number(param)).toLocaleString('en-US', { style: 'decimal', maximumFractionDigits: 2, minimumFractionDigits: 2 });
+export const toSoles=(param,decimales=2)=>{
+    return (Number(param)).toLocaleString('en-US', { style: 'decimal', maximumFractionDigits: decimales, minimumFractionDigits: decimales });
 }
 
 export const withLeftZeros=(param)=>{

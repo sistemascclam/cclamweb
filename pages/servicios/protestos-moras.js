@@ -87,11 +87,11 @@ export default function ProtestosYMoras() {
                                         mail="protestos@cclam.org.pe"
                                     />
                                 </div>
-                                <div className="col-span-4 lg:pl-5">
-                                    <p className="text-justify mt-5 text-base font-normal">
+                                <div className="col-span-4 lg:pl-5 text-gray-800">
+                                    <p className="text-justify mt-5">
                                         El área de Protestos y Moras de la Centenaria Cámara de Comercio y Producción de Lambayeque brinda la orientación de forma gratuita y personalizada para cuidar su imagen crediticia, regularizar protestos de manera confiable mejorando su condición de riesgo crediticio y obtener nuevos financiamientos.
                                     </p>
-                                    <p className="text-justify mt-5 text-base font-normal">
+                                    <p className="text-justify mt-5">
                                         Al regularizar tu sistema crediticio, la consulta en central de riesgo es a nivel nacional con la orientación e interpretación. <span className="font-semibold">¡NO PIERDA TIEMPO Y ACCEDA AL CRÉDITO!</span>
                                     </p>
                                 </div>
@@ -109,7 +109,9 @@ export default function ProtestosYMoras() {
                                             {
 
                                                 op.items.map((it, ii) =>
-                                                    <div className="text-base font-light mb-2 flex" key={ii}>
+                                                    <a 
+                                                    href={`https://wa.me/51944674614?text=Hola!%20Quisiera%20saber%20más%20sobre%20el%20servicio%20de%20${it.replace(/ /g, "%20").toLocaleUpperCase()}`} target="_blank" rel="noreferrer"
+                                                    className="text-base font-light mb-2 flex hover:text-blue-500 cursor-pointer" key={ii}>
                                                         <div className="mt-1 bg-blue-100 rounded-full h-4 w-4 flex justify-center flex-wrap content-center mr-2">
                                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -118,7 +120,7 @@ export default function ProtestosYMoras() {
                                                         <div className="w-auto">
                                                             {it}
                                                         </div>
-                                                    </div>
+                                                    </a>
                                                 )
                                             }
                                         </div>

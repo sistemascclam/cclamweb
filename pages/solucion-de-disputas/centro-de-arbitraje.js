@@ -229,8 +229,7 @@ export default function CentroArbitraje() {
                                 </p>
                             </div>
                         </div>
-                        
-                        <CalculadoraArbitraje />
+                        {/* <CalculadoraArbitraje /> */}
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-4 gap-x-6 mt-14">
                             {options.map((option, i) => (
                                 <Item key={i} {...option} />

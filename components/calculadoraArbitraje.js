@@ -62,7 +62,7 @@ const menus = [
     }
 ]
 
-export default function MyModal() {
+export default function CalculadoraArbitraje() {
     const [cuantia, setcuantia] = useState("")
     const [errorCuantia, seterrorCuantia] = useState(false)
     const [showResults, setshowResults] = useState(false)

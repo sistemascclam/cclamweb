@@ -19,6 +19,7 @@ module.exports = {
         'kap': `url('/images/areas/kapfondo.png')`,
         'fachadacclam': `url('/images/fachadacclam.png')`,
         'fachada-gradiente': `url('/images/fachada-gradiente.jpg')`,
+        'comunicado-headerf': `url('/images/comunicado_urgente/comunicado_header.jpeg')`,
       }),
       colors: {
         greenWhatsapp: '#27A02F',

@@ -15,6 +15,7 @@ import ContenidoExtra from "../components/ContenidoExtra";
 import moment from 'moment'
 import 'moment/locale/es'
 import GoogleAdd from "../components/GoogleAdd";
+import ModalComunicado from "../components/ModalComunicado";
 moment.locale('es')
 
 export default function Home() {
@@ -56,13 +57,24 @@ export default function Home() {
         dispatch(listactividad())
     }, [])
 
+    const [showComunicado, setshowComunicado] = useState(true)
+    
     return (
         <Layout home>
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <header className="relative bg-themeWhite  shadow-card ">
-                <div className="relative min-h-screen bg-landing bg-cover bg-left shadow-card flex flex-wrap content-center">
+            <ModalComunicado isOpen={showComunicado} toogleModal={() => setshowComunicado(!showComunicado)} />
+            <div className="h-56 lg:h-96 flex justify-center content-end bg-comunicado-headerf bg-contain lg:bg-cover bg-no-repeat bg-center">
+                <button onClick={() => setshowComunicado(true)} className="text-themeBlue bg-gray-200 flex rounded-full py-2 px-6 hover:bg-gray-300 shadow-md text-xs lg:text-base mt-auto mb-4 lg:mb-7 font-semibold">
+                    Ver más
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 my-auto" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+            <header className="relative bg-themeWhite">
+                <div className="relative min-h-screen bg-landing bg-cover bg-left flex flex-wrap content-center">
                     <div className="relative align-middle mt-10">
                         <div className="text-left p-6 mx-6 my-auto">
                             <p className="text-sm lg:text-base md:text-base sm:text-base block text-yellow-400  font-semibold mb-3 tracking-widest">

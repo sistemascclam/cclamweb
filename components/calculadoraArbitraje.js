@@ -87,7 +87,7 @@ export default function CalculadoraArbitraje() {
 
     const calcTotal = (costos) => {
         let itemFound = costos.find(co => cuantia >= (co.desde-1) && (co.hasta == null ? true : (cuantia <= co.hasta)))
-        return itemFound && itemFound.monto_fijo ?
+        return (itemFound && itemFound.monto_fijo ?
             itemFound.monto_fijo :
             (
 
@@ -95,7 +95,7 @@ export default function CalculadoraArbitraje() {
                 *
                 (itemFound.tasa))
                 
-            )
+            )/2).toFixed(2)*2
     }
 
     let [isOpen, setIsOpen] = useState(false)
@@ -122,7 +122,7 @@ export default function CalculadoraArbitraje() {
             <div className="inset-0 flex items-center justify-center">
                 <div className="text-center pt-10">
                     <button
-                        onClick={openModal} className="bg-pink-600 hover:bg-pink-700 text-white py-2 px-4 rounded-full shadow-md flex mx-auto">
+                        onClick={openModal} className="shadow-xl bg-pink-600 hover:bg-pink-700 text-white py-2 px-4 rounded-full flex mx-auto">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1zm1-4a1 1 0 100 2h.01a1 1 0 100-2H7zm2 1a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm4-4a1 1 0 100 2h.01a1 1 0 100-2H13zM9 9a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zM7 8a1 1 0 000 2h.01a1 1 0 000-2H7z" clipRule="evenodd" />
                         </svg>
@@ -259,12 +259,7 @@ export default function CalculadoraArbitraje() {
                                                                                 {m.nombre}
                                                                             </td>
                                                                             <td className="py-4 px-6 text-right text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                                {
-                                                                                    m.con_il ?
-                                                                                        <>S/. {toSoles(calcTotal(m.costos))}</>
-                                                                                        :
-                                                                                        <>S/. {toSoles(calcTotal(m.costos) / 1.18)}</>
-                                                                                }
+                                                                                S/. {toSoles(calcTotal(m.costos))}
                                                                             </td>
                                                                             <td className="py-4 px-6 text-right text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                                                                 {
@@ -272,12 +267,19 @@ export default function CalculadoraArbitraje() {
                                                                                         "IL"
                                                                                         :
                                                                                         <>
-                                                                                            S/. {toSoles((calcTotal(m.costos) / 1.18) * 0.18)}
+                                                                                            S/. {toSoles((calcTotal(m.costos) * 0.18))}
                                                                                         </>
                                                                                 }
                                                                             </td>
-                                                                            <td className={`${m.con_il ? "pr-3" : "pr-9"} pl-3 py-4 text-right text-sm text-gray-500 whitespace-nowrap dark:text-gray-400`}>
-                                                                                S/. {toSoles(calcTotal(m.costos))}
+                                                                            <td className={`${m.con_il ? "pr-3" : "pr-10"} pl-3 py-4 text-right text-sm text-gray-500 whitespace-nowrap dark:text-gray-400`}>
+                                                                            S/. {
+                                                                                    m.con_il ?
+                                                                                            toSoles(calcTotal(m.costos))
+                                                                                        :
+                                                                                        <>
+                                                                                            {toSoles(calcTotal(m.costos)+(calcTotal(m.costos) * 0.18))}
+                                                                                        </>
+                                                                                }
                                                                                 {
                                                                                     m.con_il ?
                                                                                         " + IL"

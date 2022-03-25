@@ -14,8 +14,9 @@ import { list as listactividad } from "../redux/actions/actividad"
 import ContenidoExtra from "../components/ContenidoExtra";
 import moment from 'moment'
 import 'moment/locale/es'
-import GoogleAdd from "../components/GoogleAdd";
-import ModalComunicado from "../components/ModalComunicado";
+// import GoogleAdd from "../components/GoogleAdd";
+// import ModalComunicado from "../components/Comunicados/ModalComunicado";
+import CarouselComunicados from "../components/Comunicados/CarouselComunicados";
 moment.locale('es')
 
 export default function Home() {
@@ -58,21 +59,23 @@ export default function Home() {
     }, [])
 
     const [showComunicado, setshowComunicado] = useState(true)
-    
+
     return (
         <Layout home>
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <ModalComunicado isOpen={showComunicado} toogleModal={() => setshowComunicado(!showComunicado)} />
-            <div className="h-56 lg:h-96 flex justify-center content-end bg-comunicado-headerf bg-contain lg:bg-cover bg-no-repeat bg-center">
-                <button onClick={() => setshowComunicado(true)} className="text-themeBlue bg-gray-200 flex rounded-full py-2 px-6 hover:bg-gray-300 shadow-md text-xs lg:text-base mt-auto mb-4 lg:mb-7 font-semibold">
-                    Ver más
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 my-auto" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                </button>
+            {/* <ModalComunicado isOpen={showComunicado} toogleModal={() => setshowComunicado(!showComunicado)} /> */}
+            <div className="h-96 grid grid-cols-1 lg:grid-cols-2 w-full relative gap-2">
+                <a href="https://m.facebook.com/story.php?story_fbid=5070764136300358&id=269465366430283" target="_blank" rel="noreferrer" className="rounded-xl shadow-md flex justify-center content-end bg-comunicado-convocatoria bg-cover lg:bg-top bg-no-repeat bg-center"></a >
+                <div className="grid grid-cols-3 w-full relative gap-2">
+                    <a href="https://cclam.org.pe/pdfs/CCAUD2018.pdf" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-ee2018 bg-cover lg:bg-top bg-no-repeat bg-center"></a>
+                    <a href="https://cclam.org.pe/pdfs/CCAUD2019.pdf" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-ee2019 bg-cover lg:bg-top bg-no-repeat bg-center"></a>
+                    <a href="https://cclam.org.pe/pdfs/CC_AUD2020.pdf" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-ee2020 bg-cover lg:bg-top bg-no-repeat bg-center"></a>
+                </div>
             </div>
+            <div className="mt-6 border-themeBlue w-full border-2"></div>
+            <CarouselComunicados />
             <header className="relative bg-themeWhite">
                 <div className="relative min-h-screen bg-landing bg-cover bg-left flex flex-wrap content-center">
                     <div className="relative align-middle mt-10">
@@ -121,6 +124,33 @@ export default function Home() {
                 <Carrousel />
             </section>
             <ConveniosSection />
+            <section id="servicios-asociados" className="text-center mt-4 mb-24">
+                <h2 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-extrabold text-themeBlue ">
+                    Servicios de asociados
+                </h2>
+                <h3 className="text-base lg:text-xl md:text-xl sm:text-xl font-normal mt-2 text-themeBlue">
+                    Encuentra productos y/o servicios de nuestros asociados
+                </h3>
+                <div className="flex justify-center flex-wrap mt-10">
+                    <div className="w-80 shadow-md rounded-md bg-white ">
+                        <a href="https://bit.ly/3COTjc9" target="_blank" rel="noreferrer">
+                        <video className="rounded-md"  height="240" autoPlay={true} muted={true} loop={true}>
+                            <source src="/videos/serviciosasociados/auna.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                        </a>
+                        <div className="text-gray-600 text-sm p-4">
+                            <p>
+                                Conoce los Paquetes de Gastroenterología a tarifas preferenciales👨‍⚕️ en #ClínicasAuna sede Chiclayo. T&C: <a href="https://bit.ly/3COTjc9" target="_blank" rel="noreferrer" className="text-blue-600">https://bit.ly/3COTjc9</a>
+                            </p>
+                            <br />
+                            <p>
+                            Agenda tu cita llamando al (074) 749 333
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="video" className="hidden md:block relative">
                 <div className="static">
                     <div className="min-w-full overflow-hidden">
@@ -191,9 +221,9 @@ export default function Home() {
                 </div>
 
             </section>
-            <section id="googleads" className="flex justify-center relative overflow-y h-32 w-full">
+            {/* <section id="googleads" className="flex justify-center relative overflow-y h-32 w-full">
                 <GoogleAdd slot_id="5806654043" />
-            </section>
+            </section> */}
             <section
                 id="contigoempresa"
                 className="relative bg-themeWhite my-20 overflow-hidden lg:min-h-screen flex flex-col flex-wrap content-center py-4"
@@ -262,9 +292,9 @@ export default function Home() {
                 </Button>
 
             </section>
-            <section id="googleads2" className="flex justify-center relative overflow-y h-32 w-full">
+            {/* <section id="googleads2" className="flex justify-center relative overflow-y h-32 w-full">
                 <GoogleAdd slot_id="7303568544" />
-            </section>
+            </section> */}
             <section
                 id="cursos"
                 className="relative bg-themeWhite my-20 flex overflow-hidden lg:min-h-screen pb-10"

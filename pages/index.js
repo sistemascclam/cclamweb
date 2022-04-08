@@ -66,12 +66,13 @@ export default function Home() {
                 <title>{siteTitle}</title>
             </Head>
             {/* <ModalComunicado isOpen={showComunicado} toogleModal={() => setshowComunicado(!showComunicado)} /> */}
-            <div className="h-96 grid grid-cols-1 lg:grid-cols-2 w-full relative gap-2">
+            <div className="h-96 grid grid-cols-1 lg:grid-cols-3 w-full relative gap-2">
                 <a href="https://m.facebook.com/story.php?story_fbid=5070764136300358&id=269465366430283" target="_blank" rel="noreferrer" className="rounded-xl shadow-md flex justify-center content-end bg-comunicado-convocatoria bg-cover lg:bg-top bg-no-repeat bg-center"></a >
-                <div className="grid grid-cols-3 w-full relative gap-2">
+                <div className="grid grid-cols-2 lg:grid-cols-4 col-span-2 w-full relative gap-2">
                     <a href="https://cclam.org.pe/pdfs/CCAUD2018.pdf" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-ee2018 bg-cover lg:bg-top bg-no-repeat bg-center"></a>
                     <a href="https://cclam.org.pe/pdfs/CCAUD2019.pdf" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-ee2019 bg-cover lg:bg-top bg-no-repeat bg-center"></a>
                     <a href="https://cclam.org.pe/pdfs/CC_AUD2020.pdf" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-ee2020 bg-cover lg:bg-top bg-no-repeat bg-center"></a>
+                    <a href="https://cclam.org.pe/pdfs/CC_AUD2021.pdf" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-ee2021 bg-cover lg:bg-top bg-no-repeat bg-center"></a>
                 </div>
             </div>
             <div className="mt-6 border-themeBlue w-full border-2"></div>
@@ -131,13 +132,13 @@ export default function Home() {
                 <h3 className="text-base lg:text-xl md:text-xl sm:text-xl font-normal mt-2 text-themeBlue">
                     Encuentra productos y/o servicios de nuestros asociados
                 </h3>
-                <div className="flex justify-center flex-wrap mt-10">
+                <div className="flex justify-center flex-wrap mt-10 gap-10">
                     <div className="w-80 shadow-md rounded-md bg-white ">
                         <a href="https://bit.ly/3COTjc9" target="_blank" rel="noreferrer">
-                        <video className="rounded-md"  height="240" autoPlay={true} muted={true} loop={true}>
-                            <source src="/videos/serviciosasociados/auna.mp4" type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
+                            <video className="rounded-md" height="240" autoPlay={true} muted={true} loop={true}>
+                                <source src="/videos/serviciosasociados/auna.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
                         </a>
                         <div className="text-gray-600 text-sm p-4">
                             <p>
@@ -145,9 +146,27 @@ export default function Home() {
                             </p>
                             <br />
                             <p>
-                            Agenda tu cita llamando al (074) 749 333
+                                Agenda tu cita llamando al (074) 749 333
                             </p>
                         </div>
+                    </div>
+                    <div className="w-96 my-auto rounded-md shadow-md ">
+                        <Image
+                            className="rounded-md"
+                            src="/images/serviciosasociados/convocatoria-mindef.jpeg"
+                            width={579}
+                            height={254}
+                            layout="responsive"
+                        />
+                    </div>
+                    <div className="w-80 h-fit my-auto rounded-md shadow-md">
+                        <Image
+                            className="rounded-md"
+                            src="/images/serviciosasociados/convocatoria-mindef2.jpeg"
+                            width={380}
+                            height={491.797}
+                            layout="responsive"
+                        />
                     </div>
                 </div>
             </section>
@@ -442,7 +461,7 @@ export default function Home() {
                             </p>
                         </TitleHeading>
                         <p className="text-themeLightBlue font-bold text-3xl mt-4">
-                            2019 - 2022
+                            2022 - 2025
                         </p>
                         <div className="my-10">
                             <ConsejoCarousel

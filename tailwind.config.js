@@ -32,6 +32,8 @@ module.exports = {
         'comunicado-ee2018': `url('/images/comunicado_urgente/ee2018.png')`,
         'comunicado-ee2019': `url('/images/comunicado_urgente/ee2019.png')`,
         'comunicado-ee2020': `url('/images/comunicado_urgente/ee2020.png')`,
+        'comunicado-ee2021': `url('/images/comunicado_urgente/ee2021.png')`,
+        'convocatoria-2abril': `url('/images/comunicado_urgente/convocatoria_2_abril.jpeg')`,
       }),
       colors: {
         greenWhatsapp: '#27A02F',

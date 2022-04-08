@@ -7,15 +7,20 @@ const Slide1 = () => <div className="h-56 lg:h-96 grid grid-cols-3 gap-2 w-full 
 </div>
 
 const Slide2 = () => <div className="h-56 lg:h-96 grid grid-cols-3 gap-2 w-full relative    ">
+    <a href="https://cclam.org.pe/pdfs/convocatoria_2_abril.jpeg" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-convocatoria-2abril bg-cover lg:bg-top bg-no-repeat bg-center"></a>
     <a href="https://cclam.org.pe/pdfs/COMUNICADO_2_COMITE_ELECTORAL" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-dos-header bg-cover lg:bg-top bg-no-repeat bg-center"></a>
     <a href="https://cclam.org.pe/pdfs/LISTA_COMUNICADO_2" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-dos-header-dos bg-cover lg:bg-top bg-no-repeat bg-center"></a>
-    <a href="https://cclam.org.pe/pdfs/comunicado_3" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-tres-header bg-cover lg:bg-top bg-no-repeat bg-center"></a>
 </div>
 
 const Slide3 = () =>
     <div className="h-56 lg:h-96 grid grid-cols-3 gap-2 w-full relative ">
+        <a href="https://cclam.org.pe/pdfs/comunicado_3" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-tres-header bg-cover lg:bg-top bg-no-repeat bg-center"></a>
         <a href="https://cclam.org.pe/pdfs/comunicado_3_parte_2" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-tres-header-dos bg-cover lg:bg-top bg-no-repeat bg-center"></a>
         <a href="https://cclam.org.pe/pdfs/comunicado_04.png" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-cuatro-header bg-cover lg:bg-top bg-no-repeat bg-center"></a>
+    </div>
+
+const Slide4 = () =>
+    <div className="h-56 lg:h-96 grid grid-cols-3 gap-2 w-full relative ">
         <a href="https://cclam.org.pe/pdfs/lista_comunicado_04_comite_electoral.png" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-cuatro-header-dos bg-cover lg:bg-top bg-no-repeat bg-center"></a>
     </div>
 
@@ -26,29 +31,35 @@ const Slidesm1 = () => <div className="h-56 lg:h-96 grid grid-cols-2 gap-2 w-ful
 
 const Slidesm2 = () => <div className="h-56 lg:h-96 grid grid-cols-2 gap-2 w-full relative    ">
     <a href="https://cclam.org.pe/pdfs/REGLAMENTO_DE_ELECCIONES_CCLAM_23_NOV_2022.pdf" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-reglamento bg-cover lg:bg-top bg-no-repeat bg-center"></a>
-    <a href="https://cclam.org.pe/pdfs/COMUNICADO_2_COMITE_ELECTORAL" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-dos-header bg-cover lg:bg-top bg-no-repeat bg-center"></a>
+    <a href="https://cclam.org.pe/pdfs/convocatoria_2_abril.jpeg" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-convocatoria-2abril bg-cover lg:bg-top bg-no-repeat bg-center"></a>
 </div>
 
 const Slidesm3 = () =>
     <div className="h-56 lg:h-96 grid grid-cols-2 gap-2 w-full relative ">
+        <a href="https://cclam.org.pe/pdfs/COMUNICADO_2_COMITE_ELECTORAL" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-dos-header bg-cover lg:bg-top bg-no-repeat bg-center"></a>
         <a href="https://cclam.org.pe/pdfs/LISTA_COMUNICADO_2" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-dos-header-dos bg-cover lg:bg-top bg-no-repeat bg-center"></a>
-        <a href="https://cclam.org.pe/pdfs/comunicado_3" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-tres-header bg-cover lg:bg-top bg-no-repeat bg-center"></a>
     </div>
 
 const Slidesm4 = () =>
     <div className="h-56 lg:h-96 grid grid-cols-2 gap-2 w-full relative ">
+        <a href="https://cclam.org.pe/pdfs/comunicado_3" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-tres-header bg-cover lg:bg-top bg-no-repeat bg-center"></a>
         <a href="https://cclam.org.pe/pdfs/comunicado_3_parte_2" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-tres-header-dos bg-cover lg:bg-top bg-no-repeat bg-center"></a>
-        <a href="https://cclam.org.pe/pdfs/comunicado_04.png" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-cuatro-header bg-cover lg:bg-top bg-no-repeat bg-center"></a>
     </div>
 
 const Slidesm5 = () =>
     <div className="h-56 lg:h-96 grid grid-cols-2 gap-2 w-full relative ">
+        <a href="https://cclam.org.pe/pdfs/comunicado_04.png" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-cuatro-header bg-cover lg:bg-top bg-no-repeat bg-center"></a>
         <a href="https://cclam.org.pe/pdfs/lista_comunicado_04_comite_electoral.png" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-cuatro-header-dos bg-cover lg:bg-top bg-no-repeat bg-center"></a>
         <a href="https://cclam.org.pe/pdfs/lista_comunicado_04_comite_electoral.png" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-cuatro-header-dos bg-cover lg:bg-top bg-no-repeat bg-center"></a>
     </div>
 
-const slides = [<Slide1 />, <Slide2 />, <Slide3 />]
-const slidessm = [<Slidesm1 />, <Slidesm2 />, <Slidesm3 />, <Slidesm4 />, <Slidesm5 />]
+const Slidesm6 = () =>
+    <div className="h-56 lg:h-96 grid grid-cols-2 gap-2 w-full relative ">
+        <a href="https://cclam.org.pe/pdfs/lista_comunicado_04_comite_electoral.png" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-cuatro-header-dos bg-cover lg:bg-top bg-no-repeat bg-center"></a>
+    </div>
+
+const slides = [<Slide1 />, <Slide2 />, <Slide3 />, <Slide4 />]
+const slidessm = [<Slidesm1 />, <Slidesm2 />, <Slidesm3 />, <Slidesm4 />, <Slidesm5 />,<Slidesm6 />]
 
 export default function CarouselComunicados() {
     const [current, setcurrent] = useState(0)

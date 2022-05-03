@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Alex Didi Gómez",
+        "telf": "942418670",
+        "correo": "alexgomez@cclam.org.pe",
+        "src": "/images/comitesgremiales/alex.png"
+    },
+    {
+        "name": "Rosa Bances Mimbela",
+        "src":"/images/comitesgremiales/rosa.png",
+        "telf": "984713266",
+        "correo": "rosabances@cclam.org.pe"
+    },
+    {
+        "name": "Vanessa Ñiquen Bazán",
+        "telf": "944674614",
+        "correo": "protestos@cclam.org.pe",
+        "src": "/images/comitesgremiales/vanessa.png"
+    },
+    {
+        "name": "Martha Sifuentes Rojas",
+        "telf": "944684294",
+        "correo": "servicioalasociado@cclam.org.pe",
+        "src": "/images/comitesgremiales/martha.png"
+    },
+    {
+        "name": "Carmen Julia Sime Nieto",
+        "telf": "944675625",
+        "correo": "campuscamara@cclam.org.pe",
+        "src": "/images/comitesgremiales/carmen.png"
+    },
+    {
+        "name": "Verónica Vanessa Piscoya Lazo",
+        "telf": "944680348",
+        "correo": "comex@cclam.org.pe",
+        "src": "/images/comitesgremiales/vane.png"
+    },
+    {
+        "name": "Chelsy Quispe Díaz",
+        "telf": "944680147",
+        "correo": "secretariagerencia@cclam.org.pe",
+        "src": "/images/comitesgremiales/chelsy.png"
+    }
+]

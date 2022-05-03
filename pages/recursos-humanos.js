@@ -142,21 +142,6 @@ const cards = [
             />} />,
     },
     {
-        keywords: ["empresas", "formalizacion", "jorge", "chozo", "cajusol"],
-        element: <CardContact
-            correo="jchozo@cclam.org.pe"
-            telf="984785915"
-            wsp="984785915"
-            image={<Image
-                src={`${process.env.STORAGE_URL_FT}/images/recursos-humanos/formalizacion.png`}
-                layout="fill"
-                objectFit="cover"
-                quality="100"
-                className="rounded-4xl"
-                alt="jorge cajusol"
-            />} />,
-    },
-    {
         keywords: ["cobranza", "martha", "sifuentes"],
         element: <CardContact
             correo="servicioalasociado@cclam.org.pe"
@@ -275,13 +260,13 @@ const cards = [
             />} />,
     },
     {
-        keywords: ["imagen", "institucional", "juan", "luis", "llontop"],
+        keywords: ["imagen", "institucional", "griser", "rodas", "quintana"],
         element: <CardContact
             correo="imageninstitucional@cclam.org.pe"
             telf="984769175"
             wsp="984769175"
             image={<Image
-                src={`${process.env.STORAGE_URL_FT}/images/recursos-humanos/imagen.png`}
+                src={`${process.env.STORAGE_URL_FT}/images/recursos-humanos/imagen.jpeg`}
                 layout="fill"
                 objectFit="cover"
                 quality="100"
@@ -296,20 +281,6 @@ const cards = [
             wsp="984704667"
             image={<Image
                 src={`${process.env.STORAGE_URL_FT}/images/recursos-humanos/design.png`}
-                layout="fill"
-                objectFit="cover"
-                quality="100"
-                className="rounded-4xl"
-            />} />,
-    },
-    {
-        keywords: ["jesús", "cerdán"],
-        element: <CardContact
-            correo=" "
-            telf="978970721"
-            wsp="978970721"
-            image={<Image
-                src={`${process.env.STORAGE_URL_FT}/images/recursos-humanos/promocion-desarrollo-asociados2.png`}
                 layout="fill"
                 objectFit="cover"
                 quality="100"

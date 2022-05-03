@@ -4,6 +4,7 @@ import Image from "next/image";
 import CardContact from "../components/Servicios/CardContact";
 import { Transition } from '@headlessui/react'
 import data from "../public/dynamic/convenios.json";
+import sectoristas from "../public/dynamic/sectoristas.json";
 
 export default function Convenios() {
     return (
@@ -54,28 +55,35 @@ export default function Convenios() {
                             ))}
                         </div>
                         <p className="block text-center text-lg italic mt-2 mb-10">Y muchos convenios más...</p>
-                        <div className="w-56 mx-auto">
+                        <div className="mx-auto">
                             <p className="text-center text-themeLightBlue font-semibold">
                                 ¿Quieres saber más?
                             </p>
                             <p className="text-center text-sm font-semibold mb-3 text-gray-700">
-                                Comunícate con nosotros
+                                Comunícate con nustros sectoristas
                             </p>
-                            <CardContact
-                                image={
-                                    <Image
-                                        className="rounded-full filter brightness-95 "
-                                        src={`${process.env.STORAGE_URL_FT}/images/convenios/encargado.png`}
-                                        width="600"
-                                        height="600"
-                                        alt="Encargado de convenios"
+                            <div className="flex flex-wrap gap-x-10 gap-y-16 justify-center">
+                                {
+                                    sectoristas.map((s,sk)=>
+                                    <CardContact
+                                        key={sk}
+                                        image={
+                                            <Image
+                                                className="rounded-full filter brightness-95 "
+                                                src={`${process.env.STORAGE_URL_FT}${s.src}`}
+                                                width="600"
+                                                height="600"
+                                                alt="Encargado de convenios"
+                                            />
+                                        }
+                                        area="Sectorista"
+                                        encargado={s.name}
+                                        phone={s.telf}
+                                        mail={s.correo}
                                     />
+                                    )
                                 }
-                                area="Sectorista"
-                                encargado="Rosa Margarita Bances Mimbela"
-                                phone="984713266"
-                                mail="rosabances@cclam.org.pe"
-                            />
+                            </div>
                         </div>
                     </div>
                 </Transition>

@@ -84,7 +84,7 @@ export default function Home() {
                             <p className="text-sm lg:text-base md:text-base sm:text-base block text-yellow-400  font-semibold mb-3 tracking-widest">
                                 CÁMARA DE COMERCIO Y PRODUCCIÓN DE LAMBAYEQUE
                             </p>
-                            <h1 className="text-3xl lg:text-7xl md:text-7xl sm:text-6xl tracking-tight font-black text-azulNavidad">
+                            <h1 className="text-3xl lg:text-7xl md:text-7xl sm:text-6xl tracking-tight font-black text-white">
                                 <span className="block mb-2">Seguimos</span>
                                 <Typing
                                     phrases={[
@@ -94,7 +94,7 @@ export default function Home() {
                                     ]}
                                 />
                             </h1>
-                            <p className="mt-3 text-azulNavidad max-w-xl text-base lg:text-xl md:text-xl sm:text-xl mb-6">
+                            <p className="mt-3 text-white max-w-xl text-base lg:text-xl md:text-xl sm:text-xl mb-6">
                                 Nos seguimos transformando para continuar siendo el motor de nuestra región, tenemos nuevos servicios digitales para potenciar tu negocio.
                             </p>
                             <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fcclambayeque%2F&width=130&layout=button_count&action=like&size=small&share=false&height=21&appId" width="220" height="46" style={{ border: "none", overflow: "hidden" }} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -218,14 +218,14 @@ export default function Home() {
                                 </div>
                             </a>
                         </Link>
-                        <Link href={`/solucion-de-disputas/junta-resolucion-disputas`}>
+                        {/* <Link href={`/solucion-de-disputas/junta-resolucion-disputas`}>
                             <a>
                                 <div className="w-full lg:w-96 bg-blue-500 bg-opacity-0 px-5 py-2 rounded-full text-gray-600 flex transition duration-500 ease-in-out transform hover:scale-105 cursor-pointer">
                                     <svg viewBox="0 0 448 512" className="h-7 w-7 text-blue-500 mr-5" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" ><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm95.8 32.6L272 480l-32-136 32-56h-96l32 56-32 136-47.8-191.4C56.9 292 0 350.3 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-72.1-56.9-130.4-128.2-133.8z"></path></svg>
                                     <p className="my-auto text-base">Junta de resolución de disputas</p>
                                 </div>
                             </a>
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
                 <div className="w-52 mt-10 lg:mt-0 lg:w-96 mx-auto">

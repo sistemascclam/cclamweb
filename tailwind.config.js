@@ -10,7 +10,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: theme => ({
-        'landing': `url('/images/portada-aniversario.png')`,
+        'landing': `url('/images/landing.png')`,
         'mesa-de-partes': `url('/images/areas/mesa-de-partes.png')`,
         'protestos': `url('/images/areas/protestos.png')`,
         'formalizacion': `url('/images/areas/formalizacion.png')`,

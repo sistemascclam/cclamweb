@@ -77,7 +77,7 @@ export default function Home() {
             </div>
             <div className="mt-6 border-themeBlue w-full border-2"></div>
             <CarouselComunicados />
-            <header className="relative bg-themeWhite">
+            <header className="relative bg-themeBlue">
                 <div className="relative min-h-screen bg-landing bg-cover bg-left flex flex-wrap content-center">
                     <div className="relative align-middle mt-10">
                         <div className="text-left p-6 mx-6 my-auto">

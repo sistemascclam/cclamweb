@@ -66,7 +66,7 @@ var options = [
     },
     {
         title: "Registro de árbitros",
-        items: [{ name: "Registro de árbitros - Marzo 2022.pdf", link: "2022/MARZO/REGISTRO_DE_ARBITROS_ACTUALIZADO_032022.pdf" }],
+        items: [{ name: "Registro de árbitros - Mayo 2022.pdf", link: "2022/MAYO/REGISTRO_DE_ARBITROS_ACTUALIZADO_052022.pdf" }],
         icon: (
             <svg
                 viewBox="0 0 448 512"

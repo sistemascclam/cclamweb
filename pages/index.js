@@ -15,8 +15,6 @@ import ContenidoExtra from "../components/ContenidoExtra";
 import moment from 'moment'
 import 'moment/locale/es'
 // import GoogleAdd from "../components/GoogleAdd";
-// import ModalComunicado from "../components/Comunicados/ModalComunicado";
-import CarouselComunicados from "../components/Comunicados/CarouselComunicados";
 moment.locale('es')
 
 export default function Home() {
@@ -65,18 +63,6 @@ export default function Home() {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            {/* <ModalComunicado isOpen={showComunicado} toogleModal={() => setshowComunicado(!showComunicado)} /> */}
-            <div className="h-96 grid grid-cols-1 lg:grid-cols-3 w-full relative gap-2">
-                <a href="https://m.facebook.com/story.php?story_fbid=5070764136300358&id=269465366430283" target="_blank" rel="noreferrer" className="rounded-xl shadow-md flex justify-center content-end bg-comunicado-convocatoria bg-cover lg:bg-top bg-no-repeat bg-center"></a >
-                <div className="grid grid-cols-2 lg:grid-cols-4 col-span-2 w-full relative gap-2">
-                    <a href="https://cclam.org.pe/pdfs/CCAUD2018.pdf" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-ee2018 bg-cover lg:bg-top bg-no-repeat bg-center"></a>
-                    <a href="https://cclam.org.pe/pdfs/CCAUD2019.pdf" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-ee2019 bg-cover lg:bg-top bg-no-repeat bg-center"></a>
-                    <a href="https://cclam.org.pe/pdfs/CC_AUD2020.pdf" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-ee2020 bg-cover lg:bg-top bg-no-repeat bg-center"></a>
-                    <a href="https://cclam.org.pe/pdfs/CC_AUD2021.pdf" target="_blank" rel="noreferrer" className="flex justify-center rounded-xl shadow-md content-end bg-comunicado-ee2021 bg-cover lg:bg-top bg-no-repeat bg-center"></a>
-                </div>
-            </div>
-            <div className="mt-6 border-themeBlue w-full border-2"></div>
-            <CarouselComunicados />
             <header className="relative bg-themeBlue">
                 <div className="relative min-h-screen bg-landing bg-cover bg-left flex flex-wrap content-center">
                     <div className="relative align-middle mt-10">

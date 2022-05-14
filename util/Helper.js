@@ -10,3 +10,6 @@ export const withLeftZeros=(param)=>{
     return finalnum;
 }
 
+export const toNombrePropio=(string)=>{
+    return string.split(" ").map(st=>st.charAt(0).toUpperCase() + st.toLocaleLowerCase().slice(1)).join(" ")
+}

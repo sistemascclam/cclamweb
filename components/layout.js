@@ -29,11 +29,11 @@ export default function Layout({ children, home }) {
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
         <link rel="apple-touch-icon" href="https://www.cclam.org.pe/favicon.ico" />
       </Head>
-      <FloatingGroup />
-      <CookieConsent />
       <NavBar />
+      <FloatingGroup />
       <main className="bg-themeWhite font-poppins">{children}</main>
       <Footer />
+      {/* <CookieConsent /> */}
     </>
   )
 }

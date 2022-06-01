@@ -126,16 +126,22 @@ export default function CentroDeConciliacion() {
                         }
 
                     </div>
-                    <div className="flex flex-wrap justify-between my-20">
-                        <a href='https://cclam.org.pe/pdfs/PROTOCOLO_CENTRO_DE_CONCILIACION_CCLAM_2021.pdf' target="_blank" className="relative w-full lg:w-96 mb-5 lg:mb-0">
+                    <div className="flex flex-wrap justify-between my-10">
+                        <a href='https://cclam.org.pe/pdfs/PROTOCOLO_CENTRO_DE_CONCILIACION_CCLAM_2021.pdf' target="_blank" className="group relative w-full lg:w-4/12 mb-5 lg:mb-0">
+                            <p className='text-blue-600 text-center mb-1'>👇 <span className='group-hover:underline'>Descarga aquí</span> 👇</p>
+                            <div className='shadow-close rounded-xl'>
+                                
                             <Image
                                 className="shadow-xl rounded-xl"
                                 src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/protocoloconciliacion.jpg`}
-                                width="468"
-                                height="663"
+                                width="498"
+                                height="693"
                             />
+                            </div>
                         </a>
-                        <div className="relative w-full lg:w-7/12 lg:ml-5 rounded-xl shadow-close">
+                        <div className="relative w-full lg:w-8/12 lg:pl-8 rounded-xl mt-6">
+                        <div className='shadow-close rounded-xl'>
+
                             <Image
                                 className="rounded-xl shadow-close"
                                 src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/proyectos-conciliacion.jpeg`}
@@ -143,6 +149,7 @@ export default function CentroDeConciliacion() {
                                 height="480"
                                 layout="responsive"
                             />
+                        </div>
                         </div>
                     </div>
                 </div>

@@ -225,23 +225,29 @@ export default function CentroArbitraje() {
                             <Item key={i} {...option} />
                         ))}
                     </div>
-                    <div className="flex flex-wrap justify-between my-20">
-                        <div className="relative w-full lg:w-96 mb-5 lg:mb-0">
-                            <Image
-                                className="shadow-xl rounded-xl"
-                                src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/protocoloarbitraje.png`}
-                                width="468"
-                                height="663"
-                            />
+                    <div className="flex flex-wrap justify-between my-10">
+                        <div className="group relative w-full lg:w-4/12 mb-5 lg:mb-0">
+                            <div className='shadow-close rounded-xl'>
+
+                                <Image
+                                    className="shadow-xl rounded-xl"
+                                    src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/protocoloarbitraje.png`}
+                                    width="468"
+                                    height="663"
+                                />
+                            </div>
                         </div>
-                        <div className="relative w-full lg:w-7/12 lg:ml-5 rounded-xl shadow-close">
-                            <Image
-                                className="rounded-xl shadow-close"
-                                src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/post-mesa-conciliacion.png`}
-                                width="480"
-                                height="480"
-                                layout="responsive"
-                            />
+                        <div className="relative w-full lg:w-8/12 lg:pl-8 rounded-xl">
+                            <div className='shadow-close rounded-xl'>
+
+                                <Image
+                                    className="rounded-xl shadow-close"
+                                    src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/post-mesa-conciliacion.png`}
+                                    width="480"
+                                    height="480"
+                                    layout="responsive"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

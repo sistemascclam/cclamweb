@@ -143,10 +143,10 @@ export default function CentroArbitraje() {
                     show={true}
                     appear={true}
                     enter="transform transition duration-1000"
-                    enterFrom="opacity-0 -translate-y-3"
-                    enterTo="opacity-100 translate-y-0"
+                    enterFrom="opacity-0 "
+                    enterTo="opacity-100 "
                     leave="transform duration-200 transition ease-in-out"
-                    leaveFrom="opacity-100 translate-y-0 "
+                    leaveFrom="opacity-100  "
                     leaveTo="opacity-0 "
                 >
                     <div className="flex flex-wrap flex-col lg:flex-row justify-between ">
@@ -164,188 +164,177 @@ export default function CentroArbitraje() {
                         </div>
                     </div>
                 </Transition>
-                <Transition
-                    show={true}
-                    appear={true}
-                    enter="transform transition duration-1000"
-                    enterFrom="translate-y-8"
-                    enterTo="translate-y-0"
-                    leave="transform duration-200 transition ease-in-out"
-                    leaveFrom="translate-y-0 "
-                    leaveTo=""
-                >
-                    <div className="bg-white w-full shadow-close px-5 lg:px-24 py-12 rounded-t-4xl mt-10">
-                        <div className="flex flex-wrap lg:flex-nowrap">
-                            <div className="w-56 mx-auto">
-                                <CardContact
-                                    image={
-                                        <Image
-                                            className="rounded-full filter brightness-95 "
-                                            src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/encargado.png`}
-                                            width="600"
-                                            height="600"
-                                        />
-                                    }
-                                    area="Centro de Solución de Disputas"
-                                    encargado="María Alejandra Pasco Herrera"
-                                    phone="984701376"
-                                    mail="secretariogeneral@cclam.org.pe"
-                                />
-                            </div>
-                            <div className="col-span-4 lg:pl-5 text-gray-800">
-                                <p className="text-justify mt-5">
-                                    El Centro de Arbitraje pertenece al Centro de Solución
-                                    de Disputas de la Centenaria Cámara de Comercio y
-                                    Producción de Lambayeque, el mismo que se encarga de
-                                    impulsar el arbitraje como un mecanismo eficiente de
-                                    resolución de conflictos. Asimismo, sus procesos
-                                    arbitrales se caracterizan por ser resueltos de manera
-                                    rápida, con imparcialidad, ética y veracidad; siempre
-                                    acorde a la normatividad vigente y a su Reglamento
-                                    Arbitraje.
-                                </p>
-                                <p className="text-justify mt-5">
-                                    Se caracteriza por contar tanto con la infraestructura y
-                                    ambientes apropiados para el desarrollo de audiencias
-                                    presenciales, como por contar con una plataforma digital
-                                    apta durante todo el proceso e idónea para audiencias
-                                    virtuales. De esa manera otorgan las condiciones más
-                                    favorables para el correcto desarrollo de los procesos
-                                    arbitrales.
-                                </p>
-                                <p className="text-justify mt-5">
-                                    Para mayor información llamar al 984 701 376 – 984 793
-                                    698 o escribir a los siguientes correos electrónicos: {" "}
-                                    <span>
-                                        secretariogeneral@cclam.org.pe
-                                    </span>,  {" "}
-                                    <span>
-                                        secretariaarbitral@cclam.org.pe
-                                    </span> o {" "}
-                                    <span>
-                                        secretariaarbitraje@cclam.org.pe
-                                    </span>
-                                    .
-                                </p>
-                            </div>
+                <div className="bg-white w-full shadow-sm px-5 lg:px-24 py-12 rounded-t-4xl mt-10">
+                    <div className="flex flex-wrap lg:flex-nowrap">
+                        <div className="w-56 mx-auto">
+                            <CardContact
+                                image={
+                                    <Image
+                                        className="rounded-full filter brightness-95 "
+                                        src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/encargado.png`}
+                                        width="600"
+                                        height="600"
+                                    />
+                                }
+                                area="Centro de Solución de Disputas"
+                                encargado="María Alejandra Pasco Herrera"
+                                phone="984701376"
+                                mail="secretariogeneral@cclam.org.pe"
+                            />
                         </div>
-                        <CalculadoraArbitraje />
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-4 gap-x-6 mt-14">
-                            {options.map((option, i) => (
-                                <Item key={i} {...option} />
+                        <div className="col-span-4 lg:pl-5 text-gray-800">
+                            <p className="text-justify mt-5">
+                                El Centro de Arbitraje pertenece al Centro de Solución
+                                de Disputas de la Centenaria Cámara de Comercio y
+                                Producción de Lambayeque, el mismo que se encarga de
+                                impulsar el arbitraje como un mecanismo eficiente de
+                                resolución de conflictos. Asimismo, sus procesos
+                                arbitrales se caracterizan por ser resueltos de manera
+                                rápida, con imparcialidad, ética y veracidad; siempre
+                                acorde a la normatividad vigente y a su Reglamento
+                                Arbitraje.
+                            </p>
+                            <p className="text-justify mt-5">
+                                Se caracteriza por contar tanto con la infraestructura y
+                                ambientes apropiados para el desarrollo de audiencias
+                                presenciales, como por contar con una plataforma digital
+                                apta durante todo el proceso e idónea para audiencias
+                                virtuales. De esa manera otorgan las condiciones más
+                                favorables para el correcto desarrollo de los procesos
+                                arbitrales.
+                            </p>
+                            <p className="text-justify mt-5">
+                                Para mayor información llamar al 984 701 376 – 984 793
+                                698 o escribir a los siguientes correos electrónicos: {" "}
+                                <span>
+                                    secretariogeneral@cclam.org.pe
+                                </span>,  {" "}
+                                <span>
+                                    secretariaarbitral@cclam.org.pe
+                                </span> o {" "}
+                                <span>
+                                    secretariaarbitraje@cclam.org.pe
+                                </span>
+                                .
+                            </p>
+                        </div>
+                    </div>
+                    <CalculadoraArbitraje />
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-4 gap-x-6 mt-14">
+                        {options.map((option, i) => (
+                            <Item key={i} {...option} />
+                        ))}
+                    </div>
+                    <div className="flex flex-wrap justify-between my-20">
+                        <div className="relative w-full lg:w-96 mb-5 lg:mb-0">
+                            <Image
+                                className="shadow-xl rounded-xl"
+                                src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/protocoloarbitraje.png`}
+                                width="468"
+                                height="663"
+                            />
+                        </div>
+                        <div className="relative w-full lg:w-7/12 lg:ml-5 rounded-xl shadow-close">
+                            <Image
+                                className="rounded-xl shadow-close"
+                                src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/post-mesa-conciliacion.png`}
+                                width="480"
+                                height="480"
+                                layout="responsive"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className="relative rounded-2xl -mt-5">
+                    <Image
+                        className="filter brightness-75 rounded-2xl"
+                        src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/consejo-arbitraje.jpg`}
+                        width="1366"
+                        height="458"
+                        layout="responsive"
+                    />
+                </div>
+                <div className="lg:px-8">
+                    <div className="relative bg-white shadow-close px-5 lg:px-14 py-10 rounded-3xl -mt-3 lg:-mt-14 mx-auto text-gray-800">
+                        <p className="font-bold text-themeBlue text-xl mb-8">
+                            CONSEJO SUPERIOR DE ARBITRAJE 2019 - 2022
+                        </p>
+                        <p className="text-gray-800 leading-relaxed mb-5">
+                            El 27 de diciembre del 2019 en el directorio de la
+                            Cámara de Comercio y Producción de Lambayeque se
+                            llevó a cabo la ceremonia de Juramentación del nuevo
+                            Consejo Superior de Arbitraje de la Centenaria
+                            Institución para el período 2019 – 2022.
+                        </p>
+                        <p className="text-gray-800 leading-relaxed mb-5">
+                            El nuevo Consejo Superior de Arbitraje está
+                            conformado por el Sr. Rafael Iván Pantoja Barboza
+                            como Presidente del nuevo Consejo Superior de
+                            Arbitraje y la Sra. María Astrid Reynoso de Vargas
+                            como Vicepresidenta. Asimismo, desempeñarán como
+                            miembros titulares los señores Jose Antonio Cárdenas
+                            Reynaga, Jorge Segundo Cumpa Reyes, Kattya Karyna
+                            Hoyos Quiroz e Yván Pavel Pérez Solf, mientras que
+                            los miembros suplentes serán los señores Jorge Luis
+                            Calmet Velasco, Pablo Fernández Díaz y Rosa María
+                            del Pilar Forti Reaño.
+                        </p>
+                        <p className="text-gray-800 leading-relaxed mb-14">
+                            La ceremonia de juramentación fue presidida por el
+                            Presidente de la CCLAM, Ing. Carlos Manuel Burgos
+                            Montenegro, y tuvo como invitados al Primer
+                            Vicepresidente de la Cámara de Comercio, Mg. Olivio
+                            Huancaruna Perales; Gerente General, Lic. Miguel
+                            Ángel Camacho Urbina y; a la Secretaria General del
+                            Centro de Arbitraje, Abog. María Alejandra Pasco
+                            Herrera.
+                        </p>
+                        <p className="font-bold text-themeBlue text-xl mb-4">
+                            CONSEJO SUPERIOR DE ARBITRAJE 2019 - 2022
+                        </p>
+                        <ul className="list-none list-inside mb-14 text-gray-800">
+                            {listConsejo.map((it, i) => (
+                                <li className="flex mb-2" key={i}>
+                                    <span>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="h-4 w-4 mt-1 text-blue-500 mr-3"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={3}
+                                                d="M5 13l4 4L19 7"
+                                            />
+                                        </svg>
+                                    </span>{" "}
+                                    {it}
+                                </li>
                             ))}
-                        </div>
-                        <div className="flex flex-wrap justify-between my-20">
-                            <div className="relative w-full lg:w-96 mb-5 lg:mb-0">
-                                <Image
-                                    className="shadow-xl rounded-xl"
-                                    src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/protocoloarbitraje.png`}
-                                    width="468"
-                                    height="663"
-                                />
-                            </div>
-                            <div className="relative w-full lg:w-7/12 lg:ml-5 rounded-xl shadow-close">
-                                <Image
-                                    className="rounded-xl shadow-close"
-                                    src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/post-mesa-conciliacion.png`}
-                                    width="480"
-                                    height="480"
-                                    layout="responsive"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="relative rounded-2xl -mt-5">
-                        <Image
-                            className="filter brightness-75 rounded-2xl"
-                            src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/consejo-arbitraje.jpg`}
-                            width="1366"
-                            height="458"
-                            layout="responsive"
-                        />
-                    </div>
-                    <div className="lg:px-8">
-                        <div className="relative bg-white shadow-close px-5 lg:px-14 py-10 rounded-3xl -mt-3 lg:-mt-14 mx-auto text-gray-800">
-                            <p className="font-bold text-themeBlue text-xl mb-8">
-                                CONSEJO SUPERIOR DE ARBITRAJE 2019 - 2022
-                            </p>
-                            <p className="text-gray-800 leading-relaxed mb-5">
-                                El 27 de diciembre del 2019 en el directorio de la
-                                Cámara de Comercio y Producción de Lambayeque se
-                                llevó a cabo la ceremonia de Juramentación del nuevo
-                                Consejo Superior de Arbitraje de la Centenaria
-                                Institución para el período 2019 – 2022.
-                            </p>
-                            <p className="text-gray-800 leading-relaxed mb-5">
-                                El nuevo Consejo Superior de Arbitraje está
-                                conformado por el Sr. Rafael Iván Pantoja Barboza
-                                como Presidente del nuevo Consejo Superior de
-                                Arbitraje y la Sra. María Astrid Reynoso de Vargas
-                                como Vicepresidenta. Asimismo, desempeñarán como
-                                miembros titulares los señores Jose Antonio Cárdenas
-                                Reynaga, Jorge Segundo Cumpa Reyes, Kattya Karyna
-                                Hoyos Quiroz e Yván Pavel Pérez Solf, mientras que
-                                los miembros suplentes serán los señores Jorge Luis
-                                Calmet Velasco, Pablo Fernández Díaz y Rosa María
-                                del Pilar Forti Reaño.
-                            </p>
-                            <p className="text-gray-800 leading-relaxed mb-14">
-                                La ceremonia de juramentación fue presidida por el
-                                Presidente de la CCLAM, Ing. Carlos Manuel Burgos
-                                Montenegro, y tuvo como invitados al Primer
-                                Vicepresidente de la Cámara de Comercio, Mg. Olivio
-                                Huancaruna Perales; Gerente General, Lic. Miguel
-                                Ángel Camacho Urbina y; a la Secretaria General del
-                                Centro de Arbitraje, Abog. María Alejandra Pasco
-                                Herrera.
-                            </p>
-                            <p className="font-bold text-themeBlue text-xl mb-4">
-                                CONSEJO SUPERIOR DE ARBITRAJE 2019 - 2022
-                            </p>
-                            <ul className="list-none list-inside mb-14 text-gray-800">
-                                {listConsejo.map((it, i) => (
-                                    <li className="flex mb-2" key={i}>
-                                        <span>
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                className="h-4 w-4 mt-1 text-blue-500 mr-3"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke="currentColor"
-                                            >
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth={3}
-                                                    d="M5 13l4 4L19 7"
-                                                />
-                                            </svg>
-                                        </span>{" "}
-                                        {it}
-                                    </li>
-                                ))}
-                            </ul>
-                            <p className="italic text-center text-gray-700">
-                                “Todo litigio o controversia, derivados o
-                                relacionados con este acto jurídico, será resuelto
-                                mediante Arbitraje Institucional de Derecho, de
-                                conformidad con los Reglamentos Arbitrales del
-                                Centro de Arbitraje de la Cámara de Comercio y
-                                Producción de Lambayeque, a cuyas normas,
-                                administración y decisión se someten las partes en
-                                forma incondicional, declarando conocerlas y
-                                aceptarlas en su integridad, precisando que el laudo
-                                emitido en este proceso arbitral será inapelable y
-                                definitivo”.
-                            </p>
-                            <div className=" grid grid-cols-1 lg:grid-cols-3 gap-4 text-2xl text-center text-themeLightBlue font-bold mt-5 mb-20">
-                                <p>IMPARCIALIDAD</p>
-                                <p>INDEPENDENCIA</p>
-                                <p>ÉTICA</p>
-                            </div>
+                        </ul>
+                        <p className="italic text-center text-gray-700">
+                            “Todo litigio o controversia, derivados o
+                            relacionados con este acto jurídico, será resuelto
+                            mediante Arbitraje Institucional de Derecho, de
+                            conformidad con los Reglamentos Arbitrales del
+                            Centro de Arbitraje de la Cámara de Comercio y
+                            Producción de Lambayeque, a cuyas normas,
+                            administración y decisión se someten las partes en
+                            forma incondicional, declarando conocerlas y
+                            aceptarlas en su integridad, precisando que el laudo
+                            emitido en este proceso arbitral será inapelable y
+                            definitivo”.
+                        </p>
+                        <div className=" grid grid-cols-1 lg:grid-cols-3 gap-4 text-2xl text-center text-themeLightBlue font-bold mt-5 mb-20">
+                            <p>IMPARCIALIDAD</p>
+                            <p>INDEPENDENCIA</p>
+                            <p>ÉTICA</p>
                         </div>
                     </div>
-                </Transition>
+                </div>
             </div>
         </Layout>
     );

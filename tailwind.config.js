@@ -37,7 +37,7 @@ module.exports = {
       }),
       colors: {
         greenWhatsapp: '#27A02F',
-        themeWhite: '#F8F8F8',
+        themeWhite: '#f5f5f5',
         themeBlue: '#02116F',
         themeLightBlue: '#009BD7',
         startGradient: '#471E96',

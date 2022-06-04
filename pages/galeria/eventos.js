@@ -26,9 +26,9 @@ export default function Eventos() {
                 <div className="w-full py-6 lg:py-14 text-center">
                     <p className="text-base text-themeLightBlue mb-1 leading-tight">Entérate de lo que viene</p>
                     <p className="font-bold text-3xl leading-tight">Próximos eventos</p>
-                    <EventosContainer type="proximos" eventosData={actividadList?.filter(e =>e.fechaFin>=moment(Date.now()).format('YYYY-MM-DD'))} />
+                    <EventosContainer type="proximos" eventosData={actividadList?.filter(e =>e.fechaFin>=moment(Date.now()).format('YYYY-MM-DD')).sort(function(a,b){ return new Date(a.fechaInicio) - new Date(b.fechaInicio); })} />
                     <p className="font-bold text-3xl leading-tight mt-20">Eventos pasados</p>
-                    <EventosContainer type="pasados" eventosData={actividadList?.filter(e =>e.fechaFin<moment(Date.now()).format('YYYY-MM-DD'))} />
+                    <EventosContainer type="pasados" eventosData={actividadList?.filter(e =>e.fechaFin<moment(Date.now()).format('YYYY-MM-DD')).sort(function(a,b){ return new Date(b.fechaInicio) - new Date(a.fechaInicio); })} />
                 </div>
             </div>
         </Layout>

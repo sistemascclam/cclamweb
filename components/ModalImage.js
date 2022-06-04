@@ -19,7 +19,7 @@ export default function ModalImage({isOpen,imageModal,toogleModal}) {
                 className="fixed inset-0 z-10 overflow-y-auto"
                 onClose={toogleModal}
             >
-                <Dialog.Overlay className="fixed inset-0 bg-white opacity-80" />
+                <Dialog.Overlay className="fixed inset-0 bg-black opacity-80" />
                 <div className="min-h-screen text-center">
                     <Transition.Child
                         as={Fragment}
@@ -47,15 +47,15 @@ export default function ModalImage({isOpen,imageModal,toogleModal}) {
                         leaveFrom="opacity-100 scale-100"
                         leaveTo="opacity-0 scale-95"
                     >
-                        <div className={`inline-block w-full ${isZoomed ? 'max-w-screen max-h-screen' : 'max-w-xl'}	align-middle transition-all transform  shadow-xl rounded-2xl`}>
-                            <ScrollContainer className={`${isZoomed ? 'max-w-screen max-h-screen' : ''}`}>
+                        <div className={`inline-block w-full ${isZoomed ? 'max-w-4xl' : 'max-w-xl'}	align-middle transition-all transform rounded-2xl`}>
+                            <ScrollContainer className={`${isZoomed ? 'max-w-4xl' : ''}`}>
                                 <div className={`relative `}>
                                     {imageModal}
                                 </div>
                             </ScrollContainer>
                         </div>
                     </Transition.Child>
-                    <div className="absolute flex justify-end top-0 bg-black w-full bg-opacity-50 p-4 shadow-xl ">
+                    <div className="absolute flex justify-end top-0 bg-black w-full bg-opacity-80 p-4 shadow-xl ">
                         {
                             isFullscreen ?
                                 <button className="text-gray-300 hover:text-white mr-5" onClick={() => { setIsFullscreen(false); document.exitFullscreen(); }}>

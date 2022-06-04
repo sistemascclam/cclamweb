@@ -66,7 +66,7 @@ var options = [
     },
     {
         title: "Registro de árbitros",
-        items: [{ name: "Registro de árbitros - Mayo 2022.pdf", link: "2022/MAYO/REGISTRO_DE_ARBITROS_ACTUALIZADO_052022.pdf" }],
+        items: [{ name: "Registro de árbitros - Junio 2022.pdf", link: "2022/JUNIO/REGISTRO_DE_ARBITROS_ACTUALIZADO_062022.pdf" }],
         icon: (
             <svg
                 viewBox="0 0 448 512"
@@ -226,7 +226,8 @@ export default function CentroArbitraje() {
                         ))}
                     </div>
                     <div className="flex flex-wrap justify-between my-10">
-                        <div className="group relative w-full lg:w-4/12 mb-5 lg:mb-0">
+                        <a className="group relative w-full lg:w-4/12 mb-5 lg:mb-0" href="https://cclam.org.pe/pdfs/PROTOCOLO_CENTRO_DE_ARBITRAJE_CCLAM_AGOSTO_2020.pdf" target="_blank">
+                            <p className='text-blue-600 text-center mb-1 text-lg'>👇 <span className='group-hover:underline'>Descarga aquí</span> 👇</p>
                             <div className='shadow-close rounded-xl'>
 
                                 <Image
@@ -236,8 +237,8 @@ export default function CentroArbitraje() {
                                     height="663"
                                 />
                             </div>
-                        </div>
-                        <div className="relative w-full lg:w-8/12 lg:pl-8 rounded-xl">
+                        </a>
+                        <div className="relative w-full lg:w-8/12 lg:pl-8 rounded-xl mt-7">
                             <div className='shadow-close rounded-xl'>
 
                                 <Image

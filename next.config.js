@@ -38,13 +38,13 @@ const nextConfig = {
 //LOCAL
 // const nextConfig = {
 //   images: {
-//     domains: ['localhost:3000', 'localhost:8000', 'localhost'],
+//     domains: ['localhost:3000', 'localhost:8000', 'localhost','www.cclam.org.pe'],
 //   },
 //   env: {
 //     BASE_URL: '/',
-//     API_LINK: 'http://localhost:8000/api/',
+//     API_LINK: 'https://www.cclam.org.pe/recursos.base/public/api/',
 //     STORAGE_URL_FT: '',
-//     STORAGE_URL_BK: 'http://localhost:8000/storage/',
+//     STORAGE_URL_BK: 'https://www.cclam.org.pe/recursos.base/public/storage/',
 //     REACT_APP_IZI_PUBLIC_KEY: '63084599:testpublickey_eCcXWmaq8rKcrCiKv3kf6IkdC3H51weSJCBZo93YXupSk',
 //   },
 // }

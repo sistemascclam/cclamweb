@@ -14,6 +14,7 @@ import { list as listactividad } from "../redux/actions/actividad"
 import ContenidoExtra from "../components/ContenidoExtra";
 import moment from 'moment'
 import 'moment/locale/es'
+import Calendar from "../components/Calendar";
 // import GoogleAdd from "../components/GoogleAdd";
 moment.locale('es')
 
@@ -224,14 +225,13 @@ export default function Home() {
                         alt="Encargados de solución de disputas"
                     />
                 </div>
-
             </section>
             {/* <section id="googleads" className="flex justify-center relative overflow-y h-32 w-full">
                 <GoogleAdd slot_id="5806654043" />
             </section> */}
             <section
                 id="contigoempresa"
-                className="relative bg-themeWhite my-20 overflow-hidden lg:min-h-screen flex flex-col flex-wrap content-center py-4"
+                className="relative bg-themeWhite overflow-hidden lg:min-h-screen flex flex-col flex-wrap content-center py-10"
             >
                 <div className="w-full text-center">
                     <TitleHeading>
@@ -295,11 +295,50 @@ export default function Home() {
                         />
                     </svg>
                 </Button>
-
             </section>
             {/* <section id="googleads2" className="flex justify-center relative overflow-y h-32 w-full">
                 <GoogleAdd slot_id="7303568544" />
             </section> */}
+            <section
+                id="eventos"
+                className="relative bg-themeWhite overflow-hidden min-h-screen h-full py-20 lg:py-10"
+            >
+                <div className="w-full text-center">
+                    <TitleHeading>
+                        <p className="font-black">Agenda de {" "}
+                            <span className="font-black text-themeBlue">
+                                eventos y actividades
+                            </span>
+                        </p>
+                    </TitleHeading>
+                    <Button className="mt-5 mx-auto"
+                        execfunc={() =>
+                            router.push("/galeria/eventos")
+                        }>
+                        Saber más
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5 my-auto ml-2"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 5l7 7-7 7"
+                            />
+                        </svg>
+                    </Button>
+                </div>
+                <div className="relative w-full flex justify-center mt-12 p-3">
+                    <Calendar
+                    title={"Eventos"}
+                        events={actividadList}
+                    />
+                </div>
+            </section>
             <section
                 id="cursos"
                 className="relative bg-themeWhite my-20 flex overflow-hidden lg:min-h-screen pb-10"
@@ -368,68 +407,6 @@ export default function Home() {
                                 />
                             </div>
                         ))}
-                </div>
-            </section>
-            <section
-                id="eventos"
-                className="relative bg-themeWhite overflow-hidden min-h-screen h-full flex py-20 lg:py-0"
-            >
-                <div className="relative lg:w-5/12">
-                    {actividadList
-                        ?.filter((c, i) => c.fechaFin >= moment(Date.now()).format('YYYY-MM-DD'))
-                        ?.filter((c, i) => i < 3)
-                        ?.map((c, i) => (
-                            <div
-                                key={`event_${i}`}
-                                className={`absolute w-96 lg:w-full shadow-card rounded-xl ${i === 0
-                                    ? "-translate-x-60"
-                                    : i === 1
-                                        ? "-translate-x-64"
-                                        : "-translate-x-72"
-                                    } transition duration-700 ease-in-out transform ${i === 2
-                                        ? "lg:hover:-translate-x-0 hover:-translate-x-48"
-                                        : "lg:hover:-translate-x-2 hover:-translate-x-52"
-                                    } `}
-                                onClick={() => openContenidoExtra(i, "actividad")}
-                            >
-                                <Image
-                                    className="rounded-xl cursor-pointer"
-                                    src={`${process.env.STORAGE_URL_BK}${c.coverImage}`}
-                                    width="663"
-                                    height="663"
-                                    layout="responsive"
-                                    alt={c.title}
-                                />
-                            </div>
-                        ))}
-                </div>
-                <div className="w-5/12 text-right ml-auto mx-10 lg:mr-20 h-full">
-                    <TitleHeading>
-                        <p className="font-black">Agenda de</p>
-                        <p className="font-black text-themeBlue mt-4">
-                            eventos y actividades
-                        </p>
-                    </TitleHeading>
-                    <Button className="mt-5 ml-auto"
-                        execfunc={() =>
-                            router.push("/galeria/eventos")
-                        }>
-                        Saber más
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5 my-auto ml-2"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 5l7 7-7 7"
-                            />
-                        </svg>
-                    </Button>
                 </div>
             </section>
             <section

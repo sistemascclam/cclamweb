@@ -5,7 +5,7 @@ import Footer from './Global/Footer/index'
 import CookieConsent from './CookieConsent'
 export const siteTitle = 'CCLAM | Cámara de Comercio y Producción de Lambayeque'
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home, complete=true }) {
   return (
     <>
       <Head>
@@ -29,10 +29,25 @@ export default function Layout({ children, home }) {
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
         <link rel="apple-touch-icon" href="https://www.cclam.org.pe/favicon.ico" />
       </Head>
-      <NavBar />
-      <FloatingGroup />
+      {
+        complete ?
+        <NavBar />
+        :
+        ""
+      }
+      {
+        complete ?
+        <FloatingGroup />
+        :
+        ""
+      }
       <main className="bg-themeWhite font-poppins">{children}</main>
-      <Footer />
+      {
+        complete ?
+        <Footer />
+        :
+        ""
+      }
       {/* <CookieConsent /> */}
     </>
   )

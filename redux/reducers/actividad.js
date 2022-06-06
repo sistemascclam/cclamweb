@@ -1,9 +1,11 @@
 import {
-  LIST_ACTIVIDAD
+  LIST_ACTIVIDAD,
+  SHOW_ACTIVIDAD
 } from "../types";
 
 const INIT_STATE = {
-  actividadList: null
+  actividadList: null,
+  actividadObject: null
 };
 
 const states = (state = INIT_STATE, action) => {
@@ -12,6 +14,12 @@ const states = (state = INIT_STATE, action) => {
       return {
         ...state,
         actividadList: action.payload,
+      }
+    }
+    case SHOW_ACTIVIDAD: {
+      return {
+        ...state,
+        actividadObject: action.payload,
       }
     }
     default:

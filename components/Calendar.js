@@ -10,9 +10,10 @@ moment.locale('es')
 e.title
 e.fechaInicio
 e.coverImage
+e.link
 */}
 
-export default function Calendar({ title,events }) {
+export default function Calendar({ title, events }) {
     const [currentMonth, setcurrentMonth] = useState(moment().format('MM-Y'))
     const [daySelected, setdaySelected] = useState(null)
     const prevMonth = () => {
@@ -34,7 +35,7 @@ export default function Calendar({ title,events }) {
     }
     return (
         <div className='bg-white shadow-xl rounded-xl text-lg grid grid-cols-1 md:grid-cols-2 h-max w-full max-w-6xl'>
-        <ModalImage isOpen={isOpen} imageModal={imageModal} toogleModal={toogleModal} />
+            <ModalImage isOpen={isOpen} imageModal={imageModal} toogleModal={toogleModal} />
             <div className='py-6 px-4 w-fit h-max'>
                 <div className='flex justify-between px-5'>
                     <p className='font-bold'>{toNombrePropio(moment(currentMonth, "MM-Y").format('MMMM YYYY'))}</p>
@@ -76,7 +77,7 @@ export default function Calendar({ title,events }) {
                     {
                         [...Array(parseInt(moment(currentMonth, "MM-Y").endOf('month').format('DD'))).keys()].map(d => {
                             let hoy = moment().format("YYYY-MM-D") == moment(currentMonth, "MM-Y").format(`YYYY-MM-${d + 1}`),
-                            seleccionado = daySelected ? (moment(`${currentMonth}-${daySelected}`, "MM-Y-D").format("YYYY-MM-DD") === moment(`${currentMonth}-${d + 1}`, "MM-Y-D").format(`YYYY-MM-DD`)) : false
+                                seleccionado = daySelected ? (moment(`${currentMonth}-${daySelected}`, "MM-Y-D").format("YYYY-MM-DD") === moment(`${currentMonth}-${d + 1}`, "MM-Y-D").format(`YYYY-MM-DD`)) : false
                             return <button key={`button_calendar_${d}`} onClick={() => setdaySelected(daySelected == (d + 1) ? null : (d + 1))} title={hoy ? "Hoy" : ""} className={`text-lg rounded-full m-1 w-12 h-12 ${hoy ? 'bg-blue-600 text-white font-semibold' : (seleccionado ? 'bg-blue-200' : 'hover:bg-gray-100')} transition-all duration-200 ease-in-out`}>
                                 <span>{d + 1}</span>
                                 {
@@ -94,26 +95,26 @@ export default function Calendar({ title,events }) {
                 <div className='divide-y divide-dashed divide-gray-600 overflow-y-auto h-96'>
                     {
                         events?.filter(e => moment(e.fechaInicio).format("MM-Y") === currentMonth && (daySelected ? e.fechaInicio === moment(`${currentMonth}-${daySelected}`, "MM-Y-D").format("YYYY-MM-DD") : true))?.length === 0 ?
-                            <p className='text-center italic'>No hay eventos disponibles</p>
+                            <p className='text-center italic'>No hay {title.toLocaleLowerCase()} disponibles</p>
                             :
                             ""
                     }
                     {
                         events?.filter(e => moment(e.fechaInicio).format("MM-Y") === currentMonth && (daySelected ? e.fechaInicio === moment(`${currentMonth}-${daySelected}`, "MM-Y-D").format("YYYY-MM-DD") : true))?.sort(function (a, b) { return new Date(a.fechaInicio) - new Date(b.fechaInicio); })?.map((e, k) =>
-                            <div key={k} className="mt-3 px-3 py-5 flex gap-4 "
+                            <div key={k} className={`mt-3 px-3 py-5 flex gap-4`}
                             >
-                                <div className='relative w-24 pt-2 cursor-pointer' 
-                            onClick={() => toogleModal(
-                                <Image
-                                    className="rounded-xl shadow-xl cursor-grab "
-                                    alt={e.title}
-                                    src={`${process.env.STORAGE_URL_BK}${e.coverImage}`}
-                                    width="600"
-                                    height="600"
-                                    layout="responsive"
-                                    objectFit="contain"
-                                />
-                                )}>
+                                <div className='relative w-24 pt-2 cursor-pointer'
+                                    onClick={() => toogleModal(
+                                        <Image
+                                            className="rounded-xl shadow-xl cursor-grab "
+                                            alt={e.title}
+                                            src={`${process.env.STORAGE_URL_BK}${e.coverImage}`}
+                                            width="600"
+                                            height="600"
+                                            layout="responsive"
+                                            objectFit="contain"
+                                        />
+                                    )}>
                                     <Image
                                         className="rounded-md"
                                         alt={e.title}
@@ -125,11 +126,18 @@ export default function Calendar({ title,events }) {
                                         quality="100"
                                     />
                                 </div>
-                                <div>
+                                <div className={`${e.link ? "cursor-pointer hover:text-blue-500" : ""}`}>
                                     <p className='text-base font-normal text-gray-500'>{moment(e.fechaInicio).format("L")}</p>
-                                    <p className='font-medium text-xl'>
-                                        {toNombrePropio(e.title)}
-                                    </p>
+                                    {
+                                        e.link ?
+                                        <a className='font-medium text-xl' href={e.link} target='_blank' rel='noreferrer'>
+                                            {toNombrePropio(e.title)}
+                                        </a>
+                                        :
+                                        <p className='font-medium text-xl'>
+                                            {toNombrePropio(e.title)}
+                                        </p>
+                                    }
                                 </div>
                             </div>
                         )

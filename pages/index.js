@@ -231,7 +231,7 @@ export default function Home() {
             </section> */}
             <section
                 id="contigoempresa"
-                className="relative bg-themeWhite overflow-hidden lg:min-h-screen flex flex-col flex-wrap content-center py-10"
+                className="relative bg-themeWhite overflow-hidden lg:min-h-screen flex flex-col flex-wrap content-center"
             >
                 <div className="w-full text-center">
                     <TitleHeading>
@@ -301,7 +301,7 @@ export default function Home() {
             </section> */}
             <section
                 id="eventos"
-                className="relative bg-themeWhite overflow-hidden min-h-screen h-full py-20 lg:py-10"
+                className="relative bg-themeWhite overflow-hidden min-h-screen h-full py-20 lg:py-6"
             >
                 <div className="w-full text-center">
                     <TitleHeading>
@@ -334,20 +334,21 @@ export default function Home() {
                 </div>
                 <div className="relative w-full flex justify-center mt-12 p-3">
                     <Calendar
-                    title={"Eventos"}
+                        title={"Eventos"}
                         events={actividadList}
                     />
                 </div>
             </section>
             <section
                 id="cursos"
-                className="relative bg-themeWhite my-20 flex overflow-hidden lg:min-h-screen pb-10"
+                className="relative bg-themeWhite overflow-hidden min-h-screen h-full py-20 lg:py-20 my-20"
             >
-                <div className="mx-10 lg:ml-20 my-auto w-6/12">
+                <div className="w-full text-center">
                     <TitleHeading>
-                        <p className="font-black leading-tight">Centro de </p>
-                        <p className="font-black text-themeBlue leading-tight">
-                            Formación y Desarrollo Empresarial
+                        <p className="font-black leading-tight">Centro de
+                            <span className="font-black text-themeBlue leading-tight">
+                                Formación y Desarrollo Empresarial
+                            </span>
                         </p>
                     </TitleHeading>
                     <Paragraph className="mt-5 ">
@@ -357,8 +358,7 @@ export default function Home() {
                         empresarial para mejorar la competitividad personal y
                         laboral.
                     </Paragraph>
-                    <Button
-                        className="mt-5"
+                    <Button className="mt-5 mx-auto"
                         execfunc={() =>
                             router.push("/servicios/desarrollo-empresarial")
                         }
@@ -380,33 +380,11 @@ export default function Home() {
                         </svg>
                     </Button>
                 </div>
-                <div className="relative lg:w-5/12 lg:translate-x-28 ">
-                    {cursoList
-                        ?.filter((c, i) => i < 3)
-                        ?.map((c, i) => (
-                            <div
-                                key={`cursos_${i}`}
-                                className={`absolute w-96 lg:w-full shadow-card rounded-xl  ${i === 0
-                                    ? "translate-x-10 lg:translate-x-60"
-                                    : i === 1
-                                        ? "translate-x-12 lg:translate-x-64"
-                                        : "translate-x-14 lg:translate-x-72"
-                                    }  transition duration-700 ease-in-out transform ${i === 2
-                                        ? "hover:-translate-x-0"
-                                        : "hover:-translate-x-5"
-                                    }`}
-                            >
-                                <Image
-                                    className="rounded-xl cursor-pointer"
-                                    src={`${process.env.STORAGE_URL_BK}${c.coverImage}`}
-                                    onClick={() => openContenidoExtra(i, "curso")}
-                                    width="663"
-                                    height="663"
-                                    layout="responsive"
-                                    alt={c.descripcion}
-                                />
-                            </div>
-                        ))}
+                <div className="relative w-full flex justify-center mt-12 p-3">
+                    <Calendar
+                        title={"Cursos"}
+                        events={cursoList}
+                    />
                 </div>
             </section>
             <section

@@ -7,6 +7,7 @@ export default function CarouselFade({ slides }) {
   const [pause, setPause] = useState(false)
   const [currentSlide, setcurrentSlide] = useState(0)
   const timer = useRef()
+  const [anulanimation, setanulanimation] = useState(false)
 
   const [sliderRef, slider] = useKeenSlider({
     initial: 0,
@@ -29,24 +30,49 @@ export default function CarouselFade({ slides }) {
   })
 
   useEffect(() => {
-    sliderRef.current.addEventListener("mouseover", () => {
-      setPause(true)
-    })
-    sliderRef.current.addEventListener("mouseout", () => {
-      setPause(false)
-    })
-  }, [sliderRef])
-
-  useEffect(() => {
     timer.current = setInterval(() => {
-      if (!pause && slider) {
+      if (slider) {
         slider.next()
       }
     }, 4000)
     return () => {
       clearInterval(timer.current)
     }
-  }, [pause, slider])
+  }, [slider])
+
+  useEffect(() => {
+    if (anulanimation) {
+      clearInterval(timer.current)
+      timer.current = setInterval(() => {
+        if (slider) {
+          slider.next()
+        }
+        setanulanimation(false)
+      }, 4000)
+    }
+  }, [anulanimation])
+
+
+
+  // useEffect(() => {
+  //   sliderRef.current.addEventListener("mouseover", () => {
+  //     setPause(true)
+  //   })
+  //   sliderRef.current.addEventListener("mouseout", () => {
+  //     setPause(false)
+  //   })
+  // }, [sliderRef])
+
+  // useEffect(() => {
+  //   timer.current = setInterval(() => {
+  //     if (!pause && slider) {
+  //       slider.next()
+  //     }
+  //   }, 4000)
+  //   return () => {
+  //     clearInterval(timer.current)
+  //   }
+  // }, [pause, slider])
 
   return (
     <div ref={sliderRef} className="relative overflow-hidden min-h-screen h-600px">
@@ -59,6 +85,11 @@ export default function CarouselFade({ slides }) {
           {slide}
         </div>
       ))}
+      <div className="absolute bottom-6 inset-x-0 flex justify-center gap-4">
+        {slides.map((slide, idx) =>
+          <button key={`btn_slide_${idx}`} onClick={() => { setanulanimation(true); slider.moveToSlide(idx) }} className={`w-5 h-5 ${currentSlide === idx ? 'bg-blue-600' : 'bg-gray-300'} rounded-full shadow-md`}></button>
+        )}
+      </div>
     </div>
   )
 }

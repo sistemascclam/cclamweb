@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import EventosContainer from '../../../components/EventosContainer'
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import {list} from "../../../redux/actions/actividad"
+import {list} from "@redux/actions/actividad"
 import moment from 'moment'
 import 'moment/locale/es'
-import Layout from '../../../components/layout';
+import Layout from '@components/layout';
+import EventosContainer from '@components/EventosContainer';
 moment.locale('es')
 
 export default function Eventos() {

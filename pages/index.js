@@ -313,7 +313,7 @@ export default function Home() {
                     </TitleHeading>
                     <Button className="mt-5 mx-auto"
                         execfunc={() =>
-                            router.push("/galeria/eventos")
+                            router.push("/galeria/actividades")
                         }>
                         Saber más
                         <svg

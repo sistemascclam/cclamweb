@@ -112,7 +112,20 @@ export default function Home() {
                 <Carrousel />
             </section>
             <ConveniosSection />
-            <section id="servicios-asociados" className="text-center mt-4 mb-24">
+            <section id="nuestras-redes" className="text-center mt-4 mb-24">
+                <h2 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-extrabold text-themeBlue ">
+                    Revisa nuestras últimas publicaciones
+                </h2>
+                <div className="p-3 md:p-10 mt-4 flex flex-col md:flex-row justify-center gap-10">
+                    <div className="overflow-y-auto h-[400px] md:h-[600px] w-full md:w-[400px]">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcclambayeque&tabs=timeline&width=400&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="400" height="600" style={{ border: "none", overflow: "hidden" }} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <div className="overflow-y-auto h-[400px] md:h-[600px] w-full md:w-[400px]">
+                    <a className="twitter-timeline" href="https://twitter.com/cclambayeque?ref_src=twsrc%5Etfw">Tweets by cclambayeque</a>
+                    </div>
+                </div>
+            </section>
+            {/* <section id="servicios-asociados" className="text-center mt-4 mb-24">
                 <h2 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-extrabold text-themeBlue ">
                     Servicios de asociados
                 </h2>
@@ -156,7 +169,7 @@ export default function Home() {
                         />
                     </div>
                 </div>
-            </section>
+            </section> */}
             <section id="video" className="hidden md:block relative">
                 <div className="static">
                     <div className="min-w-full overflow-hidden">

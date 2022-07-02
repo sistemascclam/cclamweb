@@ -28,7 +28,7 @@ export default function Layout({ children, home, complete=true }) {
         <link rel="icon" href={`https://www.cclam.org.pe/favicon.ico`} />
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
         <link rel="apple-touch-icon" href="https://www.cclam.org.pe/favicon.ico" />
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
       </Head>
       {
         complete ?

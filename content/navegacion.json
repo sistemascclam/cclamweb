@@ -12,10 +12,6 @@
                         "to": "/historia"
                     },
                     {
-                        "title": "Misión, Visión y Valores",
-                        "to": "/mision-vision-valores"
-                    },
-                    {
                         "title": "Consejo Directivo - Gerencia general",
                         "to": "/consejo-directivo"
                     },

@@ -352,7 +352,6 @@ export default function Asociados() {
                     <div className="pt-36 lg:pt-28 text-center">
                         <h1 className="text-3xl lg:text-5xl font-black">Comités gremiales <span className="block text-themeBlue mt-2">Representatividad nacional</span></h1>
                         <div className="max-w-6xl mx-auto mt-5">
-
                             <p className="text-sm lg:text-lg">Los Comités Gremiales son órganos de apoyo que se han conformado en la institución con los diferentes sectores que tiene la región Lambayeque. Actualmente la Centenaria Cámara de Comercio y Producción de Lambayeque cuenta con 19 Comités Gremiales al Servicio institucional empresarial y regional.</p>
                         </div>
                     </div>
@@ -395,7 +394,7 @@ const SectoristaConComites = ({ sectorista }) =>
             {
                 sectorista.comites.map((comite, i) =>
                     <a href={`https://wa.me/51${sectorista.telf}?text=Hola%2C%20quisiera%20saber%20m%C3%A1s%20del%20comit%C3%A9%20gremial%20de%20${comite.name.replace(/ /g, "%20")}`} target="_blank"
-                        className="block max-w-xs rounded-xl p-6 bg-white ring-gray-900/5 shadow-lg space-y-3 hover:-translate-y-2 transition-all duration-300">
+                        className="block w-80 rounded-xl p-6 bg-white ring-gray-900/5 shadow-md space-y-3 hover:-translate-y-2 transition-all duration-300">
                         <div className="flex items-center space-x-3">
                             <span className="text-bgblue">
                                 {comite.icon}

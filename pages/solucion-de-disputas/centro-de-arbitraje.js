@@ -4,6 +4,8 @@ import Image from "next/image";
 import CardContact from "../../components/Servicios/CardContact"
 import { Transition } from '@headlessui/react'
 import CalculadoraArbitraje from "../../components/calculadoraArbitraje";
+import axios from '@util//Api';
+import { useEffect, useState } from "react";
 
 var options = [
     {
@@ -66,6 +68,7 @@ var options = [
     },
     {
         title: "Registro de árbitros",
+        dynamic: true,
         items: [{ name: "Registro de Árbitros - Junio 2022.pdf", link: "2022/JUNIO/REGISTRO_DE_ARBITROS_ACTUALIZADO_JUN2022.pdf" }],
         icon: (
             <svg
@@ -133,6 +136,12 @@ var listConsejo = [
 ];
 
 export default function CentroArbitraje() {
+    const [dynamicInfo, setdynamicInfo] = useState(null)
+    useEffect(async() => {
+        const {data} = await axios.get(`/dynamiclink`);
+        setdynamicInfo(data);
+    }, [])
+    
     return (
         <Layout>
             <Head>
@@ -222,7 +231,7 @@ export default function CentroArbitraje() {
                     <CalculadoraArbitraje />
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-4 gap-x-6 mt-14">
                         {options.map((option, i) => (
-                            <Item key={i} {...option} />
+                            <Item key={i} {...option} dynamicInfo={dynamicInfo} />
                         ))}
                     </div>
                     <div className="flex flex-wrap justify-between my-10">
@@ -347,7 +356,7 @@ export default function CentroArbitraje() {
     );
 }
 
-const Item = ({ title, items, icon }) => (
+const Item = ({ title, items, icon, dynamic, dynamicInfo }) => (
     <div className="flex flex-col flex-wrap content-start mb-14 w-full ">
         <div className="text-gray-700 flex">
             <span className="bg-themeBlue bg-opacity-5 h-14 w-14 flex justify-center rounded-full">
@@ -373,11 +382,20 @@ const Item = ({ title, items, icon }) => (
                 <p className="text-lg font-medium mb-3 text-blue-600 select-none">
                     {title}
                 </p>
-                {items.map((item, k) => (
-                    <a key={k} href={`https://cclam.org.pe/pdfs/${item.link}`} target="_blank" rel="noreferrer" className="text-sm mb-2 block hover:text-blue-600">
-                        {item.name}
-                    </a>
-                ))}
+                {
+                    dynamic ?
+                        <a href={`https://cclam.org.pe/pdfs/${dynamicInfo?.link}`} target="_blank" rel="noreferrer" className="text-sm mb-2 block hover:text-blue-600">
+                            {dynamicInfo?.titulo}
+                        </a>
+                        :
+                        <>
+                            {items.map((item, k) => (
+                                <a key={k} href={`https://cclam.org.pe/pdfs/${item.link}`} target="_blank" rel="noreferrer" className="text-sm mb-2 block hover:text-blue-600">
+                                    {item.name}
+                                </a>
+                            ))}
+                        </>
+                }
             </div>
         </div>
     </div>

@@ -51,7 +51,7 @@ export default function Historia() {
                     </div>
                     <div className='w-full flex mt-8 lg:mt-12 p-6 lg:pl-10 flex-col lg:flex-row'>
                         <h3 className="font-extrabold text-themeBlue text-4xl w-full lg:w-4/12">Misión, Visión y Valores</h3>
-                        <div className="max-w-4xl mx-auto gap-y-5 w-full lg:w-7/12 gap-10 flex flex-col">
+                        <div className="max-w-4xl gap-y-5 w-full lg:w-7/12 gap-10 flex flex-col">
                             <div className='flex p-5 rounded-xl '>
                                 <div className=''>
                                     <svg className="text-themeBlue drop-shadow-2xl shadow-blue-500 w-14 h-14" viewBox="0 0 24 24" focusable="false" role="img" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>

@@ -20,7 +20,7 @@ export default function NoticiasContainer({limit=50}) {
                     <NoticiaCard key={i} title={noticia.title} slug={noticia.slug} date={moment(noticia.date).format('LL')}
                         image={noticia.coverImage ?
                             <Image
-                            className="brightness-50 rounded-xl "
+                            className="brightness-50 lg:brightness-95 rounded-xl "
                                 layout="fill"
                                 objectFit="cover"
                                 src={`${process.env.STORAGE_URL_BK}${noticia.coverImage}`}
@@ -28,7 +28,7 @@ export default function NoticiasContainer({limit=50}) {
                             />
                             :
                             <Image
-                                className="brightness-75 rounded-3xl	 "
+                                className="brightness-75 lg:brightness-95 rounded-3xl	 "
                                 layout="fill"
                                 objectFit="cover"
                                 src={`${process.env.STORAGE_URL_FT}/images/landing.png`}

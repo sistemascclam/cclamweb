@@ -45,28 +45,60 @@ export default function ContigoEmpresa() {
             title={"Noticias"}
           />
           <NoticiasContainer limit={6} />
-          <div className="w-full text-center mt-8 "><Link href="/galeria/noticias"><a className="hover:text-themeLightBlue">Ver más...</a></Link></div>
+          <div className="w-full text-center mt-8 "><Link href="/galeria/noticias"><a className="text-themeLightBlue hover:text-themeBlue">Ver más...</a></Link></div>
         </section>
         <section id="revista-digital" className="relative min-h-screen flex flex-wrap content-center w-full py-6 px-10 lg:px-20 mt-10">
           <div className="w-full flex flex-wrap justify-between ">
-            <div className="w-full lg:w-5/12 flex flex-wrap content-center ">
+            <div className="w-full lg:w-5/12 flex flex-col flex-wrap content-center justify-center">
               <p className="font-extrabold mx-auto lg:mx-0 text-center lg:text-left text-3xl lg:text-5xl md:text-5xl sm:text-6xl">
                 Imagen empresarial
               </p>
               <p className="font-extrabold text-center lg:text-left text-3xl text-themeLightBlue mt-0 mb-5 lg:mt-3">
                 Nuestra revista institucional
               </p>
-              <Link href="/galeria/revistas-digitales"><a className="hover:text-themeLightBlue">Ver más...</a></Link>
+              <Link href="/galeria/revistas-digitales"><a className="text-themeLightBlue hover:text-themeBlue">Ver más...</a></Link>
             </div>
             <div className="relative w-full lg:w-5/12 ml-auto rounded-2xl shadow-close transition duration-500 ease-in-out transform hover:-translate-x-5">
               {
                 revistaDigitalObject ?
-                  <a className="" href={revistaDigitalObject.revista ? (`${process.env.STORAGE_URL_BK}${revistaDigitalObject.revista}`) : revistaDigitalObject.url} target="_blank" rel="noreferrer">
+                  <a className="" href={revistaDigitalObject.find(r=>r.tipo==1)?.revista ? (`${process.env.STORAGE_URL_BK}${revistaDigitalObject.find(r=>r.tipo==1)?.revista}`) : revistaDigitalObject.find(r=>r.tipo==1)?.slug} target="_blank" rel="noreferrer">
                     <Image
                       className="rounded-2xl "
                       alt="Revista empresarial"
-                      src={`${process.env.STORAGE_URL_BK}${revistaDigitalObject.coverImage}`}
+                      src={`${process.env.STORAGE_URL_BK}${revistaDigitalObject.find(r=>r.tipo==1)?.coverImage}`}
                       layout="responsive"
+                      width="390"
+                      height="390"
+                    />
+                  </a>
+                  :
+                  ""
+              }
+            </div>
+          </div>
+        </section>
+        <section id="tu-empresa" className="relative min-h-screen flex flex-wrap content-center w-full py-6 px-10 lg:px-20">
+          <div className="w-full flex flex-wrap justify-between ">
+            <div className="w-full lg:w-5/12 flex flex-col flex-wrap content-center justify-center">
+              <p className="font-extrabold mx-auto lg:mx-0 text-center lg:text-left text-3xl lg:text-5xl md:text-5xl sm:text-6xl">
+                #TUEMPRESA
+              </p>
+              <p className="font-extrabold text-center lg:text-left text-3xl text-themeLightBlue mt-0 mb-5 lg:mt-3">
+                Suplemento empresarial
+              </p>
+              <Link href="/galeria/revistas-digitales"><a className="text-themeLightBlue hover:text-themeBlue">Ver más...</a></Link>
+            </div>
+            <div className="relative w-full lg:w-5/12 ml-auto rounded-2xl shadow-close transition duration-500 ease-in-out transform hover:translate-x-5">
+              {
+                revistaDigitalObject ?
+                  <a className="" href={revistaDigitalObject.find(r=>r.tipo==2)?.revista ? (`${process.env.STORAGE_URL_BK}${revistaDigitalObject.find(r=>r.tipo==2)?.revista}`) : revistaDigitalObject.find(r=>r.tipo==2)?.slug} target="_blank" rel="noreferrer">
+                    <Image
+                      className="rounded-2xl "
+                      alt="Revista empresarial"
+                      src={`${process.env.STORAGE_URL_BK}${revistaDigitalObject.find(r=>r.tipo==2)?.coverImage}`}
+                      layout="responsive"
+                      objectFit='cover'
+                      objectPosition='top'
                       width="390"
                       height="390"
                     />
@@ -83,7 +115,7 @@ export default function ContigoEmpresa() {
             description={`La Centenaria Cámara de Comercio y Producción de Lambayeque respalda proyectos que van acorde al desarrollo y prestigio de la región Lambayeque, a través de: Comunicados a la opinión pública; Convocatorias institucionales; Conferencias de Prensa; Entrevistas de interés público; Proyección Social; entre otros.`}
           />
           <PronunciamientosContainer limit={4} />
-          <div className="w-full text-center mt-6"><Link href="/galeria/pronunciamientos"><a className="hover:text-themeLightBlue">Ver más...</a></Link></div>
+          <div className="w-full text-center mt-6"><Link href="/galeria/pronunciamientos"><a className="text-themeLightBlue hover:text-themeBlue">Ver más...</a></Link></div>
         </section>
         {/* <section className="flex justify-center relative overflow-y h-32 w-full">
           <GoogleAdd slot_id="2203285107"  />

@@ -112,16 +112,61 @@ export default function Home() {
                 <Carrousel />
             </section>
             <ConveniosSection />
+            <section id="servicios-asociados" className="text-center mb-36">
+                <h2 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-extrabold text-themeBlue ">
+                    Servicios de asociados
+                </h2>
+                <h3 className="text-base lg:text-xl md:text-xl sm:text-xl font-normal mt-2 text-themeBlue">
+                    Encuentra productos y/o servicios de nuestros asociados
+                </h3>
+                <div className="flex justify-center flex-wrap mt-10 gap-10">
+                    <div className="w-80 shadow-md rounded-md bg-white ">
+                        <a href="https://bit.ly/3COTjc9" target="_blank" rel="noreferrer">
+                            <video className="rounded-md" height="240" autoPlay={true} muted={true} loop={true}>
+                                <source src="/videos/serviciosasociados/auna.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </a>
+                        <div className="text-gray-600 text-sm p-4">
+                            <p>
+                                Conoce los Paquetes de Gastroenterología a tarifas preferenciales👨‍⚕️ en #ClínicasAuna sede Chiclayo. T&C: <a href="https://bit.ly/3COTjc9" target="_blank" rel="noreferrer" className="text-blue-600">https://bit.ly/3COTjc9</a>
+                            </p>
+                            <br />
+                            <p>
+                                Agenda tu cita llamando al (074) 749 333
+                            </p>
+                        </div>
+                    </div>
+                    <div className="w-96 my-auto rounded-md shadow-md ">
+                        <Image
+                            className="rounded-md"
+                            src="/images/serviciosasociados/convocatoria-mindef.jpeg"
+                            width={579}
+                            height={254}
+                            layout="responsive"
+                        />
+                    </div>
+                    <div className="w-80 h-fit my-auto rounded-md shadow-md">
+                        <Image
+                            className="rounded-md"
+                            src="/images/serviciosasociados/convocatoria-mindef2.jpeg"
+                            width={380}
+                            height={491.797}
+                            layout="responsive"
+                        />
+                    </div>
+                </div>
+            </section>
             <section id="nuestras-redes" className="text-center mt-4 mb-24">
                 <h2 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-extrabold text-themeBlue ">
                     Revisa nuestras últimas publicaciones
                 </h2>
                 <div className="p-3 md:p-10 mt-4 flex flex-col md:flex-row justify-center gap-10">
                     <div className="overflow-y-auto h-[400px] md:h-[600px] w-full md:w-[400px]">
-                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcclambayeque&tabs=timeline&width=400&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="400" height="600" style={{ border: "none", overflow: "hidden" }} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcclambayeque&tabs=timeline&width=400&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="400" height="600" style={{ border: "none", overflow: "hidden" }} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                     </div>
                     <div className="overflow-y-auto h-[400px] md:h-[600px] w-full md:w-[400px]">
-                    <a className="twitter-timeline" href="https://twitter.com/cclambayeque?ref_src=twsrc%5Etfw">Tweets by cclambayeque</a>
+                        <a className="twitter-timeline" href="https://twitter.com/cclambayeque?ref_src=twsrc%5Etfw">Tweets by cclambayeque</a>
                     </div>
                 </div>
             </section>

@@ -52,9 +52,11 @@ var listConsejo = [
     'Miembro suplente: Rosa María del Pilar Forti Reaño.'
 ]
 
+const floatingButtonConfig={ mesaVirtual: "Mesa de partes", linkMesaVirtual:"mailto:arbitraje@cclam.org.pe", numWsp:"51984701376" }
+
 export default function CentroDeConciliacion() {
     return (
-        <Layout>
+        <Layout floatingButtonInfo={floatingButtonConfig}>
             <Head>
                 <title>CCLAM | Centro de Conciliación</title>
             </Head>

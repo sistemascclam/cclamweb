@@ -2,9 +2,11 @@ import Head from 'next/head'
 import Layout from '../../components/layout'
 import Image from "next/image";
 
+const floatingButtonConfig={ mesaVirtual: "Mesa de partes", linkMesaVirtual:"mailto:arbitraje@cclam.org.pe", numWsp:"51984701376" }
+
 export default function JuntaResolucionDisputas() {
     return (
-        <Layout>
+        <Layout floatingButtonInfo={floatingButtonConfig}>
             <Head>
                 <title>CCLAM | Junta de resolución de disputas</title>
             </Head>

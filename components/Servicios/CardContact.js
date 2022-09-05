@@ -1,6 +1,6 @@
 export default function CardContact({image,area,encargado,phone,mail}) {
     return (
-        <div className="flex flex-col text-center mr-5">
+        <div className="flex flex-col text-center">
             <div className="relative rounded-full shadow-close w-44 h-44 mx-auto">
                 {image}
             </div>

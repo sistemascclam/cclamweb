@@ -1,12 +1,12 @@
 import Whatsapp from "./Whatsapp/index"
 
-export default function FloatingGroup() {
+export default function FloatingGroup({mesaVirtual,linkMesaVirtual,numWsp}) {
     return (
         <div className="fixed z-10 bottom-0 right-0 mr-6 mb-6 justify-end ">
             <div className="flex justify-end ">
-                <a href="https://cclam.sofydoc.com/externo/" rel="noreferrer" target="_blank" className="flex justify-end ">
+                <a href={linkMesaVirtual} rel="noreferrer" target="_blank" className="flex justify-end ">
                     <div className="hidden lg:block my-auto mr-2 bg-white px-3 py-1 rounded-full font-semibold shadow-3xl text-gray-800">
-                        <p className="text-xs">Mesa virtual</p>
+                        <p className="text-xs">{mesaVirtual}</p>
                     </div>
                     <div className="rounded-full h-16 w-16 bg-white flex items-center justify-center shadow-3xl mb-2 ">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -16,8 +16,7 @@ export default function FloatingGroup() {
                     </div>
                 </a>
             </div>
-            <Whatsapp />
+            <Whatsapp numWsp={numWsp} />
         </div>
     )
 }
-

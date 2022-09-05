@@ -15,7 +15,7 @@ import ContenidoExtra from "../components/ContenidoExtra";
 import moment from 'moment'
 import 'moment/locale/es'
 import Calendar from "../components/Calendar";
-// import GoogleAdd from "../components/GoogleAdd";
+import GoogleAdd from "../components/GoogleAdd"
 moment.locale('es')
 
 export default function Home() {
@@ -112,6 +112,9 @@ export default function Home() {
                 <Carrousel />
             </section>
             <ConveniosSection />
+            {/* <section className="flex justify-center relative overflow-y h-32 w-full">
+                <GoogleAdd slot_id="7303568544" />
+            </section> */}
             <section id="servicios-asociados" className="text-center mb-36">
                 <h2 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-extrabold text-themeBlue ">
                     Servicios de asociados
@@ -157,6 +160,9 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            {/* <section className="flex justify-center relative overflow-y h-32 w-full">
+                <GoogleAdd slot_id="5806654043" />
+            </section> */}
             <section id="nuestras-redes" className="text-center mt-4 mb-24">
                 <h2 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-extrabold text-themeBlue ">
                     Revisa nuestras últimas publicaciones
@@ -170,6 +176,9 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            {/* <section className="flex justify-center relative overflow-y h-32 w-full">
+                <GoogleAdd slot_id="2203285107" />
+            </section> */}
             <section id="video" className="hidden md:block relative">
                 <div className="static">
                     <div className="min-w-full overflow-hidden">
@@ -239,9 +248,6 @@ export default function Home() {
                     />
                 </div>
             </section>
-            {/* <section id="googleads" className="flex justify-center relative overflow-y h-32 w-full">
-                <GoogleAdd slot_id="5806654043" />
-            </section> */}
             <section
                 id="contigoempresa"
                 className="relative bg-themeWhite overflow-hidden lg:min-h-screen flex flex-col flex-wrap content-center"
@@ -309,9 +315,6 @@ export default function Home() {
                     </svg>
                 </Button>
             </section>
-            {/* <section id="googleads2" className="flex justify-center relative overflow-y h-32 w-full">
-                <GoogleAdd slot_id="7303568544" />
-            </section> */}
             <section
                 id="eventos"
                 className="relative bg-themeWhite overflow-hidden min-h-screen h-full py-20 lg:py-6"

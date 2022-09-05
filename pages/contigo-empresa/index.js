@@ -117,9 +117,6 @@ export default function ContigoEmpresa() {
           <PronunciamientosContainer limit={4} />
           <div className="w-full text-center mt-6"><Link href="/galeria/pronunciamientos"><a className="text-themeLightBlue hover:text-themeBlue">Ver más...</a></Link></div>
         </section>
-        {/* <section className="flex justify-center relative overflow-y h-32 w-full">
-          <GoogleAdd slot_id="2203285107"  />
-        </section> */}
       </div>
     </Layout >
   )

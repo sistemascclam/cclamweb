@@ -180,7 +180,7 @@ export default function CentroArbitraje() {
                                 image={
                                     <Image
                                         className="rounded-full filter brightness-95 "
-                                        src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/encargado.png`}
+                                        src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/encargada.png`}
                                         width="600"
                                         height="600"
                                     />

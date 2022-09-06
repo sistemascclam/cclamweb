@@ -49,7 +49,7 @@ export default function Layout({ children, home, complete = true, floatingButton
           :
           ""
       }
-      <CookieConsent />
+      {/* <CookieConsent /> */}
     </>
   )
 }

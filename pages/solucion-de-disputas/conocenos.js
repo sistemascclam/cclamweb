@@ -52,12 +52,10 @@ export default function Index() {
                                         {" "}
                                         <span>
                                             secretariogeneral@cclam.org.pe
-                                        </span>,  {" "}
+                                        </span>
+                                        |
                                         <span>
                                             secretariaarbitral@cclam.org.pe
-                                        </span> o {" "}
-                                        <span>
-                                            secretariaarbitraje@cclam.org.pe
                                         </span>
                                     </p>
                                 </div>

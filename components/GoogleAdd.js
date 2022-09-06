@@ -11,16 +11,12 @@ const GoogleAdd = ({ slot_id }) => {
 
     return (
     <ins className="adsbygoogle"
-        style={{
-        display: "block",
-        width:'100vw',
-        height:'320'
-        }}
-        width="100vw" height="320"
+     style={{display:"inline-block",maxWidth:"728px",width:'100%',height:"70px"}}
         data-ad-client="ca-pub-9881670143684490"
         data-ad-slot={slot_id}
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
+        // data-ad-format="auto"
+        // data-full-width-responsive="true"
+        ></ins>
     );
 };
 

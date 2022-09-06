@@ -112,10 +112,10 @@ export default function Home() {
                 <Carrousel />
             </section>
             <ConveniosSection />
-            <section className="flex justify-center relative overflow-y h-32 w-full">
-                <GoogleAdd slot_id="7303568544" />
+            <section className="flex justify-center relative overflow-y mb-20 w-full">
+                <GoogleAdd slot_id="1104828685" />
             </section>
-            <section id="servicios-asociados" className="text-center mb-36">
+            <section id="servicios-asociados" className="text-center">
                 <h2 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-extrabold text-themeBlue ">
                     Servicios de asociados
                 </h2>
@@ -160,10 +160,10 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className="flex justify-center relative overflow-y h-32 w-full">
-                <GoogleAdd slot_id="5806654043" />
+            <section className="flex justify-center relative overflow-y my-20 w-full">
+                <GoogleAdd slot_id="2203285107" />
             </section>
-            <section id="nuestras-redes" className="text-center mt-4 mb-24">
+            <section id="nuestras-redes" className="text-center mt-4 ">
                 <h2 className="text-3xl lg:text-5xl md:text-5xl sm:text-6xl font-extrabold text-themeBlue ">
                     Revisa nuestras últimas publicaciones
                 </h2>
@@ -176,8 +176,8 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className="flex justify-center relative overflow-y h-32 w-full">
-                <GoogleAdd slot_id="2203285107" />
+            <section className="flex justify-center relative overflow-y my-10 w-full">
+                <GoogleAdd slot_id="5806654043" />
             </section>
             <section id="video" className="hidden md:block relative">
                 <div className="static">
@@ -250,7 +250,7 @@ export default function Home() {
             </section>
             <section
                 id="contigoempresa"
-                className="relative bg-themeWhite overflow-hidden lg:min-h-screen flex flex-col flex-wrap content-center"
+                className="relative bg-themeWhite overflow-hidden flex flex-col flex-wrap content-center"
             >
                 <div className="w-full text-center">
                     <TitleHeading>
@@ -315,6 +315,9 @@ export default function Home() {
                     </svg>
                 </Button>
             </section>
+            <section className="flex justify-center relative overflow-y my-20 w-full">
+                <GoogleAdd slot_id="7303568544" />
+            </section>
             <section
                 id="eventos"
                 className="relative bg-themeWhite overflow-hidden min-h-screen h-full py-20 lg:py-6"
@@ -354,6 +357,9 @@ export default function Home() {
                         events={actividadList}
                     />
                 </div>
+            </section>
+            <section className="flex justify-center relative overflow-y my-10 w-full">
+                <GoogleAdd slot_id="5123964742" />
             </section>
             <section
                 id="cursos"

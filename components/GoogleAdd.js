@@ -12,8 +12,11 @@ const GoogleAdd = ({ slot_id }) => {
     return (
     <ins className="adsbygoogle"
         style={{
-        display: "block"
+        display: "block",
+        width:'100vw',
+        height:'320'
         }}
+        width="100vw" height="320"
         data-ad-client="ca-pub-9881670143684490"
         data-ad-slot={slot_id}
         data-ad-format="auto"

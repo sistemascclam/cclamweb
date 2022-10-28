@@ -96,7 +96,7 @@ export default function CentroDeConciliacion() {
                                 mail="secretariogeneral@cclam.org.pe"
                             />
                         </div>
-                        <div className="col-span-4 lg:pl-5">
+                        <div className="col-span-4 lg:pl-10">
                             <p className="text-justify mt-5 text-base text-gray-800">
                                 El Centro de Conciliación pertenece al Centro de Solución de Disputas de la Centenaria Cámara de Comercio y Producción de Lambayeque, el mismo que se encarga de impulsar los procesos conciliatorios como un mecanismo alternativo de resolución de conflictos en aras de brindar soluciones óptimas, oportunas y eficientes para las partes que deciden someter sus controversias en esta vía.
                             </p>
@@ -108,16 +108,10 @@ export default function CentroDeConciliacion() {
                             </p>
                             <p className="text-justify mt-5 text-base text-gray-800">
                                 Para mayor información llamar al 984 701 376 – 984 793 698 o escribir a los siguientes correos electrónicos:
-                                {" "}
-                                <span>
-                                    secretariogeneral@cclam.org.pe
-                                </span>
-                                |
-                                <span>
-                                    secretariaarbitral@cclam.org.pe
-                                </span>
-                                .
                             </p>
+                            <p className='font-bold text-start mt-2 text-lg'>secretariogeneral@cclam.org.pe | secretariaarbitral@cclam.org.pe</p>
+                            <br />
+                            <br />
                         </div>
                     </div>
                     <div className="flex flex-wrap justify-between content-center mt-20">

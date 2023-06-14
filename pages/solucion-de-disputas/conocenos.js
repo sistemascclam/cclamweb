@@ -82,14 +82,14 @@ export default function Index() {
                                                 </div>
                                             </a>
                                         </Link>
-                                        {/* <Link href={`/solucion-de-disputas/junta-resolucion-disputas`}>
+                                        <Link href={`/solucion-de-disputas/junta-resolucion-disputas`}>
                                             <a>
                                                 <div className="mx-auto w-full lg:w-96 bg-opacity-0 px-5 py-4 rounded-full text-gray-600 flex transition duration-500 ease-in-out transform hover:-translate-y-2 cursor-pointer">
                                                     <svg viewBox="0 0 448 512" className="h-8 w-8 text-themeLightBlue mr-5" focusable="false" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" ><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm95.8 32.6L272 480l-32-136 32-56h-96l32 56-32 136-47.8-191.4C56.9 292 0 350.3 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-72.1-56.9-130.4-128.2-133.8z"></path></svg>
                                                     <p className="my-auto text-base">Junta de resolución de disputas</p>
                                                 </div>
                                             </a>
-                                        </Link> */}
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="w-full md:w-1/2 text-center relative mt-20 flex flex-col justify-center">

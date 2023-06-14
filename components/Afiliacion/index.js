@@ -4,7 +4,7 @@ import SearchComiteGremial from '../Selects/SearchComiteGremial'
 import lottieJson from '../../public/animations/71551-confetti.json'
 import lottieJson2 from '../../public/animations/lf30_editor_friends.json'
 import lottieJson3 from '../../public/animations/lf20_30iie6_confetti.json'
-import Lottie from 'react-lottie'
+import Lottie from "lottie-react";
 import Select from 'react-select'
 
 import moment from "moment"

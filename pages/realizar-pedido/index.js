@@ -15,7 +15,7 @@ import KRGlue from "@lyracom/embedded-form-glue"
 
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
-import Lottie from 'react-lottie'
+import Lottie from "lottie-react";
 import moment from "moment";
 import 'moment/locale/es';
 import lottieJson from '../../public/animations/lf30_editor_8knd39fu.json'

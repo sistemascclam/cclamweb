@@ -23,7 +23,7 @@ var options = [
     items: [
       {
         name: "Estatuto de JRD 2022",
-        link: "ESTATUTO_CENTRO_DE_ARBITRAJE_CCLAM_MAYO2020.pdf",
+        link: "ESTATUTO CCLAM - JRD 2022.pdf",
       },
     ],
   },
@@ -47,7 +47,7 @@ var options = [
     items: [
       {
         name: "Reglamento de JRD 2022",
-        link: "REGLAMENTO_ANTES_DE_MARZO_DE_2019.pdf",
+        link: "REGLAMENTO CCLAM - JRD 2022.pdf",
       },
     ],
   },
@@ -56,7 +56,7 @@ var options = [
     items: [
       {
         name: "Código de ética para JRD 2022",
-        link: "2022/JUNIO/REGISTRO_DE_ARBITROS_ACTUALIZADO_JUN2022.pdf",
+        link: "CODIGO_DE_ETICA_CCLAM-2022.pdf",
       },
     ],
     icon: (
@@ -81,7 +81,7 @@ var options = [
     items: [
       {
         name: "Registro de Adjudicadores – Junio 2023",
-        link: "2022/JUNIO/REGISTRO_DE_ARBITROS_ACTUALIZADO_JUN2022.pdf",
+        link: "",
       },
     ],
     icon: (
@@ -105,11 +105,11 @@ var options = [
     items: [
       {
         name: "Tarifario de JRD",
-        link: "ANEXO1_TARIFARIO_DE_ARBITRAJE.pdf",
+        link: "ANEXO_1_TARIFARIO_DE_JRD.pdf",
       },
       {
         name: "Tarifario de servicios adicionales del Centro de JRD ",
-        link: "ANEXO1_TARIFARIO_DE_ARBITRAJE.pdf",
+        link: "ANEXO_2_TARIFARIO_DE_SERVICIOS_ADICIONALES_DEL_CENTRO.pdf",
       },
     ],
     icon: (
@@ -138,7 +138,7 @@ const floatingButtonConfig = {
 export default function JuntaResolucionDisputas() {
   const [dynamicInfo, setdynamicInfo] = useState(null);
   useEffect(async () => {
-    const { data } = await axios.get(`/dynamiclink`);
+    const { data } = await axios.get(`/dynamiclink/jrd`);
     setdynamicInfo(data);
   }, []);
 
@@ -252,7 +252,7 @@ const Item = ({ title, items, icon, dynamic, dynamicInfo }) => (
         </p>
         {dynamic ? (
           <a
-            href={`https://cclam.org.pe/pdfs/${dynamicInfo?.link}`}
+            href={`https://cclam.org.pe/pdfs/jrd/${dynamicInfo?.link}`}
             target="_blank"
             rel="noreferrer"
             className="text-sm mb-2 block hover:text-blue-600"
@@ -264,7 +264,7 @@ const Item = ({ title, items, icon, dynamic, dynamicInfo }) => (
             {items.map((item, k) => (
               <a
                 key={k}
-                href={`https://cclam.org.pe/pdfs/${item.link}`}
+                href={`https://cclam.org.pe/pdfs/jrd/${item.link}`}
                 target="_blank"
                 rel="noreferrer"
                 className="text-sm mb-2 block hover:text-blue-600"

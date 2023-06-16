@@ -140,7 +140,7 @@ const floatingButtonConfig={ mesaVirtual: "Mesa de partes", linkMesaVirtual:"mai
 export default function CentroArbitraje() {
     const [dynamicInfo, setdynamicInfo] = useState(null)
     useEffect(async() => {
-        const {data} = await axios.get(`/dynamiclink`);
+        const {data} = await axios.get(`/dynamiclink/arbitraje`);
         setdynamicInfo(data);
     }, [])
     

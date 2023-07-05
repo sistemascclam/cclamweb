@@ -145,7 +145,7 @@ export default function JuntaResolucionDisputas() {
   return (
     <Layout floatingButtonInfo={floatingButtonConfig}>
       <Head>
-        <title>CCLAM | CJunta de Resolución de Disputas</title>
+        <title>CCLAM | Centro de Junta de Resolución de Disputas [JRD]</title>
       </Head>
       <div className="pt-28 pb-4">
         <Transition
@@ -164,7 +164,7 @@ export default function JuntaResolucionDisputas() {
                 {" "}
                 Centro de{" "}
                 <span className="text-themeBlue">
-                  Junta de Resolución de Disputas
+                Junta de Resolución de Disputas
                 </span>
                 <span className="text-themeBlue opacity-70 text-5xl">
                   {" "}

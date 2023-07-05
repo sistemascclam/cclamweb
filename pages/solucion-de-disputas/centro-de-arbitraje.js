@@ -384,7 +384,9 @@ const Item = ({ title, items, icon, dynamic, dynamicInfo }) => (
                 </p>
                 {
                     dynamic ?
-                        <a href={`https://cclam.org.pe/pdfs/${dynamicInfo?.link}`} target="_blank" rel="noreferrer" className="text-sm mb-2 block hover:text-blue-600">
+                        <a 
+                        href={`https://cclam.org.pe/recursos.base/public/storage/${dynamicInfo?.link}`}
+                        target="_blank" rel="noreferrer" className="text-sm mb-2 block hover:text-blue-600">
                             {dynamicInfo?.titulo}
                         </a>
                         :

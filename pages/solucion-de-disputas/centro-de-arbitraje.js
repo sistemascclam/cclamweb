@@ -292,7 +292,7 @@ export default function CentroArbitraje() {
               />
             ))}
           </div>
-          <div className="flex flex-wrap justify-center mt-4 mb-10">
+          <div className="flex flex-wrap justify-center mb-16">
             <div className="relative w-full lg:w-6/12 lg:pl-8 rounded-xl">
               <div className="shadow-close rounded-xl">
                 <Image

@@ -203,10 +203,10 @@ const floatingButtonConfig = {
 
 export default function CentroArbitraje() {
   const [dynamicInfo, setdynamicInfo] = useState(null);
-  // useEffect(async () => {
-  //   const { data } = await axios.get(`/dynamiclink/arbitraje`);
-  //   setdynamicInfo(data);
-  // }, []);
+  useEffect(async () => {
+    const { data } = await axios.get(`/dynamiclink/arbitraje`);
+    setdynamicInfo(data);
+  }, []);
 
   return (
     <Layout floatingButtonInfo={floatingButtonConfig}>

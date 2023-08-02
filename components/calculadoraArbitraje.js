@@ -120,7 +120,7 @@ export default function CalculadoraArbitraje() {
     return (
         <>
             <div className="inset-0 flex items-center justify-center">
-                <div className="text-center pt-10">
+                <div className="text-center pt-2 pb-4">
                     <button
                         onClick={openModal} className="shadow-xl bg-pink-600 hover:bg-pink-700 text-white py-2 px-4 rounded-full flex mx-auto">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor">

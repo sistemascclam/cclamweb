@@ -12,7 +12,7 @@ var options = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="my-auto h-7 w-7 text-blue-600"
+        className="my-auto h-6 w-6 text-blue-600"
         viewBox="0 0 20 20"
         fill="currentColor"
       >
@@ -31,7 +31,7 @@ var options = [
     icon: (
       <svg
         viewBox="0 0 448 512"
-        className="my-auto h-7 w-7 text-blue-600"
+        className="my-auto h-6 w-6 text-blue-600"
         focusable="false"
         role="img"
         fill="currentColor"
@@ -74,7 +74,7 @@ var options = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="my-auto h-7 w-7 text-blue-600"
+        className="my-auto h-6 w-6 text-blue-600"
         viewBox="0 0 20 20"
         fill="currentColor"
       >
@@ -98,7 +98,7 @@ var options = [
     icon: (
       <svg
         viewBox="0 0 448 512"
-        className="my-auto h-7 w-7 text-blue-600"
+        className="my-auto h-6 w-6 text-blue-600"
         focusable="false"
         role="img"
         fill="currentColor"
@@ -122,7 +122,7 @@ var options = [
     icon: (
       <svg
         viewBox="0 0 576 512"
-        className="my-auto h-7 w-7 text-blue-600"
+        className="my-auto h-6 w-6 text-blue-600"
         focusable="false"
         role="img"
         fill="currentColor"
@@ -146,7 +146,7 @@ var options = [
     icon: (
       <svg
         viewBox="0 0 24 24"
-        className="my-auto h-7 w-7 text-blue-600"
+        className="my-auto h-6 w-6 text-blue-600"
         focusable="false"
         role="img"
         fill="currentColor"
@@ -160,18 +160,18 @@ var options = [
     title: "Protocolos",
     items: [
       {
-        name: "Protocolo - Agosto 2020: desde el 05 de agosto de 2020.",
+        name: "Protocolo: 05 de agosto de 2020.",
         link: "PROTOCOLO_CENTRO_DE_ARBITRAJE_CCLAM_AGOSTO_2020.pdf",
       },
       {
-        name: "Protocolo - Agosto 2023 [vigente]: 01 de agosto de 2023.",
+        name: "Protocolo vigente: 01 de agosto de 2023.",
         link: "PROTOCOLO_CENTRO_DE_ARBITRAJE_CCLAM_AGOSTO2023.pdf",
       },
     ],
     icon: (
       <svg
         viewBox="0 0 24 24"
-        className="my-auto h-7 w-7 text-blue-600"
+        className="my-auto h-6 w-6 text-blue-600"
         focusable="false"
         role="img"
         fill="currentColor"
@@ -203,17 +203,17 @@ const floatingButtonConfig = {
 
 export default function CentroArbitraje() {
   const [dynamicInfo, setdynamicInfo] = useState(null);
-  useEffect(async () => {
-    const { data } = await axios.get(`/dynamiclink/arbitraje`);
-    setdynamicInfo(data);
-  }, []);
+  // useEffect(async () => {
+  //   const { data } = await axios.get(`/dynamiclink/arbitraje`);
+  //   setdynamicInfo(data);
+  // }, []);
 
   return (
     <Layout floatingButtonInfo={floatingButtonConfig}>
       <Head>
         <title>CCLAM | Centro de arbitraje</title>
       </Head>
-      <div className="pt-28 pb-4">
+      <div className="pt-28">
         <Transition
           show={true}
           appear={true}
@@ -236,9 +236,9 @@ export default function CentroArbitraje() {
             </div>
           </div>
         </Transition>
-        <div className="bg-white w-full shadow-sm px-5 lg:px-24 py-12 rounded-t-4xl mt-10">
-          <div className="flex flex-wrap lg:flex-nowrap">
-            <div className="w-56 mx-auto">
+        <div className="bg-white shadow-sm rounded-4xl px-4 lg:px-16 py-12 w-full max-w-3xl mt-10 mx-auto text-gray-800 text-base">
+          <div className="flex flex-col gap-8 items-center">
+            <div className="w-56 mb-2">
               <CardContact
                 image={
                   <Image
@@ -254,8 +254,8 @@ export default function CentroArbitraje() {
                 mail="secretariogeneral@cclam.org.pe"
               />
             </div>
-            <div className="col-span-4 lg:pl-5 text-gray-800">
-              <p className="text-justify mt-5">
+            <div className="flex flex-col gap-4 w-full">
+              <p>
                 El Centro de Arbitraje pertenece al Centro de Solución de
                 Disputas de la Centenaria Cámara de Comercio y Producción de
                 Lambayeque, el mismo que se encarga de impulsar el arbitraje
@@ -265,7 +265,7 @@ export default function CentroArbitraje() {
                 veracidad; siempre acorde a la normatividad vigente y a su
                 Reglamento Arbitraje.
               </p>
-              <p className="text-justify mt-5">
+              <p>
                 Se caracteriza por contar tanto con la infraestructura y
                 ambientes apropiados para el desarrollo de audiencias
                 presenciales, como por contar con una plataforma digital apta
@@ -273,27 +273,20 @@ export default function CentroArbitraje() {
                 esa manera otorgan las condiciones más favorables para el
                 correcto desarrollo de los procesos arbitrales.
               </p>
-              <p className="text-justify mt-5">
-                Para mayor información llamar al 984 701 376 – 984 793 698 o
+              <p>
+                Para mayor información llamar al 984 701 376 - 984 793 698 o
                 escribir a los siguientes correos electrónicos:{" "}
-                <span>secretariogeneral@cclam.org.pe</span>|
+                <span>secretariogeneral@cclam.org.pe</span> |
                 <span>secretariaarbitral@cclam.org.pe</span>.
               </p>
             </div>
-          </div>
-          <CalculadoraArbitraje />
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-3 gap-x-4 mt-14">
-            {options.map((option, i) => (
-              <Item
-                key={i}
-                {...option}
-                dynamicInfo={dynamicInfo}
-                center={i === options.length - 1 && options.length % 3 === 1}
-              />
-            ))}
-          </div>
-          <div className="flex flex-wrap justify-center mb-16">
-            <div className="relative w-full lg:w-6/12 lg:pl-8 rounded-xl">
+            <CalculadoraArbitraje />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-10 gap-x-6">
+              {options.map((option, i) => (
+                <Item key={i} {...option} dynamicInfo={dynamicInfo} />
+              ))}
+            </div>
+            <div className="relative w-full lg:w-8/12 rounded-xl">
               <div className="shadow-close rounded-xl">
                 <Image
                   className="rounded-xl shadow-close"
@@ -304,83 +297,83 @@ export default function CentroArbitraje() {
                 />
               </div>
             </div>
+            <div className="flex flex-col gap-4">
+              <p className="font-bold text-themeBlue text-xl">
+                CONSEJO SUPERIOR DE ARBITRAJE 2022 – 2025
+              </p>
+              <p>
+                El 29 de diciembre de 2022, mediante la Sesión Ordinaria del
+                Consejo Directivo de la Cámara de Comercio y Producción de
+                Lambayeque, se acordó en forma unánime designar a los miembros
+                titulares y suplentes del Consejo Superior de Arbitraje durante
+                el período 2022 – 2025. Estando a ello, actualmente el
+                mencionado Consejo se encuentra conformado por:
+              </p>
+              <ul className="list-none list-inside">
+                {listConsejo.map((it, i) => (
+                  <li className="flex mb-2" key={i}>
+                    <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 mt-1 text-blue-500 mr-3"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={3}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                    </span>{" "}
+                    {it}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p className="italic text-center">
+              “Las partes acuerdan que todo litigio o controversia, derivado o
+              relacionado con este acto jurídico, se resolverá mediante el
+              arbitraje organizado y administrado por el Centro de Arbitraje de
+              la Cámara de Comercio y Producción de Lambayeque, de conformidad
+              con sus Reglamentos y directivas vigentes, a los cuales las partes
+              se someten libremente, señalando que el laudo que se emita en el
+              proceso arbitral será inapelable y definitivo”.
+            </p>
           </div>
-          <p className="font-bold text-themeBlue text-xl mb-6">
-            CONSEJO SUPERIOR DE ARBITRAJE 2022 – 2025
-          </p>
-          <p className="text-gray-800 leading-relaxed mb-3">
-            El 29 de diciembre del 2022 mediante Sesión Ordinaria del Consejo
-            Directivo de la Cámara de Comercio y Producción de Lambayeque, se
-            acordó en forma unánime designar los miembros titulares y suplentes
-            que integran el Consejo Superior de Arbitraje durante el período
-            2022 – 2025; el cual actualmente encuentra conformado por:
-          </p>
-          <ul className="list-none list-inside mb-14 text-gray-800">
-            {listConsejo.map((it, i) => (
-              <li className="flex mb-2" key={i}>
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 mt-1 text-blue-500 mr-3"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={3}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </span>{" "}
-                {it}
-              </li>
-            ))}
-          </ul>
-          <p className="italic text-center text-gray-700">
-            “Las partes acuerdan que todo litigio o controversia, derivados o
-            relacionados con este acto jurídico, se resolverá mediante el
-            arbitraje organizado y administrativo por el Centro de Arbitraje de
-            la Cámara de Comercio y Producción de Lambayeque, de conformidad con
-            sus Reglamentos y directivas vigentes, a los cuales las partes se
-            someten libremente, señalando que el laudo que se emita en el
-            proceso arbitral será inapelable y definitivo”.
-          </p>
         </div>
       </div>
     </Layout>
   );
 }
 
-const Item = ({ title, items, icon, dynamic, dynamicInfo, center }) => (
-  <div
-    className={`flex flex-col flex-wrap content-start mb-14 w-full ${
-      center ? "col-start-2" : ""
-    }`}
-  >
-    <div className="text-gray-700 flex">
-      <span className="bg-themeBlue bg-opacity-5 h-14 w-14 flex justify-center rounded-full">
-        {
-          (icon ??= (
-            <svg
-              viewBox="0 0 640 512"
-              className="my-auto h-8 w-8 text-blue-600"
-              focusable="false"
-              role="img"
+const Item = ({ title, items, icon, dynamic, dynamicInfo }) => (
+  <div className={`flex flex-col flex-wrap content-start w-full`}>
+    <div className="flex ">
+      <div
+        className="bg-themeBlue bg-opacity-5 h-12 w-12 rounded-full flex justify-center"
+        style={{ aspectRatio: "1/1" }}
+      >
+        {icon ?? (
+          <svg
+            viewBox="0 0 640 512"
+            className="my-auto h-8 w-8 text-blue-600"
+            focusable="false"
+            role="img"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
               fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill="currentColor"
-                d="M434.7 64h-85.9c-8 0-15.7 3-21.6 8.4l-98.3 90c-.1.1-.2.3-.3.4-16.6 15.6-16.3 40.5-2.1 56 12.7 13.9 39.4 17.6 56.1 2.7.1-.1.3-.1.4-.2l79.9-73.2c6.5-5.9 16.7-5.5 22.6 1 6 6.5 5.5 16.6-1 22.6l-26.1 23.9L504 313.8c2.9 2.4 5.5 5 7.9 7.7V128l-54.6-54.6c-5.9-6-14.1-9.4-22.6-9.4zM544 128.2v223.9c0 17.7 14.3 32 32 32h64V128.2h-96zm48 223.9c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zM0 384h64c17.7 0 32-14.3 32-32V128.2H0V384zm48-63.9c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16c0-8.9 7.2-16 16-16zm435.9 18.6L334.6 217.5l-30 27.5c-29.7 27.1-75.2 24.5-101.7-4.4-26.9-29.4-24.8-74.9 4.4-101.7L289.1 64h-83.8c-8.5 0-16.6 3.4-22.6 9.4L128 128v223.9h18.3l90.5 81.9c27.4 22.3 67.7 18.1 90-9.3l.2-.2 17.9 15.5c15.9 13 39.4 10.5 52.3-5.4l31.4-38.6 5.4 4.4c13.7 11.1 33.9 9.1 45-4.7l9.5-11.7c11.2-13.8 9.1-33.9-4.6-45.1z"
-              ></path>
-            </svg>
-          ))
-        }
-      </span>
-      <div className="max-w-xs mt-1 pl-5">
-        <p className="text-lg font-medium mb-3 text-blue-600 select-none">
+              d="M434.7 64h-85.9c-8 0-15.7 3-21.6 8.4l-98.3 90c-.1.1-.2.3-.3.4-16.6 15.6-16.3 40.5-2.1 56 12.7 13.9 39.4 17.6 56.1 2.7.1-.1.3-.1.4-.2l79.9-73.2c6.5-5.9 16.7-5.5 22.6 1 6 6.5 5.5 16.6-1 22.6l-26.1 23.9L504 313.8c2.9 2.4 5.5 5 7.9 7.7V128l-54.6-54.6c-5.9-6-14.1-9.4-22.6-9.4zM544 128.2v223.9c0 17.7 14.3 32 32 32h64V128.2h-96zm48 223.9c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zM0 384h64c17.7 0 32-14.3 32-32V128.2H0V384zm48-63.9c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16c0-8.9 7.2-16 16-16zm435.9 18.6L334.6 217.5l-30 27.5c-29.7 27.1-75.2 24.5-101.7-4.4-26.9-29.4-24.8-74.9 4.4-101.7L289.1 64h-83.8c-8.5 0-16.6 3.4-22.6 9.4L128 128v223.9h18.3l90.5 81.9c27.4 22.3 67.7 18.1 90-9.3l.2-.2 17.9 15.5c15.9 13 39.4 10.5 52.3-5.4l31.4-38.6 5.4 4.4c13.7 11.1 33.9 9.1 45-4.7l9.5-11.7c11.2-13.8 9.1-33.9-4.6-45.1z"
+            ></path>
+          </svg>
+        )}
+      </div>
+      <div className="pl-4 flex flex-col gap-y-2">
+        <p className="text-base font-medium text-blue-600 select-none">
           {title}
         </p>
         {dynamic ? (
@@ -388,7 +381,7 @@ const Item = ({ title, items, icon, dynamic, dynamicInfo, center }) => (
             href={`https://cclam.org.pe/recursos.base/public/storage/${dynamicInfo?.link}`}
             target="_blank"
             rel="noreferrer"
-            className="text-sm mb-2 block hover:text-blue-600"
+            className="text-sm block hover:text-blue-600"
           >
             {dynamicInfo?.titulo}
           </a>
@@ -400,7 +393,7 @@ const Item = ({ title, items, icon, dynamic, dynamicInfo, center }) => (
                 href={`https://cclam.org.pe/pdfs/${item.link}`}
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm mb-2 block hover:text-blue-600"
+                className="text-sm block hover:text-blue-600"
               >
                 {item.name}
               </a>

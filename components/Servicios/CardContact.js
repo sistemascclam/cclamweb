@@ -4,9 +4,9 @@ export default function CardContact({image,area,encargado,phone,mail}) {
             <div className="relative rounded-full shadow-close w-44 h-44 mx-auto">
                 {image}
             </div>
-            <p className="mt-2 text-xs font-medium text-themeBlue">{area}</p>
-            <p className="text-sm leading-tight text-gray-600">{encargado}</p>
-            <div className="flex justify-between mx-5 mt-2">
+            <p className="mt-2 text-xs font-medium text-themeLightBlue">{area}</p>
+            <p className="text-sm leading-tight text-gray-800 mt-1">{encargado}</p>
+            <div className="flex justify-between mx-5 mt-3">
                 <a title="Enviar correo" href={`mailto:${mail}`} target="_blank" rel="noreferrer" className="flex font-medium text-themeLightBlue transition-all duration-500 hover:scale-125">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

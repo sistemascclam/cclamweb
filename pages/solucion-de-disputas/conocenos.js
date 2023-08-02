@@ -44,11 +44,11 @@ export default function Index() {
                                     />
                                     <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fsoluciondedisputas.cclam&width=220&layout=button_count&action=like&size=small&share=true&height=46&appId" width="220" height="46" style={{ border: "none", overflow: "hidden", margin: '0 auto 0 auto' }} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                                 </div>
-                                <div className="my-auto mr-5 w-full lg:w-11/12 text-gray-800">
-                                    <p className="text-medium">
+                                <div className="my-auto mr-5 w-full lg:w-11/12 text-gray-800 text-sm flex flex-col gap-5">
+                                    <p>
                                         El Centro de Solución de Disputas de la Centenaria Cámara de Comercio y Producción de Lambayeque está comprometido con sus usuarios para brindarles un servicio eficaz, económico e imparcial; con la finalidad de buscar la solución más idónea a sus conflictos, desarrollando de esa manera una cultura de paz en nuestro país.
                                     </p>
-                                    <p className="font-bold text-sm mt-4 ">Para mayor información llamar al 984 701 376 – 984 793 698 o escribir a los siguientes correos electrónicos:
+                                    <p>Para mayor información llamar al 984 701 376 - 984 793 698 o escribir a los siguientes correos electrónicos:
                                         {" "}
                                         <span>
                                             secretariogeneral@cclam.org.pe

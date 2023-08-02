@@ -96,20 +96,19 @@ export default function CentroDeConciliacion() {
                                 mail="secretariogeneral@cclam.org.pe"
                             />
                         </div>
-                        <div className="col-span-4 lg:pl-10">
-                            <p className="text-justify mt-5 text-base text-gray-800">
+                        <div className="flex flex-col gap-5 lg:pl-8 text-gray-800 text-sm">
+                            <p>
                                 El Centro de Conciliación pertenece al Centro de Solución de Disputas de la Centenaria Cámara de Comercio y Producción de Lambayeque, el mismo que se encarga de impulsar los procesos conciliatorios como un mecanismo alternativo de resolución de conflictos en aras de brindar soluciones óptimas, oportunas y eficientes para las partes que deciden someter sus controversias en esta vía.
                             </p>
-                            <p className="text-justify mt-5 text-base text-gray-800">
+                            <p>
                                 La conciliación extrajudicial es un proceso avalado por el Ministerio de Justicia y Derechos Humanos, mediante el cual las partes podrán optar por llegar a un acuerdo conciliatorio de manera rápida y económica para resolver sus controversias.
                             </p>
-                            <p className="text-justify mt-5 text-base text-gray-800">
+                            <p>
                                 Durante este procedimiento, las partes asistirán a las audiencias de conciliación con la intervención activa e imparcial del denominado conciliador a través del diálogo. Este procedimiento concluye con la emisión del Acta de Conciliación, documento que constituye título ejecutivo, el cual contendrá el acuerdo al que llegaron las partes, debiendo estar firmada por las partes intervinientes y el conciliador.
                             </p>
-                            <p className="text-justify mt-5 text-base text-gray-800">
-                                Para mayor información llamar al 984 701 376 – 984 793 698 o escribir a los siguientes correos electrónicos:
-                            </p>
-                            <p className='font-bold text-start mt-2 text-lg'>secretariogeneral@cclam.org.pe | secretariaarbitral@cclam.org.pe</p>
+                            <p>
+                                Para mayor información llamar al 984 701 376 - 984 793 698 o escribir a los siguientes correos electrónicos:
+                            secretariogeneral@cclam.org.pe | secretariaarbitral@cclam.org.pe</p>
                             <br />
                             <br />
                         </div>

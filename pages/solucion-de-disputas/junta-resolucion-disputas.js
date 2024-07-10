@@ -127,6 +127,22 @@ var options = [
       </svg>
     ),
   },
+  {
+    title: "Requisitos de incorporación de adjudicadores al Centro",
+    items: [
+      {
+        name: "Requisitos de incorporación de adjudicadores al Centro.pdf",
+        link: "REQUISITOS_DE_INCORPORACION.pdf",
+      },
+    ],
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" 
+      className="my-auto h-7 w-7 text-blue-600">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M8.242 5.992h12m-12 6.003H20.24m-12 5.999h12M4.117 7.495v-3.75H2.99m1.125 3.75H2.99m1.125 0H5.24m-1.92 2.577a1.125 1.125 0 1 1 1.591 1.59l-1.83 1.83h2.16M2.99 15.745h1.125a1.125 1.125 0 0 1 0 2.25H3.74m0-.002h.375a1.125 1.125 0 0 1 0 2.25H2.99" />
+</svg>
+
+    ),
+  },
 ];
 
 const floatingButtonConfig = {
@@ -184,13 +200,14 @@ export default function JuntaResolucionDisputas() {
                 image={
                   <Image
                     className="rounded-full filter brightness-95 "
-                    src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/encargada.png`}
+                    src={`${process.env.STORAGE_URL_FT}/images/soluciondisputas/encargada_jrd.jpeg`}
                     width="600"
                     height="600"
+                    objectFit="cover"
                   />
                 }
                 area="Centro de Solución de Disputas"
-                encargado="María Alejandra Pasco Herrera"
+                encargado="Cynthia Chavesta Rodriguez"
                 phone="984701376"
                 mail="secretariogeneral@cclam.org.pe"
               />

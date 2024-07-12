@@ -88,11 +88,12 @@ var options = [
   },
   {
     title: "Registro de árbitros",
-    dynamic: true,
     items: [
       {
         name: "Registro de Árbitros - Junio 2022.pdf",
         link: "2022/JUNIO/REGISTRO_DE_ARBITROS_ACTUALIZADO_JUN2022.pdf",
+        dynamic: true,
+        type: "ARBITRAJE"
       },
     ],
     icon: (
@@ -201,6 +202,8 @@ var options = [
       {
         name: "Recusaciones y Sanciones 2024",
         link: "RECUSACIONES-SANCIONES-2024.pdf",
+        dynamic: true,
+        type: "RECUSACIONES"
       },
     ],
     icon: (
@@ -253,7 +256,7 @@ var listSecretariasArbitrales = [
 export default function CentroArbitraje() {
   const [dynamicInfo, setdynamicInfo] = useState(null);
   useEffect(async () => {
-    const { data } = await axios.get(`/dynamiclink/arbitraje`);
+    const { data } = await axios.get(`/dynamiclink/all`);
     setdynamicInfo(data);
   }, []);
 
@@ -460,18 +463,21 @@ const Item = ({ title, items, icon, dynamic, dynamicInfo, center }) => (
         <p className="text-lg font-medium mb-3 text-blue-600 select-none">
           {title}
         </p>
-        {dynamic ? (
-          <a
-            href={`https://cclam.org.pe/recursos.base/public/storage/${dynamicInfo?.link}`}
-            target="_blank"
-            rel="noreferrer"
-            className="text-sm mb-2 block hover:text-blue-600"
-          >
-            {dynamicInfo?.titulo}
-          </a>
-        ) : (
           <>
-            {items.map((item, k) => (
+            {items.map((item, k) => {
+              const currentInfo = dynamicInfo?.find(d=>d.tipo===item?.type)
+              return (
+              item.dynamic ?
+              <a
+                key={k}
+                href={`https://cclam.org.pe/recursos.base/public/storage/${currentInfo?.link}`}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm mb-2 block hover:text-blue-600"
+              >
+                {currentInfo?.titulo}
+              </a>
+              :
               <a
                 key={k}
                 href={`${item?.fullLink ? "" : "https://cclam.org.pe/pdfs/"}${item.link}`}
@@ -481,9 +487,10 @@ const Item = ({ title, items, icon, dynamic, dynamicInfo, center }) => (
               >
                 {item.name}
               </a>
-            ))}
+              )
+            })}
           </>
-        )}
+        
       </div>
     </div>
   </div>

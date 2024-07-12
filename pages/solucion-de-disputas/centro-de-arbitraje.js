@@ -185,7 +185,7 @@ var options = [
     title: "Código de Ética",
     items: [
       {
-        name: "Código de Ética 2007",
+        name: "Código de Ética",
         link: "CODIGO_DE_ETICA_2007.pdf",
       },
     ],
@@ -200,15 +200,34 @@ var options = [
     items: [
       {
         name: "Recusaciones y Sanciones 2024",
-        link: "RECUSACIONES-SANCIONES_2024.pdf",
+        link: "RECUSACIONES-SANCIONES-2024.pdf",
       },
     ],
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" 
       className="my-auto h-7 w-7 text-blue-600">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 18.364A9 9 0 0 0 5.636 5.636m12.728 12.728A9 9 0 0 1 5.636 5.636m12.728 12.728L5.636 5.636" />
-</svg>
-
+        <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 18.364A9 9 0 0 0 5.636 5.636m12.728 12.728A9 9 0 0 1 5.636 5.636m12.728 12.728L5.636 5.636" />
+      </svg>
+    ),
+  },
+  {
+    title: "Canal de denuncias",
+    items: [
+      {
+        name: "Presencial: Presenta tu denuncia en nuestra oficina ubicada en la Calle Manuel María Ízaga N° 035, Urbanización Patazca, Chiclayo - Lambayeque.",
+        link: "https://maps.app.goo.gl/AnA3mDomABcYT4d76",
+        fullLink: true
+      },
+      {
+        name: "Virtual: Envía tu denuncia al correo arbitraje@cclam.org.pe.",
+        link: "mailto:arbitraje@cclam.org.pe",
+        fullLink: true
+      },
+    ],
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="my-auto h-7 w-7 text-blue-600">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46" />
+      </svg>
     ),
   },
 ];
@@ -231,12 +250,6 @@ var listSecretariasArbitrales = [
   "Secretaria Arbitral: Abg. Sofia Alejandra Kcomt Fernandez."
 ];
 
-const floatingButtonConfig = {
-  mesaVirtual: "Mesa de partes",
-  linkMesaVirtual: "mailto:arbitraje@cclam.org.pe",
-  numWsp: "51984701376",
-};
-
 export default function CentroArbitraje() {
   const [dynamicInfo, setdynamicInfo] = useState(null);
   useEffect(async () => {
@@ -245,7 +258,7 @@ export default function CentroArbitraje() {
   }, []);
 
   return (
-    <Layout floatingButtonInfo={floatingButtonConfig}>
+    <Layout hideMesaPartes={true}>
       <Head>
         <title>CCLAM | Centro de arbitraje</title>
       </Head>
@@ -313,7 +326,8 @@ export default function CentroArbitraje() {
                 Para mayor información llamar al 984 701 376 - 984 793 698 o
                 escribir a los siguientes correos electrónicos:{" "}
                 <span>secretariogeneral@cclam.org.pe</span> | 
-                <span>secretariaarbitral@cclam.org.pe</span>.
+                <span>secretariaarbitral@cclam.org.pe</span> | 
+                <span>secretariaarbitraje@cclam.org.pe</span>.
               </p>
             </div>
           </div>
@@ -460,7 +474,7 @@ const Item = ({ title, items, icon, dynamic, dynamicInfo, center }) => (
             {items.map((item, k) => (
               <a
                 key={k}
-                href={`https://cclam.org.pe/pdfs/${item.link}`}
+                href={`${item?.fullLink ? "" : "https://cclam.org.pe/pdfs/"}${item.link}`}
                 target="_blank"
                 rel="noreferrer"
                 className="text-sm mb-2 block hover:text-blue-600"

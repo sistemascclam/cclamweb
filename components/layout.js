@@ -5,7 +5,7 @@ import Footer from './Global/Footer/index'
 import CookieConsent from './CookieConsent'
 export const siteTitle = 'CCLAM | Cámara de Comercio y Producción de Lambayeque'
 
-export default function Layout({ children, home, complete = true, floatingButtonInfo = { mesaVirtual: "Mesa virtual", linkMesaVirtual:"https://cclam.sofydoc.com/externo/", numWsp:null } }) {
+export default function Layout({ children, home, complete = true, floatingButtonInfo = { mesaVirtual: "Mesa virtual", linkMesaVirtual:"https://cclam.sofydoc.com/externo/", numWsp:null }, hideMesaPartes = false }) {
   return (
     <>
       <Head>
@@ -38,7 +38,7 @@ export default function Layout({ children, home, complete = true, floatingButton
       }
       {
         complete ?
-          <FloatingGroup {...floatingButtonInfo} />
+          <FloatingGroup {...floatingButtonInfo} hideMesaPartes={hideMesaPartes} />
           :
           ""
       }

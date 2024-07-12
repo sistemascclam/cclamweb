@@ -223,9 +223,9 @@ export default function JuntaResolucionDisputas() {
                 a un contrato de obra o proyecto.
               </p>
               <p className="text-justify mt-5">
-                Para mayor información llamar al 984 701 376 – 984 793 698 o
+                Para mayor información llamar al 984 793 698 o
                 escribir a los siguientes correos electrónicos:{" "}
-                <span>secretariogeneral@cclam.org.pe</span> |{" "}
+                <span>jrd@cclam.org.pe</span> |{" "}
                 <span>secretariaarbitral@cclam.org.pe</span>.
               </p>
             </div>
